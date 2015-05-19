@@ -21,4 +21,5 @@
 	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
 	define('APPPATH', realpath('application').'/');
 	define('VIEWPATH', APPPATH.'views/');
+	define('BASEURL', '/ff/application');
 require_once BASEPATH.'core/CodeIgniter.php';

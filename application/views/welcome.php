@@ -1,3 +1,6 @@
+<?php
+	defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -24,7 +27,7 @@
         </div>
         <div class="login_title">
             <div class="logo">
-                <img src="./image/logo_img.png">
+                <img src="<?=base_url().'/image/logo_img.png'?>">
             </div>
             <div class="slogan">
                 <img src="./image/logo_text.png">
