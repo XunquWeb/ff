@@ -1,0 +1,49 @@
+html{
+    height:100%;
+}
+body{
+    height:100%;
+    background-color: #90CFBF;
+}
+
+.container{
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+.login_title_ver{
+    height:25%;
+}
+.login_title{
+    height:73%;
+}
+.login_title .logo{
+    text-align: center;
+}
+.login_title .logo img{
+    width:76px;
+}
+.login_title .slogan{
+    text-align:center;
+}
+.login_title .slogan img{
+    margin-top: 5px;
+    width:114px;
+}
+
+.login_buttons{
+    margin-top:-90px;
+}
+.login_buttons button{
+    width:100%;
+    border:0px;
+}
+.login_buttons #loginButton{
+    margin-bottom: 5px;
+    background-color: #04918A;
+}
+.login_buttons #signupButton{
+    color: #04918A;
+    background-color: #F5F5F5;
+}
+
