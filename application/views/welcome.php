@@ -11,8 +11,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/welcome.css" rel="stylesheet">
+    <link href="<?=base_url()?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>/css/welcome.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,10 +27,10 @@
         </div>
         <div class="login_title">
             <div class="logo">
-                <img src="<?=base_url().'/image/logo_img.png'?>">
+                <img src="<?=base_url()?>/image/logo_img.png">
             </div>
             <div class="slogan">
-                <img src="./image/logo_text.png">
+                <img src="<?=base_url()?>/image/logo_text.png">
             </div>
         </div>
         <div class="row login_buttons">
@@ -50,6 +50,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?=base_url()?>/js/bootstrap.min.js"></script>
   </body>
 </html>
