@@ -1,0 +1,1 @@
+<p>用户已创建<?php echo anchor('login/index', '登录');?></p>

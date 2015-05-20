@@ -1,0 +1,13 @@
+<h1>创建用户</h1>
+<?php
+
+echo form_open('login/create_user');
+echo form_input('username', set_value('username', '姓名'));
+echo form_input('stu_num', set_value('stu_num', '学号'));
+echo form_input('email', set_value('mail', '邮箱'));
+echo form_password('password', '密码');
+echo form_password('password2', '密码确认');
+echo form_submit('submit', '创建用户');
+
+?>
+

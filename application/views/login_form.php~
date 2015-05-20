@@ -1,0 +1,12 @@
+<div id="login_form">
+	<h1>Login, Fool!</h1>
+	<?php
+		echo form_open('login/validate_credentials');
+		echo form_input('email', 'Email');
+		echo form_input('password', 'Password');
+		echo form_submit('submit', 'Go!');
+		echo anchor('login/signup', 'ÓÐÕËºÅ£¬µã»÷×¢²á');
+		
+
+	?>
+</div>
