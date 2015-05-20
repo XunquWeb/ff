@@ -8,8 +8,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
+    <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>css/login.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,10 +21,10 @@
     <div class="container_fix">
         <div class="login_title">
             <div class="logo">
-                <img src="./image/logo_img.png">
+                <img src="<?=base_url()?>image/logo_img.png">
             </div>
             <div class="slogan">
-                <img src="./image/logo_text.png">
+                <img src="<?=base_url()?>image/logo_text.png">
             </div>
         </div>
     </div>
