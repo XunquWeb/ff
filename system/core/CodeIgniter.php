@@ -1,14 +1,137 @@
 <?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014 - 2015, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * System Initialization File
+ *
+ * Loads the base classes and executes the request.
+ *
+ * @package		CodeIgniter
+ * @subpackage	CodeIgniter
+ * @category	Front-controller
+ * @author		EllisLab Dev Team
+ * @link		http://codeigniter.com/user_guide/
+ */
+
+/**
+ * CodeIgniter Version
+ *
+ * @var	string
+ *
+ */
 	define('CI_VERSION', '3.0.0');
 
-	if (file_exists(APPPATH.'config/'.ENVIRONMENT.'/constants.php')){
+/*
+ * ------------------------------------------------------
+ *  Load the framework constants
+ * ------------------------------------------------------
+ */
+	if (file_exists(APPPATH.'config/'.ENVIRONMENT.'/constants.php'))
+	{
 		require_once(APPPATH.'config/'.ENVIRONMENT.'/constants.php');
 	}
+
 	require_once(APPPATH.'config/constants.php');
+
+/*
+ * ------------------------------------------------------
+ *  Load the global functions
+ * ------------------------------------------------------
+ */
 	require_once(BASEPATH.'core/Common.php');
 
+
+/*
+ * ------------------------------------------------------
+ * Security procedures
+ * ------------------------------------------------------
+ */
+
+if ( ! is_php('5.4'))
+{
+	ini_set('magic_quotes_runtime', 0);
+
+	if ((bool) ini_get('register_globals'))
+	{
+		$_protected = array(
+			'_SERVER',
+			'_GET',
+			'_POST',
+			'_FILES',
+			'_REQUEST',
+			'_SESSION',
+			'_ENV',
+			'_COOKIE',
+			'GLOBALS',
+			'HTTP_RAW_POST_DATA',
+			'system_path',
+			'application_folder',
+			'view_folder',
+			'_protected',
+			'_registered'
+		);
+
+		$_registered = ini_get('variables_order');
+		foreach (array('E' => '_ENV', 'G' => '_GET', 'P' => '_POST', 'C' => '_COOKIE', 'S' => '_SERVER') as $key => $superglobal)
+		{
+			if (strpos($_registered, $key) === FALSE)
+			{
+				continue;
+			}
+
+			foreach (array_keys($$superglobal) as $var)
+			{
+				if (isset($GLOBALS[$var]) && ! in_array($var, $_protected, TRUE))
+				{
+					$GLOBALS[$var] = NULL;
+				}
+			}
+		}
+	}
+}
+
+
+/*
+ * ------------------------------------------------------
+ *  Define a custom error handler so we can log PHP errors
+ * ------------------------------------------------------
+ */
 	set_error_handler('_error_handler');
 	set_exception_handler('_exception_handler');
 	register_shutdown_function('_shutdown_handler');
