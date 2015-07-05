@@ -1,0 +1,157 @@
+.msg-list {
+  margin-top:-20px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.comment-item {
+  line-height: 50px;
+}
+
+.msg-item {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+  color: #303030;
+}
+
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.comment-item .msg-icon {
+  margin-top: 6px;
+}
+
+.msg-icon-red {
+  background: #f19149;
+}
+
+.msg-icon {
+  float: left;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 40px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.msg-item .contents {
+  margin-right: 60px;
+}
+
+.comment-item .arrow-right {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 22px;
+  color: #ccc;
+  font-weight: 700;
+}
+
+.line {
+  width: 100%;
+  padding: 5px 0 5px 15px;
+  font-size: 14px;
+  background: #ebebeb;
+  color:#555555;
+}
+
+.msg-item h5 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.msg-icon-blue {
+  background: #23acd5;
+}
+.glyphicon-envelope{
+  font-size: 10px;
+  margin-right: 5px;
+  margin-left:6px;
+  color: #6d6d6d;
+  position: relative;
+  top: 1px;
+}
+
+.msg-item+.msg-item {
+  border-top: 1px solid #ebebeb;
+}
+
+.msg-icon span{
+  font-size: 28px;
+  top: -1px;
+}
+
+#msg-detail-list{
+  min-height: 160px;
+  margin-top:5px;
+  margin-bottom:40px;
+}
+
+.msg-detail{
+  height:40px;
+  padding-top: 5px;
+  margin-bottom:10px;
+}
+.msg-detail img{
+  height:100%;
+  float:left;
+  margin-right:15px;
+  border-radius: 50%;
+}
+
+.msg-detail+.msg-detail{
+  border-top: 1px solid #ebebeb;  
+}
+.msg-text{
+  color:#999;
+  font-size: 8px;
+  -o-text-overflow:ellipsis;
+  -webkit-text-overflow:ellipsis;
+  -moz-text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  width:200px;
+  position:absolute;
+}
+.msg-time{
+  color:#999;
+  right:15px;
+  font-size:8px;
+  position:absolute;
+}
+.msg-detail-content{
+  float:left;
+}
+
+.msg_reply_img{
+  height:30px;
+  border-radius: 50%;
+  margin-right:7px;
+}
+.msg-modal-fix{
+  padding:8px 15px;
+}
+.msg-modal-fix span{
+  line-height:30px;
+  color:#5F8E96;
+}
+.msg_reply_time{
+    float: right;
+    margin-right: 9px;
+    font-size: 7px;
+    line-height: 28px;
+}

@@ -1,0 +1,23 @@
+body{
+    height:100%;
+}
+label span{
+	font-size:20px;
+	color:red;
+	position: relative;
+    top: 5px;
+    left: 3px;
+}
+.form-horizontal .form-group label {
+	padding-top:0px;
+}
+
+h5{
+  font-size:28px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.submit_button{
+  width:100%;
+}

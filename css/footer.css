@@ -1,0 +1,25 @@
+.footer_container{
+    text-align: center;
+    background-color: #595757;
+    color: #888889;
+    padding: 15px 0px 7px 0px;
+    z-index: -2;
+	width:100%;
+	z-index:-1;
+}
+.footer_container a {
+  font-weight: 700;
+  margin-left: 2px;
+  margin-right:2px;
+  color: #9aa4af;
+  text-decoration: none;
+}
+a:hover {
+  color: #16a085;
+  text-decoration: none;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+span{
+	margin-right:2px;
+}

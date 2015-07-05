@@ -1,0 +1,104 @@
+.ch_icon {
+  float: left;
+  width: 70px;
+  height: 70px;
+  background-image: url(../image/channel_icon.png);
+  background-size: 100% auto;
+}
+
+.ch_item {
+  overflow: hidden;
+  display: block;
+  padding: 6px 34px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.ch_item>.fl {
+  float: left;
+  margin-left: 30px;
+  padding: 10px 0;
+  color: #000;
+}
+
+#channel_list{
+	padding-left:0px;
+}
+
+.ch_item>.fl>span {
+  font-size: 12px;
+  color: #999;
+}
+
+.ch_item>.fl>p {
+  margin-bottom: 8px;
+}
+
+#board {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 2px 4px;
+  color: #fff;
+  text-align: center;
+  margin-bottom:15px;
+}
+.b_item {
+  box-sizing: border-box;
+  width: 49.5%;
+  padding: 10px 4px;
+  border-radius: 4px;
+}
+.b_item:nth-child(1) {
+  float: left;
+  background: #f3b54a;
+  color: #fff;
+}
+.b_item:nth-child(2) {
+  float: right;
+  background: #57c7c3;
+  color: #fff;
+}
+#board span {
+  font-size: 12px;
+}
+#board .fl {
+  display: inline-block;
+  text-align: left;
+}
+#board .fl>p {
+  margin-bottom: -4px;
+}
+.b_item:nth-child(1) .b_icon {
+  background-position: 0 0;
+}
+.b_icon {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-right: 2px;
+  background-image: url(../image/board_icon.png);
+  background-size: 100% auto;
+  vertical-align: bottom;
+}
+.b_item:nth-child(2) .b_icon {
+  background-position: 0 -34px;
+}
+
+#btm {
+  text-align: center;
+  line-height: 30px;
+  color: #9e9e9e;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+#btm>.img {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  vertical-align: bottom;
+  background-size: 100% 100%;
+  background-image: url(http://f.qsc.dreamore.cn/public_html/refactbuild/image/qsc_logo.png);
+}
+#carousel-channel-generic{
+  margin-bottom:20px;
+}
