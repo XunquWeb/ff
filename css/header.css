@@ -262,6 +262,7 @@ figcaption.ratings a span{
 }
 
 .user-info .user_sig{
+    padding-left:10%;
     margin-top: 20px;
     height: 40px;
     background-color: rgba(220, 220, 220, 0.5);
@@ -288,7 +289,7 @@ figcaption.ratings a span{
 }
 
 .user_content .user_toggle{
-    padding-left: 35px;
+    padding-left: 10%;;
     height: 70px;
 }
 
@@ -301,7 +302,7 @@ figcaption.ratings a span{
 
 .user_content a span.badge {
     position:absolute;
-    left:25px;
+    left:10%;
     padding: 3px 6px;
     color: #ffffff;
 }

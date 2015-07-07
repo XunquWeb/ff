@@ -72,7 +72,7 @@ class User extends CI_Controller {
 	public function myinfo(){
 		if($this->session->id){
 			$this->load->model('user_model');
-			$this->load->view('personal_info');
+			$this->load->view('user_info');
 		}
 		else{
 			redirect('');

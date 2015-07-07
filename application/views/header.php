@@ -103,7 +103,8 @@
                   <div class="user-info">
                     <div style="margin-top:10px;" class="row">
                       <div class="col-xs-4 col-sm-4 text-center">
-                        <figure><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <figure>
+                          <a href="http://localhost/ff/User/myinfo" class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
                           <figcaption class="ratings">
                           <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
                           </p>
