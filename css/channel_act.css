@@ -100,5 +100,6 @@
   background-image: url(http://f.qsc.dreamore.cn/public_html/refactbuild/image/qsc_logo.png);
 }
 #carousel-channel-generic{
-  margin-bottom:20px;
+  margin-bottom:0px;
+  margin-top: -50px;
 }
