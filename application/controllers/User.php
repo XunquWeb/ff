@@ -72,7 +72,17 @@ class User extends CI_Controller {
 	public function myinfo(){
 		if($this->session->id){
 			$this->load->model('user_model');
-			$this->load->view('user_info');
+			$this->load->view('user_info/user_info');
+		}
+		else{
+			redirect('');
+		}
+	}
+
+	public function myinfo1(){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$this->load->view('user_info/user_info1');
 		}
 		else{
 			redirect('');
@@ -101,6 +111,16 @@ class User extends CI_Controller {
 					echo 'failed';
 				}
 			}
+		}
+	}
+
+	public function account_info(){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$this->load->view('user_info/account_info');
+		}
+		else{
+			redirect('');
 		}
 	}
 

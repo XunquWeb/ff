@@ -1,0 +1,388 @@
+body{
+  background-color: #f0f2f5;
+  color: #777777;
+}
+
+.nav_fix{
+  position: relative;
+  margin-bottom:0px;
+  background-color: #fff;
+  border:none;
+}
+
+.navbar-header{
+  width:100%;
+  line-height: 50px;
+}
+
+.navbar-header i{
+  position:absolute;
+  font-size: 30px;
+  padding: 10px;
+  font-weight: thin;
+}
+
+.navbar-header h4{
+  width:100%;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  padding:auto;
+}
+
+.content-wrap{
+  background-color: #f3f3f3;
+}
+
+.content-wrap section{
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.content-wrap section .padder {
+  margin-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.panel {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.panel-body {
+    padding-top: 5px;
+}
+
+.panel-body .main_info{
+  height: 85px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.panel-body .main_info .inline{float: left;width: 30%;padding-bottom: 0px;margin-bottom: 0px;}
+
+.panel-body .main_info img{
+  border-radius:50%;
+  height: auto; 
+  font-size: 30px;
+  width: 80px;
+  line-height: 80px;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.panel-body .main_info p{
+  position:relative;
+  text-align: center;
+  display:block;
+}
+
+.panel-body .main_info span{
+   padding-left:20px;
+   margin-left:-12px;
+    position: absolute;
+    top:-20px;
+    font-size:6px;
+    line-height:12px;
+    width:20px;
+    padding: 3px 0px;
+    color: #ffffff;
+    border:1px solid #f3f3f3;
+}
+
+
+
+
+/*
+.portlet {
+    clear: both;
+    margin-top: 0px;
+    padding: 0px;
+}
+.portlet {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+.portlet.box > .portlet-header {
+    margin-bottom: 0;
+    padding: 8px 15px;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+}
+.portlet > .portlet-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.portlet > .portlet-header:before {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.portlet > .portlet-header:after {
+    content: "";
+    display: table;
+    line-height: 0;
+    clear: both;
+}
+.portlet > .portlet-header .caption {
+    font-family:"Microsoft YaHei";
+    float: left;
+    display: inline-block;
+    font-size: 16px;
+    font-weight:200px;
+    line-height: 18px;
+    padding: 0;
+}
+.portlet > .portlet-header .caption i {
+    float: left;
+    margin-top: 2px;
+    display: inline-block !important;
+    font-size: 16px;
+    margin-right: 5px;
+    color: #333;
+}
+.portlet .portlet-body {
+    /*background: #FFFFFF;*/
+/*    padding: 15px;
+    clear: both;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    text-align: left;
+}
+
+.portlet .portlet-body .table tbody tr td {
+    border-top: 1px solid #efefef;
+    display: table-cell;
+}
+
+.portlet .portlet-body .table .td-meta{
+  width: 25%;
+}*/
+
+
+.panel-body .inline{float: left;width: 33%;padding-bottom: 0px;margin-bottom: 0px;}
+
+.panel-body .inline-xm{float: left;width: 20%;padding-bottom: 0px;margin-bottom: 0px;}
+
+.panel-body .inline-sm{float: left;width: 25%;padding-bottom: 0px;margin-bottom: 0px;}
+
+.panel-body .description{font-size: 12px;padding-top: 10px;color: #b4b4b4;}
+
+.panel-body .nav-stacked li{float: left;width: 100%;border-bottom:1px solid #f3f3f3;}
+
+.panel-body .nav-stacked li a{ text-align: left;border-radius: 0px;font-family:"Microsoft YaHei";padding-top: 10px;padding-bottom: 10px;border:none;}
+
+.panel-body .nav-stacked li input{ float:left;text-align: left;border-radius: 0px;font-family:"Microsoft YaHei";line-height:30px;margin-top: 5px;margin-bottom: 0px;border:none;width:100%;padding-left:24px;outline:medium;background-color: #ffffff;}
+
+/*.panel-body .nav-stacked li input:focus{border-bottom:1px solid #B4B4B4;}*/
+/*.panel-body .nav-stacked li a i{border-radius:30%;color: #333;padding:2px 0px;font-size:10px;width:16px;text-align:center; }*/
+.panel-body .nav-stacked li a i{border-radius:30%;color: #ffffff;padding:2px 0px;width:16px;text-align:center; }
+.panel-body .nav-stacked li p i{border-radius:30%;color: #ffffff;padding:2px 0px;width:16px;text-align:center; }
+
+.panel-body .nav-stacked a span{
+    padding-top: 10px;
+    padding-bottom:0px; 
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0;
+    text-align: center;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.panel-body .nav-stacked a span i{
+  border-radius:50%;
+  height: auto; 
+  font-size: 20px;
+  width: 50px;
+  line-height: 50px;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.panel-body .nav-stacked .more_info{
+  float: left;
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  width: 20px;
+}
+
+.panel-body .nav-stacked a .description{
+  padding-top: 5px;
+  font-size: 10px;
+  color: #333;
+}
+
+.panel-body .nav-sided{
+  width: 65%;
+  margin-top: 10px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 18px;
+  padding-bottom:5px;
+}
+
+.panel-body .more_info li{
+  text-align:left;
+  display: block;
+  width: 100%;
+  border-bottom:1px solid #f3f3f3;
+  margin-left: 0px;
+}
+
+.panel-body .more_info li input{float:left;text-align: left;border-radius: 0px;font-family:"Microsoft YaHei";line-height:30px;margin-top: 5px;margin-bottom: 0px;border:none;width:65%;padding-left:24px;outline:medium;font-size: 16px;background-color: #ffffff;}
+
+
+.panel-body .more_info li p{
+  margin-left: 5%;
+  margin-right:5%;
+  width: 20%;
+  min-width:60px;
+  float: left;
+  height: 42px;
+  line-height: 22px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  word-spacing:-1em;/*调整文本，以防止使用两端对齐之后字间距过大*/
+  text-align:justify;
+  text-justify:distribute-all-lines;/*ie6-8*/
+  text-align-last:justify;/* ie9*/
+  -moz-text-align-last:justify;/*ff*/
+  -webkit-text-align-last:justify;/*chrome 20+*/
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0){/* 兼容chrome*/
+.panel-body .more_info li p span:after{
+   content:".";
+   display: inline-block;
+   width:100%;
+   overflow:hidden;
+   height:0;
+  }
+}
+
+.panel-body .more_info li a{
+  height: 42px;
+  width: 65%;
+  float: right;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  line-height: 22px;
+  border-radius:0px;
+}
+
+.meta-rank{
+  border:1px solid #19a9d5;
+  padding-left:0px;
+  border-radius: 50px;
+  color: #19a9d5 !important;
+  padding-top:0px !important;
+  width: 50px;
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 0px;
+  height: 20px;
+  text-align: center;
+}
+
+.meta-sex{
+  font-size: 10px;
+  line-height: 22px;
+}
+
+.meta-sex i{
+  padding-top: 8px;
+  height: 15px;
+  margin-left: 10px;
+}
+
+.panel .panel-header {
+  
+  margin-top:5px;
+    height: 30px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.panel .panel-header:before {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.panel .panel-header:after {
+    content: "";
+    display: table;
+    line-height: 0;
+    clear: both;
+}
+.panel .panel-header .caption {
+  letter-spacing:6px;
+  margin-left:5%;
+    font-family:"Microsoft YaHei";
+    float: left;
+    display: inline-block;
+    font-size: 16px;
+    font-weight:200px;
+    line-height: 18px;
+    padding: 0;
+}
+.panel .panel-header .caption i {
+    float: left;
+    margin-top: 0px;
+    display: inline-block !important;
+    font-size: 18px;
+    margin-right: 5px;
+    color: #333;
+}
+
+.panel-body .star_info span{
+  display: block;
+  line-height:22px;
+  height: 16px;
+  margin-left:15px;
+  padding-top:0px !important;
+  font-size: 16px;
+  width: 16px;
+  float:left;
+}
+
+.panel-body .star_info .space{
+  width: 8px;
+}
+
+
+.panel-body .level_info{
+  padding-left:25px;
+}
+
+.panel-body .personal_info li{
+  text-align:left;
+  display: block;
+  width: 100%;
+  border-bottom:1px solid #f3f3f3;
+  margin-left: 0px;
+  font-size: 16px;
+}
+
+.panel-body .personal_info li a{
+  padding-left: 5%;
+}
+
+.panel-body .personal_info li a i{
+  padding: 2px 2px;
+  width:20px;
+}

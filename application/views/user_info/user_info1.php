@@ -10,7 +10,9 @@
       <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
       <title>Bootstrap 101 Template</title>
     <link href="<?=base_url('css/Bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/user_info.css')?>" rel="stylesheet">
+    <link href="<?=base_url('css/base.css')?>" rel="stylesheet">
+    <link href="<?=base_url('css/user_info/user_info.css')?>" rel="stylesheet">
+
     <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
         <!--公告样式-->
 <!--     <link rel="stylesheet" type="text/css" href="<?=base_url('css/change/normalize.css')?>" />
@@ -30,7 +32,7 @@
   <div style="background:url(<?=base_url('image/users/bg-3.jpg')?>) center center; background-size:cover">
     <div class="wrapper-lg bg-white-opacity">
       <div class="row m-t">
-          <div class="col-sm-7 ">
+          <div class=" ">
             <div class="meta-full m-b meta-back">
               <a href="http://localhost/ff" class="pull-left c-black m-t"><span><i class="fa fa-chevron-left"></i> 返回 </span></a>
               <a href="" class="pull-right c-black m-t" title=""><span><i class="fa fa-comment"></i></span>
@@ -164,7 +166,7 @@
                       <span class="description">朋友</span>
                     </a>
                     <a href="" class="m-b-md inline p">
-                      <span class="icon"><i class="icon fa fa-sitemap bc-blue"></i></span>
+                      <span class="icon"><i class="icon fa fa-sitemap bc-blue-xm"></i></span>
                       <span class="description">公司/学校</span>
                     </a>
                     <a href="" class="m-b-md inline p">
@@ -226,7 +228,7 @@
                   <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
                       <li >
-                        <a href="#tab-profile-setting" data-toggle="tab"><i class="fa fa-user bc-red"></i>&nbsp;&nbsp;&nbsp;&nbsp;帐号信息</a>
+                        <a href="http://localhost/ff/User/account_info" data-toggle="tab"><i class="fa fa-user bc-red"></i>&nbsp;&nbsp;&nbsp;&nbsp;帐号信息</a>
                       </li>
                       <li>
                         <a href="#tab-account-setting" data-toggle="tab"><i class="fa fa-qrcode bc-blue-xm"></i>&nbsp;&nbsp;&nbsp;&nbsp;二维码</a>

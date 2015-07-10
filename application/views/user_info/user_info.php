@@ -7,10 +7,13 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+      <meta http-equiv="Page-Enter" content="RevealTrans(duration=3,Transitionv=12)">
       <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
       <title>Bootstrap 101 Template</title>
     <link href="<?=base_url('css/Bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/user_info.css')?>" rel="stylesheet">
+    <link href="<?=base_url('css/base.css')?>" rel="stylesheet">
+    <link href="<?=base_url('css/user_info/user_info.css')?>" rel="stylesheet">
+
     <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
         <!--公告样式-->
 <!--     <link rel="stylesheet" type="text/css" href="<?=base_url('css/change/normalize.css')?>" />
@@ -25,72 +28,59 @@
 
 
   </head>
+  
 
+  <nav class="nav_fix navbar navbar-default " id="nav_fix">
+      <div class="container-fluid0 bc-main">
+        <div class="navbar-header">
+          <a href="http://localhost/ff/User/myinfo" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a>
+          <h4 class="c-white">个人主页</h4>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        </div><!-- /.navbar-collapse -->
 
-  <div style="background:url(<?=base_url('image/users/bg-3.jpg')?>) center center; background-size:cover">
-    <div class="wrapper-lg bg-white-opacity">
-      <div class="row m-t">
-          <div class="col-sm-7 ">
-            <div class="meta-full m-b meta-back">
-              <a href="http://localhost/ff" class="pull-left c-black m-t"><span><i class="fa fa-chevron-left"></i> 返回 </span></a>
-              <a href="" class="pull-right c-black m-t" title=""><span><i class="fa fa-comment"></i></span>
-              <a href="" class="pull-right c-black m-t" title=""><span><i class="fa fa-user-plus"></i> </span></a>
-              <a href="" class="pull-right c-black m-t" title=""><span>关注</span></a> 
-            </div>
-            <div class="meta-left pull-left text-center m-t">
-              <figure>
-                <a href="http://localhost/ff/User/myinfo" class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
-                <figcaption class="ratings">
-                <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
-                </p>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="meta-right pull-right clear">
-              <div class="m-b m-l-sm m-t-sm block user_name">
-                <span class="h3 pull-left block m-t">朗然与早秀</span>
-                <!-- <small class="m-l">陕西省 咸阳市</small> -->
-                <span herf="" class="meta-rank pull-left m-t m-l-sm">Lv.9</span>
-                <span class="meta-sex"><i class="fa fa-mars"></i></span>
-                <!-- <span class="glyphicon glyphicon-male"></span> -->
-              </div>
-              <p class="m-b-sm m-l-sm user_sig"><i class="fa fa-quote-left m-r"></i>你知道吗，我是个诗人~
-              </p>
-              <div class="user_item m-t-xm m-l-sm">
-                <i class="user_icon" style="background-position:-0px -203px;"></i>
-                <span>程序猿,艺术家</span>
-              </div>
-              <div class="user_item m-t m-l-sm">
-                <i class="user_icon" style="background-position:-0px -140px;"></i>
-                <span>旅游，出行，读书</span>
-              </div>
-            </div>
-<!--             <div class="meta">
-                  <span class="meat_label"><i class="fa fa-group"></i> 威望 : <em class="meta-text">15</em></span>
-                  <span class="meat_label"><i class="fa fa-thumbs-up"></i> 赞同 : <em class="meta-text">11</em></span>
-                  <span class="meat_label"><i class="fa fa-heart"></i> 感谢 : <em class="meta-text">0</em></span>
-                   <a href="javascript:;" class="m-l-sm pull-right follow btn btn-normal btn-success" onclick="AWS.User.follow($(this), 'user', 7);" data-original-title="" title=""><span>关注</span> <em>|</em> 10</a> -->
-           <!--    </div> -->
+          
+      </div><!-- /.container-fluid -->
 
-              <div class="meta-full pull-left text-center">
-                  <a href="" class="m-b-md inline p">
-                    <span class="h4 block font-bold">2k</span>
-                    <small class="c-black font-bold">关注</small>
-                  </a>
-                  <a href="" class="m-b-md inline p">
-                    <span class="h4 block font-bold">250</span>
-                    <small class="c-black font-bold">关注者</small>
-                  </a>
-                  <a href="" class="m-b-md inline p">
-                    <span class="h4 block font-bold">441</span>
-                    <small class="c-black font-bold">动态</small>
-                  </a>
-              </div>
-          </div>
+    </nav>
 
-      </div>
+  <div class="profile-header clearfix" style="background:url(<?=base_url('image/01/5.jpg')?>) center center; background-size:cover">
+    
+    <div class="profile-header-contents">
+      <div class="profile-header-overlay">
+        <figure class="m-b inline p">
+          <a href="http://localhost/ff/User/myinfo" class="">
+            <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
+            <p><span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span></p>
+          </a>
+        </figure>
+        <div class="block user_name">
+          <h4 class="block profile-header-heading" >朗然与早秀<span herf="" class="meta-rank pull-left">Lv.9</span></h4>
+          
+        </div>
+        <em class="profile-header-subheading">Professional Consultant</em>
+        <div class="profile-header-socials">
+          <a href="">
+            <i class="fa fa-facebook"></i>
+              5k+ Likes
+          </a>
+          <a href="">
+            <i class="fa fa-twitter"></i>
+              9k+ Followers   
+          </a>
+          <a href="">
+            <i class="fa fa-google-plus"></i>
+              2.5k + Plus
+          </a>
+        </div>
+        
     </div>
+    <div class="profile-header-background" style="background:url(<?=base_url('image/01/4w.jpg')?>) center center; background-size:cover"></div>
+    </div>
+    
   </div>
+
+
   <div class="wrapper">
     <section>
     <div class="tabs">
@@ -164,7 +154,7 @@
                       <span class="description">朋友</span>
                     </a>
                     <a href="" class="m-b-md inline p">
-                      <span class="icon"><i class="icon fa fa-sitemap bc-blue"></i></span>
+                      <span class="icon"><i class="icon fa fa-sitemap bc-blue-xm"></i></span>
                       <span class="description">公司/学校</span>
                     </a>
                     <a href="" class="m-b-md inline p">
@@ -226,7 +216,7 @@
                   <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
                       <li >
-                        <a href="#tab-profile-setting" data-toggle="tab"><i class="fa fa-user bc-red"></i>&nbsp;&nbsp;&nbsp;&nbsp;帐号信息</a>
+                        <a href="http://localhost/ff/User/account_info" data-toggle="tab"><i class="fa fa-user bc-red"></i>&nbsp;&nbsp;&nbsp;&nbsp;帐号信息</a>
                       </li>
                       <li>
                         <a href="#tab-account-setting" data-toggle="tab"><i class="fa fa-qrcode bc-blue-xm"></i>&nbsp;&nbsp;&nbsp;&nbsp;二维码</a>
