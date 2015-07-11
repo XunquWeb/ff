@@ -36,20 +36,17 @@
 #board {
   overflow: hidden;
   box-sizing: border-box;
-  padding: 2px 4px;
   color: #fff;
   text-align: center;
-  margin-bottom:15px;
 }
 .b_item {
   box-sizing: border-box;
-  width: 49.5%;
+  width: 50%;
   padding: 10px 4px;
-  border-radius: 4px;
 }
 .b_item:nth-child(1) {
   float: left;
-  background: #f3b54a;
+  background: #4AACF3;
   color: #fff;
 }
 .b_item:nth-child(2) {
@@ -102,4 +99,8 @@
 #carousel-channel-generic{
   margin-bottom:0px;
   margin-top: -50px;
+}
+
+body{
+  background-color: #fcfcfc;
 }

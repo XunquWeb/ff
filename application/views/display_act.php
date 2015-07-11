@@ -12,7 +12,7 @@
 	<div class="container channel_list" id="ff_projects_list">
 		<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
-		        <a href="#">
+		        <a href="<?=base_url('act/detail')?>">
 		            <div class="clearfix">
 		                <span class="ribbon labels">#act_state#</span>
 		                <h1>#act_title#</h1>

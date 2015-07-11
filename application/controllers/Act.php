@@ -66,5 +66,13 @@ class Act extends CI_Controller {
 			$this->load->view('footer');
 
 	}
+	
+	public function detail()
+	{
+			$this->load->model('act_model');
+			$this->load->view('header');
+			$this->load->view('detail_act');
+			$this->load->view('footer');		
+	}
 
 }
