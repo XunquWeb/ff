@@ -33,9 +33,9 @@ class User extends CI_Controller {
 
 	public function signup()
 	{
-		if($this->session->id){
-			echo $this->session->email;
-		}else{
+//		if($this->session->id){
+//			echo $this->session->email;
+//		}else{
 			if($this->input->method()=='get'){
 				$this->load->view('signup');
 			}else{
@@ -46,7 +46,7 @@ class User extends CI_Controller {
 					$this->load->view('signup');
 				}
 			}
-		}
+//		}
 	}
 	public function logout()
 	{
@@ -91,11 +91,21 @@ class User extends CI_Controller {
 
 	public function myinfo_edit(){
 		if($this->session->id){
-			$this->load->model('user_model');
-			$this->load->view('personal_info_edit');
+			if($this->input->method()=='get'){
+				$this->load->view('personal_info_edit');
+			}
+			else{
+				$this->load->model('user_model');
+				if($this->user_model->myinfo_edit()){
+					echo '<script>alert(/success/);window.location="login";</script>';
+				}
+				else{
+					$this->load->view('personal_info_edit');
+				}
+			}	
 		}
 		else{
-			redirect('');
+			redirect('welcome');
 		}
 	}
 

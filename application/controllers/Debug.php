@@ -19,4 +19,10 @@ class Debug extends CI_Controller {
 		$this->load->view('personal_info');
 		$this->load->view('footer');
 	}
+	public function signup()
+	{
+		$this->load->view('header');
+		$this->load->view('signup');
+		$this->load->view('footer');
+	}
 }

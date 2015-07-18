@@ -23,7 +23,7 @@
 		</div>
 		<a class="info_back" href="<?=base_url('user/myinfo')?>"><img src="<?=base_url('image/left_icon.png')?>"></span></a>
 	</div>
-	<form class="info_detail_edit" action="<?=base_url('User/info_post')?>" method="post" >
+	<form class="info_detail_edit" action="<?=base_url('User/myinfo_edit')?>" method="post" >
 		<div class="info_basic">
 			<h6>基本信息</h6>
 			<div class="info_basic_detail">
@@ -56,7 +56,7 @@
 			<h6>MORE</h6>
 			<div class="info_more_detail">
 				<ul>
-					<li><span class="info_detail_edit_a">出生日期</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="birthday" id="birthday"  placeholder="2015-1-1" maxlength="7" ></div></li>
+					<li><span class="info_detail_edit_a">出生日期</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="birthday" id="birthday"  placeholder="2015-01-01" maxlength="7" ></div></li>
 					<li><span class="info_detail_edit_a">家&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乡</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="home" id="personal_info"  placeholder="如：闵行，上海，北京等" maxlength="7" ></div></li>
 					<li><span class="info_detail_edit_a">兴趣爱好</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="hobby" id="personal_info"  placeholder="填下你喜欢做的事情咯～" maxlength="7" ></div></li>
 					<li><span class="info_detail_edit_a">情感状态</span><span class="must">&nbsp;</span>					
