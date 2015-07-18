@@ -92,7 +92,9 @@ class User extends CI_Controller {
 	public function myinfo_edit(){
 		if($this->session->id){
 			if($this->input->method()=='get'){
-				$this->load->view('personal_info_edit');
+				$this->load->model('user_model');
+				$data = $this->user_model->myinfo_get();
+				$this->load->view('personal_info_edit',$data);
 			}
 			else{
 				$this->load->model('user_model');

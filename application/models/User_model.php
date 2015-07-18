@@ -60,4 +60,13 @@ class User_model extends CI_Model {
 		return False;
 	}
 
+	public function myinfo_get(){
+		$sql = "SELECT name,nname,college,major,entryy,sign,birth,home,hobby,estate FROM user WHERE id=?";
+		$query = $this->db->query($sql, $this->session->id);
+		if ($query->num_rows() > 0){
+			return $query->result_array()[0];
+		}
+		return 0;
+	}
+
 }

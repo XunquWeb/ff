@@ -28,7 +28,7 @@
 			<h6>基本信息</h6>
 			<div class="info_basic_detail">
 				<ul>
-					<li><div class="edit_container"><span class="info_detail_edit_a">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span><span class="must">*</span></div><div class="info_edit_fix"><input type="text" class="form-control" name="nickname" id="personal_info"  placeholder="昵称（不超过7个字）" maxlength="7" ></div></li>
+					<li><div class="edit_container"><span class="info_detail_edit_a">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span><span class="must">*</span></div><div class="info_edit_fix"><input type="text" class="form-control" name="nickname" id="personal_info"  placeholder="昵称（不超过7个字）" value="<?php echo $nname;?>" maxlength="7" ></div></li>
 					<li><span class="info_detail_edit_a">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校</span><span class="must">*</span>
 						<div class="info_edit_fix">
 							<select id="school" name="school">
@@ -41,14 +41,14 @@
 							</select>
 						</div>
 					</li>
-					<li><span class="info_detail_edit_a">院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系</span><span class="must">*</span><div class="info_edit_fix"><input type="text" class="form-control" name="major" id="major"  placeholder="院系（如电子信息与电气工程）" maxlength="7" ></div></li>
+					<li><span class="info_detail_edit_a">院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系</span><span class="must">*</span><div class="info_edit_fix"><input type="text" class="form-control" name="major" id="major"  placeholder="院系（如电子信息与电气工程）" value="<?php echo $major;?>" maxlength="7" ></div></li>
 					<li><span class="info_detail_edit_a">入学年份</span><span class="must">*</span>
 						<div class="info_edit_fix">
 							<select id="year" style="size:10;" name="year">
 							</select>
 						</div>
 					</li>
-					<li><span class="info_detail_edit_a">自我描述</span><span class="must">*</span><div class="info_edit_fix"><input type="text" class="form-control" name="describe" id="personal_info"  placeholder="一句话的描述（不超过15个字）" maxlength="7" ></div></li>
+					<li><span class="info_detail_edit_a">自我描述</span><span class="must">*</span><div class="info_edit_fix"><input type="text" class="form-control" name="describe" id="personal_info"  placeholder="一句话的描述（不超过15个字）" value="<?php echo $sign;?>" maxlength="7" ></div></li>
 				</ul>
 			</div>	
 		</div>
@@ -57,8 +57,8 @@
 			<div class="info_more_detail">
 				<ul>
 					<li><span class="info_detail_edit_a">出生日期</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="birthday" id="birthday"  placeholder="2015-01-01" maxlength="7" ></div></li>
-					<li><span class="info_detail_edit_a">家&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乡</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="home" id="personal_info"  placeholder="如：闵行，上海，北京等" maxlength="7" ></div></li>
-					<li><span class="info_detail_edit_a">兴趣爱好</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="hobby" id="personal_info"  placeholder="填下你喜欢做的事情咯～" maxlength="7" ></div></li>
+					<li><span class="info_detail_edit_a">家&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乡</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="home" id="personal_info"  placeholder="如：闵行，上海，北京等" value="<?php echo $home;?>" maxlength="7" ></div></li>
+					<li><span class="info_detail_edit_a">兴趣爱好</span><span class="must">&nbsp;</span><div class="info_edit_fix"><input type="text" class="form-control" name="hobby" id="personal_info"  placeholder="填下你喜欢做的事情咯～" value="<?php echo $hobby;?>" maxlength="7" ></div></li>
 					<li><span class="info_detail_edit_a">情感状态</span><span class="must">&nbsp;</span>					
 						<div class="info_edit_fix">
 							<select name="status">
