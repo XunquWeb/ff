@@ -1,3 +1,5 @@
+
+
 .container-fluid0{
   border-top: none;
   border-left:none;
@@ -224,4 +226,124 @@
 }
 .borc-default{
   border:1px solid #999;
+}
+
+/*.btn-outlined.btn-default {
+    background: none;
+    border: 1px solid #777777;
+    color: #777777;
+}
+.btn-outlined.btn-primary {
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+}
+.btn-outlined.btn-success {
+    background: none;
+    border: 1px solid #5cb85c;
+    color: #5cb85c;
+}
+.btn-outlined.btn-warning {
+    background: none;
+    border: 1px solid #f0ad4e;
+    color: #f0ad4e;
+}
+.btn-outlined.btn-info {
+    background: none;
+    border: 1px solid #5bc0de;
+    color: #5bc0de;
+}
+.btn-outlined.btn-danger {
+    background: none;
+    border: 1px solid #d9534f;
+    color: #d9534f;
+}
+.btn-outlined.btn-red {
+    background: none;
+    border: 1px solid #bf4346;
+    color: #bf4346;
+}
+.btn-outlined.btn-orange {
+    background: none;
+    border: 1px solid #e9662c;
+    color: #e9662c;
+}
+.btn-outlined.btn-green {
+    background: none;
+    border: 1px solid #488c6c;
+    color: #488c6c;
+}
+.btn-outlined.btn-yellow {
+    background: none;
+    border: 1px solid #f2994b;
+    color: #f2994b;
+}
+.btn-outlined.btn-blue {
+    background: none;
+    border: 1px solid #0a819c;
+    color: #0a819c;
+}
+.btn-outlined.btn-pink {
+    background: none;
+    border: 1px solid #bf3773;
+    color: #bf3773;
+}
+.btn-outlined.btn-violet {
+    background: none;
+    border: 1px solid #9351ad;
+    color: #9351ad;
+}
+.btn-outlined.btn-grey {
+    background: none;
+    border: 1px solid #4b5d67;
+    color: #4b5d67;
+}
+.btn-outlined.btn-dark {
+    background: none;
+    border: 1px solid #594857;
+    color: #594857;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    color: #ffffff;
+    background-color: #df2e1b;
+    border-color: #c42818;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.active{
+    color: #777777;
+    background-color: #dbdbdb;
+    border-color: #c6c6c6;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mask{
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 9999;
 }

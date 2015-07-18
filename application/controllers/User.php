@@ -79,6 +79,26 @@ class User extends CI_Controller {
 		}
 	}
 
+	public function home(){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$this->load->view('home/home');
+		}
+		else{
+			redirect('');
+		}
+	}
+
+	public function inv_classify(){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$this->load->view('classify/inv_classify');
+		}
+		else{
+			redirect('');
+		}
+	}
+
 	public function myinfo1(){
 		if($this->session->id){
 			$this->load->model('user_model');

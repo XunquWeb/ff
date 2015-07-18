@@ -7,7 +7,9 @@
             width: 70,
             height: 36,
             showLabel: true,
-            useShortLabels: true
+            useShortLabels: true,
+            readonly: false
+
         }
     }
 

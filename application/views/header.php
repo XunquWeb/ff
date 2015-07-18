@@ -24,75 +24,17 @@
     <![endif]-->
       <script src="<?=base_url('js/jquery-1.10.2.min.js')?>"></script>
   </head>
+
+  <body>
+    
+  
     <nav class="nav_fix navbar navbar-default " id="nav_fix">
       <div class="container-fluid">
-<!--         <div class="navbar-former">
-          <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a id="logo" href="#" class="navbar-brand">
-            <span class="fa fa-rocket"></span>
-            <span class="logo-text">µAdmin</span>
-            <span style="display: none" class="logo-text-icon">µ</span>
-          </a>
-        </div> -->
-
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?=base_url('')?>">
-            <img style="height:36px;position:relative;top:-7px;float:left;" src="<?=base_url('image/logo_img.png')?>">
-            
-              <span><img style="height:36px;position:relative;top:-7px;float:left;margin-left:5px;" src="<?=base_url('image/logo_text_1.png')?>"></span>
-            -->
-          <!-- </a> -->
-          <!-- <a id="menu-toggle" href="#" data-toggle="class:aside-folded" data-target=".nav_fix"><i class="fa fa-bars"></i></a> -->
           <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
-          <!-- <div id="topbar-search" class="">
-            <div class="input-group">
-              <input type="text" placeholder="Search..." class="form-control" /><span class="input-group-btn"><a href="javascript:;" class="btn submit"><i class="fa fa-search"></i></a></span>
-            </div>
-          </div> -->
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<!--          
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
--->
-          <!-- <ul class="nav navbar-nav navbar-right">
-            <li>
-              <button class="btn btn-primary" type="button" id="messagebutton" onclick=window.open("<?=base_url('user/message')?>",'_parent')>
-                消息 <span class="badge">4</span>
-              </button>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">用户名 <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="<?=base_url('user/myinfo')?>" onclick="backurl()">个人信息</a></li>
-                <li><a href="<?=base_url('act/my_act')?>">我的活动</a></li>
-                <li><a href="<?=base_url('act/submit')?>">发布活动</a></li>
-                <li class="divider"></li>
-                <li><a href="<?=base_url('user/logout')?>">退出</a></li>
-              </ul>
-            </li>
-          </ul> -->
-        </div><!-- /.navbar-collapse -->
-
-          
+        </div><!-- /.navbar-collapse -->  
       </div><!-- /.container-fluid -->
       
       <!-- 侧边导航 -->
@@ -160,24 +102,8 @@
                 </li>
               </ul>
       </aside>
-<!--           <div id="modal-config" class="modal fade in" aria-hidden="false" style="display: block;">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-                            <h4 class="modal-title">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend et nisl eget porta. Curabitur elementum sem molestie nisl varius, eget tempus odio molestie. Nunc vehicula sem arcu, eu pulvinar neque cursus ac. Aliquam ultricies lobortis magna et aliquam. Vestibulum egestas eu urna sed ultricies. Nullam pulvinar dolor vitae quam dictum condimentum. Integer a sodales elit, eu pulvinar leo. Nunc nec aliquam nisi, a mollis neque. Ut vel felis quis tellus hendrerit placerat. Vivamus vel nisl non magna feugiat dignissim sed ut nibh. Nulla elementum, est a pretium hendrerit, arcu risus luctus augue, mattis aliquet orci ligula eget massa. Sed ut ultricies felis.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
     </nav>
+    </body>
 
     
   <script>

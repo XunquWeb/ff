@@ -375,45 +375,52 @@
             }
             
             // v = s.headerText(that.temp);
-            v =  "摩羯座";
-            month = $('.dw-time .dwwl1 .dw-sel').attr("data-val");
-            date = $('.dw-time .dwwl2 .dw-sel').attr("data-val");
+            v =  "未填写";
+            state = $('.dw-state .dwwl0 .dw-sel').attr("data-val");
+            // date = $('.dwwl2 .dw-sel').attr("data-val");
+            // if(sex == 2015) {v = "男" + "span class="meta-sex c-blue"><i class="fa fa-mars"></i></span>";}
+            if(state == 2015) {v = "未填写";}
+            if(state == 2016) {v = "你猜";}
+            if(state == 2017) {v = "单身";}
+            if(state == 2018) {v = "非单身";}
 
-
-            if (month == 0 && date >=20 || month == 1 && date <=18) {v = "水瓶座";}
-            if (month == 0 && date > 31) {v = "Huh?";}
-            if (month == 1 && date >=19 || month == 2 && date <=20) {v = "双鱼座";}
-            if (month == 1 && date > 29) {v = "Say what?";}
-            if (month == 2 && date >=21 || month == 3 && date <=19) {v = "白羊座";}
-            if (month == 2 && date > 31) {v = "OK.  Whatever.";}
-            if (month == 3 && date >=20 || month == 4 && date <=20) {v = "金牛座";}
-            if (month == 3 && date > 30) {v = "I'm soooo sorry!";}
-            if (month == 4 && date >=21 || month == 5 && date <=21) {v = "双子座";}
-            if (month == 4 && date > 31) {v = "Umm ... no.";}
-            if (month == 5 && date >=22 || month == 6 && date <=22) {v = "巨蟹座";}
-            if (month == 5 && date > 30) {v = "Sorry.";}
-            if (month == 6 && date >=23 || month == 7 && date <=22) {v = "狮子座";}
-            if (month == 6 && date > 31) {v = "Excuse me?";}
-            if (month == 7 && date >=23 || month == 8 && date <=22) {v = "室女座";}
-            if (month == 7 && date > 31) {v = "Yeah. Right.";}
-            if (month == 8 && date >=23 || month == 9 && date <=22) {v = "天秤座";}
-            if (month == 8 && date > 30) {v = "Try Again.";}
-            if (month == 9 && date >=23 || month == 10 && date <=21) {v = "天蝎座";}
-            if (month == 9 && date > 31) {v = "Forget it!";}
-            if (month == 10 && date >=22 || month == 11 && date <=21) {v = "射手座";}
-            if (month == 10 && date > 30) {v = "Invalid Date";}
-            if (month == 11 && date >=22 || month == 0 && date <=19) {v = "摩羯座";}
-            if (month == 11 && date > 31) {v = "No way!";}
+            // if (month == 0 && date >=20 || month == 1 && date <=18) {v = "水瓶座";}
+            // if (month == 0 && date > 31) {v = "Huh?";}
+            // if (month == 1 && date >=19 || month == 2 && date <=20) {v = "双鱼座";}
+            // if (month == 1 && date > 29) {v = "Say what?";}
+            // if (month == 2 && date >=21 || month == 3 && date <=19) {v = "白羊座";}
+            // if (month == 2 && date > 31) {v = "OK.  Whatever.";}
+            // if (month == 3 && date >=20 || month == 4 && date <=20) {v = "金牛座";}
+            // if (month == 3 && date > 30) {v = "I'm soooo sorry!";}
+            // if (month == 4 && date >=21 || month == 5 && date <=21) {v = "双子座";}
+            // if (month == 4 && date > 31) {v = "Umm ... no.";}
+            // if (month == 5 && date >=22 || month == 6 && date <=22) {v = "巨蟹座";}
+            // if (month == 5 && date > 30) {v = "Sorry.";}
+            // if (month == 6 && date >=23 || month == 7 && date <=22) {v = "狮子座";}
+            // if (month == 6 && date > 31) {v = "Excuse me?";}
+            // if (month == 7 && date >=23 || month == 8 && date <=22) {v = "室女座";}
+            // if (month == 7 && date > 31) {v = "Yeah. Right.";}
+            // if (month == 8 && date >=23 || month == 9 && date <=22) {v = "天秤座";}
+            // if (month == 8 && date > 30) {v = "Try Again.";}
+            // if (month == 9 && date >=23 || month == 10 && date <=21) {v = "天蝎座";}
+            // if (month == 9 && date > 31) {v = "Forget it!";}
+            // if (month == 10 && date >=22 || month == 11 && date <=21) {v = "射手座";}
+            // if (month == 10 && date > 30) {v = "Invalid Date";}
+            // if (month == 11 && date >=22 || month == 0 && date <=19) {v = "摩羯座";}
+            // if (month == 11 && date > 31) {v = "No way!";}
 
 
             
             if (!temp) {
                 that.values = that.temp.slice(0);
                 that.val = v;
+                // console.log($('#info_state').html());
+                // that.html += "span class="meta-sex c-blue"><i class="fa fa-mars"></i></span>";
             }
 
             if (fill) {
                 if (input) {
+                    // if(sex == 2015) {$('#info_state').parent().html('<p><span>性别</span></p><input id="info_state"  value ="男"  class="bounceOutUp"  ></input> <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span>');}
                     elm.val(v).trigger('change');
                 }
             }
@@ -448,8 +455,9 @@
             v = s.formatResult(that.temp);
             if (s.display == 'inline') {
                 that.setValue(false, manual);
+                that.html("123");
             } else {
-                $('.dwv', dw).html("生日");
+                $('.dwv', dw).html("状态");
             }
 
             if (manual) {
@@ -558,7 +566,7 @@
                 mAnim = 'dw-' + anim + ' dw-in';
             }
             // Create wheels containers
-            var html = '<div  class="dw-time dw-trans ' + s.theme + ' dw-' + s.display + '">' + (s.display == 'inline' ? '<div class="dw dwbg dwi"><div class="dwwr" style="width:70%;" > ' : '<div class="dw-persp " style="display:none;">' + '<div class="dwo" style="display:none;"></div><div style="display:none;" class="dw dwbg animated' + mAnim + '"><div class="dw-arrw"><div class="dw-arrw-i"><div class="dw-arr"></div></div></div><div class="dwwr" >' + (s.headerText ? '<div class="dwv"></div>' : ''));
+            var html = '<div  class="dw-state dw-trans ' + s.theme + ' dw-' + s.display + '">' + (s.display == 'inline' ? '<div class="dw dwbg dwi"><div class="dwwr" style="width:70%;" > ' : '<div class="dw-persp " style="display:none;">' + '<div class="dwo" style="display:none;"></div><div style="display:none;" class="dw dwbg animated' + mAnim + '"><div class="dw-arrw"><div class="dw-arrw-i"><div class="dw-arr"></div></div></div><div class="dwwr" >' + (s.headerText ? '<div class="dwv"></div>' : ''));
             html += (s.display != 'inline' ? '<a class="dwbc' + (s.button3 ? ' dwbc-p' : '') + '"><span class="dwbw dwb-s"><span class="dwb">' + s.setText + '</span></span>' + (s.button3 ? '<span class="dwbw dwb-n" style="display:none;"><span class="dwb">' + s.button3Text + '</span></span>' : '') + '<span class="dwbw dwb-c" style="display:none;"><span class="dwb">' + s.cancelText + '</span></span></a>' : '<div class="dwcc"></div>') ;
             for (i = 0; i < s.wheels.length; i++) {
                 html += '<div class="dwc' + (s.mode != 'scroller' ? ' dwpm' : ' dwsc') + (s.showLabel ? '' : ' dwhl') + '"><div class="dwwc dwrc"><table cellpadding="0" cellspacing="0"><tr>';
@@ -704,10 +712,17 @@
         };
 
         that.fadeIn =function () {
-            $('.dw-time .dw-persp').fadeIn(300);
-          $('.dw-time .dwo').fadeIn(300,function(){
-            $('.dw-time .dwbg').removeClass('bounceInDown').addClass('bounceOutUp').fadeIn();
+            $('.dw-state .dw-persp').fadeIn(300);
+          $('.dw-state .dwo').fadeIn(300,function(){
+            $('.dw-state .dwbg').removeClass('bounceInDown').addClass('bounceOutUp').fadeIn();
             });
+
+            console.log($('.dw-state .dwwl0 .dw-bf').children().eq(1).children().html());
+            $(".dw-state .dwwl0 .dw-bf").children().eq(0).children().text('未填写');
+            $(".dw-state .dwwl0 .dw-bf").children().eq(1).children().text('你猜');
+            $(".dw-state .dwwl0 .dw-bf").children().eq(2).children().text('单身');
+            $(".dw-state .dwwl0 .dw-bf").children().eq(3).children().text('非单身');
+
           
 
               var wh = $('body').height();
@@ -716,7 +731,7 @@
              wh2 = 210;
               wh3 = wh1 < wh2 ? wh2 : wh1;
               var ma1 = $(window).height()-wh3;
-              $('.dw-time div.dw').css('height', wh3).css('margin-top',ma1);
+              $('.dw-state div.dw').css('height', wh3).css('margin-top',ma1);
             console.log('3');
         };
         
@@ -753,10 +768,15 @@
         // };
 
         that.fadeOut = function(){
-            $('.dw-time .dw-persp').fadeOut(300);
-            $('.dw-time .dwo').fadeOut(300,function(){
-            $('.dw-time .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
+            $('.dw-state .dw-persp').fadeOut(300);
+            $('.dw-state .dwo').fadeOut(300,function(){
+            $('.dw-state .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
           });
+
+            $(".dw-state .dwwl0 .dw-bf").children().eq(0).children().text('未填写');
+            $(".dw-state .dwwl0 .dw-bf").children().eq(1).children().text('你猜');
+            $(".dw-state .dwwl0 .dw-bf").children().eq(2).children().text('单身');
+            $(".dw-state .dwwl0 .dw-bf").children().eq(3).children().text('非单身');
             $('#mask').css('height', 0).fadeOut(300);
             console.log('4');
         };
@@ -952,7 +972,7 @@
             rows: 3,
             delay: 300,
             disabled: false,
-            readonly: true,
+            readonly: false,
             showOnFocus: true,
             showLabel: true,
             wheels: [],
@@ -1169,12 +1189,12 @@
         }
     });
 
-    $.fn.mobiscroll = function (method) {
-        extend(this, $.mobiscroll.shorts);
+    $.fn.mobiscroll2 = function (method) {
+        extend(this, $.mobiscroll2.shorts);
         return init(this, method, arguments);
     };
 
-    $.mobiscroll = $.mobiscroll || {
+    $.mobiscroll2 = $.mobiscroll2 || {
         /**
         * Set settings for all instances.
         * @param {Object} o - New default settings.
