@@ -1,0 +1,27 @@
+user表
+	id -- id
+	email -- 邮箱
+	phone -- 手机
+	pwd -- 密码
+	name -- 姓名
+	nname -- 昵称(取自nickname)
+	birth -- 出生日期
+	home -- 家乡
+
+	college -- 学校
+	academy	-- 学院
+	major -- 专业
+	entryy -- 入学年份(取自entry year)
+	
+	qq -- qq
+	wx -- 微信
+	rr -- 人人
+	fb -- facebook
+	tw -- twitter
+	
+	estate -- 情感状态(取自emotional state)
+	hobby -- 兴趣爱好
+	tag -- 标签
+	sign -- 签名
+
+如有添加或修改，请补充说明
