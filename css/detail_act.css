@@ -444,3 +444,6 @@ a {
   margin-top:-3px;
   color: rgb(0, 153, 233);
 }
+.dt_comment_board .msg-detail{
+  margin-bottom:0px;
+}

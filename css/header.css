@@ -196,7 +196,7 @@ aside.slide-wrapper.moved {
   transform: translate3d(0, 0, 0);
 }
 aside.slide-wrapper li > a {
-  padding: 15px 10px;
+  padding: 5px 10px;
   font-size: 15px;
   display: block;
   color: #fff;
@@ -211,19 +211,17 @@ aside.slide-wrapper .user-panel{
 }
 
 .user-info {
-    padding-top: 15px;
+    padding-top: 10px;
     padding-left:15px;
     padding-right:15px;
     background-color: #8CC152; 
 }
-.user-info .img-circle {
-    border: 2px solid #fff;
-}
+
 .user-action {
     padding: 0px 15px 15px 15px;
 }
 figcaption.ratings {
-    margin-top: 10px;
+    margin-top: 0px;
 }
 figcaption.ratings a {
     color: #f1c40f;
@@ -235,10 +233,11 @@ figcaption.ratings a span{
 }
 
 .user-info h2{
-    margin-top: 15px;
+    margin-top: 13px;
     font-size: 16px;
     color: #fff;
     font-family: "Microsoft YaHei";
+    margin-bottom:5px;
 }
 
 .user-info .text-center{
@@ -263,7 +262,7 @@ figcaption.ratings a span{
 
 .user-info .user_sig{
     padding-left:10%;
-    margin-top: 20px;
+    margin-top: 13px;
     height: 40px;
     background-color: rgba(220, 220, 220, 0.5);
 }
@@ -285,12 +284,14 @@ figcaption.ratings a span{
 
 .user_content .user_inter{
     background: #fff;
-    height: 5px;
+    height: 0px;
 }
 
+.user_inter{
+  margin:0px;
+}
 .user_content .user_toggle{
-    padding-left: 10%;;
-    height: 70px;
+    padding-left: 5%;
 }
 
 .user_content a i{
@@ -302,7 +303,7 @@ figcaption.ratings a span{
 
 .user_content a span.badge {
     position:absolute;
-    left:10%;
+    left:5%;
     padding: 3px 6px;
     color: #ffffff;
 }

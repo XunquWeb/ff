@@ -8,8 +8,13 @@
     <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?=base_url('css/display_act.css')?>" rel="stylesheet">
   </head>
-
 	<div class="container channel_list" id="ff_projects_list">
+		<div class="project_tab">
+			<ul class="nav_tabs" id="myTab">
+					<a class="nav_item active" href="#" onclick="change()">最热</a>
+					<a class="nav_item " href="#" onclick="change()">经典</a>
+			</ul>
+		</div>
 		<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
 		        <a href="<?=base_url('act/detail')?>">
@@ -122,6 +127,7 @@
 		</div>
 
  -->
+ <!--
 		<div class="page">
 		    
 		    	<a class="pre disabled">
@@ -134,6 +140,7 @@
 			    </a>
 			
 		</div>
+-->
 	</div>
 
 

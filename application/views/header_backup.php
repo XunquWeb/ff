@@ -39,7 +39,7 @@
       
       <!-- 侧边导航 -->
       <div class="slide-mask"></div>
-      <aside class="slide-wrapper" style="position:fixed;">
+      <aside class="slide-wrapper">
               <ul id="side-menu" class="nav">
                 <li class="user-panel">
                   <div class="user-info">
@@ -47,15 +47,14 @@
                       <div class="col-xs-4 col-sm-4 text-center">
                         <figure>
                           <a href="<?=base_url('user/myinfo')?>" class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
+                          <figcaption class="ratings">
+                          <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
+                          </p>
+                          </figcaption>
                         </figure>
                       </div>
                       <div class="col-xs-8 col-sm-8">
                         <h2>John Doe</h2>
-                        <figcaption class="ratings">
-                          <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
-                          </p>
-                        </figcaption>
-                        <!--
                         <div class="user_item">
                           <i class="user_icon" style="background-position:-0px -203px;"></i>
                           <span>程序猿，单身狗</span>
@@ -79,32 +78,27 @@
                       <p class="user_inter"></p>
                       <a href="#" class="user_toggle">
                         <i class="fa fa-bell fa-fw"></i>
+                        <span class="badge badge-green">3</span>
+                        <span class="user_toggle_info">系统消息</span>
+                      </a>
+                      <p class="user_inter"></p>
+                      <a href="#" class="user_toggle">
+                        <i class="fa fa-comments"></i>
                         <span class="badge badge-blue">3</span>
-                        <span class="user_toggle_info">首页</span>
+                        <span class="user_toggle_info">用户私信</span>
                       </a>
                       <p class="user_inter"></p>
                       <a href="#" class="user_toggle">
                         <i class="fa fa-sitemap fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
-                        <span class="user_toggle_info">活动</span>
+                        <span class="user_toggle_info">我的群组</span>
                       </a>
-                      <p class="user_inter"></p>
-                      <a href="#" class="user_toggle">
-                        <i class="fa fa-sitemap fa-fw"></i>
-                        <!-- <span class="badge badge-green">3</span> -->
-                        <span class="user_toggle_info">好友</span>
-                      </a>                  
+
                       <p class="user_inter"></p>
                       <a href="#" class="user_toggle">
                         <i class="fa fa-tachometer fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
-                        <span class="user_toggle_info">关注</span>
-                      </a>
-                      <p class="user_inter user_inter_last"></p>
-                      <a href="#" class="user_toggle">
-                        <i class="fa fa-tachometer fa-fw"></i>
-                        <!-- <span class="badge badge-green">3</span> -->
-                        <span class="user_toggle_info">发起</span>
+                        <span class="user_toggle_info">我的活动</span>
                       </a>
                 </li>
               </ul>
@@ -137,7 +131,7 @@
   <script src="<?=base_url('js/bootstrap.min.js')?>"></script>
   <script type="text/javascript">
     $(function(){
-      $('aside.slide-wrapper.user_content').on('touchstart', 'li', function(e){
+      $('aside.slide-wrapper').on('touchstart', 'li', function(e){
         $(this).addClass('current').siblings('li').removeClass('current');
       });
       

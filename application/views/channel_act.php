@@ -8,42 +8,28 @@
     <link href="<?=base_url('css/channel_act.css')?>" rel="stylesheet">
   </head>
       <div id="carousel-channel-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-channel-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-chennel-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-channel-generic" data-slide-to="2"></li>
-        </ol>
+
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <img src="<?=base_url('image/example1.jpeg')?>" alt="...">
-            <div class="carousel-caption">
-              狂拽
-            </div>
           </div>
           <div class="item">
             <img src="<?=base_url('image/example2.jpeg')?>" alt="...">
-            <div class="carousel-caption">
-              酷炫
-            </div>
           </div>
           <div class="item">
             <img src="<?=base_url('image/example3.jpeg')?>" alt="...">
-            <div class="carousel-caption">
-              屌炸天
-            </div>
           </div>
         </div>
 
         <!-- Controls -->
         <a class="left carousel-control" href="#carousel-channel-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="font-size:10px"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="right carousel-control" href="#carousel-channel-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size:10px"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
@@ -56,11 +42,11 @@
             <span>总有新奇在身边</span>
           </div>
         </a>
-        <a href="<?=base_url('User/register')?>" class="b_item">
+        <a href="<?=base_url('Forum/public_forum')?>" class="b_item">
           <i class="b_icon"></i>
           <div class="fl">
-            <p>每日签到</p>
-            <span>坚持签到送豪礼</span>
+            <p>哈哈哈哈</p>
+            <span>大家一起来吐槽</span>
           </div>
         </a>
       </div>

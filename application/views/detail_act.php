@@ -101,7 +101,7 @@
     <h4 class="sub-title-decoration">活动评论</h4>
 </div>
 <div class="dt_comment_board">
-    <div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
+    <div class="msg-detail dt-msg-fix" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
             <img src="<?=base_url('image/photo_default.gif')?>">
             <div class="msg-detail-content">
               <div class="msg-source">王永强</div>
@@ -132,7 +132,8 @@
       <p class="dt_review_topR" ontouchstart=""><span ontouchstart="">评论</span><a><img src="<?=base_url('image/comment_icon.png')?>" title="评论"></a></p>
       <a id="plWei" name="plWei"></a>
 </div>
-
+<div class="height-fix" style="height:20px">
+</div>
 <div class="dt_join_bar dt_join_bar_outside" >
       <div class="l">
         <div>
