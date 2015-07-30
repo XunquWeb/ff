@@ -77,31 +77,31 @@
                 </li>
                 <li class="user_content">
                       <p class="user_inter"></p>
-                      <a href="#" class="user_toggle">
+                      <a href="#" class="user_toggle" href="<?base_url('')?>">
                         <i class="fa fa-bell fa-fw"></i>
                         <span class="badge badge-blue">3</span>
                         <span class="user_toggle_info">首页</span>
                       </a>
                       <p class="user_inter"></p>
-                      <a href="#" class="user_toggle">
+                      <a href="#" class="user_toggle" href="<?base_url('')?>">
                         <i class="fa fa-sitemap fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">活动</span>
                       </a>
                       <p class="user_inter"></p>
-                      <a href="#" class="user_toggle">
+                      <a href="#" class="user_toggle" href="<?base_url('')?>">
                         <i class="fa fa-sitemap fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">好友</span>
                       </a>                  
                       <p class="user_inter"></p>
-                      <a href="#" class="user_toggle">
+                      <a href="#" class="user_toggle" href="<?base_url('')?>">
                         <i class="fa fa-tachometer fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
-                        <span class="user_toggle_info">关注</span>
+                        <span class="user_toggle_info">广场</span>
                       </a>
                       <p class="user_inter user_inter_last"></p>
-                      <a href="#" class="user_toggle">
+                      <a href="#" class="user_toggle" href="<?base_url('')?>">
                         <i class="fa fa-tachometer fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">发起</span>

@@ -190,3 +190,20 @@ p.channel_tip:before {
   text-align: center;
   color: #858585;
 }
+.display-top{
+  margin-top:-50px;
+  height: 48px;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.display-select{
+    width: 33.33%;
+    float:left;
+  height: 47px;
+  text-align: center;
+  border-bottom: 1px solid #CDCDCD;
+  font-size: 1em;
+  line-height: 48px;
+  color:#000;
+}

@@ -33,7 +33,7 @@
   <nav class="nav_fix navbar navbar-default " id="nav_fix">
       <div class="container-fluid0 bc-main">
         <div class="navbar-header">
-          <a href="http://localhost/ff/User/myinfo" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a>
+          <a href="<?=$this->session->userdata('backurl');?>" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a>
           <h4 class="c-white">个人主页</h4>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -49,20 +49,26 @@
     <div class="profile-header-contents">
       <div class="profile-header-overlay">
         <figure class="m-b inline p">
-          <a href="http://localhost/ff/User/myinfo" class="">
+          <a href="<?=base_url('User/myinfo')?>" class="">
             <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
             <p><span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span></p>
           </a>
         </figure>
         <div class="block user_name">
           <h4 class="block profile-header-heading" >朗然与早秀<span herf="" class="meta-rank pull-left">Lv.9</span></h4>
-          
         </div>
         <em class="profile-header-subheading">Professional Consultant</em>
+        <div class="info_view">
+          <div class="info_view_fix">
+            <span href="#"><span>9</span><span>关注 </span></span>
+            <span style="margin-left:2px;margin-right:2px">|</span>
+            <span href="#"><span>124</span><span>浏览</span></span>
+          </div>
+        </div>
         <div class="profile-header-socials">
           <a href="">
             <i class="fa fa-facebook"></i>
-              5k+ Likes
+              8k+ Likes
           </a>
           <a href="">
             <i class="fa fa-twitter"></i>
@@ -146,44 +152,24 @@
         <section id="section-bar-2">
           <div class="padder">
               <div class="">
-                <div class="panel">
-                  <div class="panel-body">
-                    <h4 class="circle"><span data-counter="" data-start="10" data-end="50" data-step="1" data-duration="0">选择圈子</span>
-                    <a href="" class="m-b-md inline p">
-                      <span class="icon"><i class="icon fa fa-users bc-green"></i></span>
-                      <span class="description">朋友</span>
-                    </a>
-                    <a href="" class="m-b-md inline p">
-                      <span class="icon"><i class="icon fa fa-sitemap bc-blue-xm"></i></span>
-                      <span class="description">公司/学校</span>
-                    </a>
-                    <a href="" class="m-b-md inline p">
-                      <span class="icon"><i class="icon fa fa-external-link bc-orange"></i></span>
-                      <span class="description">其他</span>
-                    </a>
-                    
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="">
                   <div class="portlet box">
                     <div class="portlet-header">
                       <div class="caption"><span><i class="fa fa-user"></i></span>个人信息</div> 
                     </div>
                     <div class="portlet-body">
-                      <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover">
                                         <tbody>
                                             <tr>
-                                                <td width="30%">真实姓名</td>
-                                                <td>安嘉珺</td>
+                                                <td width="30%"></td>
+                                                <td>Diane Harris</td>
                                             </tr>
                                             <tr>
-                                                <td width="30%">出生日期</td>
-                                                <td>（未填写）</td>
+                                                <td width="30%">Email</td>
+                                                <td>name@example.com</td>
                                             </tr>
                                             <tr>
-                                                <td width="30%">学校</td>
-                                                <td>上海交通大学</td>
+                                                <td width="30%">Address</td>
+                                                <td>Street 123, Avenue 45, Country</td>
                                             </tr>
                                             <tr>
                                                 <td width="30%">Status</td>
@@ -196,106 +182,23 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td width="30%">入学年份</td>
-                                                <td> 上海交通大学</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="30%">恋爱状态</td>
-                                                <td>保密</td>
+                                                <td width="30%">Join Since</td>
+                                                <td> Jun 03, 2014</td>
                                             </tr>
                                         </tbody>
-                                    </table>      
+                                    </table>                      
+                         <!--  <a class="right carousel-control" href="#carousel-channel-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a> -->
                         
                     </div>
 
                   </div>
                             
-             </div> -->
-             <div class="">
-                <div class="panel">
-                  <div class="panel-body">
-                    <ul class="nav nav-pills nav-stacked">
-                      <li >
-                        <a href="http://localhost/ff/User/account_info" data-toggle="tab"><i class="fa fa-user bc-red"></i>&nbsp;&nbsp;&nbsp;&nbsp;帐号信息</a>
-                      </li>
-                      <li>
-                        <a href="#tab-account-setting" data-toggle="tab"><i class="fa fa-qrcode bc-blue-xm"></i>&nbsp;&nbsp;&nbsp;&nbsp;二维码</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-picture-o bc-orange-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;相册</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-cube bc-pink"></i>&nbsp;&nbsp;&nbsp;&nbsp;收藏</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-graduation-cap bc-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;认证</a>
-                      </li>
-                      <!-- <li >
-                        <a href="#tab-profile-setting" data-toggle="tab"><i class="fa fa-user c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;帐号信息</a>
-                      </li>
-                      <li>
-                        <a href="#tab-account-setting" data-toggle="tab"><i class="fa fa-qrcode c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;二维码</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-picture-o c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;相册</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-cube c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;收藏</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-graduation-cap c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;认证</a>
-                      </li> -->
-                      <a href="" class="m-b-md inline-xm p">
-                        <span class="icon"><i class="fa fa-pinterest bc-green"></i></span>
-                        <span class="description">最近在听</span>
-                      </a>
-                      <a href="" class="m-b-md inline-xm p">
-                        <span class="icon"><i class="fa fa-book bc-orange-sm"></i></span>
-                        <span class="description">最近在读</span>
-                      </a>
-                      <a href="" class="m-b-md inline-xm p">
-                        <span class="icon"><i class="fa fa-street-view bc-pink"></i></span>
-                        <span class="description">加入的组</span>
-                      </a>
-                    </ul>
-                    
-                  </div>
-                </div>
-              </div>
-              <div class="">
-                <div class="panel">
-                  <div class="panel-body">
-                    <ul class="nav nav-pills nav-stacked">
-                      <li >
-                        <a href="#tab-profile-setting" data-toggle="tab"><i class="fa fa-cog bc-blue"></i>&nbsp;&nbsp;&nbsp;&nbsp;设置</a>
-                      </li>
-                      <li>
-                        <a href="#tab-account-setting" data-toggle="tab"><i class="fa fa-dashboard bc-default"></i>&nbsp;&nbsp;&nbsp;&nbsp;常见问题</a>
-                      </li>
-                      
-                      <!-- <li >
-                        <a href="#tab-profile-setting" data-toggle="tab"><i class="fa fa-user c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;帐号信息</a>
-                      </li>
-                      <li>
-                        <a href="#tab-account-setting" data-toggle="tab"><i class="fa fa-qrcode c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;二维码</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-picture-o c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;相册</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-cube c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;收藏</a>
-                      </li>
-                      <li>
-                        <a href="#tab-contact-setting" data-toggle="tab"><i class="fa fa-graduation-cap c-black"></i>&nbsp;&nbsp;&nbsp;&nbsp;认证</a>
-                      </li> -->
-                    </ul>
-                    
-                  </div>
-                </div>
-              </div>
+             </div>
 
-          </div>
-        </section>
+          </div>        </section>
         <section id="section-bar-3">
           <div class="padder">
               <div class="">

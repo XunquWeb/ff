@@ -31,7 +31,7 @@ body{
 .navbar-header h4{
   width:100%;
   text-align: center;
-  line-height: 30px;
+  line-height: 28px;
   margin-top: 12px;
   margin-bottom: 10px;
   padding:auto;
@@ -801,7 +801,7 @@ fieldset[disabled] .btn-success.active {
 
 .user_name{
   text-align: center;
-  margin-top:10px;
+  margin-top:-24px;
   margin-bottom: 10px;
   min-height: 30px;
   position:relative;
@@ -923,6 +923,9 @@ fieldset[disabled] .btn-success.active {
   height: 15px;
   text-align: center;
   display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 4%;
 }
 
 .meta-sex i{
@@ -934,7 +937,7 @@ fieldset[disabled] .btn-success.active {
 
 
 .wrapper nav {
-  padding: 10px 20px 10px 20px;
+  padding: 5px 0px 5px 2px;
 
 }
 
@@ -950,7 +953,7 @@ fieldset[disabled] .btn-success.active {
 
 
 .wrapper ul li{
-  min-width: 70px;
+  min-width: 32.8%;
 }
 
 .wrapper ul li a{
@@ -1349,17 +1352,18 @@ fieldset[disabled] .btn-success.active {
 
 /* Content */
 .nav-sm{
-  margin: 0 5%;
+  margin: 0 0%;
 }
 
 .nav-pills > li{
-  margin-right:10px;
+  margin-right:0px;
 }
 
 .nav-pills > li.tab-current > a {
-  border-radius: 50px;
-  color: #fff !important;
-  background-color: #23b7e5;
+  border-radius:50px;
+  background-color: #19a9d5;
+  color:#fff !important;
+  width:80%;
 }
 
 .nav-pills > li.tab-current > a:hover,
@@ -1530,11 +1534,10 @@ fieldset[disabled] .btn-success.active {
   background-repeat:repeat; 
 }
 .profile-header-logo{
-  width:120px;
-  height:120px;
+  width:85px;
   border-radius:100px;
-  margin-top:30px;
-  margin-bottom:30px;
+  margin-top:15px;
+  margin-bottom:0px;
   margin-left:auto;
   margin-right:auto;
   border:solid 2px #ffffff; 
@@ -1555,6 +1558,7 @@ fieldset[disabled] .btn-success.active {
   left:0px;
   right:0px;
   bottom:0px;
+  height:205px;
 }
 .profile-header-icon-one{
   position:absolute;
@@ -1586,7 +1590,7 @@ fieldset[disabled] .btn-success.active {
   text-align:center;
   font-weight:400;
   color:#FFFFFF;  
-  font-size:22px;
+  font-size:20px;
 }
 .profile-header-subheading{
   text-align:center;
@@ -1649,12 +1653,24 @@ fieldset[disabled] .btn-success.active {
    padding-left:20px;
    margin-left:-15px;
     position: absolute;
-    top:-60px;
-    right:20px;
+  top: -31px;
+  left: 78px;
     font-size:6px;
     line-height:20px;
     width:20px;
     padding: 0px 0px;
     color: #ffffff;
     border:1px solid #f3f3f3;
+}
+
+.info_view{
+  position:absolute;
+  right:0;
+}
+.info_view_fix{
+  position:relative;
+  bottom:35px;
+  color: rgba(255,255,255,0.6);
+  right:10px;
+  font-size:12px;
 }

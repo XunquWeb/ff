@@ -8,13 +8,12 @@
     <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?=base_url('css/display_act.css')?>" rel="stylesheet">
   </head>
+  		<div class="display-top">
+            <a id="display-classify" class="display-select display-select-active" onclick="setFrameGroupIndex(0);">全部分类</a>
+            <a id="display-rank" class="display-select"  onclick="setFrameGroupIndex(1);">智能排序</a>
+            <a id="display-select" class="display-select" onclick="setFrameGroupIndex(2);">交通大学</a>
+        </div>
 	<div class="container channel_list" id="ff_projects_list">
-		<div class="project_tab">
-			<ul class="nav_tabs" id="myTab">
-					<a class="nav_item active" href="#" onclick="change()">最热</a>
-					<a class="nav_item " href="#" onclick="change()">经典</a>
-			</ul>
-		</div>
 		<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
 		        <a href="<?=base_url('act/detail')?>">
