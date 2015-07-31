@@ -5,6 +5,7 @@
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     margin-bottom: 50px;
+    z-index:20;
 }
 
 #nav_fix .container-fluid{

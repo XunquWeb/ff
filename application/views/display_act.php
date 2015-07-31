@@ -9,10 +9,39 @@
     <link href="<?=base_url('css/display_act.css')?>" rel="stylesheet">
   </head>
   		<div class="display-top">
-            <a id="display-classify" class="display-select display-select-active" onclick="setFrameGroupIndex(0);">全部分类</a>
-            <a id="display-rank" class="display-select"  onclick="setFrameGroupIndex(1);">智能排序</a>
-            <a id="display-select" class="display-select" onclick="setFrameGroupIndex(2);">交通大学</a>
+            <a id="display-classify" class="display-select" onclick="setFrameGroupIndex(0);">全部分类<span class="triangle_down"></span></a>
+            
+            <a id="display-rank" class="display-select"  onclick="setFrameGroupIndex(1);">智能排序<span class="triangle_down"></span></a>
+
+            <a id="display-region" class="display-select" onclick="setFrameGroupIndex(2);">交通大学<span class="triangle_down"></span></a>
         </div>
+
+        <div class="scroller-wrapper display-none">
+                <div id="dropdown_scroller" class="dropdown-scroller">
+                    <ul style="-webkit-transition-property: -webkit-transform; transition-property: -webkit-transform; -webkit-transform-origin: 0px 0px 0px; -webkit-transform: translate3d(0px, 0px, 0px);">
+                        <li class="category-wrapper classify active">
+                            <ul class="dropdown-list">
+                            	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>全部分类</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>学习</span></li>
+                            </ul>
+                        </li>
+                        <li class="category-wrapper rank display-none">
+                            <ul class="dropdown-list">
+                            	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>智能排序</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>热度</span></li>
+                            </ul>
+                        </li>
+                        <li class="category-wrapper region display-none">
+                            <ul class="dropdown-list">
+                            	<li  class="active" data-category-id="0" data-category-name="美食" data-has-sub="true"><span>交通大学</span></li>
+                            	<li  data-category-id="1" data-category-name="今日新单"><span>复旦大学</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="scroller_shadow display-none" style="height:100%;width:100%;background: rgba(0,0,0,.7);z-index:2;position:fixed;top:0;">
+		</div>
 	<div class="container channel_list" id="ff_projects_list">
 		<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
@@ -141,6 +170,25 @@
 		</div>
 -->
 	</div>
-
+<script>
+	$('.scroller_shadow').bind('click', function() 
+		{ 
+			$('.scroller-wrapper').addClass('display-none');
+			$('.scroller_shadow').addClass('display-none');
+			$('.display-top span').removeClass('triangle_up');
+			$('.display-top span').addClass('triangle_down'); 
+		}
+	);
+	function setFrameGroupIndex(state){
+		$('.scroller-wrapper').removeClass('display-none');
+		$('.scroller_shadow').removeClass('display-none');
+		$('.category-wrapper').addClass('display-none');
+		switch(state){
+			case 0: $('#display-classify span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
+			case 1: $('#display-rank span').removeClass('triangle_down').addClass('triangle_up');$('.rank').removeClass('display-none');break;
+			case 2: $('#display-region span').removeClass('triangle_down').addClass('triangle_up');$('.region').removeClass('display-none');break;
+		}
+	}
+</script>
 
 </html>
