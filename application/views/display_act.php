@@ -43,33 +43,7 @@
         <div class="scroller_shadow display-none" style="height:100%;width:100%;background: rgba(0,0,0,.7);z-index:2;position:fixed;top:0;">
 		</div>
 	<div class="container channel_list" id="ff_projects_list">
-		<div class="panel panel-default">
-		    <div class="panel-body mod-project-details funding">
-		        <a href="<?=base_url('act/detail')?>">
-		            <div class="clearfix">
-		                <span class="ribbon labels">#act_state#</span>
-		                <h1>#act_title#</h1>
-		            </div>
-
-		            <div class="media">
-		            
-		            	<div class="item-img"><img class="lazy pull-left" src="http://p.qsc.dreamore.cn/Uploads/Project/Thumb/20150507/57d5208ffd8e1a11651024415aad821e.jpg!thumb">
-	            		</div>
-	            		<p class="act_description">#act_description##act_description##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail#</p>
-            		</div>
-            	</a>
-            	
-        			<p class="channel_tip">来自<a href="#" class="channel_text">#channel_text#</a></p>
-        		
-
-		    </div>
-		    <div class="panel-footer">
-		        浏览&nbsp;&nbsp;<span><i class="blue">#act_view_num#</i>次</span>
-		        响应&nbsp;&nbsp;<span><i class="blue">#act_take_num#</i>次</span>
-		         评论<span><i class="blue">#act_comment_num#</i>次</span>
-		    </div>
-		</div>
-
+<!--
 		<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
 		        <a href="#">
@@ -95,26 +69,33 @@
 		         评论<span><i class="blue">#act_comment_num#</i>次</span>
 		    </div>
 		</div>
+-->
 
-
-		<div class="panel panel-default">
+	<?php
+		foreach ($row as $r) {
+			echo <<<TR
+			<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
 		        <a href="#">
 		            <div class="clearfix">
-		                <span class="ribbon labels">#act_state#</span>
-		                <h1>#act_title#</h1>
-		            </div>
-
-		            <div class="media">
-		            
-		            	<p class="item-img"><img class="lazy pull-left" src="http://p.qsc.dreamore.cn/Uploads/Project/Thumb/20150507/57d5208ffd8e1a11651024415aad821e.jpg!thumb"></p>
-	            		<p>#act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail##act_detail#</p>
-            		</div>
-            	</a>
-            	
-        			<p class="channel_tip">来自<a href="#" class="channel_text">#channel_text#</a></p>
+		                <span class="ribbon labels">
+TR;
+						echo $r['a_state'];
+					echo '</span>';
+		    
+		    		echo '<h1>' . $r['name'] . '</h1>';
+				echo '</div>';
+			
+		    	echo '<div class="media">';        
+		    		echo '<p class="item-img"><img class="lazy pull-left" src="http://p.qsc.dreamore.cn/Uploads/Project/Thumb/20150507/57d5208ffd8e1a11651024415aad821e.jpg!thumb"></p>';
+	            	echo '<p>' . $r['extra'] . '</p>';
+            	echo '</div>';
+            echo '</a>';
+            
+            
+        	echo '<p class="channel_tip">来自<a href="#" class="channel_text">' . $r['t_name'] . '</a></p>';
         		
-
+			echo <<<TR
 		    </div>
 		    <div class="panel-footer">
 		        浏览&nbsp;&nbsp;<span><i class="blue">#act_view_num#</i>次</span>
@@ -122,7 +103,13 @@
 		         评论<span><i class="blue">#act_comment_num#</i>次</span>
 		    </div>
 		</div>
+TR;
+		}
 
+
+
+
+	?>
 	
 		<!-- 
 	

@@ -22,16 +22,13 @@ class Act extends CI_Controller {
 		//var_dump($ch_id);
 
 		$this->load->model('act_model');
-		if($data = $this->act_model->index(intval($ch_id), intval($page))){
-			foreach($data as $row){
-				//var_dump($row);
-				//echo $row['u_id'].'&'.$row['name'].'#';
-		 	}
+		if($data['row'] = $this->act_model->index(intval($ch_id), intval($page))){
+			$this->load->view('header');		
+			$this->load->view('display_act',$data);
+			$this->load->view('footer');
 		}
 
-		$this->load->view('header');		
-		$this->load->view('display_act');
-		$this->load->view('footer');
+		
 	}
 
 	public function submit()
