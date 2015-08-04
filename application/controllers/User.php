@@ -158,14 +158,18 @@ class User extends CI_Controller {
 
 	public function message($type=0){
 		//$this->load->model('Msg_model');
+		/*
 		$data['type']=$type;
 		if($type==0)
 		{
-			$this->load->view('header');
+
 			$this->load->view('message');
 		}
 		else 
 			$this->load->view('message_line_top',$data);
+		*/
+		$this->load->view('header');
+		$this->load->view('message_line_top');
 		$this->load->view('message_detail_list',$type);//it's not the page display after you click the particular message;
 		$this->load->view('footer');
 	}

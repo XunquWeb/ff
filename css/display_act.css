@@ -208,15 +208,15 @@ p.channel_tip:before {
     border-style:solid;
     border-color:#b7b7b7 transparent transparent ;/* 灰色 透明 透明 */
 }
-.display-select-active .triangle_up{
+.display-top .triangle_up{
     width:0;
     height:0;
     position:relative;
-    top:10px;
+    top:-11px;
     left:2px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 10px solid #16A085;
+    border-width:5px;
+    border-style:solid;
+    border-color:transparent transparent #16A085  ;
   
 }
 
