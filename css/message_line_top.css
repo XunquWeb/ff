@@ -1,0 +1,19 @@
+.msg-top-bar {
+  margin-top:-50px;
+  overflow: hidden;
+  background: #fff;
+}
+.msg-top-bar a{
+	width:50%;
+	text-align:center;
+	height:50px;
+	line-height:50px;
+	font-size:18px;
+	display: block;
+	color:#000;
+}
+.msg-top-bar .active {
+  color: #ffba15;
+  box-shadow: inset 0 -5px 0px #ffba15;
+  float: left;
+}

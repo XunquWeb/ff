@@ -10,9 +10,14 @@
 	    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	    <title>Bootstrap 101 Template</title>
 		<link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+		<link href="<?=base_url('css/message_line_top.css')?>" rel="stylesheet">
+		
+		<!--
 		<link href="<?=base_url('css/personal_info_edit.css')?>" rel="stylesheet">
 		<link href="<?=base_url('css/personal_info.css')?>" rel="stylesheet">
+		-->
 	</head>
+	    <!-- 
 <div class="info_edit_topbox">
 	<div class="info_edit_title">
 		<h4>
@@ -24,3 +29,13 @@
 	</div>
 	<a class="info_back" href="<?=base_url('user/message/0')?>"><img src="http://localhost:8888/xunqu/ff/image/left_icon.png"></a>
 </div>
+		-->
+
+<nav class="msg-top-bar">
+	<a href="#" class="active">
+	<span>用户私信</span>
+	</a>
+	<a href="#">
+	<span>系统消息</span>
+	</a>
+</nav>

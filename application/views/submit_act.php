@@ -12,7 +12,7 @@
     <script src="<?=base_url('js/datepicker.js')?>"></script>
   </head>
 
-    <div class="container">
+    <div class="container" style="margin-top:-50px;">
           <div class="col-xs-8 col-md-offset-3 col-md-3">
             <h5 >发布活动</h5>
           </div>

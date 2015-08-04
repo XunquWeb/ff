@@ -171,6 +171,7 @@
 -->
 	</div>
 <script>
+	var updown = 1;
 	$('.scroller_shadow').bind('click', function() 
 		{ 
 			$('.scroller-wrapper').addClass('display-none');
@@ -183,10 +184,51 @@
 		$('.scroller-wrapper').removeClass('display-none');
 		$('.scroller_shadow').removeClass('display-none');
 		$('.category-wrapper').addClass('display-none');
+
 		switch(state){
-			case 0: $('#display-classify span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
-			case 1: $('#display-rank span').removeClass('triangle_down').addClass('triangle_up');$('.rank').removeClass('display-none');break;
-			case 2: $('#display-region span').removeClass('triangle_down').addClass('triangle_up');$('.region').removeClass('display-none');break;
+			case 0:{
+				if($('#display-classify span').hasClass('triangle_down')){
+					$('.display-top span').removeClass('triangle_up');
+					$('.display-top span').addClass('triangle_down');
+					$('#display-classify span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
+				}
+				else{
+					$('.display-top span').removeClass('triangle_up');
+					$('.display-top span').addClass('triangle_down');
+					$('.scroller-wrapper').addClass('display-none');
+					$('.scroller_shadow').addClass('display-none');
+					break;					
+				}
+			} 
+				
+			case 1:{
+				if($('#display-rank span').hasClass('triangle_down')){
+					$('.display-top span').removeClass('triangle_up');
+					$('.display-top span').addClass('triangle_down');
+					$('#display-rank span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
+				}
+				else{
+					$('.display-top span').removeClass('triangle_up');
+					$('.display-top span').addClass('triangle_down');
+					$('.scroller-wrapper').addClass('display-none');
+					$('.scroller_shadow').addClass('display-none');
+					break;					
+				}
+			}  
+			case 2:{
+				if($('#display-region span').hasClass('triangle_down')){
+					$('.display-top span').removeClass('triangle_up');
+					$('.display-top span').addClass('triangle_down');
+					$('#display-region span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
+				}
+				else{
+					$('.display-top span').removeClass('triangle_up');
+					$('.display-top span').addClass('triangle_down');
+					$('.scroller-wrapper').addClass('display-none');
+					$('.scroller_shadow').addClass('display-none');
+					break;				
+				}
+			}  
 		}
 	}
 </script>
