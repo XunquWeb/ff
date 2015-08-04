@@ -25,7 +25,7 @@ class User extends CI_Controller {
 					redirect('act');
 				}else{
 					$data['login_error']='Error Username or Password';
-					$this->load->view('login',$data);
+						$this->load->view('login',$data);
 				}
 			}
 		}
@@ -71,6 +71,7 @@ class User extends CI_Controller {
 
 	public function myinfo(){
 		if($this->session->id){
+			
 			$this->load->model('user_model');
 			$this->load->view('user_info/user_info');
 		}
@@ -120,7 +121,7 @@ class User extends CI_Controller {
 				$this->load->model('user_model');
 				if($this->user_model->myinfo_edit()){
 					echo '<script>alert(/success/);window.location="login";</script>';
-				}
+				}	
 				else{
 					$this->load->view('personal_info_edit');
 				}

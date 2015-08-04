@@ -19,10 +19,9 @@ class Debug extends CI_Controller {
 		$this->load->view('personal_info');
 		$this->load->view('footer');
 	}
-	public function signup()
+	public function homehome()
 	{
-		$this->load->view('header');
-		$this->load->view('signup');
+		$this->load->view('home/home');
 		$this->load->view('footer');
 	}
 }
