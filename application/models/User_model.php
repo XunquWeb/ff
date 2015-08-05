@@ -60,11 +60,24 @@ class User_model extends CI_Model {
 		return False;
 	}
 
-	public function myinfo_get(){
-		$sql = "SELECT name,nname,college,major,entryy,sign,birth,home,hobby,estate FROM user WHERE id=?";
+	public function myinfo_edit_get(){
+		$sql = "SELECT name,sex,nname,college,major,entryy,sign,birth,home,hobby,estate FROM user WHERE id=?";
 		$query = $this->db->query($sql, $this->session->id);
 		if ($query->num_rows() > 0){
 			return $query->result_array()[0];
+		}
+		return 0;
+	}
+
+	public function myinfo_get($user_id){
+		$sql = "SELECT nname,sex,college,major,entryy,sign,birth,home,hobby,estate,email,follow_num,browse_num FROM user,act_man WHERE id=?";
+		$query1 = $this->db->query($sql, $user_id);
+		$sql = "SELECT a_name,start_time,extra FROM act WHERE act.a_id in (SELECT act_man.a_id FROM act_man WHERE u_id=?) ORDER BY start_time DESC";
+		$query2 = $this->db->query($sql, $user_id);
+		if ($query1->num_rows() > 0){
+			$temp['acts'] = $query2->result_array();
+			$query = array_merge($query1->result_array()[0],$temp);
+			return $query;
 		}
 		return 0;
 	}

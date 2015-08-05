@@ -5,6 +5,7 @@ user表
 	pwd -- 密码
 	name -- 姓名
 	nname -- 昵称(取自nickname)
+	sex -- 性别
 	birth -- 出生日期
 	home -- 家乡
 
@@ -23,6 +24,9 @@ user表
 	hobby -- 兴趣爱好
 	tag -- 标签
 	sign -- 签名
+	
+	follow_num -- 关注数
+	browse_num -- 浏览数
 
 act表
 	a_id -- 活动id

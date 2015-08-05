@@ -21,7 +21,7 @@
     </div>
     <div class="hdman_r">
       <div class="yhName">
-        <a href="#" class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php echo $row['name'];?></a>
+        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $row['u_id'] . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php echo $row['name'];?></a>
       </div>
       <div class="dt_review_item_count">
         <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $row['share'];?></a><span id="info_hits">阅读 <?php echo $row['browse'];?></span>
@@ -93,12 +93,13 @@
     <div class="dt_like_list" id="dt_like_list">
       <span>
         <img src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" class="zanIcon" id="icon_zan_ok2"></span>
-        <?php for($i=0;$i<count($row['likes'])-1;$i++){
-          echo '<a ontouchstart="" href="#" class="dt_nick" >' . $row['likes'][$i]['nname'] . '</a>';
-
+        <?php
+          if(count($row['likes'])> 0) 
+            for($i=0;$i<count($row['likes'])-1;$i++){
+              echo '<a ontouchstart="" href=' . "\"" . base_url('User/myinfo') . "/" . $row['likes'][$i]['id'] . "\"" . 'class="dt_nick" >' . $row['likes'][$i]['nname'] . '</a>';
         }?>
         <a>和</a>
-        <a ontouchstart="" href="#" class="dt_nick" ><?php echo $row['likes'][count($row['likes'])-1]['nname']?></a>
+        <a ontouchstart="" href=<?php if(count($row['likes']) > 1) echo "\"" . base_url('User/myinfo') . "/" . $row['likes'][count($row['likes'])-1]['id'] . "\"";?> class="dt_nick" ><?php if(count($row['likes']) > 1) echo $row['likes'][count($row['likes'])-1]['nname']?></a>
         <a>等人觉得很赞</a>
       </span>
     </div>

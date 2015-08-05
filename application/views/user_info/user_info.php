@@ -55,14 +55,14 @@
           </a>
         </figure>
         <div class="block user_name">
-          <h4 class="block profile-header-heading" >朗然与早秀<span herf="" class="meta-rank pull-left">Lv.9</span></h4>
+          <h4 class="block profile-header-heading" ><?php echo $row['nname'];?><span herf="" class="meta-rank pull-left">Lv.9</span></h4>
         </div>
         <em class="profile-header-subheading">Professional Consultant</em>
         <div class="info_view">
           <div class="info_view_fix">
-            <span href="#"><span>9</span><span>关注 </span></span>
+            <span href="#"><span><?php echo $row['follow_num'];?></span><span>关注 </span></span>
             <span style="margin-left:2px;margin-right:2px">|</span>
-            <span href="#"><span>124</span><span>浏览</span></span>
+            <span href="#"><span><?php echo $row['browse_num'];?></span><span>浏览</span></span>
           </div>
         </div>
         <div class="profile-header-socials">
@@ -161,21 +161,23 @@
                                         <tbody>
                                             <tr>
                                                 <td width="30%"></td>
-                                                <td>Diane Harris</td>
+                                                <td><?php echo $row['nname'];?></td>
                                             </tr>
                                             <tr>
                                                 <td width="30%">Email</td>
-                                                <td>name@example.com</td>
+                                                <td><?php echo $row['email'];?></td>
                                             </tr>
                                             <tr>
-                                                <td width="30%">Address</td>
-                                                <td>Street 123, Avenue 45, Country</td>
+                                                <td width="30%">Hometown</td>
+                                                <td><?php echo $row['home'];?></td>
                                             </tr>
+                                            <!--
                                             <tr>
                                                 <td width="30%">Status</td>
                                                 <td><span class="label label-success">Active</span>
                                                 </td>
                                             </tr>
+                                            -->
                                             <tr>
                                                 <td width="30%">Rating</td>
                                                 <td><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i>

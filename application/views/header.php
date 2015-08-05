@@ -46,7 +46,7 @@
                     <div style="margin-top:10px;" class="row">
                       <div class="col-xs-4 col-sm-4 text-center">
                         <figure>
-                          <a href="<?=base_url('user/myinfo')?>" class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
+                          <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $this->session->id . "\"";?> class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
                         </figure>
                       </div>
                       <div class="col-xs-8 col-sm-8">

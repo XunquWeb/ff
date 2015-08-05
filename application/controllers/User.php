@@ -69,11 +69,22 @@ class User extends CI_Controller {
 		}
 	}
 
-	public function myinfo(){
+	public function myinfo($user_id){
 		if($this->session->id){
-			
 			$this->load->model('user_model');
-			$this->load->view('user_info/user_info');
+			if($data['row'] = $this->user_model->myinfo_get($user_id)){
+				if($this->session->id == $user_id){
+					$data['authority'] = true;
+				}
+				else{
+					$data['authority'] = false;
+				}
+				//var_dump($data);
+				$this->load->view('user_info/user_info',$data);
+			}
+			else{
+				echo "data error";
+			}
 		}
 		else{
 			redirect('');
@@ -114,7 +125,7 @@ class User extends CI_Controller {
 		if($this->session->id){
 			if($this->input->method()=='get'){
 				$this->load->model('user_model');
-				$data = $this->user_model->myinfo_get();
+				$data = $this->user_model->myinfo_edit_get();
 				$this->load->view('personal_info_edit',$data);
 			}
 			else{

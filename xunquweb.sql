@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 08 月 05 日 16:38
+-- 生成日期: 2015 年 08 月 05 日 22:13
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -269,6 +269,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pwd` char(41) NOT NULL,
   `name` varchar(255) NOT NULL,
   `nname` varchar(255) NOT NULL,
+  `sex` varchar(10) NOT NULL,
   `birth` date NOT NULL DEFAULT '0000-00-00',
   `home` varchar(255) NOT NULL,
   `college` varchar(255) NOT NULL,
@@ -285,6 +286,9 @@ CREATE TABLE IF NOT EXISTS `user` (
   `tag` varchar(255) NOT NULL,
   `sign` varchar(255) NOT NULL,
   `pvg` int(1) NOT NULL DEFAULT '5',
+  `rating` bigint(10) NOT NULL,
+  `follow_num` bigint(20) NOT NULL,
+  `browse_num` bigint(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
@@ -292,18 +296,18 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- 转存表中的数据 `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `phone`, `pwd`, `name`, `nname`, `birth`, `home`, `college`, `academy`, `major`, `entryy`, `qq`, `wx`, `rr`, `fb`, `tw`, `estate`, `hobby`, `tag`, `sign`, `pvg`) VALUES
-(1, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin1', 'admin1', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 1),
-(2, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin2', 'admin2', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 2),
-(3, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin3', 'admin3', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 3),
-(4, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin4', 'admin4', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 4),
-(5, 'youxiang@126.com', '13615468546', '000000', 'guestguestguest', 'guestguestguest', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5),
-(6, 'youxian@126.com', '13615468545', '000000', 'guestguestgues', 'guestguestgues', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5),
-(7, 'youxia@126.com', '13615468544', '000000', 'guestguestgue', 'guestguestgue', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5),
-(8, 'youxi@126.com', '13615468542', '000000', 'guestguestg', 'guestguestg', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5),
-(9, 'youx@126.com', '13615468541', '000000', 'guestguest', 'guestguest', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5),
-(10, 'you@126.com', '13615468540', '000000', 'guestgues', 'guestgues', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5),
-(11, 'caozhechao@126.com', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '', '土拨鼠1313', '0000-00-00', '上海闸北', 'sjtu', '', '电院信安', '0000-00-00', NULL, NULL, NULL, NULL, NULL, 'singledog', '。', '', '给清昊找妹子5', 5);
+INSERT INTO `user` (`id`, `email`, `phone`, `pwd`, `name`, `nname`, `sex`, `birth`, `home`, `college`, `academy`, `major`, `entryy`, `qq`, `wx`, `rr`, `fb`, `tw`, `estate`, `hobby`, `tag`, `sign`, `pvg`, `rating`, `follow_num`, `browse_num`) VALUES
+(1, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin1', 'admin1', '', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 1, 0, 0, 0),
+(2, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin2', 'admin2', '', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 2, 0, 0, 0),
+(3, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin3', 'admin3', '', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 3, 0, 0, 0),
+(4, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin4', 'admin4', '', '0000-00-00', '', '', '', '', '0000-00-00', NULL, NULL, NULL, NULL, NULL, '', '', '', '', 4, 0, 0, 0),
+(5, 'youxiang@126.com', '13615468546', '000000', 'guestguestguest', 'guestguestguest', '', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 0),
+(6, 'youxian@126.com', '13615468545', '000000', 'guestguestgues', 'guestguestgues', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 0),
+(7, 'youxia@126.com', '13615468544', '000000', 'guestguestgue', 'guestguestgue', 'male', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 0),
+(8, 'youxi@126.com', '13615468542', '000000', 'guestguestg', 'guestguestg', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 43324, 275252),
+(9, 'youx@126.com', '13615468541', '000000', 'guestguest', 'guestguest', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 16, 7, 56),
+(10, 'you@126.com', '13615468540', '000000', 'guestgues', 'guestgues', 'male', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', '2015-07-13', NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 12, 3, 28),
+(11, 'caozhechao@126.com', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '', '土拨鼠1313', 'male', '0000-00-00', '上海闸北', 'sjtu', '', '电院信安', '0000-00-00', NULL, NULL, NULL, NULL, NULL, 'singledog', '。', '', '给清昊找妹子5', 5, 14, 15, 5);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
