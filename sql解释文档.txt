@@ -24,4 +24,23 @@ user表
 	tag -- 标签
 	sign -- 签名
 
+act表
+	a_id -- 活动id
+	u_id -- 活动创建的用户id（user表的外码）
+	
+	a_name -- 活动标题
+	deadline -- 报名截止时间
+	create_time -- 活动创建时间（系统自动生成）
+	start_time -- 开始时间
+	end_time -- 结束时间
+	extra -- 具体内容
+	place -- 活动地点
+	max_num -- 最大人数
+	join_num -- 已报名人数
+
+	t_id -- 分类（type表的外码）
+	a_state -- 活动状态
+	browse -- 浏览量/阅读量
+	a_like -- 点赞数
+
 如有添加或修改，请补充说明

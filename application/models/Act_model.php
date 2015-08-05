@@ -7,19 +7,23 @@ class Act_model extends CI_Model {
 		$this->load->database();
 	}
 	public function index($ch_id=0, $page=0){
-//		$this->form_validation->set_rules('u', 'Username', 'required|max_length[255]|valid_email');
-//		$this->form_validation->set_rules('p', 'Password', 'required|min_length[6]|max_length[255]');
 		if($ch_id == 0){
-			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.id DESC limit ?,10";
+			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC limit ?,10";
 			$query = $this->db->query($sql, array(10*$page));
 			return $query->result_array();
 		}
 		else{
-			$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.t_id=type.id ORDER BY act.id DESC limit ?,10";
+			$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.t_id=type.id ORDER BY act.a_id DESC limit ?,10";
 			$query = $this->db->query($sql,array($ch_id, 10*$page));
 			return $query->result_array();
 		}
 		
+	}
+	public function detail($a_id=1){
+		$sql = "SELECT a_id,u_id,user.name,a_name,deadline,create_time,start_time,end_time,extra,place,max_num,join_num,t_name,a_state,browse,a_like,share 
+			FROM act,type,user WHERE act.t_id=type.id and user.id=act.u_id and act.a_id=? limit 1";
+		$query = $this->db->query($sql, array($a_id));
+		return $query->result_array()[0];
 	}
 //	public function signup(){
 //		$this->form_validation->set_rules('e', 'Username', 'required|max_length[255]|valid_email|is_unique[user.email]');

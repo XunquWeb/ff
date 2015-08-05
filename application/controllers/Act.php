@@ -64,12 +64,16 @@ class Act extends CI_Controller {
 
 	}
 	
-	public function detail()
+	public function detail($a_id=1)
 	{
-			$this->load->model('act_model');
-			$this->load->view('header');
-			$this->load->view('detail_act');
-			$this->load->view('footer');		
+		$this->load->model('act_model');
+		if($data['row'] = $this->act_model->detail(intval($a_id))){
+			var_dump($data['row']);
+			$this->load->view('header');		
+			$this->load->view('detail_act',$data);
+			$this->load->view('footer');
+		}
+				
 	}
 
 }

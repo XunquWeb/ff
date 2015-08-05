@@ -10,7 +10,7 @@
   </head>
 
 <div class="detail_title">
-    <h1 class="detail_title_h1" id="dt_title">一次有关台风的实验</h1>
+    <h1 class="detail_title_h1" id="dt_title"><?php echo $row['a_name'];?></h1>
 </div>
 
 <div class="detail_user hdMan">
@@ -21,10 +21,10 @@
     </div>
     <div class="hdman_r">
       <div class="yhName">
-        <a href="#" class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;">堀越二郎</a>
+        <a href="#" class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php echo $row['name'];?></a>
       </div>
       <div class="dt_review_item_count">
-        <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 61+</a><span id="info_hits">阅读 1798</span>
+        <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $row['share'];?></a><span id="info_hits">阅读 <?php echo $row['browse'];?></span>
       </div>
     </div>
       <input type="hidden" id="postUserId36" value="a8fd3">
@@ -38,8 +38,13 @@
 	      <span class="glyphicon glyphicon-time" ></span>
 	      <div class="detail_Time_n">
 	          <p>
-	              06/15(周一) 15:00 至 07/04 18:00<br>
-	              <span>07月04日 18:00 报名截止</span>
+                <?php
+                  echo substr($row['start_time'],5,11) . "&nbsp";
+                  echo "至";
+                  echo substr($row['end_time'],5,11) . "&nbsp";
+                  echo "<br>";
+                ?>
+	              <span><?php echo substr($row['deadline'],5,11) . "&nbsp";?>报名截止</span>
 	          </p>
 	      </div>
 	  </div>
@@ -47,7 +52,7 @@
         <div class="dt_address_item" ontouchstart="">
             <div class="detail_Attr_K">
             	<span class="glyphicon glyphicon-map-marker" ></span>
-                <p class="addressP">上海闵行区</p>
+                <p class="addressP"><?php echo $row['place'];?></p>
             </div>
 
         </div>
@@ -55,11 +60,11 @@
     <div class="detail_Joinnum" id="detail_Joinnum">
       <div class="detail_Joinnum_t">
       	<span class="glyphicon glyphicon-align-left detail_Joinnum_t_icon" ></span>
-      	<p>已有<span>59</span>人报名</p>
+      	<p>已有<span><?php echo $row['join_num'];?></span>人报名</p>
       </div>
       <div class="detail_Joinnum_b">
          <p>
-           限<span>160</span>人报名
+           限<span><?php echo $row['max_num'];?></span>人报名
          </p>
       </div>
     </div>
@@ -72,15 +77,14 @@
 
 <div class="dt_act_board">
   <div class="dt_act_detail">
-     <div>起风了起风了起风了起风了起风了起风了起风了起风了起风了起风了起风了起风了起风了，然而张之铖并没有被吹起来</div>
-     <div>联系人：张之铖</br>
-          电话：54749110
+     <div>
+        <?php echo $row['extra'];?>
      </div>
   </div>
 </div>
 <div class="dt_like" ontouchstart="">
       <a href="" ontouchstart="">
-        <p ontouchstart="">赞(<span id="dt_like_count">10</span>)</p>
+        <p ontouchstart="">赞(<span id="dt_like_count"><?php echo $row['a_like'];?></span>)</p>
         <span class="zanWk" ontouchstart=""><img id="img_dt_like" src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" alt=""></span>
       </a>
 </div>

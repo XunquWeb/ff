@@ -76,14 +76,16 @@
 			echo <<<TR
 			<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
-		        <a href="#">
-		            <div class="clearfix">
-		                <span class="ribbon labels">
+TR;
+		    echo "<a href=\"" . base_url('Act/detail') . "/" . $r['a_id'] . "\">";
+		    echo <<<TR
+		    	<div class="clearfix">
+		            <span class="ribbon labels">
 TR;
 						echo $r['a_state'];
 					echo '</span>';
 		    
-		    		echo '<h1>' . $r['name'] . '</h1>';
+		    		echo '<h1>' . $r['a_name'] . '</h1>';
 				echo '</div>';
 			
 		    	echo '<div class="media">';        
@@ -98,9 +100,12 @@ TR;
 			echo <<<TR
 		    </div>
 		    <div class="panel-footer">
-		        浏览&nbsp;&nbsp;<span><i class="blue">#act_view_num#</i>次</span>
-		        响应&nbsp;&nbsp;<span><i class="blue">#act_take_num#</i>次</span>
-		         评论<span><i class="blue">#act_comment_num#</i>次</span>
+TR;
+		    echo '浏览&nbsp;&nbsp;<span><i class="blue">' . $r['browse'] . '</i>次</span>';
+
+		    echo <<<TR
+		    	响应&nbsp;&nbsp;<span><i class="blue">#act_take_num#</i>次</span>
+		        评论<span><i class="blue">#act_comment_num#</i>次</span>
 		    </div>
 		</div>
 TR;
