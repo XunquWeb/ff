@@ -93,11 +93,14 @@
     <div class="dt_like_list" id="dt_like_list">
       <span>
         <img src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" class="zanIcon" id="icon_zan_ok2"></span>
-        <a ontouchstart="" href="#" class="dt_nick" >苏钰欢</a>
-        <a ontouchstart="" href="#" class="dt_nick" >赵襄彭</a>
+        <?php for($i=0;$i<count($row['likes'])-1;$i++){
+          echo '<a ontouchstart="" href="#" class="dt_nick" >' . $row['likes'][$i]['nname'] . '</a>';
+
+        }?>
         <a>和</a>
-        <a ontouchstart="" href="#" class="dt_nick" >他们的baby</a>
+        <a ontouchstart="" href="#" class="dt_nick" ><?php echo $row['likes'][count($row['likes'])-1]['nname']?></a>
         <a>等人觉得很赞</a>
+      </span>
     </div>
 </div>
 

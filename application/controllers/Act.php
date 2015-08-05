@@ -68,7 +68,7 @@ class Act extends CI_Controller {
 	{
 		$this->load->model('act_model');
 		if($data['row'] = $this->act_model->detail(intval($a_id))){
-			//var_dump($data['row']);
+			var_dump($data['row']);
 			$this->load->view('header');		
 			$this->load->view('detail_act',$data);
 			$this->load->view('footer');

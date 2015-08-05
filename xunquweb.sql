@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 08 月 05 日 15:54
+-- 生成日期: 2015 年 08 月 05 日 16:38
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -97,12 +97,30 @@ INSERT INTO `act` (`a_id`, `u_id`, `a_name`, `deadline`, `create_time`, `start_t
 --
 
 CREATE TABLE IF NOT EXISTS `act_man` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `am_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `a_id` int(10) unsigned NOT NULL,
   `u_id` int(10) unsigned NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `am_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`am_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- 转存表中的数据 `act_man`
+--
+
+INSERT INTO `act_man` (`am_id`, `a_id`, `u_id`, `am_time`) VALUES
+(1, 36, 11, '2015-08-05 08:06:04'),
+(2, 36, 10, '2015-08-05 08:06:15'),
+(3, 36, 9, '2015-08-05 08:06:20'),
+(4, 36, 8, '2015-08-05 08:06:25'),
+(5, 35, 11, '2015-08-05 08:06:30'),
+(6, 35, 9, '2015-08-05 08:06:35'),
+(7, 35, 7, '2015-08-05 08:06:40'),
+(8, 34, 11, '2015-08-05 08:06:47'),
+(9, 34, 6, '2015-08-05 08:06:55'),
+(10, 33, 11, '2015-08-05 08:07:00'),
+(11, 33, 10, '2015-08-05 08:07:08'),
+(12, 36, 7, '2015-08-05 08:08:01');
 
 -- --------------------------------------------------------
 
