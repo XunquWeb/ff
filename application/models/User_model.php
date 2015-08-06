@@ -70,7 +70,7 @@ class User_model extends CI_Model {
 	}
 
 	public function myinfo_get($user_id){
-		$sql = "SELECT nname,sex,college,major,entryy,sign,birth,home,hobby,estate,email,follow_num,browse_num FROM user,act_man WHERE id=?";
+		$sql = "SELECT id,nname,sex,college,major,entryy,sign,birth,home,hobby,estate,email,follow_num,browse_num FROM user,act_man WHERE id=?";
 		$query1 = $this->db->query($sql, $user_id);
 		$sql = "SELECT a_name,start_time,extra FROM act WHERE act.a_id in (SELECT act_man.a_id FROM act_man WHERE u_id=?) ORDER BY start_time DESC";
 		$query2 = $this->db->query($sql, $user_id);
@@ -82,4 +82,14 @@ class User_model extends CI_Model {
 		return 0;
 	}
 
+	public function follow($user_id){
+		$sql = "INSERT INTO follow(follower_id,followed_id) VALUES (? , ?)";
+		return $this->db->query($sql, array($this->session->id, $user_id));
+
+	}
+
+	public function unfollow($user_id){
+		$sql = "DELETE FROM follow WHERE follower_id = ? and followed_id = ?";
+		return $this->db->query($sql, array($this->session->id, $user_id));
+	}
 }

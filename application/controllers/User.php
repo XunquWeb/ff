@@ -69,7 +69,7 @@ class User extends CI_Controller {
 		}
 	}
 
-	public function myinfo($user_id){
+	public function myinfo($user_id=1){
 		if($this->session->id){
 			$this->load->model('user_model');
 			if($data['row'] = $this->user_model->myinfo_get($user_id)){
@@ -184,6 +184,36 @@ class User extends CI_Controller {
 		$this->load->view('message_line_top');
 		$this->load->view('message_detail_list',$type);//it's not the page display after you click the particular message;
 		$this->load->view('footer');
+	}
+
+	public function follow($user_id=1){
+		if($this->session->id){
+			if($this->session->id != $user_id){			//A cannot follow A
+				$this->load->model('user_model');
+				if($this->user_model->follow($user_id)){
+					echo '<script>alert(/follow success/);</script>';
+					return true;
+				}
+			}
+		}
+		else{
+			redirect('');
+		}
+	}
+
+	public function unfollow($user_id=1){
+		if($this->session->id){
+			if($this->session->id != $user_id){			//A cannot unfollow A
+				$this->load->model('user_model');
+				if($this->user_model->unfollow($user_id)){
+					echo '<script>alert(/unfollow success/);</script>';
+					return true;
+				}
+			}
+		}
+		else{
+			redirect('');
+		}
 	}
 
 	
