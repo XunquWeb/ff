@@ -187,6 +187,7 @@ class User extends CI_Controller {
 	}
 
 	public function follow($user_id=1){
+		//建议在model里面加入表单验证，以及 session->id!=$user_id也在表单验证中完成
 		if($this->session->id){
 			if($this->session->id != $user_id){			//A cannot follow A
 				$this->load->model('user_model');
@@ -202,6 +203,7 @@ class User extends CI_Controller {
 	}
 
 	public function unfollow($user_id=1){
+		//建议在model里面加入表单验证，以及 session->id!=$user_id也在表单验证中完成
 		if($this->session->id){
 			if($this->session->id != $user_id){			//A cannot unfollow A
 				$this->load->model('user_model');
