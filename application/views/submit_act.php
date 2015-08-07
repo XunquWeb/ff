@@ -1,5 +1,5 @@
 <?php
-	defined('BASEPATH') OR exit('No direct script access allowed');
+    defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -10,188 +10,111 @@
     <link href="<?=base_url('css/datepicker.css')?>" rel="stylesheet">
     <script src="<?=base_url('js/clockpicker.js')?>"></script>
     <script src="<?=base_url('js/datepicker.js')?>"></script>
+    <script src="<?=base_url('js/jquery-1.10.2.min.js')?>"></script>
   </head>
 
-    <div class="container" style="margin-top:-50px;">
-          <div class="col-xs-8 col-md-offset-3 col-md-3">
-            <h5 >发布活动</h5>
-          </div>
-          <hr style="width:100%;">
-          <div class="col-md-8 col-md-offset-3 content" >
-            <form  role="form" class="form-horizontal submit_act-form-fixed" action="submit-act" method="post" >     
-              <div class="form-group"> 
-                <label class="control-label col-sm-2" >类别<span>*</span></label>
-                <div class="col-md-8 col-sm-6">
-                  <div class="btn-group"  id="submit_act_choose">
-                      <button type="button" class="btn btn-primary" name="activity_kind" id="run" value="1" onclick=getpara(1) > 12
-                      <button type="button" class="btn btn-primary" name="activity_kind" id="swim" value="2"> 34
-                      <button type="button" class="btn btn-primary" name="activity_kind" id="film" value="3"> 56
-                      <button type="button" class="btn btn-primary" name="activity_kind" id="ball" value="4" > 78
-                  </div>  
+
+
+
+    <form class="create-event " id="create_event" method="post" action="/myevent/SaveQEvent" data-abide="" prevent-submit="true" novalidate="">
+    		<input type="hidden" value="0" name="Id" id="activity_id">
+            <input id="Category" name="Category" type="hidden" value="99">
+            <input id="Type" name="Type" type="hidden" value="1">
+            <input id="CreateBy" name="CreateBy" type="hidden" value="9302036809375">
+            <input id="Setting_Province" name="Setting.Province" type="hidden" value="上海">
+            <input id="City" name="City" type="hidden" value="上海">
+            <input id="Setting_ShowMembers" name="Setting.ShowMembers" type="hidden" value=""> 
+            <input id="Setting_Summary" name="Setting.Summary" type="hidden" value="">
+            <input id="Setting_IsPrivate" name="Setting.IsPrivate" type="hidden" value=""> 
+            <input id="Tag" name="Tag" type="hidden" value="">
+            <input id="Description" name="Description" type="hidden" value="">
+            
+            <!-- <div class="small tips">
+                <span class="icon-alert"></span>
+                提示：发布违法、反动互动信息或者冒用他人、组织名义发起互动，将依据记录提交公安机关处理
+            </div> -->
+            <div class="form-group error">
+                <span class="icon-tag"></span>
+                <input type="text" class="form-control" placeholder="活动主题" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+            </div>
+            <div class="form-group datetime">
+                <span class="icon-time-md"></span>
+                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入活动开始时间" data-validation-type="warning" name="Start" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
+                <!-- <div class="tips sr-only">输入活动开始时间</div> -->
+            </div>
+            <div class="form-group datetime">
+                <span class="icon-time-md"></span>
+                <input type="text" class="form-control" placeholder="活动结束时间" required="" data-validation-message="请输入活动结束时间" data-validation-type="warning" name="End" value="2015-08-13 17:00:00" id="mobiscroll1438876656973" readonly="">
+                <!-- <div class="tips sr-only">输入活动结束时间</div> -->
+            </div>
+            <div class="form-group">
+                <span class="icon-city-md"></span>
+                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="" readonly="">
+                </input>
+
+            </div>
+            <div class="form-group">
+                <span class="icon-place-md"></span>
+                <input type="text" class="form-control" placeholder="详细地址" required="" data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
+            </div>
+            <div class="event-edit">
+            <div class="placeholder"><span></span>添加活动介绍，让小伙伴更好的了解活动～</div>
+                <div class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
+                    
                 </div>
-              </div>     
-              <div class="form-group">
-                <label class="control-label col-sm-2" >活动名称<span>*</span></label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" name="activity_name" id="activity_name"  placeholder="名称（不超过15个字）" maxlength="15" >
-                </div> 
-              </div>    
-              <div id='vpara'></div>
-              <!--        it's the abandoned time selection part     
-              <div class="form-group">
-                <label for="dtp_input1" class="col-md-2 col-sm-2 control-label">开始时间<span>*</span></label>
-                <div class="col-md-8 col-sm-8" id="starttime_main">
-                  <div class="input-group date form_datetime controls" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
-                    <input class="form-control" size="20" type="text" name="start_time" id="start_time" placeholder="活动开始日期" value="" >
-                    <span class="input-group-addon"><label for="start_time" class="glyphicon glyphicon-th"></label></span>
-                  </div>
-                  <div class="input-group clockpicker">
-                        <input type="text" class="form-control" placeholder="活动开始时间">
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                  </div>
-
-                </div>
-              </div>
-
-
-
-              <div class="form-group">
-                <label for="dtp_input2" class="col-md-2 col-sm-2 control-label">结束时间<span>*</span></label>
-                <div class="col-md-8 col-sm-8">
-                  <div class="input-group date form_datetime controls" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input2">
-                    <input class="form-control" size="20" type="text" name="end_time" id="end_time" placeholder="活动结束日期" value="" >
-                    <span class="input-group-addon"><label for="end_time" class="glyphicon glyphicon-th"></label></span>
-                  </div>
-                  <div class="input-group clockpicker">
-                        <input type="text" class="form-control" placeholder="活动结束时间">
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                  </div>
-
-
-                </div>
-              </div>
                 
-              <div class="form-group">
-               <label class="control-label col-sm-2" >地点<span>*</span></label>
-               <div class="col-sm-8">
-                 <input type="text" class="form-control"  placeholder="地点（不超过10个字）" name="place" id="place" maxlength="10">
-               </div> 
-              </div>
-
-              <div class="form-group">
-                 <label class="control-label col-sm-2">人数上限<span>*</span></label>
-                 <div class="col-sm-8">
-                   <input type="text" class="form-control" onkeyup="value=value.replace(/[^\d]/g,'') "  placeholder="人数上限" pattern="^\+?[1-9][0-9]*$" name="max_number" id="max_number">
-                 </div> 
-              </div>
--->
-              <div class="form-group">
-                  <label for="dtp_input3" class="col-md-2 col-sm-2 control-label" >截止报名<span style="visibility:hidden">*</span></label>
-                <div class="col-md-8 col-sm-8">
-                  <div class="input-group date form_datetime controls" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input3">
-                    <input class="form-control" size="20" type="text" name="close_time" id="close_time" placeholder="截止报名时间后不再接受申请" value="" >
-                    <span class="input-group-addon"><label for="close_time" class="glyphicon glyphicon-th"></label></span>
-                  </div>
-                  <div class="input-group clockpicker">
-                        <input type="text" class="form-control"  placeholder="截止报名时间">
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                  </div>       
+            </div>
+            <div class="create-event-more open" >
+                <h2><div class="pull-right"><span class="icon-arrow-down"></span></div>更多选项</h2>
+                <div style="display:none">    
+                    <div>
+                        希望活动行帮我推荐
+                        <div id="isPrivate" class="toggle">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
+                    <div class="">
+                        选择活动类别
+                        <select name="Setting.HdxTags" id="event-select-hdxtag">
+                            
+                            <option value="" img="/Content/v2.0/img/poster/thumb/entertainment.jpg">选择主题</option>
+                            <option value="创业" img="/Content/v2.0/img/poster/thumb/es.jpg">创业</option>
+                            <option value="商务" img="/Content/v2.0/img/poster/thumb/business.jpg">商务</option>
+                            <option value="公益" img="/Content/v2.0/img/poster/thumb/benefit.jpg">公益</option>
+                            <option value="社交" img="/Content/v2.0/img/poster/thumb/social.jpg">社交</option>
+                            <option value="亲子" img="/Content/v2.0/img/poster/thumb/baby.jpg">亲子</option>
+                            <option value="电影" img="/Content/v2.0/img/poster/thumb/movie.jpg">电影</option>
+                            <option value="娱乐" img="/Content/v2.0/img/poster/thumb/entertainment.jpg">娱乐</option>
+                            <option value="生活" img="/Content/v2.0/img/poster/thumb/life.jpg">生活</option>
+                            <option value="音乐" img="/Content/v2.0/img/poster/thumb/music.jpg">音乐</option>
+                            <option value="科技" img="/Content/v2.0/img/poster/thumb/tech.jpg">科技</option>
+                            <option value="运动" img="/Content/v2.0/img/poster/thumb/sport.jpg">运动</option>
+                            <option value="课程" img="/Content/v2.0/img/poster/thumb/course.jpg">课程</option>
+                            <option value="校园" img="/Content/v2.0/img/poster/thumb/school.jpg">校园</option>
+                            <option value="文化" img="/Content/v2.0/img/poster/thumb/culture.jpg">文化</option>
+                            
+                            <option value="其他" img="/Content/v2.0/img/poster/thumb/es.jpg">其他</option>
+                        </select>
+                    </div>
+                    <div>
+                        用户报名填写项
+                        <ul>
+                            <li class="btn btn-sm btn-default active actived">姓名</li>
+                            <li class="btn btn-sm btn-default active actived">手机</li>
+                            <li class="btn btn-sm btn-default">职位</li>
+                            <li class="btn btn-sm btn-default">行业</li>
+                            <li class="btn btn-sm btn-default">备注</li>
+                            <li class="btn btn-sm btn-default">单位</li>
+                            <li class="btn btn-sm btn-default">参与人数</li>
+                        </ul>
+                    </div>
+                    <div style="color: #a0a0a0;">
+                        <input type="text" name="MaxInstance" class="form-control" value="100" placeholder="报名人数上限">
+                    </div>
                 </div>
-              </div> 
+            </div>
+            <div class="text-center text-muted small">如需设置更多内容请下载APP～</div>
+            <input id="btn_create_event" type="submit" class="btn btn-primary btn-block btn-lg" onclick="javascript:saveEvent();" value="确定发布">
+        </form>
 
 
-              <div class="form-group">
-                <label class="control-label col-sm-2" >备注<span style="visibility:hidden">*</span></label>
-                <div class="col-sm-8">
-                  <textarea class="form-control" rows="3"  onKeyDown="textdown(event)"
-                  onKeyUp="textup()" onblur="textup()" placeholder="选填，限50字" name="remark"id="remark"></textarea>
-                </div> 
-              </div>
-           
-              <div class="form-group">
-                <div class="col-md-2 col-xs-0 col-sm-2"></div>
-                <div class="col-md-2 col-xs-12 col-sm-8">
-                  <button class="btn btn-primary submit_button"  type="button" onclick="return submitData()" >确认发布</button>
-                </div>
-                <div class="col-xs-2"></div>
-              </div>
-            </form>
-          </div>    <!--col-md-10-->
-
-    </div>
-
-
-
-    <script>
-        $('#close_time').datepicker({
-          format: 'yyyy-mm-dd',
-                weekStart: 1,
-                autoclose: true,
-                todayBtn: 'linked',
-                language: 'zh-CN'
-         });
-    </script>
-
-    <script type="text/javascript">
-        $('.clockpicker').clockpicker();
-        $('.date').datepicker();
-    </script>
-    <script>
-        function timedatepick(num){
-        $('#start_time'+num).datepicker({
-          format: 'yyyy-mm-dd',
-                weekStart: 1,
-                autoclose: true,
-                todayBtn: 'linked',
-                language: 'zh-CN'
-         });
-        }
-        function getpara(typeId){
-              text0 = '<div class="form-group"><label class="control-label col-sm-2" >#name#<span>*</span></label><div class="col-sm-8"><input type="text" class="form-control" name="#id#" id="#id#"  placeholder="#ph#" maxlength="255" ></div></div>';
-              text1 = '<div class="form-group"><label for="dtp_input#id#" class="col-md-2 col-sm-2 control-label">#name#<span>*</span></label><div class="col-md-8 col-sm-8"><div class="input-group date form_datetime controls" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input#id#"><input class="form-control" size="20" type="text" name="#id#" id="start_time#id#" placeholder="#ph#" value="" ><span class="input-group-addon"><label for="start_time#id#" class="glyphicon glyphicon-th"></label></span></div><div class="input-group clockpicker"><input type="text" class="form-control" placeholder="#ph#"><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div></div></div>';
-              text2 = '<div class="form-group"><label class="control-label col-sm-2" >#name#<span>*</span></label><div class="col-sm-8"><input type="text" class="form-control" name="#id#" id="#id#"  placeholder="#ph#" maxlength="255" ></div></div>';
-            var x=new XMLHttpRequest();
-            x.open("post","<?=base_url('Ajax/get_act_para')?>",false);
-		      	x.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-            x.send("t="+typeId);
-            if(x.status==200){
-
-                var y=x.response.split(':');
-                if(y[0]=="data"){
-                    var data = y[1].substring(0,y[1].length-1).split('#');
-					var arr=[];
-          document.getElementById('vpara').innerHTML='';
-					for(var i=0,a;a=data[i];i++){
-						var item = a.split('&');//item[0]标题 item[2]类型
-						//show item[0],[1],[2];
-            var text='';
-            switch(parseInt(item[2])){
-              case 0: text=text0; break;
-              case 1: text=text1;arr.push(i); break;       
-              case 2: text=text2; break;
-            }
-            text=text.replace(/#name#/g,item[0]);
-            text=text.replace(/#ph#/g,item[1]);
-            text=text.replace(/#id#/g,i+"");
-            document.getElementById('vpara').innerHTML=document.getElementById('vpara').innerHTML+text;
-					  }
-					for(var i=0,a;a=data[i];i++){
-						timedatepick(i);
-					}
-          $('.clockpicker').clockpicker();
-          $('.date').datepicker();
-
-                }else if(y[0]=="err"){
-					         //show error;
-                }
-            }
-        }
-    </script>
-
-</html>

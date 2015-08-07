@@ -32,6 +32,10 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
+                      <a href="<?=base_url('user/message')?>" class="user_toggle" >
+                        <i class="fa fa-bell fa-fw"></i>
+                        <span class="badge badge-blue">3</span>
+                      </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         </div><!-- /.navbar-collapse -->  
@@ -81,12 +85,6 @@
                         <i class="fa fa-bell fa-fw"></i>
                         <span class="badge badge-blue">3</span>
                         <span class="user_toggle_info">首页</span>
-                      </a>
-                      <p class="user_inter"></p>
-                      <a href="<?=base_url('user/message')?>" class="user_toggle" >
-                        <i class="fa fa-bell fa-fw"></i>
-                        <span class="badge badge-blue">3</span>
-                        <span class="user_toggle_info">消息</span>
                       </a>
                       <p class="user_inter"></p>
                       <a href="<?=base_url('act/display')?>" class="user_toggle" >
