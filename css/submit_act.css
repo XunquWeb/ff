@@ -140,6 +140,7 @@ option {
   -webkit-box-shadow: none;
   box-shadow: none;
   padding-left:38px;
+  padding-top:14px;
 }
 
 .create-event-more {
@@ -188,4 +189,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 12px;
   height: 8px;
   background-position: -191px -34px;
+}
+
+.display-none{
+  display: none;
 }
