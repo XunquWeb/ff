@@ -11,9 +11,10 @@
 	font-size:18px;
 	display: block;
 	color:#000;
+	float:left;
 }
 .msg-top-bar .active {
-  color: #ffba15;
-  box-shadow: inset 0 -5px 0px #ffba15;
+  color: #62b651;
+  box-shadow: inset 0 -5px 0px #62b651;
   float: left;
 }

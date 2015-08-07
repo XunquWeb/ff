@@ -32,10 +32,10 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
-                      <a href="<?=base_url('user/message')?>" class="user_toggle" >
-                        <i class="fa fa-bell fa-fw"></i>
-                        <span class="badge badge-blue">3</span>
-                      </a>
+          <a href="<?=base_url('user/message')?>" class="user_toggle user_message" >
+            <i class="fa fa-bell fa-fw"></i>
+            <span class="badge badge-blue">3</span>
+          </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         </div><!-- /.navbar-collapse -->  
@@ -44,7 +44,7 @@
       <!-- 侧边导航 -->
       <div class="slide-mask"></div>
       <aside class="slide-wrapper" style="position:fixed;">
-              <ul id="side-menu" class="nav">
+              <ul id="side-menu" class="nav" style="position:relative">
                 <li class="user-panel">
                   <div class="user-info">
                     <div style="margin-top:10px;" class="row">
@@ -104,12 +104,26 @@
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">广场</span>
                       </a>
-                      <p class="user_inter user_inter_last"></p>
+                      <p class="user_inter"></p>
                       <a href="<?=base_url('act/submit')?>" class="user_toggle" >
                         <i class="fa fa-tachometer fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">发起</span>
                       </a>
+                      <div class="user_inter_last">
+                        <p class="user_inter "></p>
+                        <a href="<?=base_url('act/submit')?>" class="user_toggle" >
+                          <i class="fa fa-tachometer fa-fw"></i>
+                          <!-- <span class="badge badge-green">3</span> -->
+                          <span class="user_toggle_info">退出</span>
+                        </a>
+                        <p class="user_inter"></p>
+                        <a href="<?=base_url('act/submit')?>" class="user_toggle" >
+                          <i class="fa fa-tachometer fa-fw"></i>
+                          <!-- <span class="badge badge-green">3</span> -->
+                          <span class="user_toggle_info">设置</span>
+                        </a>
+                      </div>
                 </li>
               </ul>
       </aside>

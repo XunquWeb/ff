@@ -39,3 +39,21 @@
 	<span>系统消息</span>
 	</a>
 </nav>
+
+<script>
+	$('.msg-top-bar a').bind('click', function(){
+			$('.msg-top-bar a').each(
+				function(){
+					if($(this).hasClass('active'))
+					{
+						$(this).removeClass('active');
+					}
+					else
+					{
+						$(this).addClass('active');
+					}
+				}
+			)
+		}
+	);
+</script>

@@ -326,3 +326,31 @@ figcaption.ratings a span{
     font-family:'Microsoft Yahei';
     position:absolute;
 }
+
+.user_message{
+  float:right;
+  position:relative;
+}
+.user_message i{
+  margin-top: 11px;
+  padding-left: 10px;
+  font-size: 25px;
+  color: #b4b4b4;
+  margin-right: 15px;
+}
+.user_message span.badge-blue {
+  background-color: #5bc0de !important;
+}
+.user_message span.badge {
+  position: absolute;
+  left: 2px;
+  padding: 3px 6px;
+  color: #ffffff;
+  top: 7px;
+}
+
+.user_inter_last{
+  position:absolute;
+  bottom:60px;
+  width:100%;
+}
