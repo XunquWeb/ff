@@ -58,7 +58,7 @@
                 <input type="text" class="form-control" placeholder="详细地址" required="" data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
             </div>
             <div class="event-edit">
-                <div class="placeholder"><span></span>添加活动介绍，让小伙伴更好的了解活动～</div>
+                <div class="placeholder"><span></span><p>添加活动介绍，让小伙伴更好的了解活动～</p></div>
                 <div class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
                     
                 </div>
@@ -119,12 +119,11 @@
 
 <script>
     $(".event-edit .textarea").bind('input propertychange', function() {
-        var word = $(".event-edit .textarea").val();
-        alert(123123);
+        var word = $(".event-edit .textarea").text();
         if (word != ''){
-            $(".event-edit .placeholder").addClass('display-none');
+            $(".event-edit .placeholder p").addClass('display-none');
         }
         else 
-            $(".event-edit .placeholder").removeClass('display-none');
+            $(".event-edit .placeholder p").removeClass('display-none');
     });
 </script>
