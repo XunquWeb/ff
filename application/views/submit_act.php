@@ -66,10 +66,15 @@
             </div>
             <div class="create-event-more open" >
                 <h2><div class="pull-right"><span class="icon-arrow-down"></span></div>更多选项</h2>
-                <div style="display:none">    
                     <div>
-                        希望活动行帮我推荐
+                        设置为私密活动，报名者需要通过指定链接报名
                         <div id="isPrivate" class="toggle">
+                            <div class="toggle-handle"></div>
+                        </div>
+                    </div>
+                    <div>
+                        报名者需要经过您的同意
+                        <div id="isAccord" class="toggle">
                             <div class="toggle-handle"></div>
                         </div>
                     </div>
@@ -108,12 +113,9 @@
                             <li class="btn btn-sm btn-default">参与人数</li>
                         </ul>
                     </div>
-                    <div style="color: #a0a0a0;">
-                        <input type="text" name="MaxInstance" class="form-control" value="100" placeholder="报名人数上限">
-                    </div>
-                </div>
+                
             </div>
-            <div class="text-center text-muted small">如需设置更多内容请下载APP～</div>
+            <!--<div class="text-center text-muted small">如需设置更多内容请下载APP～</div>-->
             <input id="btn_create_event" type="submit" class="btn btn-primary btn-block btn-lg" onclick="javascript:saveEvent();" value="确定发布">
         </form>
 
@@ -126,4 +128,14 @@
         else 
             $(".event-edit .placeholder p").removeClass('display-none');
     });
+    $(".create-event-more h2").bind('click',function(){
+        if($(".create-event-more").hasClass('open'))
+        {
+            $(".create-event-more").removeClass('open');
+        }
+        else
+        {
+            $(".create-event-more").addClass('open');
+        }
+    })
 </script>

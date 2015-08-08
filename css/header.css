@@ -335,12 +335,16 @@ figcaption.ratings a span{
   margin-top: 11px;
   padding-left: 10px;
   font-size: 25px;
-  color: #b4b4b4;
+  color: #ffffff;
   margin-right: 15px;
 }
 .user_message span.badge-blue {
   background-color: #5bc0de !important;
 }
+.user_message span.badge-green {
+  background-color: #5BDF52 !important;
+}
+
 .user_message span.badge {
   position: absolute;
   left: 2px;
@@ -349,6 +353,8 @@ figcaption.ratings a span{
   top: 7px;
 }
 
-.user_inter_last{
-  width:100%;
+.user_inter_last {
+  border: #F9F8F8 solid 1px;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }

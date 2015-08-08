@@ -34,7 +34,7 @@
           <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
           <a href="<?=base_url('user/message')?>" class="user_toggle user_message" >
             <i class="fa fa-bell fa-fw"></i>
-            <span class="badge badge-blue">3</span>
+            <span class="badge badge-green">3</span>
           </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -110,8 +110,8 @@
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">发起</span>
                       </a>
-                      <div class="user_inter_last">
-                        <p class="user_inter "></p>
+
+                        <p class="user_inter_last"></p>
                         <a href="<?=base_url('act/submit')?>" class="user_toggle" >
                           <i class="fa fa-tachometer fa-fw"></i>
                           <!-- <span class="badge badge-green">3</span> -->
@@ -123,7 +123,6 @@
                           <!-- <span class="badge badge-green">3</span> -->
                           <span class="user_toggle_info">设置</span>
                         </a>
-                      </div>
                 </li>
               </ul>
       </aside>
