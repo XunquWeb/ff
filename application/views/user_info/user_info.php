@@ -55,14 +55,14 @@
           </a>
         </figure>
         <div class="block user_name">
-          <h4 class="block profile-header-heading" ><?php echo $row['nname'];?><span herf="" class="meta-rank pull-left">Lv.9</span></h4>
+          <h4 class="block profile-header-heading" ><?php echo $nname;?><span herf="" class="meta-rank pull-left">Lv.9</span></h4>
         </div>
         <em class="profile-header-subheading">Professional Consultant</em>
         <div class="info_view">
           <div class="info_view_fix">
-            <span href="#"><span><?php echo $row['follow_num'];?></span><span>关注 </span></span>
+            <span href="#"><span><?php echo $follow_num;?></span><span>关注 </span></span>
             <span style="margin-left:2px;margin-right:2px">|</span>
-            <span href="#"><span><?php echo $row['browse_num'];?></span><span>浏览</span></span>
+            <span href="#"><span><?php echo $browse_num;?></span><span>浏览</span></span>
           </div>
         </div>
         <div class="profile-header-socials">
@@ -161,15 +161,15 @@
                                         <tbody>
                                             <tr>
                                                 <td width="30%"></td>
-                                                <td><?php echo $row['nname'];?></td>
+                                                <td><?php echo $nname;?></td>
                                             </tr>
                                             <tr>
                                                 <td width="30%">Email</td>
-                                                <td><?php echo $row['email'];?></td>
+                                                <td><?php echo $email;?></td>
                                             </tr>
                                             <tr>
                                                 <td width="30%">Hometown</td>
-                                                <td><?php echo $row['home'];?></td>
+                                                <td><?php echo $home;?></td>
                                             </tr>
                                             <!--
                                             <tr>

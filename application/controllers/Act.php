@@ -23,6 +23,7 @@ class Act extends CI_Controller {
 
 		$this->load->model('act_model');
 		if($data['row'] = $this->act_model->index(intval($ch_id), intval($page))){
+			//var_dump($data);
 			$this->load->view('header');		
 			$this->load->view('display_act',$data);
 			$this->load->view('footer');
@@ -67,11 +68,20 @@ class Act extends CI_Controller {
 	public function detail($a_id=1)
 	{
 		$this->load->model('act_model');
-		if($data['row'] = $this->act_model->detail(intval($a_id))){
-			//var_dump($data['row']);
+		if($data = $this->act_model->detail(intval($a_id))){
+			//var_dump($data);
 			$this->load->view('header');		
 			$this->load->view('detail_act',$data);
 			$this->load->view('footer');
+		}
+				
+	}
+
+	public function actlikes($a_id=1)
+	{
+		$this->load->model('act_model');
+		if($this->act_model->actlikes(intval($a_id))){
+			return true;
 		}
 				
 	}

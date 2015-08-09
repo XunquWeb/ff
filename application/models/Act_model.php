@@ -19,26 +19,30 @@ class Act_model extends CI_Model {
 		}
 		
 	}
-	public function detail($a_id=1){
+	public function detail($a_id){
 		$sql = "SELECT a_id,u_id,user.name,a_name,deadline,create_time,start_time,end_time,extra,place,max_num,join_num,t_name,a_state,browse,a_like,share 
 			FROM act,type,user WHERE act.t_id=type.id and user.id=act.u_id and act.a_id=? limit 1";
 		$query1 = $this->db->query($sql, array($a_id));
+		
 		$sql = "SELECT user.nname,user.id FROM user WHERE user.id in (SELECT act_man.u_id FROM act,act_man WHERE act.a_id=act_man.a_id and act.a_id=?)";
 		$query2 = $this->db->query($sql, array($a_id));
-		$temp['likes'] = $query2->result_array();
+		$temp['involves'] = $query2->result_array();
+		
+		$sql = "SELECT nname,user.id FROM user WHERE user.id in (SELECT act_likes.u_id FROM act_likes WHERE act_likes.a_id= ? ) limit 10";
+		$query3 = $this->db->query($sql, array($a_id));
+		$temp['likes'] = $query3->result_array();
+
 		$query = array_merge($query1->result_array()[0],$temp);
+
 		return $query;
 	}
-//	public function signup(){
-//		$this->form_validation->set_rules('e', 'Username', 'required|max_length[255]|valid_email|is_unique[user.email]');
-//		$this->form_validation->set_rules('p', 'Password', 'required|min_length[6]|max_length[255]');
-//		if($this->form_validation->run()){
-//			$sql = "INSERT INTO user ( email , pwd ) values ( ? , password( ? ))";
-//			$sql = $this->db->compile_binds($sql, array($_POST['e'],$_POST['p']));
-//			return $this->db->simple_query($sql);
-//		}
-//		return FALSE;
-//	}
+
+	public function actlikes($a_id){
+		$sql = "INSERT INTO act_likes (u_id,a_id) values ( ? , ? )";
+		$result = $this->db->compile_binds($sql, array($this->session->id, $a_id));
+		return $this->db->simple_query($result);
+	}
+
 	public function submit(){
 		echo "ok";
 	}
