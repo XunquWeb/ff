@@ -20,23 +20,31 @@ class Act_model extends CI_Model {
 		
 	}
 	public function detail($a_id){
-		$sql = "SELECT a_id,u_id,user.name,a_name,deadline,create_time,start_time,end_time,extra,place,max_num,join_num,t_name,a_state,browse,a_like,share 
-			FROM act,type,user WHERE act.t_id=type.id and user.id=act.u_id and act.a_id=? limit 1";
-		$query1 = $this->db->query($sql, array($a_id));
-		
-		$sql = "SELECT user.nname,user.id FROM user WHERE user.id in (SELECT act_man.u_id FROM act,act_man WHERE act.a_id=act_man.a_id and act.a_id=?)";
-		$query2 = $this->db->query($sql, array($a_id));
-		$temp['involves'] = $query2->result_array();
-		
-		$sql = "SELECT nname,user.id FROM user WHERE user.id in (SELECT act_likes.u_id FROM act_likes WHERE act_likes.a_id= ? ) limit 10";
-		$query3 = $this->db->query($sql, array($a_id));
-		$temp['likes'] = $query3->result_array();
+		$sql = "UPDATE act SET browse=browse+1 WHERE a_id= ? ";			//浏览量 + 1
+		$result = $this->db->compile_binds($sql, $a_id);
+		if($this->db->simple_query($result)){
+			//获取活动基本信息
+			$sql = "SELECT a_id,u_id,user.name,a_name,deadline,create_time,start_time,end_time,extra,place,max_num,join_num,t_name,a_state,browse,a_like,share 
+				FROM act,type,user WHERE act.t_id=type.id and user.id=act.u_id and act.a_id=? limit 1";
+			$query1 = $this->db->query($sql, array($a_id));
+			
+			//获取活动参与者信息
+			$sql = "SELECT user.nname,user.id FROM user WHERE user.id in (SELECT act_man.u_id FROM act,act_man WHERE act.a_id=act_man.a_id and act.a_id=?)";
+			$query2 = $this->db->query($sql, array($a_id));
+			$temp['involves'] = $query2->result_array();
+			
+			//获取活动点赞者信息
+			$sql = "SELECT nname,user.id FROM user WHERE user.id in (SELECT act_likes.u_id FROM act_likes WHERE act_likes.a_id= ? ) limit 10";
+			$query3 = $this->db->query($sql, array($a_id));
+			$temp['likes'] = $query3->result_array();
 
-		$query = array_merge($query1->result_array()[0],$temp);
+			$query = array_merge($query1->result_array()[0],$temp);
 
-		return $query;
+			return $query;
+		}
 	}
 
+	//点赞
 	public function actlikes($a_id){
 		$sql = "INSERT INTO act_likes (u_id,a_id) values ( ? , ? )";
 		$result = $this->db->compile_binds($sql, array($this->session->id, $a_id));
@@ -64,5 +72,10 @@ class Act_model extends CI_Model {
 			return $query->result_array();
 		}
 		return 0;
+	}
+
+	public function modifya_state($new_state, $a_id){
+		$sql = "UPDATE act SET a_state= ? WHERE a_id= ?";
+		return $this->db->query($sql, array($new_state, $a_id));
 	}
 }
