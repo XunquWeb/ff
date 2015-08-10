@@ -49,10 +49,13 @@ class Act extends CI_Controller {
 		
 			$this->load->model('act_model');
 			if($this->act_model->join()){
-				echo 'success';
+				//echo 'success';
 			}else{
-				echo 'failed';
+				//echo 'failed';
 			}
+			$this->load->view('header');
+			$this->load->view('join_act');
+			$this->load->view('footer');
 		
 	}
 	public function my_act()

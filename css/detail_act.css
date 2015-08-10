@@ -429,6 +429,7 @@ a {
   color: #0099e9;
   cursor: pointer;
   font-size: 13px;
+  word-break:break-word;
 }
 .zanWk img {
   float: right;
