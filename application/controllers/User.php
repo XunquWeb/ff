@@ -70,9 +70,10 @@ class User extends CI_Controller {
 	}
 
 	public function myinfo($user_id=1){
+		$user_id = $this->session->id;
 		if($this->session->id){
 			$this->load->model('user_model');
-			if($data['row'] = $this->user_model->myinfo_get($user_id)){
+			if($data = $this->user_model->myinfo_get($user_id)){
 				if($this->session->id == $user_id){
 					$data['authority'] = true;
 				}

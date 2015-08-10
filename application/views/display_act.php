@@ -73,6 +73,7 @@
 
 	<?php
 		foreach ($row as $r) {
+			//var_dump($r);
 			echo <<<TR
 			<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
@@ -95,7 +96,7 @@ TR;
             echo '</a>';
             
             
-        	echo '<p class="channel_tip">来自<a href="#" class="channel_text">' . $r['t_name'] . '</a></p>';
+        	echo '<p class="channel_tip">来自<a href="'. base_url('Act/display') . '/' . $r['t_id'] .'" class="channel_text">' . $r['t_name'] . '</a></p>';
         		
 			echo <<<TR
 		    </div>

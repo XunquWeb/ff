@@ -10,7 +10,7 @@
   </head>
 
 <div class="detail_title">
-    <h1 class="detail_title_h1" id="dt_title"><?php echo $row['a_name'];?></h1>
+    <h1 class="detail_title_h1" id="dt_title"><?php echo $a_name;?></h1>
 </div>
 
 <div class="detail_user hdMan">
@@ -21,10 +21,10 @@
     </div>
     <div class="hdman_r">
       <div class="yhName">
-        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $row['u_id'] . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php echo $row['name'];?></a>
+        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $u_id . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php echo $name;?></a>
       </div>
       <div class="dt_review_item_count">
-        <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $row['share'];?></a><span id="info_hits">阅读 <?php echo $row['browse'];?></span>
+        <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $share;?></a><span id="info_hits">阅读 <?php echo $browse;?></span>
       </div>
     </div>
       <input type="hidden" id="postUserId36" value="a8fd3">
@@ -39,12 +39,12 @@
 	      <div class="detail_Time_n">
 	          <p>
                 <?php
-                  echo substr($row['start_time'],5,11) . "&nbsp";
+                  echo substr($start_time,5,11) . "&nbsp";
                   echo "至";
-                  echo substr($row['end_time'],5,11) . "&nbsp";
+                  echo substr($end_time,5,11) . "&nbsp";
                   echo "<br>";
                 ?>
-	              <span><?php echo substr($row['deadline'],5,11) . "&nbsp";?>报名截止</span>
+	              <span><?php echo substr($deadline,5,11) . "&nbsp";?>报名截止</span>
 	          </p>
 	      </div>
 	  </div>
@@ -52,7 +52,7 @@
         <div class="dt_address_item" ontouchstart="">
             <div class="detail_Attr_K">
             	<span class="glyphicon glyphicon-map-marker" ></span>
-                <p class="addressP"><?php echo $row['place'];?></p>
+                <p class="addressP"><?php echo $place;?></p>
             </div>
 
         </div>
@@ -60,11 +60,11 @@
     <div class="detail_Joinnum" id="detail_Joinnum">
       <div class="detail_Joinnum_t">
       	<span class="glyphicon glyphicon-align-left detail_Joinnum_t_icon" ></span>
-      	<p>已有<span><?php echo $row['join_num'];?></span>人报名</p>
+      	<p>已有<span><?php echo $join_num;?></span>人报名</p>
       </div>
       <div class="detail_Joinnum_b">
          <p>
-           限<span><?php echo $row['max_num'];?></span>人报名
+           限<span><?php echo $max_num;?></span>人报名
          </p>
       </div>
     </div>
@@ -78,28 +78,26 @@
 <div class="dt_act_board">
   <div class="dt_act_detail">
      <div>
-        <?php echo $row['extra'];?>
+        <?php echo $extra;?>
      </div>
   </div>
 </div>
 <div class="dt_like" ontouchstart="">
       <a href="" ontouchstart="">
-        <p ontouchstart="">赞(<span id="dt_like_count"><?php echo $row['a_like'];?></span>)</p>
+        <p ontouchstart="">赞(<span id="dt_like_count"><?php echo $a_like;?></span>)</p>
         <span class="zanWk" ontouchstart=""><img id="img_dt_like" src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" alt=""></span>
       </a>
 </div>
-<div style="" class="dt_like_main" id="dt_like_main">
+<div style="<?php echo count($likes) > 0 ?  : "display:none";?>" class="dt_like_main" id="dt_like_main">
     <div class="dt_like_main_top"><img class="zanJiao" src="http://img1.hudongba.cn/static_v4/images/detail/zanJiao.png" alt=""></div>
     <div class="dt_like_list" id="dt_like_list">
       <span>
         <img src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" class="zanIcon" id="icon_zan_ok2"></span>
         <?php
-          if(count($row['likes'])> 0) 
-            for($i=0;$i<count($row['likes'])-1;$i++){
-              echo '<a ontouchstart="" href=' . "\"" . base_url('User/myinfo') . "/" . $row['likes'][$i]['id'] . "\"" . 'class="dt_nick" >' . $row['likes'][$i]['nname'] . '</a>';
-        }?>
-        <a>和</a>
-        <a ontouchstart="" href=<?php if(count($row['likes']) > 1) echo "\"" . base_url('User/myinfo') . "/" . $row['likes'][count($row['likes'])-1]['id'] . "\"";?> class="dt_nick" ><?php if(count($row['likes']) > 1) echo $row['likes'][count($row['likes'])-1]['nname']?></a>
+          foreach ($likes as $r) {
+            echo "<a href=\"" . base_url('User/myinfo') . "/" . $r['id'] . "\" class='dt_nick' >" . $r['nname'] . "</a>";
+          }
+        ?>
         <a>等人觉得很赞</a>
       </span>
     </div>
