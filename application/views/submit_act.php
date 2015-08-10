@@ -67,7 +67,7 @@
             <div class="create-event-more open" >
                 <h2><div class="pull-right"><span class="icon-arrow-down"></span></div>更多选项</h2>
                     <div>
-                        设置为私密活动，报名者需要通过指定链接报名
+                        设置为私密活动
                         <div id="isPrivate" class="toggle">
                             <div class="toggle-handle"></div>
                         </div>
