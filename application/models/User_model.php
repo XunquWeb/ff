@@ -10,7 +10,7 @@ class User_model extends CI_Model {
 		$this->form_validation->set_rules('u', 'Username', 'required|max_length[255]|valid_email');
 		$this->form_validation->set_rules('p', 'Password', 'required|min_length[6]|max_length[255]');
 		if($this->form_validation->run()){
-			$sql = "SELECT id,name,email,phone FROM user WHERE email = ? AND pwd = password( ? ) limit 1";
+			$sql = "SELECT id,name,nname,email,phone FROM user WHERE email = ? AND pwd = password( ? ) limit 1";
 			$query = $this->db->query($sql, array( $_POST['u'] , $_POST['p'] ));
 			if ($query->num_rows() > 0){
 				return $query->result_array()[0];

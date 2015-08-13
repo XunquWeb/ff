@@ -10,19 +10,22 @@ class Msg extends CI_Controller {
 		}
     }
 
+    //获取用户所有消息
 	public function index()
 	{
-		if($this->input->method()=='post'){
-				$this->load->model('msg_model');
-				if($res= $this->msg_model->index()){
-					foreach($res as $row){
-						echo $row['from_u_id'].'&'.$row['to_u_id'].'&'.urlencode($row['data']).'&'.$row['time'].'#';
-					}
-				}
-			
-		}else{
-			show_404();
+		$this->load->model('msg_model');
+		if($result = $this->msg_model->index()){
+			//var_dump($result);
+			foreach ($result as $r) {
+				$data[$r['s_name']][] = $r;
+			}
+			var_dump($data);
+			$this->load->view('header');
+			$this->load->view('message_line_top');
+			$this->load->view('message_detail_list',$data);//it's not the page display after you click the particular message;
+			$this->load->view('footer');
 		}
+		
 	}
 
 	public function submit()
@@ -46,19 +49,10 @@ class Msg extends CI_Controller {
 	public function msg_ajax(){
 		$this->load->model('msg_model');
 		if($data = $this->msg_model->msg_ajax()){
-
 			//var_dump($data);
-			foreach ($data as $row) {
-				switch (intval($row['source'])) {
-					case 0:echo '系统消息&' . $row['COUNT(*)'] . '#';break;
-					case 1:echo '用户私信&' . $row['COUNT(*)'] . '#';break;
-					case 2:echo '活动评论&' . $row['COUNT(*)'] . '#';break;
-					case 3:echo '广场消息&' . $row['COUNT(*)'] . '#';break;
-					default:echo 'error';break;
-				}
+			foreach ($data as $r) {
+				echo $r['s_name'] . '&' . $r['COUNT(*)'] . '#';
 			}
-			
-			
 		}
 	}
 

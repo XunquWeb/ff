@@ -1,27 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Msg_model extends CI_Model {
-	public function __construct()
-	{
+	
+	public function __construct(){
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->database();
 	}
+
 	public function index(){
-		$sql = "SELECT * from msg WHERE to_u_id = ?";
-		$query = $this->db->query($sql,array($this->session->id));
-		return $query->result_array();
+		$sql = "SELECT m_id,from_u_id,user.nname as from_nname,m_content,unrd,m_time,s_name FROM msg,user,source WHERE from_u_id=user.id and msg.s_id=source.s_id and to_u_id = ? and msg.s_id!=2";
+		$query1 = $this->db->query($sql, $this->session->id);
+		$sql = "SELECT m_id,from_u_id,user.nname as from_nname,m_content,unrd,m_time,s_name,a_name FROM msg,user,source,act WHERE from_u_id=user.id and msg.s_id=source.s_id and to_u_id = ? and msg.s_id=2 and act.a_id=msg.a_id";
+		$query2 = $this->db->query($sql, $this->session->id);
+		return array_merge($query1->result_array(),$query2->result_array());
 	}
-//	public function signup(){
-//		$this->form_validation->set_rules('e', 'Username', 'required|max_length[255]|valid_email|is_unique[user.email]');
-//		$this->form_validation->set_rules('p', 'Password', 'required|min_length[6]|max_length[255]');
-//		if($this->form_validation->run()){
-//			$sql = "INSERT INTO user ( email , pwd ) values ( ? , password( ? ))";
-//			$sql = $this->db->compile_binds($sql, array($_POST['e'],$_POST['p']));
-//			return $this->db->simple_query($sql);
-//		}
-//		return FALSE;
-//	}
+
 	public function submit(){
 		$this->form_validation->set_rules('tid', 'tid', 'required|integer');
 		$this->form_validation->set_rules('data', 'data', 'required|max_length[60000]|');
@@ -34,7 +29,7 @@ class Msg_model extends CI_Model {
 	}
 
 	public function msg_ajax(){
-		$sql = "SELECT COUNT(*),source FROM msg WHERE to_u_id= ? and unrd=1 GROUP BY source";
+		$sql = "SELECT COUNT(*),s_name FROM msg,source WHERE to_u_id= ? and unrd=1 and msg.s_id=source.s_id GROUP BY msg.s_id";
 		if($query = $this->db->query($sql,$this->session->id)){
 			return $query->result_array();
 		}

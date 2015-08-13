@@ -181,10 +181,7 @@ class User extends CI_Controller {
 		else 
 			$this->load->view('message_line_top',$data);
 		*/
-		$this->load->view('header');
-		$this->load->view('message_line_top');
-		$this->load->view('message_detail_list',$type);//it's not the page display after you click the particular message;
-		$this->load->view('footer');
+		redirect('Msg');
 	}
 
 	public function follow($user_id=1){

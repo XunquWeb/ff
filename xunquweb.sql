@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 08 月 10 日 18:26
+-- 生成日期: 2015 年 08 月 13 日 19:21
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -199,38 +199,39 @@ CREATE TABLE IF NOT EXISTS `msg` (
   `from_u_id` int(10) unsigned NOT NULL,
   `to_u_id` int(10) NOT NULL,
   `m_content` text NOT NULL,
-  `rd` int(1) unsigned NOT NULL DEFAULT '0',
+  `unrd` int(1) unsigned NOT NULL DEFAULT '0',
   `m_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `source` int(1) NOT NULL,
-  `a_id` bigint(20) NOT NULL,
+  `s_id` int(1) NOT NULL,
+  `a_id` bigint(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`m_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- 转存表中的数据 `msg`
 --
 
-INSERT INTO `msg` (`m_id`, `from_u_id`, `to_u_id`, `m_content`, `rd`, `m_time`, `source`, `a_id`) VALUES
+INSERT INTO `msg` (`m_id`, `from_u_id`, `to_u_id`, `m_content`, `unrd`, `m_time`, `s_id`, `a_id`) VALUES
 (1, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(2, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(3, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(4, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
+(2, 2, 11, 'hello', 1, '0000-00-00 00:00:00', 0, 0),
+(3, 11, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 6, 11, 'hello', 1, '0000-00-00 00:00:00', 0, 0),
 (5, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(6, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(7, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(8, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 11, 40, 'hello15', 0, '0000-00-00 00:00:00', 0, 0),
+(7, 3, 11, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
+(8, 11, 40, 'hello13', 0, '0000-00-00 00:00:00', 0, 0),
 (9, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(10, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(11, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(12, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
-(13, 2, 40, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
+(10, 2, 11, 'hello', 0, '0000-00-00 00:00:00', 0, 0),
+(11, 11, 40, 'hello10', 1, '0000-00-00 00:00:00', 1, 0),
+(12, 11, 40, 'hello9', 1, '0000-00-00 00:00:00', 1, 0),
+(13, 2, 11, 'hello', 1, '0000-00-00 00:00:00', 1, 0),
 (14, 9, -1, 'hello7', 0, '2015-08-07 16:00:00', 2, 34),
-(15, 10, 4, 'hello6', 0, '2015-08-15 16:00:00', 2, 35),
-(16, 10, 6, 'hello5', 0, '2015-08-11 16:00:00', 2, 35),
+(15, 10, 11, 'hello6', 1, '2015-08-15 16:00:00', 2, 35),
+(16, 10, 11, 'hello5', 1, '2015-08-11 16:00:00', 2, 35),
 (17, 10, -1, 'hello4', 0, '2015-08-06 16:00:00', 2, 36),
-(18, 11, -1, 'hello3', 0, '2015-08-10 16:00:00', 2, 36),
+(18, 11, -1, 'hello3', 1, '2015-08-10 16:00:00', 2, 36),
 (19, 11, 2, 'hello2', 0, '2015-08-04 16:00:00', 2, 36),
-(20, 11, 3, 'hello1', 0, '2015-08-13 16:00:00', 2, 36);
+(20, 11, 3, 'hello1', 1, '2015-08-13 16:00:00', 2, 36),
+(21, 5, 11, 'gverasgvaeg', 1, '2015-08-13 06:58:38', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -246,6 +247,28 @@ CREATE TABLE IF NOT EXISTS `reg` (
   `reg_text` text NOT NULL,
   PRIMARY KEY (`reg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `source`
+--
+
+CREATE TABLE IF NOT EXISTS `source` (
+  `s_id` int(1) NOT NULL,
+  `s_name` varchar(40) NOT NULL,
+  PRIMARY KEY (`s_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `source`
+--
+
+INSERT INTO `source` (`s_id`, `s_name`) VALUES
+(0, '系统消息'),
+(1, '用户私信'),
+(2, '活动评论'),
+(3, '广场消息');
 
 -- --------------------------------------------------------
 
@@ -335,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `follow_num` bigint(20) DEFAULT NULL,
   `browse_num` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `user`
