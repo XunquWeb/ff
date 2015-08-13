@@ -42,4 +42,24 @@ class Msg extends CI_Controller {
 		}
 	}
 
+	//所有消息ajax的函数，返回各类未读消息的数值
+	public function msg_ajax(){
+		$this->load->model('msg_model');
+		if($data = $this->msg_model->msg_ajax()){
+
+			//var_dump($data);
+			foreach ($data as $row) {
+				switch (intval($row['source'])) {
+					case 0:echo '系统消息&' . $row['COUNT(*)'] . '#';break;
+					case 1:echo '用户私信&' . $row['COUNT(*)'] . '#';break;
+					case 2:echo '活动评论&' . $row['COUNT(*)'] . '#';break;
+					case 3:echo '广场消息&' . $row['COUNT(*)'] . '#';break;
+					default:echo 'error';break;
+				}
+			}
+			
+			
+		}
+	}
+
 }

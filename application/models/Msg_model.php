@@ -32,4 +32,11 @@ class Msg_model extends CI_Model {
 		}
 		return FALSE;	
 	}
+
+	public function msg_ajax(){
+		$sql = "SELECT COUNT(*),source FROM msg WHERE to_u_id= ? and unrd=1 GROUP BY source";
+		if($query = $this->db->query($sql,$this->session->id)){
+			return $query->result_array();
+		}
+	}
 }
