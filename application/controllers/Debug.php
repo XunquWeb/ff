@@ -19,6 +19,12 @@ class Debug extends CI_Controller {
 		$this->load->view('personal_info');
 		$this->load->view('footer');
 	}
+	public function manage()
+	{
+		$this->load->view('header');
+		$this->load->view('manage_act');
+		$this->load->view('footer');
+	}
 	public function test()
 	{
 		if("dab"){

@@ -40,7 +40,7 @@
 	          <p>
                 <?php
                   echo substr($start_time,5,11) . "&nbsp";
-                  echo "至";
+                  echo "至" . "&nbsp";
                   echo substr($end_time,5,11) . "&nbsp";
                   echo "<br>";
                 ?>
@@ -52,7 +52,11 @@
         <div class="dt_address_item" ontouchstart="">
             <div class="detail_Attr_K">
             	<span class="glyphicon glyphicon-map-marker" ></span>
-                <p class="addressP"><?php echo $place;?></p>
+                <p class="addressP">
+                                    <?php if(!$place) echo "无"; 
+                                          else echo $place;
+                                    ?>
+                </p>
             </div>
 
         </div>

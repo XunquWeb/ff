@@ -71,6 +71,28 @@
 		</div>
 -->
 
+<div class="panel panel-default">
+		    <div class="panel-body mod-project-details funding"><a href="http://localhost:8888/ff/Act/detail/36">		    	<div class="clearfix">
+		            <span class="ribbon labels">进行中</span><h1>流浪狗求收养</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="http://img3.imgtn.bdimg.com/it/u=525184704,2771878227&amp;fm=21&amp;gp=0.jpg"></p><p>学校的流浪狗妈妈因为咬了人背警察带走了555 留下了一窝小宝宝，爱心人士快来领养啦！</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">好仁</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">公益</a></p></p>		    </div>
+		    <div class="panel-footer">浏览&nbsp;&nbsp;<span><i class="blue">137</i>次</span>		    	响应&nbsp;&nbsp;<span><i class="blue">33</i>次</span>
+		        评论<span><i class="blue">78</i>次</span>
+		    </div>
+		</div>
+		<div class="panel panel-default">
+		    <div class="panel-body mod-project-details funding"><a href="http://localhost:8888/ff/Act/detail/36">		    	<div class="clearfix">
+		            <span class="ribbon labels">进行中</span><h1>寻找男神赵大哥</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="http://img3.imgtn.bdimg.com/it/u=525184704,2771878227&amp;fm=21&amp;gp=0.jpg"></p><p>听说赵大哥来交通大学了！天呐。。少女们快来围观～～～</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">曹小超</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">娱乐</a></p></p>		    </div>
+		    <div class="panel-footer">浏览&nbsp;&nbsp;<span><i class="blue">137</i>次</span>		    	响应&nbsp;&nbsp;<span><i class="blue">33</i>次</span>
+		        评论<span><i class="blue">78</i>次</span>
+		    </div>
+		</div>
+		<div class="panel panel-default">
+		    <div class="panel-body mod-project-details funding"><a href="http://localhost:8888/ff/Act/detail/36">		    	<div class="clearfix">
+		            <span class="ribbon labels">进行中</span><h1>怎么通过助飞计划结识学妹</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="http://img3.imgtn.bdimg.com/it/u=525184704,2771878227&amp;fm=21&amp;gp=0.jpg"></p><p> 助飞计划只是水一水你就图样图森破了，这周末我有幸邀请了王学长指点同学们怎么样通过助飞计划成为学妹眼中的靠谱学长！后面，你懂的...</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">秦小浩</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">公益</a></p></p>		    </div>
+		    <div class="panel-footer">浏览&nbsp;&nbsp;<span><i class="blue">137</i>次</span>		    	响应&nbsp;&nbsp;<span><i class="blue">33</i>次</span>
+		        评论<span><i class="blue">78</i>次</span>
+		    </div>
+		</div>
+
 	<?php
 		foreach ($row as $r) {
 			//var_dump($r);
