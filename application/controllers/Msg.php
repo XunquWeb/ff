@@ -14,15 +14,25 @@ class Msg extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('msg_model');
-		if($result = $this->msg_model->index()){
-			//var_dump($result);
+		$result = $this->msg_model->index();
+		//var_dump($result);
+		if($result){
 			foreach ($result as $r) {
 				$data[$r['s_name']][] = $r;
 			}
-			var_dump($data);
+			$data['empty'] = false;
+			//var_dump($data);
 			$this->load->view('header');
 			$this->load->view('message_line_top');
 			$this->load->view('message_detail_list',$data);//it's not the page display after you click the particular message;
+			$this->load->view('footer');
+		}
+		else{
+			$data['empty'] = true;
+			//var_dump($data);
+			$this->load->view('header');
+			$this->load->view('message_line_top');
+			$this->load->view('message_detail_list',$data);
 			$this->load->view('footer');
 		}
 		
