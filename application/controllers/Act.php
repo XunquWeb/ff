@@ -97,13 +97,13 @@ class Act extends CI_Controller {
 	public function modifya_state($deadline, $start_time, $end_time, $a_state, $a_id){
 		$new_state = 0;
 		$current = date("Y-m-d h:i:s");
-		if(strtotime($current) <= strtotime($deadline) and $a_state != "报名中"){
-			$new_state = "报名中";
+		if(strtotime($current) <= strtotime($deadline) and $a_state != "求队友"){
+			$new_state = "求队友";
 		}
 		elseif (strtotime($current) > strtotime($deadline) 
 			and strtotime($current) < strtotime($start_time)
-			and $a_state != "待进行") {
-			$new_state = "待进行";
+			and $a_state != "酝酿中") {
+			$new_state = "酝酿中";
 		}
 		elseif (strtotime($current) >= strtotime($start_time) 
 			and strtotime($current) <= strtotime($end_time)
