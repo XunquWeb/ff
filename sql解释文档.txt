@@ -27,6 +27,7 @@ user表
 	
 	follow_num -- 关注数
 	browse_num -- 浏览数
+	latest_m_id -- 该用户客户端上所显示的最新的广场的m_id
 
 act表
 	a_id -- 活动id

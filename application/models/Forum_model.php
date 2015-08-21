@@ -10,9 +10,11 @@ class Forum_model extends CI_Model {
 	}
 
 	public function index(){
-		$sql = "SELECT m_id,user.nname,from_u_id,m_content,m_time FROM msg,user WHERE s_id=3 and msg.from_u_id=user.id and floor=0 ORDER BY m_time DESC limit 10";
-		$query = $this->db->query($sql);
-		return $query->result_array();
+		$sql1 = "SELECT m_id,user.nname,from_u_id,m_content,m_time FROM msg,user WHERE s_id=3 and msg.from_u_id=user.id and floor=0 ORDER BY m_time DESC limit 10";
+		$query1 = $this->db->query($sql1);
+		$sql2 = "UPDATE user SET latest_m_id=(SELECT MAX(m_id) FROM msg) WHERE user.id=?";
+		$query2 = $this->db->query($sql2,array($this->session->id));
+		return $query1->result_array();
 	}
 
 	public function forum_comment_ajax($m_id){
@@ -27,5 +29,12 @@ class Forum_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function new_message_ajax(){
+		$sql1 = "SELECT m_id,nname,from_u_id,m_content,m_time FROM msg,user WHERE s_id=3 and floor=0 and user.id=msg.from_u_id and m_id>(SELECT latest_m_id FROM user WHERE user.id=?) and m_id<=(SELECT MAX(m_id) FROM msg) ORDER BY m_time DESC";
+		$query1 = $this->db->query($sql1,array($this->session->id));
+		$sql2 = "UPDATE user SET latest_m_id=(SELECT MAX(m_id) FROM msg) WHERE user.id=?";
+		$query2 = $this->db->query($sql2,array($this->session->id));
+		return $query1->result_array();
+	}
 
 }

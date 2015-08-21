@@ -12,7 +12,7 @@ class Forum extends CI_Controller {
 	public function public_forum(){
 		$this->load->model('forum_model');
 		if($data = $this->forum_model->index()){
-			var_dump($data);
+			//var_dump($data);
 			$this->load->view('header');
 			$this->load->view('public_forum',$data);
 			$this->load->view('footer');
@@ -72,6 +72,17 @@ class Forum extends CI_Controller {
 		}
 	}
 
-	
+	public function new_message_ajax(){
+		$this->load->model('forum_model');
+		if($data = $this->forum_model->new_message_ajax()){
+			//var_dump($data);
+			foreach ($data as $r) {
+				echo $r['m_id'].'&'.$r['nname'].'&'.$r['from_u_id'].'&'.$r['m_content'].'&'.$r['m_time'].'#';
+			}
+		}
+		else{
+			echo "no new message";
+		}
+	}
 
 }
