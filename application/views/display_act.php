@@ -22,7 +22,15 @@
                         <li class="category-wrapper classify active">
                             <ul class="dropdown-list">
                             	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>全部分类</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>学习</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>吃喝玩乐</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>健身减肥</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>影音书画</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>同学去哪</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>争做学霸</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>来约奇葩</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>我会更棒</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>摄影约片</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>变帅变美</span></li>                           	
                             </ul>
                         </li>
                         <li class="category-wrapper rank display-none">
@@ -80,14 +88,14 @@
 		</div>
 		<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding"><a href="http://localhost:8888/ff/Act/detail/36">		    	<div class="clearfix">
-		            <span class="ribbon labels">进行中</span><h1>寻找男神赵大哥</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="http://img3.imgtn.bdimg.com/it/u=525184704,2771878227&amp;fm=21&amp;gp=0.jpg"></p><p>听说赵大哥来交通大学了！天呐。。少女们快来围观～～～</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">曹小超</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">娱乐</a></p></p>		    </div>
+		            <span class="ribbon labels">进行中</span><h1>寻找男神赵大哥</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2959798364,3991048693&fm=96"></p><p>听说赵大哥来交通大学了！天呐。。少女们快来围观～～～</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">曹小超</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">娱乐</a></p></p>		    </div>
 		    <div class="panel-footer">浏览&nbsp;&nbsp;<span><i class="blue">137</i>次</span>		    	响应&nbsp;&nbsp;<span><i class="blue">33</i>次</span>
 		        评论<span><i class="blue">78</i>次</span>
 		    </div>
 		</div>
 		<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding"><a href="http://localhost:8888/ff/Act/detail/36">		    	<div class="clearfix">
-		            <span class="ribbon labels">进行中</span><h1>怎么通过助飞计划结识学妹</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="http://img3.imgtn.bdimg.com/it/u=525184704,2771878227&amp;fm=21&amp;gp=0.jpg"></p><p> 助飞计划只是水一水你就图样图森破了，这周末我有幸邀请了王学长指点同学们怎么样通过助飞计划成为学妹眼中的靠谱学长！后面，你懂的...</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">秦小浩</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">公益</a></p></p>		    </div>
+		            <span class="ribbon labels">进行中</span><h1>怎么通过助飞计划结识学妹</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1594611624,4089902143&fm=58"></p><p> 助飞计划只是水一水你就图样图森破了，这周末我有幸邀请了王学长指点同学们怎么样通过助飞计划成为学妹眼中的靠谱学长！后面，你懂的...</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">秦小浩</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">公益</a></p></p>		    </div>
 		    <div class="panel-footer">浏览&nbsp;&nbsp;<span><i class="blue">137</i>次</span>		    	响应&nbsp;&nbsp;<span><i class="blue">33</i>次</span>
 		        评论<span><i class="blue">78</i>次</span>
 		    </div>

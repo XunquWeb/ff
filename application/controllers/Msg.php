@@ -19,7 +19,7 @@ class Msg extends CI_Controller {
 			foreach ($result as $r) {
 				$data[$r['s_name']][] = $r;
 			}
-			var_dump($data);
+			//var_dump($data);
 			$this->load->view('header');
 			$this->load->view('message_line_top');
 			$this->load->view('message_detail_list',$data);//it's not the page display after you click the particular message;

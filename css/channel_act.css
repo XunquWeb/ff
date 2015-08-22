@@ -2,7 +2,7 @@
   float: left;
   width: 70px;
   height: 70px;
-  background-image: url(../image/channel_icon.png);
+  background-image: url(../image/channel_icon_list.png);
   background-size: 100% auto;
 }
 
@@ -94,7 +94,7 @@
   height: 30px;
   vertical-align: bottom;
   background-size: 100% 100%;
-  background-image: url(http://f.qsc.dreamore.cn/public_html/refactbuild/image/qsc_logo.png);
+  background-image: url('../image/xunqu.jpg');
 }
 #carousel-channel-generic{
   margin-bottom:0px;

@@ -20,7 +20,7 @@
 				<img src="<?=base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">王永强</div>
-					<div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+					<div class="msg-text">今晚约写代码吗？</div>
 				</div>
 				<div class="msg-time">晚上18:08</div>
 				<div class="msg-nm"></div>
@@ -28,42 +28,42 @@
 			<div class="msg-detail">
 				<img src="<?=base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
-					<div class="msg-source">王永强</div>
-					<div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+					<div class="msg-source">苏小欢</div>
+					<div class="msg-text">分享了一个约单</div>
 				</div>
-				<div class="msg-time">晚上18:08</div>
+				<div class="msg-time">下午14:08</div>
 			</div>
 			<div class="msg-detail">
 				<img src="<?=base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
-					<div class="msg-source">王永强</div>
-					<div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+					<div class="msg-source">秦小浩</div>
+					<div class="msg-text">哈哈哈 踢球嘛？</div>
 				</div>
-				<div class="msg-time">晚上18:08</div>
+				<div class="msg-time">早上10:12</div>
 			</div>
 			<div class="msg-detail">
 				<img src="<?=base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
-					<div class="msg-source">王永强</div>
-					<div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+					<div class="msg-source">萌妹纸</div>
+					<div class="msg-text">晚安～</div>
 				</div>
-				<div class="msg-time">晚上18:08</div>
+				<div class="msg-time">昨天22:46</div>
 			</div>
 			<div class="msg-detail">
 				<img src="<?=base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
-					<div class="msg-source">王永强</div>
-					<div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+					<div class="msg-source">张小铖</div>
+					<div class="msg-text">好吧好吧 晚点聊，我先出去了</div>
 				</div>
-				<div class="msg-time">晚上18:08</div>
+				<div class="msg-time">昨天16:09</div>
 			</div>
 			<div class="msg-detail">
 				<img src="<?=base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
-					<div class="msg-source">王永强</div>
-					<div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+					<div class="msg-source">董小良</div>
+					<div class="msg-text">分享了一个约单</div>
 				</div>
-				<div class="msg-time">晚上18:08</div>
+				<div class="msg-time">昨天10:08</div>
 			</div>
 		</div>
 

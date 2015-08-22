@@ -82,21 +82,22 @@
                 <li class="user_content">
                       <p class="user_inter"></p>
                       <a href="<?=base_url('index.php')?>" class="user_toggle" >
-                        <i class="fa fa-bell fa-fw"></i>
-                        <span class="badge badge-blue">3</span>
+                        <!--<i class="fa fa-bell fa-fw"></i>
+                        <span class="badge badge-blue">3</span>-->
+                        <i class="fa fa-sitemap fa-fw"></i>
                         <span class="user_toggle_info">首页</span>
                       </a>
                       <p class="user_inter"></p>
                       <a href="<?=base_url('act/display')?>" class="user_toggle" >
                         <i class="fa fa-sitemap fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
-                        <span class="user_toggle_info">活动</span>
+                        <span class="user_toggle_info">约单</span>
                       </a>
                       <p class="user_inter"></p>
                       <a href="#" class="user_toggle" >
                         <i class="fa fa-sitemap fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
-                        <span class="user_toggle_info">好友</span>
+                        <span class="user_toggle_info">关注</span>
                       </a>                  
                       <p class="user_inter"></p>
                       <a href="<?=base_url('forum/public_forum')?>" class="user_toggle" >
@@ -112,7 +113,7 @@
                       </a>
 
                         <p class="user_inter_last"></p>
-                        <a href="<?=base_url('act/submit')?>" class="user_toggle" >
+                        <a href="<?=base_url('user/logout')?>" class="user_toggle" >
                           <i class="fa fa-tachometer fa-fw"></i>
                           <!-- <span class="badge badge-green">3</span> -->
                           <span class="user_toggle_info">退出</span>

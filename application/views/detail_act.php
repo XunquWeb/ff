@@ -10,7 +10,7 @@
   </head>
 
 <div class="detail_title">
-    <h1 class="detail_title_h1" id="dt_title"><?php echo $a_name;?></h1>
+    <h1 class="detail_title_h1" id="dt_title"><?//php echo $a_name;?>寻趣小分队求加盟</h1>
 </div>
 
 <div class="detail_user hdMan">
@@ -21,7 +21,7 @@
     </div>
     <div class="hdman_r">
       <div class="yhName">
-        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $u_id . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php echo $name;?></a>
+        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $u_id . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php // echo $name;?>寻小趣</a>
       </div>
       <div class="dt_review_item_count">
         <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $share;?></a><span id="info_hits">阅读 <?php echo $browse;?></span>
@@ -53,9 +53,10 @@
             <div class="detail_Attr_K">
             	<span class="glyphicon glyphicon-map-marker" ></span>
                 <p class="addressP">
-                                    <?php if(!$place) echo "无"; 
-                                          else echo $place;
+                                    <?php //if(!$place) echo "无"; 
+                                          //else echo $place;
                                     ?>
+                                    上海交通大学
                 </p>
             </div>
 
@@ -76,13 +77,15 @@
 </div>
 
 <div  class="comment_header">
-    <h4 class="sub-title-decoration">活动简介</h4>
+    <h4 class="sub-title-decoration">约单详情</h4>
 </div>
 
 <div class="dt_act_board">
   <div class="dt_act_detail">
      <div>
-        <?php echo $extra;?>
+        <?php // echo $extra;?>
+        如果你热衷探索技术或者深谙营销之道或者什么都不会但有一颗想改变世界的心，那么就请加入我们。我们是交大最有情怀的创业小分队，我们致力于解决自己身边的问题～
+
      </div>
   </div>
 </div>
@@ -108,32 +111,32 @@
 </div>
 
 <div  class="comment_header">
-    <h4 class="sub-title-decoration">活动评论</h4>
+    <h4 class="sub-title-decoration">闲聊</h4>
 </div>
 <div class="dt_comment_board">
     <div class="msg-detail dt-msg-fix" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
             <img src="<?=base_url('image/photo_default.gif')?>">
             <div class="msg-detail-content">
               <div class="msg-source">王永强</div>
-              <div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+              <div class="msg-text">怎么报名的，组队呀～</div>
             </div>
             <div class="msg-time">晚上18:08</div>
     </div>
     <div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
             <img src="<?=base_url('image/photo_default.gif')?>">
             <div class="msg-detail-content">
-              <div class="msg-source">王永强</div>
-              <div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+              <div class="msg-source">曹小超</div>
+              <div class="msg-text">楼上技术大神。</div>
             </div>
-            <div class="msg-time">晚上18:08</div>
+            <div class="msg-time">晚上18:14</div>
     </div>
     <div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
             <img src="<?=base_url('image/photo_default.gif')?>">
             <div class="msg-detail-content">
               <div class="msg-source">王永强</div>
-              <div class="msg-text">听说张之铖今天又找妹纸了？！！</div>
+              <div class="msg-text">@曹小超：又逗我...</div>
             </div>
-            <div class="msg-time">晚上18:08</div>
+            <div class="msg-time">晚上19:08</div>
     </div>
 </div>
 
@@ -150,7 +153,7 @@
           <a href="#" ontouchstart="">
             <p>
               <img class="dt_join_bar_icon" src="<?=base_url('image/icon_add.png')?>" alt="">
-              <span>我也要发活动</span>
+              <span>我也要发约单</span>
             </p>
           </a>
         </div>
@@ -160,7 +163,7 @@
           <a href="#" ontouchstart="" onclick="">
             <p>
               <img class="dt_join_bar_icon" src="<?=base_url('image/icon_man2.png')?>" alt="">
-              <span>我要报名</span>
+              <span>我要去约</span>
             </p>
           </a>
         </div>

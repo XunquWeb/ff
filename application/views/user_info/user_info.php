@@ -94,7 +94,7 @@
         <ul class="nav nav-pills nav-sm">
           <li><a href="#section-bar-1">状态</a></li>
           <li><a href="#section-bar-2">信息</a></li>
-          <li><a href="#section-bar-3">活动</a></li>
+          <li><a href="#section-bar-3">约单</a></li>
         </ul>
       </nav>
       <div class="content-wrap">
@@ -109,8 +109,8 @@
                                   </div>
                                   <div class="timeline-space"></div>
                                   <div class="timeline-label">
-                                      <h4 class="timeline-title">New Project</h4>
-                                      <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial.</p>
+                                      <h4 class="timeline-title">新的关注</h4>
+                                      <p>土拨鼠1313关注了苏小欢</p>
                                   </div>
                               </div>
                           </article>
@@ -122,8 +122,8 @@
                                   </div>
                                   <div class="timeline-space"></div>
                                   <div class="timeline-label bg-green">
-                                      <h4 class="timeline-title">Job Meeting</h4>
-                                      <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette.</p>
+                                      <h4 class="timeline-title">新的趣谈</h4>
+                                      <p>好呀！IDG比赛算我一个～</p>
                                   </div>
                               </div>
                           </article>
@@ -135,8 +135,8 @@
                                   </div>
                                   <div class="timeline-space"></div>
                                   <div class="timeline-label bg-orange">
-                                      <h4 class="timeline-title">Daily Feeds</h4>
-                                      <p><img src="http://lorempixel.com/45/45/nature/3/" alt="" class="timeline-img pull-left">Parsley amaranth tigernut silver beet maize fennel spinach ricebean black-eyed. Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial.</p>
+                                      <h4 class="timeline-title">新的约单</h4>
+                                      <p><img src="http://lorempixel.com/45/45/nature/3/" alt="" class="timeline-img pull-left">土拨鼠1313参加了苏小欢发起的“寻趣小分队招募”</p>
                                   </div>
                               </div>
                               <div class="timeline-entry-inner">

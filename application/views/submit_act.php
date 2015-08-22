@@ -35,16 +35,16 @@
             </div> -->
             <div class="form-group error">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="活动主题" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+                <input type="text" class="form-control" placeholder="约单主题" required="" data-validation-message="请输入约单主题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
             </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入活动开始时间" data-validation-type="warning" name="Start" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
+                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Start" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
                 <!-- <div class="tips sr-only">输入活动开始时间</div> -->
             </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="活动结束时间" required="" data-validation-message="请输入活动结束时间" data-validation-type="warning" name="End" value="2015-08-13 17:00:00" id="mobiscroll1438876656973" readonly="">
+                <input type="text" class="form-control" placeholder="活动结束时间" required="" data-validation-message="请输入约单结束时间" data-validation-type="warning" name="End" value="2015-08-13 17:00:00" id="mobiscroll1438876656973" readonly="">
                 <!-- <div class="tips sr-only">输入活动结束时间</div> -->
             </div>
             <div class="form-group">
@@ -58,7 +58,7 @@
                 <input type="text" class="form-control" placeholder="详细地址" required="" data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
             </div>
             <div class="event-edit">
-                <div class="placeholder"><span></span><p>添加活动介绍，让小伙伴更好的了解活动～</p></div>
+                <div class="placeholder"><span></span><p>添加约单详情，让小伙伴更好的了解约单～</p></div>
                 <div class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
                     
                 </div>
@@ -67,7 +67,7 @@
             <div class="create-event-more open" >
                 <h2><div class="pull-right"><span class="icon-arrow-down"></span></div>更多选项</h2>
                     <div>
-                        设置为私密活动
+                        设置为私密约单
                         <div id="isPrivate" class="toggle">
                             <div class="toggle-handle"></div>
                         </div>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="">
-                        选择活动类别
+                        选择约单类别
                         <select name="Setting.HdxTags" id="event-select-hdxtag">
                             
                             <option value="" img="/Content/v2.0/img/poster/thumb/entertainment.jpg">选择主题</option>
@@ -106,10 +106,10 @@
                         <ul>
                             <li class="btn btn-sm btn-default active actived">姓名</li>
                             <li class="btn btn-sm btn-default active actived">手机</li>
-                            <li class="btn btn-sm btn-default">职位</li>
-                            <li class="btn btn-sm btn-default">行业</li>
+                            <li class="btn btn-sm btn-default">学校</li>
+                            <li class="btn btn-sm btn-default">学院</li>
+                            <li class="btn btn-sm btn-default">年级</li>
                             <li class="btn btn-sm btn-default">备注</li>
-                            <li class="btn btn-sm btn-default">单位</li>
                             <li class="btn btn-sm btn-default">参与人数</li>
                         </ul>
                     </div>
