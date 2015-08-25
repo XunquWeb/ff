@@ -11,8 +11,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/welcome.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/welcome.css')?>" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,20 +27,20 @@
         </div>
         <div class="login_title">
             <div class="logo">
-                <img src="<?=base_url('image/logo_img.png')?>">
+                <img src="<?php echo base_url('image/logo_img.png')?>">
             </div>
             <div class="slogan">
-                <img src="<?=base_url('image/logo_text.png')?>">
+                <img src="<?php echo base_url('image/logo_text.png')?>">
             </div>
         </div>
         <div class="row login_buttons">
             <div class="col-sm-6">
-                <button type="button" id="loginButton"  class="btn btn-primary" autocomplete="off" onclick=window.location="<?=base_url('User/login/')?>">
+                <button type="button" id="loginButton"  class="btn btn-primary" autocomplete="off" onclick=window.location="<?php echo base_url('User/login/')?>">
                     登陆
                 </button>
             </div>
             <div class="col-sm-6">
-                <button type="button" id="signupButton"  class="btn btn-primary" autocomplete="off" onclick=window.location="<?=base_url('User/signup/')?>">
+                <button type="button" id="signupButton"  class="btn btn-primary" autocomplete="off" onclick=window.location="<?php echo base_url('User/signup/')?>">
                     点击这里加入寻趣
                 </button>
             </div>
@@ -50,6 +50,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?=base_url('js/bootstrap.min.js')?>"></script>
+    <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
   </body>
 </html>
