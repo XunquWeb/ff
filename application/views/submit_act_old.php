@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/submit_act.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/clockpicker.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/datepicker.css')?>" rel="stylesheet">
-    <script src="<?=base_url('js/clockpicker.js')?>"></script>
-    <script src="<?=base_url('js/datepicker.js')?>"></script>
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/submit_act.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/clockpicker.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/datepicker.css')?>" rel="stylesheet">
+    <script src="<?php echo base_url('js/clockpicker.js')?>"></script>
+    <script src="<?php echo base_url('js/datepicker.js')?>"></script>
   </head>
 
     <div class="container" style="margin-top:-50px;">
@@ -157,7 +157,7 @@
               text1 = '<div class="form-group"><label for="dtp_input#id#" class="col-md-2 col-sm-2 control-label">#name#<span>*</span></label><div class="col-md-8 col-sm-8"><div class="input-group date form_datetime controls" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input#id#"><input class="form-control" size="20" type="text" name="#id#" id="start_time#id#" placeholder="#ph#" value="" ><span class="input-group-addon"><label for="start_time#id#" class="glyphicon glyphicon-th"></label></span></div><div class="input-group clockpicker"><input type="text" class="form-control" placeholder="#ph#"><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div></div></div>';
               text2 = '<div class="form-group"><label class="control-label col-sm-2" >#name#<span>*</span></label><div class="col-sm-8"><input type="text" class="form-control" name="#id#" id="#id#"  placeholder="#ph#" maxlength="255" ></div></div>';
             var x=new XMLHttpRequest();
-            x.open("post","<?=base_url('Ajax/get_act_para')?>",false);
+            x.open("post","<?php echo base_url('Ajax/get_act_para')?>",false);
 		      	x.setRequestHeader("Content-type","application/x-www-form-urlencoded");
             x.send("t="+typeId);
             if(x.status==200){

@@ -1,5 +1,5 @@
 <head>
-	<link href="<?=base_url('css/footer_mobile.css')?>" rel="stylesheet">
+	<link href="<?php echo base_url('css/footer_mobile.css')?>" rel="stylesheet">
 </head>
 
 	<footer>

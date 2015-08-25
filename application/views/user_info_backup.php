@@ -9,17 +9,17 @@
       <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
       <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
       <title>Bootstrap 101 Template</title>
-    <link href="<?=base_url('css/Bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/user_info.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/Bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/user_info.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
         <!--公告样式-->
-<!--     <link rel="stylesheet" type="text/css" href="<?=base_url('css/change/normalize.css')?>" />
-    <link rel="stylesheet" type="text/css" href="<?=base_url('css/change/demo.css')?>" /> -->
+<!--     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/change/normalize.css')?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/change/demo.css')?>" /> -->
 
     <!--必要样式-->
 
-    <script src="<?=base_url('js/jquery-1.10.2.min.js')?>"></script>
-    <script src="<?=base_url('js/modernizr.custom.js')?>"></script>
+    <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
+    <script src="<?php echo base_url('js/modernizr.custom.js')?>"></script>
 
 
 
@@ -27,7 +27,7 @@
   </head>
 
 
-  <div style="background:url(<?=base_url('image/users/bg-3.jpg')?>) center center; background-size:cover">
+  <div style="background:url(<?php echo base_url('image/users/bg-3.jpg')?>) center center; background-size:cover">
     <div class="wrapper-lg bg-white-opacity">
       <div class="row m-t">
           <div class="col-sm-7 ">
@@ -39,7 +39,7 @@
             </div>
             <div class="meta-left pull-left text-center m-t">
               <figure>
-                <a href="http://localhost/ff/User/myinfo" class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
+                <a href="http://localhost/ff/User/myinfo" class=""><img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
                 <figcaption class="ratings">
                 <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
                 </p>
@@ -363,11 +363,11 @@
 
   
 
-  <script src="<?=base_url('js/waypoints.min.js')?>" type="text/javascript"></script>
-  <script src="<?=base_url('js/navbar2.js')?>" type="text/javascript"></script>
+  <script src="<?php echo base_url('js/waypoints.min.js')?>" type="text/javascript"></script>
+  <script src="<?php echo base_url('js/navbar2.js')?>" type="text/javascript"></script>
 
 
-  <script src="<?=base_url('js/cbpFWTabs.js')?>"></script>
+  <script src="<?php echo base_url('js/cbpFWTabs.js')?>"></script>
   <script type="text/javascript">
   (function() {
 

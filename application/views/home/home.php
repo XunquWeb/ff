@@ -12,15 +12,15 @@
     <title>寻趣</title>
 
     <!-- Bootstrap -->
-    <link href="<?=base_url('css/bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/base.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/home/home.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
-    <script src="<?=base_url('js/jquery-2.1.0.min.js')?>"></script>
-    <script src="<?=base_url('js/modernizr.custom.js')?>"></script>
+    <link href="<?php echo base_url('css/bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/base.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/home/home.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
+    <script src="<?php echo base_url('js/jquery-2.1.0.min.js')?>"></script>
+    <script src="<?php echo base_url('js/modernizr.custom.js')?>"></script>
 
-    <script type="text/javascript" src="<?=base_url('js/carousel/jquery.event.drag-1.5.min.js')?>"></script>
-    <script type="text/javascript" src="<?=base_url('js/carousel//jquery.touchSlider.js')?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('js/carousel/jquery.event.drag-1.5.min.js')?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('js/carousel//jquery.touchSlider.js')?>"></script>
     <script type="text/javascript">
     // $(document).ready(function(){
 
@@ -114,7 +114,7 @@
                     <div style="margin-top:10px;" class="row">
                       <div class="col-xs-4 col-sm-4 text-center">
                         <figure>
-                          <a href="http://localhost/ff/User/myinfo" class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
+                          <a href="http://localhost/ff/User/myinfo" class=""><img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
                           <figcaption class="ratings">
                           <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
                           </p>
@@ -244,7 +244,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -295,7 +295,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -346,7 +346,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -397,7 +397,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -448,7 +448,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -499,7 +499,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -550,7 +550,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -601,7 +601,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -652,7 +652,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -703,7 +703,7 @@
                  <div class="user_slider">
                    <figure class="m-b inline p">
                       <a href="" class="">
-                        <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                        <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                         <p>
                           <span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span>
                           <!-- <a href=""><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i><i class="fa fa-drupal c-orange"></i>Lv.9</a> -->
@@ -780,7 +780,7 @@
     });
     </script>
 
-  <script src="<?=base_url('js/bootstrap.min.js')?>"></script>
+  <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
   <script type="text/javascript">
     $(function(){
       $('aside.slide-wrapper').on('touchstart', 'li', function(e){
@@ -807,7 +807,7 @@
     });
   </script>
   
-  <script src="<?=base_url('js/cbpFWTabs.js')?>"></script>
+  <script src="<?php echo base_url('js/cbpFWTabs.js')?>"></script>
   <script type="text/javascript">
   (function() {
 

@@ -9,15 +9,15 @@
 	    <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 	    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	    <title>Bootstrap 101 Template</title>
-		<link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-		<link href="<?=base_url('css/message.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/message.css')?>" rel="stylesheet">
 	</head>
 
 
 
 		<div class="container" id="msg-detail-list">
 			<div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
-				<img src="<?=base_url('image/photo_default.gif')?>">
+				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">王永强</div>
 					<div class="msg-text">今晚约写代码吗？</div>
@@ -26,7 +26,7 @@
 				<div class="msg-nm"></div>
 			</div>
 			<div class="msg-detail">
-				<img src="<?=base_url('image/photo_default.gif')?>">
+				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">苏小欢</div>
 					<div class="msg-text">分享了一个约单</div>
@@ -34,7 +34,7 @@
 				<div class="msg-time">下午14:08</div>
 			</div>
 			<div class="msg-detail">
-				<img src="<?=base_url('image/photo_default.gif')?>">
+				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">秦小浩</div>
 					<div class="msg-text">哈哈哈 踢球嘛？</div>
@@ -42,7 +42,7 @@
 				<div class="msg-time">早上10:12</div>
 			</div>
 			<div class="msg-detail">
-				<img src="<?=base_url('image/photo_default.gif')?>">
+				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">萌妹纸</div>
 					<div class="msg-text">晚安～</div>
@@ -50,7 +50,7 @@
 				<div class="msg-time">昨天22:46</div>
 			</div>
 			<div class="msg-detail">
-				<img src="<?=base_url('image/photo_default.gif')?>">
+				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">张小铖</div>
 					<div class="msg-text">好吧好吧 晚点聊，我先出去了</div>
@@ -58,7 +58,7 @@
 				<div class="msg-time">昨天16:09</div>
 			</div>
 			<div class="msg-detail">
-				<img src="<?=base_url('image/photo_default.gif')?>">
+				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">董小良</div>
 					<div class="msg-text">分享了一个约单</div>
@@ -74,7 +74,7 @@
     <div class="modal-content">
       <div class="modal-header msg-modal-fix">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <img class="msg_reply_img" src="<?=base_url('image/photo_default.gif')?>">
+        <img class="msg_reply_img" src="<?php echo base_url('image/photo_default.gif')?>">
         <span>王永强</span>
         <span class='msg_reply_time'>04:35am</span>
       </div>

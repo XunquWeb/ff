@@ -10,19 +10,19 @@
       <meta http-equiv="Page-Enter" content="RevealTrans(duration=3,Transitionv=12)">
       <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
       <title>Bootstrap 101 Template</title>
-    <link href="<?=base_url('css/Bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/base.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/user_info/user_info.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/Bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/base.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/user_info/user_info.css')?>" rel="stylesheet">
 
-    <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
         <!--公告样式-->
-<!--     <link rel="stylesheet" type="text/css" href="<?=base_url('css/change/normalize.css')?>" />
-    <link rel="stylesheet" type="text/css" href="<?=base_url('css/change/demo.css')?>" /> -->
+<!--     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/change/normalize.css')?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/change/demo.css')?>" /> -->
 
     <!--必要样式-->
 
-    <script src="<?=base_url('js/jquery-1.10.2.min.js')?>"></script>
-    <script src="<?=base_url('js/modernizr.custom.js')?>"></script>
+    <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
+    <script src="<?php echo base_url('js/modernizr.custom.js')?>"></script>
 
 
 
@@ -44,13 +44,13 @@
 
     </nav>
 
-  <div class="profile-header clearfix" style="background:url(<?=base_url('image/01/5.jpg')?>) center center; background-size:cover">
+  <div class="profile-header clearfix" style="background:url(<?php echo base_url('image/01/5.jpg')?>) center center; background-size:cover">
     
     <div class="profile-header-contents">
       <div class="profile-header-overlay">
         <figure class="m-b inline p">
           <a href="http://localhost/ff/User/myinfo" class="">
-            <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
+            <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
             <p><span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span></p>
           </a>
         </figure>
@@ -75,7 +75,7 @@
         </div>
         
     </div>
-    <div class="profile-header-background" style="background:url(<?=base_url('image/01/4w.jpg')?>) center center; background-size:cover"></div>
+    <div class="profile-header-background" style="background:url(<?php echo base_url('image/01/4w.jpg')?>) center center; background-size:cover"></div>
     </div>
     
   </div>
@@ -353,11 +353,11 @@
 
   
 
-  <script src="<?=base_url('js/waypoints.min.js')?>" type="text/javascript"></script>
-  <script src="<?=base_url('js/navbar2.js')?>" type="text/javascript"></script>
+  <script src="<?php echo base_url('js/waypoints.min.js')?>" type="text/javascript"></script>
+  <script src="<?php echo base_url('js/navbar2.js')?>" type="text/javascript"></script>
 
 
-  <script src="<?=base_url('js/cbpFWTabs.js')?>"></script>
+  <script src="<?php echo base_url('js/cbpFWTabs.js')?>"></script>
   <script type="text/javascript">
   (function() {
 

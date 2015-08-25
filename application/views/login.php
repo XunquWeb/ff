@@ -11,8 +11,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/login.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/login.css')?>" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,10 +24,10 @@
     <div class="container_fix">
         <div class="login_title">
             <div class="logo">
-                <img src="<?=base_url('image/logo_img.png')?>">
+                <img src="<?php echo base_url('image/logo_img.png')?>">
             </div>
             <div class="slogan">
-                <img src="<?=base_url('image/logo_text.png')?>">
+                <img src="<?php echo base_url('image/logo_text.png')?>">
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
                 <div class="account-wall">
 <?php echo $login_error ?>
 <?php echo validation_errors(); ?>
-<form action="<?=base_url('User/login')?>" class="form-signin" method="post" accept-charset="utf-8">
+<form action="<?php echo base_url('User/login')?>" class="form-signin" method="post" accept-charset="utf-8">
                         <input type="text" class="form-control" id="" placeholder="电子邮箱" name="u" required autofocus>
                         <input type="password" class="form-control" placeholder="密码" name="p" required>
                         <button class="btn btn-lg btn-primary btn-block " id="loginButton" type="submit">
@@ -50,7 +50,7 @@
                         </label>
                     </form>
                 </div>
-                <a href="<?=base_url('User/signup')?>" class="text-center new-account">没有账号，点此注册</a>
+                <a href="<?php echo base_url('User/signup')?>" class="text-center new-account">没有账号，点此注册</a>
             </div>
         </div>
 
@@ -66,6 +66,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?=base_url('js/bootstrap.min.js')?>"></script>
+    <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
   </body>
 </html>

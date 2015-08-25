@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/detail_act.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/message.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/detail_act.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/message.css')?>" rel="stylesheet">
   </head>
 
 <div class="detail_title">
@@ -115,7 +115,7 @@
 </div>
 <div class="dt_comment_board">
     <div class="msg-detail dt-msg-fix" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
-            <img src="<?=base_url('image/photo_default.gif')?>">
+            <img src="<?php echo base_url('image/photo_default.gif')?>">
             <div class="msg-detail-content">
               <div class="msg-source">王永强</div>
               <div class="msg-text">怎么报名的，组队呀～</div>
@@ -123,7 +123,7 @@
             <div class="msg-time">晚上18:08</div>
     </div>
     <div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
-            <img src="<?=base_url('image/photo_default.gif')?>">
+            <img src="<?php echo base_url('image/photo_default.gif')?>">
             <div class="msg-detail-content">
               <div class="msg-source">曹小超</div>
               <div class="msg-text">楼上技术大神。</div>
@@ -131,7 +131,7 @@
             <div class="msg-time">晚上18:14</div>
     </div>
     <div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
-            <img src="<?=base_url('image/photo_default.gif')?>">
+            <img src="<?php echo base_url('image/photo_default.gif')?>">
             <div class="msg-detail-content">
               <div class="msg-source">王永强</div>
               <div class="msg-text">@曹小超：又逗我...</div>
@@ -142,7 +142,7 @@
 
 <div ontouchstart="" onclick="" class="dt_review_top">
       <p id="dt_review_count" class="dt_review_topL">快来发表你的评论</p>
-      <p class="dt_review_topR" ontouchstart=""><span ontouchstart="">评论</span><a><img src="<?=base_url('image/comment_icon.png')?>" title="评论"></a></p>
+      <p class="dt_review_topR" ontouchstart=""><span ontouchstart="">评论</span><a><img src="<?php echo base_url('image/comment_icon.png')?>" title="评论"></a></p>
       <a id="plWei" name="plWei"></a>
 </div>
 <div class="height-fix" style="height:20px">
@@ -152,7 +152,7 @@
         <div>
           <a href="#" ontouchstart="">
             <p>
-              <img class="dt_join_bar_icon" src="<?=base_url('image/icon_add.png')?>" alt="">
+              <img class="dt_join_bar_icon" src="<?php echo base_url('image/icon_add.png')?>" alt="">
               <span>我也要发约单</span>
             </p>
           </a>
@@ -162,7 +162,7 @@
         <div>
           <a href="#" ontouchstart="" onclick="">
             <p>
-              <img class="dt_join_bar_icon" src="<?=base_url('image/icon_man2.png')?>" alt="">
+              <img class="dt_join_bar_icon" src="<?php echo base_url('image/icon_man2.png')?>" alt="">
               <span>我要去约</span>
             </p>
           </a>

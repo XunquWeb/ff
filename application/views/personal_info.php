@@ -9,8 +9,8 @@
 	    <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 	    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	    <title>Bootstrap 101 Template</title>
-		<link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-		<link href="<?=base_url('css/personal_info.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/personal_info.css')?>" rel="stylesheet">
 	</head>
 	<div class="info_topbox">
 		<div class="info_photo">
@@ -20,8 +20,8 @@
 			<h4>哈利波特昊</h4>
 			<h3>um...this guy is somehow a bit handsome~~</h3>
 		</div>
-		<a class="info_edit_btn" href="<?=base_url('user/myinfo_edit')?>"><img src="http://f.qsc.dreamore.cn/public_html/refactbuild/image/user_edit.png"></a>
-		<a class="info_back" href="<?php echo $this->session->userdata('backurl');?>"><img src="<?=base_url('image/left_icon.png')?>"></span></a>
+		<a class="info_edit_btn" href="<?php echo base_url('user/myinfo_edit')?>"><img src="http://f.qsc.dreamore.cn/public_html/refactbuild/image/user_edit.png"></a>
+		<a class="info_back" href="<?php echo $this->session->userdata('backurl');?>"><img src="<?php echo base_url('image/left_icon.png')?>"></span></a>
 		<div class="info_view">
 			<span href="#"><span>9</span><span>关注 </span></span>
 			<span style="margin-left:5px;margin-right:5px">|</span>

@@ -12,11 +12,11 @@
     <title>寻趣</title>
 
     <!-- Bootstrap -->
-    <link href="<?=base_url('css/bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/base.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/classify/classify.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
-    <script src="<?=base_url('js/jquery-2.1.0.min.js')?>"></script>
+    <link href="<?php echo base_url('css/bootstrap/dist/css/bootstrap.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/base.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/classify/classify.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
+    <script src="<?php echo base_url('js/jquery-2.1.0.min.js')?>"></script>
   </head>
 
   <body>

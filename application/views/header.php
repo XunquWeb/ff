@@ -12,9 +12,9 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/header.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/header.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +22,7 @@
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-      <script src="<?=base_url('js/jquery-1.10.2.min.js')?>"></script>
+      <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
   </head>
 
   <body>
@@ -32,7 +32,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
-          <a href="<?=base_url('user/message')?>" class="user_toggle user_message" >
+          <a href="<?php echo base_url('user/message')?>" class="user_toggle user_message" >
             <i class="fa fa-bell fa-fw"></i>
             <span class="badge badge-green">3</span>
           </a>
@@ -50,7 +50,7 @@
                     <div style="margin-top:10px;" class="row">
                       <div class="col-xs-4 col-sm-4 text-center">
                         <figure>
-                          <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $this->session->id . "\"";?> class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
+                          <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $this->session->id . "\"";?> class=""><img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
                         </figure>
                       </div>
                       <div class="col-xs-8 col-sm-8">
@@ -81,14 +81,14 @@
                 </li>
                 <li class="user_content">
                       <p class="user_inter"></p>
-                      <a href="<?=base_url('index.php')?>" class="user_toggle" >
+                      <a href="<?php echo base_url('index.php')?>" class="user_toggle" >
                         <!--<i class="fa fa-bell fa-fw"></i>
                         <span class="badge badge-blue">3</span>-->
                         <i class="fa fa-sitemap fa-fw"></i>
                         <span class="user_toggle_info">首页</span>
                       </a>
                       <p class="user_inter"></p>
-                      <a href="<?=base_url('act/display')?>" class="user_toggle" >
+                      <a href="<?php echo base_url('act/display')?>" class="user_toggle" >
                         <i class="fa fa-sitemap fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">约单</span>
@@ -100,26 +100,26 @@
                         <span class="user_toggle_info">关注</span>
                       </a>                  
                       <p class="user_inter"></p>
-                      <a href="<?=base_url('forum/public_forum')?>" class="user_toggle" >
+                      <a href="<?php echo base_url('forum/public_forum')?>" class="user_toggle" >
                         <i class="fa fa-tachometer fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">广场</span>
                       </a>
                       <p class="user_inter"></p>
-                      <a href="<?=base_url('act/submit')?>" class="user_toggle" >
+                      <a href="<?php echo base_url('act/submit')?>" class="user_toggle" >
                         <i class="fa fa-tachometer fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">发起</span>
                       </a>
 
                         <p class="user_inter_last"></p>
-                        <a href="<?=base_url('user/logout')?>" class="user_toggle" >
+                        <a href="<?php echo base_url('user/logout')?>" class="user_toggle" >
                           <i class="fa fa-tachometer fa-fw"></i>
                           <!-- <span class="badge badge-green">3</span> -->
                           <span class="user_toggle_info">退出</span>
                         </a>
                         <p class="user_inter"></p>
-                        <a href="<?=base_url('act/submit')?>" class="user_toggle" >
+                        <a href="<?php echo base_url('act/submit')?>" class="user_toggle" >
                           <i class="fa fa-tachometer fa-fw"></i>
                           <!-- <span class="badge badge-green">3</span> -->
                           <span class="user_toggle_info">设置</span>
@@ -152,7 +152,7 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="<?=base_url('js/bootstrap.min.js')?>"></script>
+  <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
   <script type="text/javascript">
     $(function(){
       $('aside.slide-wrapper.user_content').on('touchstart', 'li', function(e){

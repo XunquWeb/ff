@@ -12,9 +12,9 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/header.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/header.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +22,7 @@
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-      <script src="<?=base_url('js/jquery-1.10.2.min.js')?>"></script>
+      <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
   </head>
 
   <body>
@@ -46,7 +46,7 @@
                     <div style="margin-top:10px;" class="row">
                       <div class="col-xs-4 col-sm-4 text-center">
                         <figure>
-                          <a href="<?=base_url('user/myinfo')?>" class=""><img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
+                          <a href="<?php echo base_url('user/myinfo')?>" class=""><img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
                           <figcaption class="ratings">
                           <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
                           </p>
@@ -128,7 +128,7 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="<?=base_url('js/bootstrap.min.js')?>"></script>
+  <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
   <script type="text/javascript">
     $(function(){
       $('aside.slide-wrapper').on('touchstart', 'li', function(e){

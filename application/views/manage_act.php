@@ -4,13 +4,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/clockpicker.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/datepicker.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/manage_act.css')?>" rel="stylesheet">
-    <script src="<?=base_url('js/clockpicker.js')?>"></script>
-    <script src="<?=base_url('js/datepicker.js')?>"></script>
-    <script src="<?=base_url('js/jquery-1.10.2.min.js')?>"></script>
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/clockpicker.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/datepicker.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/manage_act.css')?>" rel="stylesheet">
+    <script src="<?php echo base_url('js/clockpicker.js')?>"></script>
+    <script src="<?php echo base_url('js/datepicker.js')?>"></script>
+    <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
   </head>
 
 

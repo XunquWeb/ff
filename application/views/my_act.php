@@ -5,8 +5,8 @@
 <html lang="zh-CN">
   <head>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/display_act.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/display_act.css')?>" rel="stylesheet">
   </head>
 	<div class="container channel_list" id="ff_projects_list">
 		<div class="panel panel-default">

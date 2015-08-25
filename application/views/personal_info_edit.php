@@ -9,21 +9,21 @@
 	    <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 	    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	    <title>Bootstrap 101 Template</title>
-		<link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-		<link href="<?=base_url('css/personal_info_edit.css')?>" rel="stylesheet">
-		<link href="<?=base_url('css/personal_info.css')?>" rel="stylesheet">
-		<link href="<?=base_url('css/clockpicker.css')?>" rel="stylesheet">
-	    <link href="<?=base_url('css/datepicker.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/personal_info_edit.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/personal_info.css')?>" rel="stylesheet">
+		<link href="<?php echo base_url('css/clockpicker.css')?>" rel="stylesheet">
+	    <link href="<?php echo base_url('css/datepicker.css')?>" rel="stylesheet">
 		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-	    <script src="<?=base_url('js/datepicker.js')?>"></script>
+	    <script src="<?php echo base_url('js/datepicker.js')?>"></script>
 	</head>
 	<div class="info_edit_topbox">
 		<div class="info_edit_title">
 			<h4>我的资料</h4>
 		</div>
-		<a class="info_back" href="<?=base_url('user/myinfo')?>"><img src="<?=base_url('image/left_icon.png')?>"></span></a>
+		<a class="info_back" href="<?php echo base_url('user/myinfo')?>"><img src="<?php echo base_url('image/left_icon.png')?>"></span></a>
 	</div>
-	<form class="info_detail_edit" action="<?=base_url('User/myinfo_edit')?>" method="post" >
+	<form class="info_detail_edit" action="<?php echo base_url('User/myinfo_edit')?>" method="post" >
 		<div class="info_basic">
 			<h6>基本信息</h6>
 			<div class="info_basic_detail">

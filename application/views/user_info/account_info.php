@@ -12,30 +12,30 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/base.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/user_info/account_info.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/base.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/user_info/account_info.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" rel="stylesheet">
 
-      <script src="<?=base_url('js/jquery-2.1.0.min.js')?>"></script>
+      <script src="<?php echo base_url('js/jquery-2.1.0.min.js')?>"></script>
 
     <!--input_info  -->
-    <script src="<?=base_url('js/input_info/mobiscroll_02.js')?>" type="text/javascript"></script>
-    <script src="<?=base_url('js/input_info/mobiscroll_04.js')?>" type="text/javascript"></script>
-    <link href="<?=base_url('css/input_info/mobiscroll_02.css')?>" rel="stylesheet" type="text/css">
-    <link href="<?=base_url('css/input_info/mobiscroll.css')?>" rel="stylesheet" type="text/css">
-    <script src="<?=base_url('js/input_info/mobiscroll.js')?>" type="text/javascript"></script>
-    <script src="<?=base_url('js/input_info/mobiscroll_03.js')?>" type="text/javascript"></script>
-    <script src="<?=base_url('js/input_info/mobiscroll_05.js')?>" type="text/javascript"></script>
-    <link href="<?=base_url('css/input_info/mobiscroll_03.css')?>" rel="stylesheet" type="text/css">
+    <script src="<?php echo base_url('js/input_info/mobiscroll_02.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/input_info/mobiscroll_04.js')?>" type="text/javascript"></script>
+    <link href="<?php echo base_url('css/input_info/mobiscroll_02.css')?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url('css/input_info/mobiscroll.css')?>" rel="stylesheet" type="text/css">
+    <script src="<?php echo base_url('js/input_info/mobiscroll.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/input_info/mobiscroll_03.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/input_info/mobiscroll_05.js')?>" type="text/javascript"></script>
+    <link href="<?php echo base_url('css/input_info/mobiscroll_03.css')?>" rel="stylesheet" type="text/css">
 
-    <script src="<?=base_url('js/input_info/mobiscroll_06.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/input_info/mobiscroll_06.js')?>" type="text/javascript"></script>
 
-    <script src="<?=base_url('js/input_info/mobiscroll_07.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/input_info/mobiscroll_07.js')?>" type="text/javascript"></script>
 
-    <link rel="stylesheet" type="text/css" href="<?=base_url('css/page-transition/component.css')?>" />
-    <link rel="stylesheet" type="text/css" href="<?=base_url('css/page-transition/animations.css')?>" />
-    <script src="<?=base_url('js/page-transition/modernizr.custom.js')?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/page-transition/component.css')?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/page-transition/animations.css')?>" />
+    <script src="<?php echo base_url('js/page-transition/modernizr.custom.js')?>"></script>
     <!-- <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css"> -->
 
 
@@ -83,7 +83,7 @@
                       <div class="main_info " >
                         <figure class="m-b inline p">
                           <a href="http://localhost/ff/User/myinfo" class="">
-                            <img src="<?=base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                            <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                             <p><span class="badge badge-green"><i class="fa fa-camera"></i></span></p>
                           </a>
                         </figure>
@@ -468,8 +468,8 @@
       });
     </script>  
 
-    <script src="<?=base_url('js/page-transition/jquery.dlmenu.js')?>"></script>
-    <script src="<?=base_url('js/page-transition/pagetransitions.js')?>"></script>
+    <script src="<?php echo base_url('js/page-transition/jquery.dlmenu.js')?>"></script>
+    <script src="<?php echo base_url('js/page-transition/pagetransitions.js')?>"></script>
 
 
     <script type="text/javascript">

@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/public_forum.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/public_forum.css')?>" rel="stylesheet">
   </head>
 <div class="forum-frame">    
 
@@ -92,7 +92,7 @@
           <div class="forum-box">
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
                       <span class="forum-icon-box pull-left">
-                          <img src="<?=base_url('/image/photo_default.gif')?>" alt="">
+                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
                       </span>
                       <span class="user-name pull-left">这就是用户名</span>
                   </div>
@@ -119,7 +119,7 @@
           <div class="forum-box">
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
                       <span class="forum-icon-box pull-left">
-                          <img src="<?=base_url('/image/photo_default.gif')?>" alt="">
+                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
                       </span>
                       <span class="user-name pull-left">这就是用户名</span>
                   </div>
@@ -146,7 +146,7 @@
           <div class="forum-box">
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
                       <span class="forum-icon-box pull-left">
-                          <img src="<?=base_url('/image/photo_default.gif')?>" alt="">
+                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
                       </span>
                       <span class="user-name pull-left">这就是用户名</span>
                   </div>
@@ -173,7 +173,7 @@
           <div class="forum-box">
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
                       <span class="forum-icon-box pull-left">
-                          <img src="<?=base_url('/image/photo_default.gif')?>" alt="">
+                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
                       </span>
                       <span class="user-name pull-left">这就是用户名</span>
                   </div>

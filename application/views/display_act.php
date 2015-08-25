@@ -5,8 +5,8 @@
 <html lang="zh-CN">
   <head>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?=base_url('css/display_act.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/display_act.css')?>" rel="stylesheet">
   </head>
   		<div class="display-top">
             <a id="display-classify" class="display-select" onclick="setFrameGroupIndex(0);">全部分类<span class="triangle_down"></span></a>
