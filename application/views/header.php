@@ -34,7 +34,7 @@
           <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
           <a href="<?php echo base_url('user/message')?>" class="user_toggle user_message" >
             <i class="fa fa-bell fa-fw"></i>
-            <span class="badge badge-green">3</span>
+            <span class="badge badge-green" id="msg_num">0</span>
           </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -175,15 +175,26 @@
         $('aside.slide-wrapper').removeClass('moved');
       });
     });
-
     function get_msg_num(){
-      $.post{
-        '<?php echo base_url('msg/msg_ajax')?>';
-      }
+      $.post(
+        '<?php echo base_url('msg/msg_ajax')?>',
+        function(data){
+          data.split();
+          $("#msg_num").html()
+        }
+      );
     }
-    $(document).ready(function(){  
-      setInterval(getnums, 10000);  
+/**/
+    $(document).ready(function(){
+      $.post(
+        '<?php echo base_url('msg/msg_ajax')?>',
+        function(data){
+          
+        }
+      );  
+      setInterval(get_msg_num, 60000);  
     }); 
+/**/
   </script>
   
 
