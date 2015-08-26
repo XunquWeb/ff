@@ -177,8 +177,8 @@
     });
 
     function get_msg_num(){
-      $.get{
-        '';
+      $.post{
+        '<?php echo base_url('msg/msg_ajax')?>';
       }
     }
     $(document).ready(function(){  

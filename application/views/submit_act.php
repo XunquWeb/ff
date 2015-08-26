@@ -57,6 +57,10 @@
                 <span class="icon-place-md"></span>
                 <input type="text" class="form-control" placeholder="详细地址" required="" data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
             </div>
+            <div class="form-group">
+                <span class="icon-place-md"></span>
+                <input type="text" class="form-control" placeholder="人数上限" required="" data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
+            </div>
             <div class="event-edit">
                 <div class="placeholder"><span></span><p>添加约单详情，让小伙伴更好的了解约单～</p></div>
                 <div class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
