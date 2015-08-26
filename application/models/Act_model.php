@@ -56,7 +56,22 @@ class Act_model extends CI_Model {
 	}
 
 	public function submit(){
-		echo "ok";
+		$this->form_validation->set_rules('Title','title','required|max_length[50]');
+		$this->form_validation->set_rules('Deadline','deadline','required');
+		$this->form_validation->set_rules('Start','start_time','required');
+		$this->form_validation->set_rules('End','end_time','required');
+		$this->form_validation->set_rules('College','college','required');
+		$this->form_validation->set_rules('Address','address','required|max_length[255]');
+		$this->form_validation->set_rules('Max_num','max number','required|less_than[500]|is_natural');
+		$this->form_validation->set_rules('Description','description','required|min_length[10]|max_length[255]');
+
+		if($this->form_validation->run()){
+			$sql = "INSERT INTO act (u_id,a_name,deadline,start_time,end_time,extra,a_college,place,max_num) VALUES (?,?,?,?,?,?,?,?,?)";
+			$sql = $this->db->compile_binds($sql,array($this->session->id,$_POST['Title'],$_POST['Deadline'],$_POST['Start'],$_POST['End'],$_POST['Description'],$_POST['College'],$_POST['Address'],$_POST['Max_num']));
+			return $this->db->simple_query($sql);
+		}
+		return false;
+
 	}
 
 	public function join(){

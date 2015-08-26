@@ -16,7 +16,7 @@
 
 
 
-    <form class="create-event " id="create_event" method="post" action="/myevent/SaveQEvent" data-abide="" prevent-submit="true" novalidate="">
+    <form class="create-event " id="create_event" method="post" action="<?php echo base_url('act/submit');?>" data-abide="" prevent-submit="true" novalidate="">
     		<input type="hidden" value="0" name="Id" id="activity_id">
             <input id="Category" name="Category" type="hidden" value="99">
             <input id="Type" name="Type" type="hidden" value="1">
@@ -37,6 +37,11 @@
                 <span class="icon-tag"></span>
                 <input type="text" class="form-control" placeholder="约单主题" required="" data-validation-message="请输入约单主题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
             </div>
+            <div class="form-group deadline">
+                <span class="icon-time-md"></span>
+                <input type="text" class="form-control" placeholder="报名截止时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Deadline" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
+                <!-- <div class="tips sr-only">输入活动开始时间</div> -->
+            </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
                 <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Start" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
@@ -49,7 +54,7 @@
             </div>
             <div class="form-group">
                 <span class="icon-city-md"></span>
-                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="" readonly="">
+                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="学校" name="College">
                 </input>
 
             </div>
@@ -59,13 +64,13 @@
             </div>
             <div class="form-group">
                 <span class="icon-place-md"></span>
-                <input type="text" class="form-control" placeholder="人数上限" required="" data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
+                <input type="text" class="form-control" placeholder="人数上限" required="" data-validation-message="" data-validation-type="warning" name="Max_num" value="">
             </div>
             <div class="event-edit">
                 <div class="placeholder"><span></span><p>添加约单详情，让小伙伴更好的了解约单～</p></div>
-                <div class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
+                <textarea class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
                     
-                </div>
+                </textarea>
                 
             </div>
             <div class="create-event-more open" >

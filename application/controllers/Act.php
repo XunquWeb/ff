@@ -36,17 +36,17 @@ class Act extends CI_Controller {
 		
 	}
 
-	public function submit()
-	{
-
-			if($this->input->method()=='get'){
-				$this->load->view('header');
-				$this->load->view('submit_act');
-				$this->load->view('footer');
-			}else{
-				$this->load->model('act_model');
-				$this->act_model->submit();
+	public function submit(){
+		if($this->input->method()=='get'){
+			$this->load->view('header');
+			$this->load->view('submit_act');
+			$this->load->view('footer');
+		}else{
+			$this->load->model('act_model');
+			if($this->act_model->submit()){
+				echo '<script>alert(/success/);window.location="index";</script>';
 			}
+		}
 		
 	}
 	public function join()
