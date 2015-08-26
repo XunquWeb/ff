@@ -175,6 +175,15 @@
         $('aside.slide-wrapper').removeClass('moved');
       });
     });
+
+    function get_msg_num(){
+      $.get{
+        '';
+      }
+    }
+    $(document).ready(function(){  
+      setInterval(getnums, 10000);  
+    }); 
   </script>
   
 
