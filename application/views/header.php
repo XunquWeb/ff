@@ -179,8 +179,13 @@
       $.post(
         '<?php echo base_url('msg/msg_ajax')?>',
         function(data){
-          data.split();
-          $("#msg_num").html()
+          $msg_arr=data.split('|');
+          $msg_sum=0;
+          for(i=0;i<=2;i++)
+          {
+            $msg_sum = $msg_sum + parseInt($msg_arr[i]);
+          }
+          $("#msg_num").html($msg_sum);
         }
       );
     }
@@ -189,9 +194,15 @@
       $.post(
         '<?php echo base_url('msg/msg_ajax')?>',
         function(data){
-          
+          $msg_arr=data.split('|');
+          $msg_sum=0;
+          for(i=0;i<=2;i++)
+          {
+            $msg_sum = $msg_sum + parseInt($msg_arr[i]);
+          }
+          $("#msg_num").html($msg_sum);
         }
-      );  
+      );
       setInterval(get_msg_num, 60000);  
     }); 
 /**/
