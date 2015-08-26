@@ -56,17 +56,22 @@ class Msg extends CI_Controller {
 
 	//所有消息ajax的函数，返回各类未读消息的数值,系统消息&用户私信&活动评论
 	public function msg_ajax(){
-		$this->load->model('msg_model');
-		if($data = $this->msg_model->msg_ajax()){
-			//var_dump($data);
-			foreach ($data as $r) {
-				if(isset($r['s_name'])){
-					echo $r['COUNT(*)'] . '|';
-				}
-				else{
-					echo '0|';
+		if($this->input->method() == 'post'){
+			$this->load->model('msg_model');
+			if($data = $this->msg_model->msg_ajax()){
+				//var_dump($data);
+				foreach ($data as $r){
+					if(isset($r['s_name'])){
+						echo $r['COUNT(*)'] . '|';
+					}
+					else{
+						echo '0|';
+					}
 				}
 			}
+		}
+		else{
+			exit('No direct script access allowed');
 		}
 	}
 

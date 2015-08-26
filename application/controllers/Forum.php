@@ -50,7 +50,7 @@ class Forum extends CI_Controller {
 					.'|'.$v['to_nname'].'|'.$v['m_content'].'|'.$v['m_time'].'|'.$v['rp_id']
 					.'|'.$v['floor'].'&';
 				}
-				echo '#';
+				echo '%';
 			}
 			*/
 		}
