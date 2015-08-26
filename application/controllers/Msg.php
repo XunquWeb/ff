@@ -64,7 +64,7 @@ class Msg extends CI_Controller {
 					echo $r['COUNT(*)'] . '|';
 				}
 				else{
-					echo '0&';
+					echo '0|';
 				}
 			}
 		}
