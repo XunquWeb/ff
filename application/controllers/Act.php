@@ -49,20 +49,43 @@ class Act extends CI_Controller {
 		}
 		
 	}
-	public function join()
-	{
-		
-			$this->load->model('act_model');
-			if($this->act_model->join()){
-				//echo 'success';
-			}else{
-				//echo 'failed';
-			}
+
+	public function join($a_id=1){
+		$this->load->model('act_model');
+		if($data = $this->act_model->join($a_id)){
+			//var_dump($data);
 			$this->load->view('header');
-			$this->load->view('join_act');
+			$this->load->view('join_act',$data);
 			$this->load->view('footer');
+		}else{
+
+		}
 		
 	}
+
+	public function join_in($a_id=1,$is_sponsor=0){
+		$this->load->model('act_model');
+		if($this->act_model->is_exist($a_id)){
+			echo '<script>alert(/already join in!/);</script>';
+		}
+		else{
+			if($is_sponsor){
+				$is_check = 3;
+			}
+			else{
+				$is_check = $this->act_model->is_check($a_id);
+			}
+				
+			if($data = $this->act_model->join_in($a_id,$is_check)){
+				echo '<script>alert(/join in success/);</script>';
+			}else{
+				
+			}
+					
+		}
+		
+	}
+
 	public function my_act()
 	{
 			$this->load->model('act_model');
@@ -125,6 +148,16 @@ class Act extends CI_Controller {
 			return $new_state;
 		}
 
+	}
+
+
+	public function manage(){
+		$this->load->model('act_model');
+		if($data = $this->act_model->manage()){
+			$this->load->view('header');
+			$this->load->view('manage_act',$data);
+			$this->load->view('footer');
+		}
 	}
 
 }

@@ -27,8 +27,7 @@ class Debug extends CI_Controller {
 	}
 	public function test()
 	{
-		$this->load->view('header');
-		$this->load->view('user_info/account_info');
-		$this->load->view('footer');
+		$this->load->model('act_model');
+		$this->act_model->check();
 	}
 }

@@ -74,15 +74,49 @@ class Act_model extends CI_Model {
 
 	}
 
-	public function join(){
-		$this->form_validation->set_rules('a', 'act', 'required|integer');
+	public function join($a_id=1){
+		$sql = "SELECT a_id,a_name,start_time,a_college,place FROM act WHERE a_id=? limit 1";
+		if($query = $this->db->query($sql, array($a_id))){
+			$temp = $query->result_array();
+			return $temp[0];
+		}	
+	}
+
+	public function join_in($a_id=1,$is_check=0){
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('phone', 'Phone', 'required|integer|exact_length[11]');
+		$this->form_validation->set_rules('college', 'College', 'required');
+		$this->form_validation->set_rules('description', 'Description', 'max_length[255]');
+		//$this->form_validation->set_rules('email', 'Email', 'required|max_length[255]|valid_email');
+		//$this->form_validation->set_rules('sex', 'Sex', 'required');
+		//$this->form_validation->set_rules('year', 'Year', 'required|integer');
+
 		if($this->form_validation->run()){
-			$sql = "INSERT INTO act_man (a_id,u_id) values ( ? , ? )";
-			$sql = $this->db->compile_binds($sql,array(intval($_POST['a']),intval($this->session->id)));
+			$sql = "INSERT INTO act_man (a_id,u_id,am_state,am_name,am_phone,am_college,am_extra) VALUES (?,?,?,?,?,?,?)";
+			$sql = $this->db->compile_binds($sql,array($a_id,intval($this->session->id),$is_check,$_POST['name'],$_POST['phone'],$_POST['college'],$_POST['description']));
 			return $this->db->simple_query($sql);
 		}
 		return FALSE;
 	}
+
+	public function is_exist($a_id=1){
+		$sql = "SELECT * FROM act_man WHERE a_id=? and u_id=? limit 1";
+		$query = $this->db->query($sql, array(intval($a_id),intval($this->session->id)));
+		if($query->num_rows()){
+			return 1;
+		}
+		else{
+			return 0;
+		}
+	}
+
+	public function is_check($a_id=1){
+		$sql = "SELECT a_check FROM act WHERE a_id=? limit 1";
+		$query = $this->db->query($sql, array(intval($a_id)));
+		$t = $query->result_array();
+		return $t[0]['a_check'];
+	}
+
 	public function get_para(){
 		$this->form_validation->set_rules('t', 'tid', 'required|integer');
 		if($this->form_validation->run()){
@@ -97,4 +131,6 @@ class Act_model extends CI_Model {
 		$sql = "UPDATE act SET a_state= ? WHERE a_id= ?";
 		return $this->db->query($sql, array($new_state, $a_id));
 	}
+
+	
 }

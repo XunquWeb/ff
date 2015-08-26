@@ -16,7 +16,7 @@
 
 
 
-    <form class="create-event " id="create_event" method="post" action="/myevent/SaveQEvent" data-abide="" prevent-submit="true" novalidate="">
+    <form class="create-event " id="create_event" method="post" action="<?php echo base_url('act/join_in'). '/' . $a_id;?>" data-abide="" prevent-submit="true" novalidate="">
     		<input type="hidden" value="0" name="Id" id="activity_id">
             <input id="Category" name="Category" type="hidden" value="99">
             <input id="Type" name="Type" type="hidden" value="1">
@@ -35,40 +35,40 @@
             </div> -->
             <div class="form-group error">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="活动主题" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+                <input type="text" class="form-control" placeholder="活动主题" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="Title" value="<?php echo $a_name;?>" maxlength="100" data-invalid="">
             </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入活动开始时间" data-validation-type="warning" name="Start" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
+                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入活动开始时间" data-validation-type="warning" name="Start" value="<?php echo $start_time;?>" id="mobiscroll1438876656972" readonly="">
                 <!-- <div class="tips sr-only">输入活动开始时间</div> -->
             </div>
             <div class="form-group">
                 <span class="icon-city-md"></span>
-                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="" readonly="">
+                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="" readonly="" value="<?php echo $a_college;?>">
                 </input>
 
             </div>
             <div class="form-group error">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="姓名" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+                <input type="text" class="form-control" placeholder="姓名" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="name" value="" maxlength="100" data-invalid="">
             </div>
             <div class="form-group error">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="手机" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+                <input type="text" class="form-control" placeholder="手机" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="phone" value="" maxlength="100" data-invalid="">
             </div>
             <div class="form-group error">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="学校" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+                <input type="text" class="form-control" placeholder="学校" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="college" value="" maxlength="100" data-invalid="">
             </div>
             <div class="event-edit">
                 <div class="placeholder"><span></span><p>报名的验证消息，以供发起者审核</p></div>
-                <div class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
+                <textarea class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="description">
                     
-                </div>
+                </textarea>
                 
             </div>
             <!--<div class="text-center text-muted small">如需设置更多内容请下载APP～</div>-->
-            <input id="btn_create_event" type="submit" class="btn btn-primary btn-block btn-lg" onclick="javascript:saveEvent();" value="确定发布">
+            <input id="btn_create_event" type="submit" class="btn btn-primary btn-block btn-lg" onclick="javascript:saveEvent();" value="报名">
         </form>
 
 <script>
