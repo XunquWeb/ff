@@ -54,7 +54,7 @@
             </div>
             <div class="form-group">
                 <span class="icon-city-md"></span>
-                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="学校" name="College">
+                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="活动学校" name="College">
                 </input>
 
             </div>
@@ -73,6 +73,20 @@
                 </textarea>
                 
             </div>
+
+            <div class="form-group error">
+                <span class="icon-tag"></span>
+                <input type="text" class="form-control" placeholder="个人姓名" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="name" value="" maxlength="100" data-invalid="">
+            </div>
+            <div class="form-group error">
+                <span class="icon-tag"></span>
+                <input type="text" class="form-control" placeholder="个人手机" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="phone" value="" maxlength="100" data-invalid="">
+            </div>
+            <div class="form-group error">
+                <span class="icon-tag"></span>
+                <input type="text" class="form-control" placeholder="个人学校" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="college" value="" maxlength="100" data-invalid="">
+            </div>
+
             <div class="create-event-more open" >
                 <h2><div class="pull-right"><span class="icon-arrow-down"></span></div>更多选项</h2>
                     <div>

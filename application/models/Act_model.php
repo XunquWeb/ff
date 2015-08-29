@@ -68,7 +68,12 @@ class Act_model extends CI_Model {
 		if($this->form_validation->run()){
 			$sql = "INSERT INTO act (u_id,a_name,deadline,start_time,end_time,extra,a_college,place,max_num) VALUES (?,?,?,?,?,?,?,?,?)";
 			$sql = $this->db->compile_binds($sql,array($this->session->id,$_POST['Title'],$_POST['Deadline'],$_POST['Start'],$_POST['End'],$_POST['Description'],$_POST['College'],$_POST['Address'],$_POST['Max_num']));
-			return $this->db->simple_query($sql);
+			if($this->db->simple_query($sql)){
+				return $this->db->insert_id();
+			}
+			else{
+				return false;
+			}
 		}
 		return false;
 
@@ -93,7 +98,7 @@ class Act_model extends CI_Model {
 
 		if($this->form_validation->run()){
 			$sql = "INSERT INTO act_man (a_id,u_id,am_state,am_name,am_phone,am_college,am_extra) VALUES (?,?,?,?,?,?,?)";
-			$sql = $this->db->compile_binds($sql,array($a_id,intval($this->session->id),$is_check,$_POST['name'],$_POST['phone'],$_POST['college'],$_POST['description']));
+			$sql = $this->db->compile_binds($sql,array($a_id,intval($this->session->id),$is_check,$_POST['name'],$_POST['phone'],$_POST['college'],isset($_POST['description'])? $_POST['description']: null));
 			return $this->db->simple_query($sql);
 		}
 		return FALSE;
@@ -130,6 +135,22 @@ class Act_model extends CI_Model {
 	public function modifya_state($new_state, $a_id){
 		$sql = "UPDATE act SET a_state= ? WHERE a_id= ?";
 		return $this->db->query($sql, array($new_state, $a_id));
+	}
+
+
+	public function manage($a_id){
+		$sql = "SELECT * FROM act_man WHERE a_id=?";
+		$query = $this->db->query($sql, array($a_id));
+		return $query->result_array();
+	}
+
+	public function is_sponsor($a_id=1){
+		$sql = "SELECT * FROM act WHERE a_id=? and u_id=?";
+		$query = $this->db->query($sql, array($a_id, $this->session->id));
+		if($query->num_rows() > 0){
+			return true;
+		}
+		return false;
 	}
 
 	

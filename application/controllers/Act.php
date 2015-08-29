@@ -2,23 +2,23 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Act extends CI_Controller {
-	public function __construct()
-    {
+
+	public function __construct(){
 		parent::__construct();
 		if(!$this->session->id){
 			redirect('');
 		}
     }
 
-	public function index()
-	{
+
+	public function index(){
 		$this->load->view('header');
 		$this->load->view('channel_act');
 		$this->load->view('footer');
 	}
 
-	public function display($ch_id=0, $page=0)
-	{
+
+	public function display($ch_id=0, $page=0){
 		//var_dump($ch_id);
 
 		$this->load->model('act_model');
@@ -33,8 +33,8 @@ class Act extends CI_Controller {
 			$this->load->view('footer');
 		}
 
-		
 	}
+
 
 	public function submit(){
 		if($this->input->method()=='get'){
@@ -43,13 +43,21 @@ class Act extends CI_Controller {
 			$this->load->view('footer');
 		}else{
 			$this->load->model('act_model');
-			if($this->act_model->submit()){
-				echo '<script>alert(/success/);window.location="index";</script>';
+			if($act_id = $this->act_model->submit()){
+				//将组织者加入act_man表
+				if($this->join_in($act_id, 1)){
+					echo '<script>alert(/success/);window.location="index";</script>';
+				}
+			}
+			else{
+				echo "<script>alert(/retry/);</script>";
 			}
 		}
 		
 	}
 
+
+	//载入活动报名页面
 	public function join($a_id=1){
 		$this->load->model('act_model');
 		if($data = $this->act_model->join($a_id)){
@@ -63,16 +71,21 @@ class Act extends CI_Controller {
 		
 	}
 
+
+	//活动报名submit
 	public function join_in($a_id=1,$is_sponsor=0){
+		//判断是否已报名
 		$this->load->model('act_model');
 		if($this->act_model->is_exist($a_id)){
 			echo '<script>alert(/already join in!/);</script>';
 		}
 		else{
+			//判断是否是活动发起人
 			if($is_sponsor){
 				$is_check = 3;
 			}
 			else{
+				//判断该活动是否需要审核
 				$is_check = $this->act_model->is_check($a_id);
 			}
 				
@@ -86,17 +99,17 @@ class Act extends CI_Controller {
 		
 	}
 
-	public function my_act()
-	{
+
+	public function my_act(){
 			$this->load->model('act_model');
 			$this->load->view('header');
 			$this->load->view('my_act');
 			$this->load->view('footer');
 
 	}
+
 	
-	public function detail($a_id=1)
-	{
+	public function detail($a_id=1){
 		$this->load->model('act_model');
 		if($data = $this->act_model->detail(intval($a_id))){
 			//var_dump($data);
@@ -107,6 +120,7 @@ class Act extends CI_Controller {
 				
 	}
 
+
 	public function actlikes($a_id=1)
 	{
 		$this->load->model('act_model');
@@ -115,6 +129,7 @@ class Act extends CI_Controller {
 		}
 				
 	}
+
 
 	//判断并修改活动状态
 	public function modifya_state($deadline, $start_time, $end_time, $a_state, $a_id){
@@ -151,12 +166,20 @@ class Act extends CI_Controller {
 	}
 
 
-	public function manage(){
+	//活动管理界面
+	public function manage($a_id=1){
 		$this->load->model('act_model');
-		if($data = $this->act_model->manage()){
-			$this->load->view('header');
-			$this->load->view('manage_act',$data);
-			$this->load->view('footer');
+		if($this->act_model->is_sponsor($a_id)){
+			if($data = $this->act_model->manage($a_id)){
+				//var_dump($data);
+				$this->load->view('header');
+				$this->load->view('manage_act',$data);
+				$this->load->view('footer');
+			}
+		}
+		else{
+			//redirect没有权限页面
+			echo "no authority";
 		}
 	}
 
