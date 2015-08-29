@@ -54,7 +54,7 @@
                         </figure>
                       </div>
                       <div class="col-xs-8 col-sm-8">
-                        <h2>John Doe</h2>
+                        <h2><?php echo $this->session->nname;?></h2>
                         <figcaption class="ratings">
                           <p><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star"></span></a><a href="#"><span class="fa fa-star-o"></span></a>
                           </p>
@@ -74,7 +74,7 @@
                         </div> -->
                       </div>
                       <div class="col-xs-12 col-sm-12 user_sig">
-                        <p>你知道吗，我是个诗人~</p>
+                        <p><?php echo $this->session->sign;?></p>
                       </div>
                     </div>
                   </div>
