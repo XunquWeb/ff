@@ -18,13 +18,12 @@ class Act extends CI_Controller {
 	}
 
 
-	public function display($ch_id=0, $page=0){
-		//var_dump($ch_id);
+	public function display($ch_id=0){
 
 		$this->load->model('act_model');
-		if($data['row'] = $this->act_model->index(intval($ch_id), intval($page))){
+		if($data['row'] = $this->act_model->index($ch_id)){
 			//var_dump($data);
-			for($i=0; $i<10; $i++){
+			for($i=0; $i<count($data['row']); $i++){
 				$r = $data['row'][$i];
 				$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
 			}
@@ -36,6 +35,26 @@ class Act extends CI_Controller {
 	}
 
 
+	//活动列表ajax
+	public function display_ajax($ch_id=0, $page=1){
+		$this->load->model('act_model');
+		if($data['row'] = $this->act_model->display_ajax($ch_id, $page)){
+			var_dump($data['row']);
+			for($i=0; $i<count($data['row']); $i++){
+				$r = $data['row'][$i];
+				$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
+			}
+			//json code to echo
+
+
+		}
+		else{
+			echo "no more activities";
+		}
+	}
+
+
+	//发布活动
 	public function submit(){
 		if($this->input->method()=='get'){
 			$this->load->view('header');
@@ -109,6 +128,7 @@ class Act extends CI_Controller {
 	}
 
 	
+	//详细活动内容
 	public function detail($a_id=1){
 		$this->load->model('act_model');
 		if($data = $this->act_model->detail(intval($a_id))){

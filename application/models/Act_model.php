@@ -1,12 +1,30 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Act_model extends CI_Model {
-	public function __construct()
-	{
+
+
+	public function __construct(){
 		parent::__construct();
 		$this->load->database();
 	}
-	public function index($ch_id=0, $page=0){
+
+
+	public function index($ch_id=0){
+		if($ch_id == 0){
+			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC limit 10";
+			$query = $this->db->query($sql);
+			return $query->result_array();
+		}
+		else{
+			$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.t_id=type.id ORDER BY act.a_id DESC limit 10";
+			$query = $this->db->query($sql,array($ch_id));
+			return $query->result_array();
+		}
+		
+	}
+
+
+	public function display_ajax($ch_id=0,$page=1){
 		if($ch_id == 0){
 			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC limit ?,10";
 			$query = $this->db->query($sql, array(10*$page));
@@ -17,8 +35,9 @@ class Act_model extends CI_Model {
 			$query = $this->db->query($sql,array($ch_id, 10*$page));
 			return $query->result_array();
 		}
-		
 	}
+
+
 	public function detail($a_id){
 		$sql = "UPDATE act SET browse=browse+1 WHERE a_id= ? ";			//浏览量 + 1
 		$result = $this->db->compile_binds($sql, $a_id);
@@ -48,12 +67,14 @@ class Act_model extends CI_Model {
 		}
 	}
 
+
 	//点赞
 	public function actlikes($a_id){
 		$sql = "INSERT INTO act_likes (u_id,a_id) values ( ? , ? )";
 		$result = $this->db->compile_binds($sql, array($this->session->id, $a_id));
 		return $this->db->simple_query($result);
 	}
+
 
 	public function submit(){
 		$this->form_validation->set_rules('Title','title','required|max_length[50]');
@@ -79,6 +100,7 @@ class Act_model extends CI_Model {
 
 	}
 
+
 	public function join($a_id=1){
 		$sql = "SELECT a_id,a_name,start_time,a_college,place FROM act WHERE a_id=? limit 1";
 		if($query = $this->db->query($sql, array($a_id))){
@@ -86,6 +108,7 @@ class Act_model extends CI_Model {
 			return $temp[0];
 		}	
 	}
+
 
 	public function join_in($a_id=1,$is_check=0){
 		$this->form_validation->set_rules('name', 'Name', 'required');
@@ -104,6 +127,7 @@ class Act_model extends CI_Model {
 		return FALSE;
 	}
 
+
 	public function is_exist($a_id=1){
 		$sql = "SELECT * FROM act_man WHERE a_id=? and u_id=? limit 1";
 		$query = $this->db->query($sql, array(intval($a_id),intval($this->session->id)));
@@ -115,12 +139,14 @@ class Act_model extends CI_Model {
 		}
 	}
 
+
 	public function is_check($a_id=1){
 		$sql = "SELECT a_check FROM act WHERE a_id=? limit 1";
 		$query = $this->db->query($sql, array(intval($a_id)));
 		$t = $query->result_array();
 		return $t[0]['a_check'];
 	}
+
 
 	public function get_para(){
 		$this->form_validation->set_rules('t', 'tid', 'required|integer');
@@ -132,10 +158,12 @@ class Act_model extends CI_Model {
 		return 0;
 	}
 
+
 	public function modifya_state($new_state, $a_id){
 		$sql = "UPDATE act SET a_state= ? WHERE a_id= ?";
 		return $this->db->query($sql, array($new_state, $a_id));
 	}
+
 
 
 	public function manage($a_id){
@@ -143,6 +171,7 @@ class Act_model extends CI_Model {
 		$query = $this->db->query($sql, array($a_id));
 		return $query->result_array();
 	}
+
 
 	public function is_sponsor($a_id=1){
 		$sql = "SELECT * FROM act WHERE a_id=? and u_id=?";
