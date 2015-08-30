@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `act_man` (
   `a_id` int(10) unsigned NOT NULL,
   `u_id` int(10) unsigned NOT NULL,
   `am_jointime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `am_signup` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `am_signup` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `am_state` int(1) NOT NULL,
   `am_name` varchar(20) NOT NULL,
   `am_phone` varchar(20) NOT NULL,
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `act_man` (
   `am_wx` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`am_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
-
+CREATE TRIGGER trigger_actman BEFORE INSERT ON act_man FOR EACH ROW SET NEW.am_signup = CURRENT_TIMESTAMP;
 --
 -- 转存表中的数据 `act_man`
 --
