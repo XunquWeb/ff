@@ -94,7 +94,7 @@
                         <span class="user_toggle_info">约单</span>
                       </a>
                       <p class="user_inter"></p>
-                      <a href="#" class="user_toggle" >
+                      <a href="<?php echo base_url('user/follow_list')?>" class="user_toggle" >
                         <i class="fa fa-sitemap fa-fw"></i>
                         <!-- <span class="badge badge-green">3</span> -->
                         <span class="user_toggle_info">关注</span>

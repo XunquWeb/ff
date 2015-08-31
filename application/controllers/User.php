@@ -217,6 +217,19 @@ class User extends CI_Controller {
 		}
 	}
 
+	public function follow_list(){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$this->load->view('header');
+			$this->load->view('follow_line_top');
+			$this->load->view('follow');
+			$this->load->view('footer');
+		}
+		else{
+			redirect('');
+		}
+	}
+
 	public function unfollow($user_id=1){
 		if($this->session->id){
 			if($this->session->id != $user_id){			//A cannot unfollow A
