@@ -74,15 +74,11 @@
     <div class="modal-content">
       <div class="modal-header msg-modal-fix">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <img class="msg_reply_img" src="<?php echo base_url('image/photo_default.gif')?>">
-        <span>王永强</span>
-        <span class='msg_reply_time'>04:35am</span>
+        <span>发私信</span>
       </div>
       <div class="modal-body">
-      	<p>听说张之铖又找妹纸了？！！</p>
         <form>
           <div class="form-group">
-            <label for="message-text" class="control-label">回复</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div>
         </form>
