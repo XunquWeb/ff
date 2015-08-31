@@ -74,13 +74,31 @@ class User extends CI_Controller {
 		if($this->session->id){
 			$this->load->model('user_model');
 			if($data = $this->user_model->myinfo_get($user_id)){
-				if($this->session->id == $user_id){
-					$data['authority'] = true;
-				}
-				else{
-					$data['authority'] = false;
-				}
+				$data['authority'] = ($this->session->id == $user_id ? true : false);			
 				//var_dump($data);
+
+				$t['act_arrange'] = $data['act_arrange'];
+				$t['act_join'] = $data['act_join'];
+				foreach ($data as $k => $d) {
+					if(is_array($d)){
+						while(count($data[$k]) != 0){
+							$data['more'][] = array_pop($data[$k]);
+						}
+						unset($data[$k]);
+					}
+				}
+				$data['act_arrange'] = $t['act_arrange'];
+				$data['act_join'] = $t['act_join'];
+				//var_dump($data);
+
+				//按时间降序排序
+				foreach ($data['more'] as $d) {
+					$time[] = strtotime($d['time']);
+				}
+				array_multisort($time, SORT_DESC, SORT_STRING, $data['more']);
+				//var_dump($data);
+
+
 				$this->load->view('user_info/user_info',$data);
 			}
 			else{

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 08 月 26 日 19:17
+-- 生成日期: 2015 年 08 月 31 日 14:18
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -91,13 +91,13 @@ INSERT INTO `act` (`a_id`, `u_id`, `a_name`, `deadline`, `create_time`, `start_t
 (34, 2, '找妹子4', '2015-08-03 16:00:00', '2015-08-26 09:57:22', '2015-08-05 16:00:00', '2015-08-12 16:00:00', 'everyone is ok', '上海交大', '还是清昊家', 30, 8, 3, '已结束', 28, 3, 1, 0),
 (35, 2, '找妹子2', '2015-08-01 16:00:00', '2015-08-26 09:57:18', '2015-08-03 16:00:00', '2015-08-16 16:00:00', 'everyone is ok', '上海交大', '又是清昊家', 100, 40, 4, '已结束', 118, 2, 10, 0),
 (36, 2, '找妹子', '2015-08-05 16:00:00', '2015-08-26 10:58:03', '2015-08-12 16:00:00', '2015-08-23 16:00:00', 'everyone is ok', '上海交大', '清昊家', 100, 20, 4, '已结束', 141, 4, 15, 0),
-(37, 11, 'frewgwrege', '2015-08-13 00:00:00', '2015-08-26 09:02:38', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'erwgerwgewrgerw', 'gerwgwegwe', 20, 0, 0, '求队友', 0, 0, 0, 0),
-(38, 11, 'frewgwrege', '2015-08-13 00:00:00', '2015-08-26 09:02:59', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'erwgerwgewrgerw', 'gerwgwegwe', 20, 0, 0, '求队友', 0, 0, 0, 0),
-(39, 11, 'frewgwrege', '2015-08-13 00:00:00', '2015-08-26 09:05:07', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'erwgerwgewrgerw', 'gerwgwegwe', 20, 0, 0, '求队友', 0, 0, 0, 0),
-(40, 11, 'freergerg', '2015-08-13 00:00:00', '2015-08-26 09:09:30', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'sdfgdfgdsg', 'dgfgsdgdsg', 20, 0, 0, '求队友', 0, 0, 0, 0),
-(41, 11, 'freergerg', '2015-08-13 00:00:00', '2015-08-26 09:10:26', '2015-08-13 00:00:00', '2015-08-13 09:00:00', 'csbbvsdybvsdbvsdbvubdsubvsudbsybvy', 'sdfgdfgdsg', 'dgfgsdgdsg', 20, 0, 0, '求队友', 0, 0, 0, 0),
-(42, 11, 'csffvrgerges', '2015-08-13 00:00:00', '2015-08-26 09:14:05', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '                    \r\n                vnreguverbwugbuewrgbuergeriheurgurehuehreir', 'gerggerhrthrt', 'hrthrthrthrthrehre', 25, 0, 0, '求队友', 0, 0, 0, 0),
-(43, 11, 'gregergerg', '2015-08-13 00:00:00', '2015-08-26 09:14:52', '2015-08-13 00:00:00', '2015-08-13 09:00:00', 'grewwwwwwwwwwwwwwwwwwwwwwwwwww', 'ergergererg', 'ergergerger', 200, 0, 0, '求队友', 0, 0, 0, 0);
+(37, 11, 'frewgwrege', '2015-08-13 00:00:00', '2015-08-31 05:29:09', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'erwgerwgewrgerw', 'gerwgwegwe', 20, 0, 0, '已结束', 0, 0, 0, 0),
+(38, 11, 'frewgwrege', '2015-08-13 00:00:00', '2015-08-31 05:29:09', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'erwgerwgewrgerw', 'gerwgwegwe', 20, 0, 0, '已结束', 0, 0, 0, 0),
+(39, 11, 'frewgwrege', '2015-08-13 00:00:00', '2015-08-31 05:29:09', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'erwgerwgewrgerw', 'gerwgwegwe', 20, 0, 0, '已结束', 0, 0, 0, 0),
+(40, 11, 'freergerg', '2015-08-13 00:00:00', '2015-08-31 05:29:08', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '', 'sdfgdfgdsg', 'dgfgsdgdsg', 20, 0, 0, '已结束', 0, 0, 0, 0),
+(41, 11, 'freergerg', '2015-08-13 00:00:00', '2015-08-31 05:29:08', '2015-08-13 00:00:00', '2015-08-13 09:00:00', 'csbbvsdybvsdbvsdbvubdsubvsudbsybvy', 'sdfgdfgdsg', 'dgfgsdgdsg', 20, 0, 0, '已结束', 0, 0, 0, 0),
+(42, 11, 'csffvrgerges', '2015-08-13 00:00:00', '2015-08-31 05:29:08', '2015-08-13 00:00:00', '2015-08-13 09:00:00', '                    \r\n                vnreguverbwugbuewrgbuergeriheurgurehuehreir', 'gerggerhrthrt', 'hrthrthrthrthrehre', 25, 0, 0, '已结束', 0, 0, 0, 0),
+(43, 11, 'gregergerg', '2015-08-13 00:00:00', '2015-08-31 05:29:08', '2015-08-13 00:00:00', '2015-08-13 09:00:00', 'grewwwwwwwwwwwwwwwwwwwwwwwwwww', 'ergergererg', 'ergergerger', 200, 0, 0, '已结束', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -153,26 +153,37 @@ CREATE TABLE IF NOT EXISTS `act_man` (
   `am_qq` varchar(11) DEFAULT NULL,
   `am_wx` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`am_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
-CREATE TRIGGER trigger_actman BEFORE INSERT ON act_man FOR EACH ROW SET NEW.am_signup = CURRENT_TIMESTAMP;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
 --
 -- 转存表中的数据 `act_man`
 --
 
 INSERT INTO `act_man` (`am_id`, `a_id`, `u_id`, `am_jointime`, `am_signup`, `am_state`, `am_name`, `am_phone`, `am_sex`, `am_email`, `am_college`, `am_entryy`, `am_extra`, `am_qq`, `am_wx`) VALUES
-(1, 36, 11, '2015-08-05 08:06:04', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(2, 36, 10, '2015-08-05 08:06:15', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(3, 36, 9, '2015-08-05 08:06:20', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(4, 36, 8, '2015-08-05 08:06:25', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(5, 35, 11, '2015-08-05 08:06:30', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(6, 35, 9, '2015-08-05 08:06:35', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(7, 35, 7, '2015-08-05 08:06:40', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(8, 34, 11, '2015-08-05 08:06:47', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(9, 34, 6, '2015-08-05 08:06:55', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(10, 33, 11, '2015-08-05 08:07:00', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(11, 33, 10, '2015-08-05 08:07:08', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(12, 36, 7, '2015-08-05 08:08:01', '2015-08-26 09:31:23', 0, '', '', '', '', '', 0000, '', '0', NULL),
-(13, 2, 11, '2015-08-26 11:16:45', '2015-08-26 11:16:45', 0, 'conan', '11111111111', NULL, NULL, 'dwefweffw', NULL, '                    fffafafwefweffffffffffew\r\n                ', NULL, NULL);
+(1, 36, 11, '2015-08-05 08:06:04', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(2, 36, 10, '2015-08-05 08:06:15', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(3, 36, 9, '2015-08-05 08:06:20', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(4, 36, 8, '2015-08-05 08:06:25', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(5, 35, 11, '2015-08-05 08:06:30', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(6, 35, 9, '2015-08-05 08:06:35', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(7, 35, 7, '2015-08-05 08:06:40', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(8, 34, 11, '2015-08-05 08:06:47', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(9, 34, 6, '2015-08-05 08:06:55', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(10, 33, 11, '2015-08-05 08:07:00', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(11, 33, 10, '2015-08-05 08:07:08', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(12, 36, 7, '2015-08-05 08:08:01', '2015-08-31 02:24:49', 0, '', '', '', '', '', 0000, '', '0', NULL),
+(13, 2, 11, '2015-08-26 11:16:45', '2015-08-31 02:24:49', 0, 'conan', '11111111111', NULL, NULL, 'dwefweffw', NULL, '                    fffafafwefweffffffffffew\r\n                ', NULL, NULL),
+(14, 4, 11, '2015-08-31 02:26:22', '2015-08-31 02:26:22', 0, 'greger', 'gergregerg', NULL, NULL, 'gdgfsds', NULL, 'gdgrgrehtrhtrsdhsr', NULL, NULL);
+
+--
+-- 触发器 `act_man`
+--
+DROP TRIGGER IF EXISTS `trigger_actman`;
+DELIMITER //
+CREATE TRIGGER `trigger_actman` BEFORE INSERT ON `act_man`
+ FOR EACH ROW SET NEW.am_signup = CURRENT_TIMESTAMP
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -184,6 +195,7 @@ CREATE TABLE IF NOT EXISTS `follow` (
   `f_id` bigint(11) NOT NULL AUTO_INCREMENT,
   `follower_id` bigint(11) NOT NULL,
   `followed_id` bigint(11) NOT NULL,
+  `f_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`f_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
@@ -191,23 +203,23 @@ CREATE TABLE IF NOT EXISTS `follow` (
 -- 转存表中的数据 `follow`
 --
 
-INSERT INTO `follow` (`f_id`, `follower_id`, `followed_id`) VALUES
-(1, 11, 4),
-(2, 11, 6),
-(3, 11, 7),
-(4, 11, 5),
-(5, 11, 7),
-(6, 11, 7),
-(7, 11, 5),
-(8, 11, 0),
-(9, 11, 0),
-(10, 11, 0),
-(11, 11, 0),
-(12, 11, 0),
-(13, 11, 0),
-(14, 11, 0),
-(15, 11, 1),
-(16, 11, 3);
+INSERT INTO `follow` (`f_id`, `follower_id`, `followed_id`, `f_time`) VALUES
+(1, 11, 4, '2015-08-31 04:52:06'),
+(2, 11, 6, '2015-08-31 04:52:06'),
+(3, 11, 8, '2015-08-13 04:52:06'),
+(4, 11, 5, '2015-08-28 04:41:50'),
+(5, 11, 10, '2015-08-31 04:52:06'),
+(6, 11, 7, '2015-08-31 04:52:06'),
+(7, 11, 3, '2015-08-31 04:52:06'),
+(8, 11, 1, '2015-08-03 04:52:06'),
+(9, 11, 2, '2015-08-22 04:39:06'),
+(10, 11, 9, '2015-08-06 04:52:06'),
+(11, 11, 12, '2015-08-31 00:52:06'),
+(12, 11, 13, '2015-09-24 04:52:06'),
+(13, 11, 14, '2015-08-31 04:52:06'),
+(14, 11, 15, '2015-08-31 04:52:06'),
+(15, 1, 3, '2015-08-31 04:52:06'),
+(16, 5, 3, '2015-08-31 04:52:06');
 
 -- --------------------------------------------------------
 
@@ -306,6 +318,29 @@ CREATE TABLE IF NOT EXISTS `reg` (
   `reg_text` text NOT NULL,
   PRIMARY KEY (`reg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sign`
+--
+
+CREATE TABLE IF NOT EXISTS `sign` (
+  `sn_id` bigint(40) NOT NULL AUTO_INCREMENT,
+  `u_id` bigint(40) NOT NULL,
+  `sn_content` varchar(255) NOT NULL,
+  `sn_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`sn_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `sign`
+--
+
+INSERT INTO `sign` (`sn_id`, `u_id`, `sn_content`, `sn_time`) VALUES
+(1, 11, 'aaaaaaaaaaaaaaaa', '2015-08-31 02:46:47'),
+(2, 11, 'bbbbbbbbbbbbbbbb', '2015-08-31 02:46:53'),
+(3, 11, 'cccccccccccccccccccc', '2015-08-31 02:47:03');
 
 -- --------------------------------------------------------
 
@@ -443,6 +478,29 @@ INSERT INTO `user` (`id`, `email`, `phone`, `pwd`, `name`, `nname`, `sex`, `birt
 (14, '14@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '141414', '141414', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, NULL, 0),
 (15, 'shangyuan@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '尚缘', '尚缘', 'male', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, NULL, 0),
 (16, 'keaizhuyi@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '可爱主义', '可爱主义', 'male', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `user_state`
+--
+
+CREATE TABLE IF NOT EXISTS `user_state` (
+  `us_id` bigint(40) NOT NULL AUTO_INCREMENT,
+  `u_id` bigint(40) NOT NULL,
+  `us_content` varchar(255) NOT NULL,
+  `us_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`us_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `user_state`
+--
+
+INSERT INTO `user_state` (`us_id`, `u_id`, `us_content`, `us_time`) VALUES
+(1, 11, 'haokaixinhaokaixin', '2015-08-31 02:49:58'),
+(2, 11, 'haishihaokaixinhaokaixin', '2015-08-31 02:50:16'),
+(3, 11, 'zailaiyici', '2015-08-31 02:50:27');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

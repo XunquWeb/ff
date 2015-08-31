@@ -70,13 +70,43 @@ class User_model extends CI_Model {
 	}
 
 	public function myinfo_get($user_id){
-		$sql = "SELECT id,nname,sex,college,major,entryy,sign,birth,home,hobby,estate,email,follow_num,browse_num FROM user,act_man WHERE id=?";
-		$query1 = $this->db->query($sql, $user_id);
-		$sql = "SELECT a_name,start_time,extra FROM act WHERE act.a_id in (SELECT act_man.a_id FROM act_man WHERE u_id=?) ORDER BY start_time DESC";
-		$query2 = $this->db->query($sql, $user_id);
-		if ($query1->num_rows() > 0){
-			$temp['acts'] = $query2->result_array();
-			$query = array_merge($query1->result_array()[0],$temp);
+		//用户基本信息
+		$sql = "SELECT id,nname,sex,college,major,entryy,sign,birth,home,hobby,estate,email,follow_num,browse_num FROM user WHERE id=?";
+		$query = $this->db->query($sql, $user_id);
+		if ($query->num_rows() > 0){
+			$t = $query->result_array();
+			
+			//组织的活动
+			$sql = "SELECT a_id,a_name,start_time as time,extra,'act_arrange' as type FROM act WHERE u_id =?";
+			$query = $this->db->query($sql, $user_id);
+			$temp['act_arrange'] = $query->result_array();
+
+			//参与的活动
+			$sql = "SELECT a_id,a_name,start_time as time,extra,'act_join' as type FROM act WHERE act.a_id in (SELECT act_man.a_id FROM act_man WHERE u_id=? and am_state<>?)";
+			$query = $this->db->query($sql, array($user_id,3));
+			$temp['act_join'] = $query->result_array();
+
+			//用户的签名更改
+			$sql = "SELECT sn_content, sn_time as time, 'sign_change' as type FROM sign WHERE u_id =?";
+			$query = $this->db->query($sql, $user_id);
+			$temp['sign_change'] = $query->result_array();
+
+			//用户发布的状态
+			$sql = "SELECT us_content, us_time as time, 'user_state' as type FROM user_state WHERE u_id =?";
+			$query = $this->db->query($sql, $user_id);
+			$temp['user_state'] = $query->result_array();
+
+			//广场发起的消息（不包括评论）
+			$sql = "SELECT m_content, m_time as time, 'forum' as type FROM msg WHERE from_u_id =? and s_id=? and floor=?";
+			$query = $this->db->query($sql, array($user_id, 3, 0));
+			$temp['forum'] = $query->result_array();
+
+			//用户关注
+			$sql = "SELECT followed_id,nname,f_time as time,'follow' as type FROM follow,user WHERE user.id=follow.followed_id and follower_id=?";
+			$query = $this->db->query($sql, $user_id);
+			$temp['follow'] = $query->result_array();
+
+			$query = array_merge($t[0],$temp);
 			return $query;
 		}
 		return 0;
