@@ -239,7 +239,7 @@ p.channel_tip:before {
   z-index:10;
 }
 .scroller-wrapper .dropdown-scroller {
-  overflow: hidden;
+  overflow: scroll;
   max-height: 160px;
   width: 100%;
   background: #f6f4f0;
