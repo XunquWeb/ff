@@ -171,20 +171,20 @@ class User extends CI_Controller {
 		}
 	}
 
-	public function info_post(){
-		$this->load->model('user_model');
-		if($this->session->id){
-			if($this->input->method()=='get'){
-				$this->load->view('personal_info');
-			}else{
-				if($this->user_model->myinfo_edit()){
-					echo '<script>alert(/success/);window.location="myinfo";</script>';
-				}else{
-					echo 'failed';
-				}
-			}
-		}
-	}
+//	public function info_post(){
+//		$this->load->model('user_model');
+//		if($this->session->id){
+//			if($this->input->method()=='get'){
+//				$this->load->view('personal_info');
+//			}else{
+//				if($this->user_model->myinfo_edit()){
+//					echo '<script>alert(/success/);window.location="myinfo";</script>';
+//				}else{
+//					echo 'failed';
+//				}
+//			}
+//		}
+//	}
 
 	public function account_info(){
 		if($this->session->id){
@@ -247,9 +247,11 @@ class User extends CI_Controller {
 	public function follow_list(){
 		if($this->session->id){
 			$this->load->model('user_model');
+			$data['arr']=$this->user_model->follower_show($this->session->id);
+
 			$this->load->view('header');
 			$this->load->view('follow_line_top');
-			$this->load->view('follow');
+			$this->load->view('follow',$data);
 			$this->load->view('footer');
 		}
 		else{
