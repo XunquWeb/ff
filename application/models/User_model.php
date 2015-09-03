@@ -120,6 +120,15 @@ class User_model extends CI_Model {
 		//SELECT follow.followed_id,follow.follower_id,user.name AS followedname FROM follow LEFT JOIN user ON follow.followed_id = user.id
 	}
 
+	public function following($user_id){
+		$sql = "SELECT * FROM follow WHERE follower_id = ? and followed_id = ?";
+		$query = $this->db->query($sql, array($this->session->id, $user_id));
+		if ($query->num_rows() > 0){
+			return true;
+		}
+		else return false;
+	}
+
 	public function follow($user_id){
 		$sql = "INSERT INTO follow(follower_id,followed_id) VALUES (? , ?)";
 		return $this->db->query($sql, array($this->session->id, $user_id));

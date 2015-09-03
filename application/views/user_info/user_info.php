@@ -44,7 +44,6 @@
       </div><!-- /.container-fluid -->
 
     </nav>
-
   <div class="profile-header clearfix" style="background:url(<?php echo base_url('image/01/5.jpg')?>) center center; background-size:cover">
     
     <div class="profile-header-contents">
@@ -287,13 +286,31 @@
         return false;
       })
     });
+    function following(){
+        $.post(
+        "<?php echo base_url('user/following').'/'.$id ?>",
+        function(data){
+          if(data == '0')
+          {
+            $('.addoredit').text("关注").attr('href',"<?php echo base_url('user').'/follow/'.$id ?>"); 
+    
+          }
+          else
+          {
+            $('.addoredit').text("取消关注").attr('href',"<?php echo base_url('user').'/unfollow/'.$id ?>"); 
+          }
+        }
+      );
+    }
+
     $(document).ready(function(){
-      if(<?php echo ($this->session->userdata('id') == $id) ?> )
+      if(<?php echo $this->session->userdata('id');?> == <?php echo $id ?> )
       {
+        //$('.addoredit').text("关注").attr('href',"<?php echo base_url('user').'/follow/'.$id ?>"); 
         $('.addoredit').text("编辑").attr('href',"<?php echo base_url('user/account_info')?>"); 
       }
       else{
-        $('.addoredit').text("关注").attr('href',"<?php echo base_url('user/account_info')?>"); 
+        following();
       }
         
     });

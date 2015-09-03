@@ -69,8 +69,8 @@ class User extends CI_Controller {
 		}
 	}
 
-	public function myinfo($user_id=1){
-		$user_id = $this->session->id;
+	public function myinfo($user_id){
+		//$user_id = $this->session->id;
 		if($this->session->id){
 			$this->load->model('user_model');
 			if($data = $this->user_model->myinfo_get($user_id)){
@@ -202,15 +202,33 @@ class User extends CI_Controller {
 		redirect('Msg');
 	}
 
+	public function following($user_id){
+		if($this->session->id){
+			$this->load->model('user_model');
+			if($this->user_model->following($user_id)){
+				echo 1;
+			}
+			else{
+				echo 0;
+			}
+		}
+		else{
+			redirect('');
+		}
+	}
+
 	public function follow($user_id=1){
 		if($this->session->id){
 			if($this->session->id != $user_id){			//A cannot follow A
 				$this->load->model('user_model');
 				if($this->user_model->follow($user_id)){
 					echo '<script>alert(/follow success/);</script>';
+					//redirect("");
 					return true;
 				}
 			}
+			else
+				echo '<script>alert("cant follow your self");</script>';
 		}
 		else{
 			redirect('');
