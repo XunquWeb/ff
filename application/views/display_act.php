@@ -36,13 +36,18 @@
                         <li class="category-wrapper rank display-none">
                             <ul class="dropdown-list">
                             	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>智能排序</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>热度</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>最热约单</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>最新约单</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>精品推荐</span></li>
                             </ul>
                         </li>
                         <li class="category-wrapper region display-none">
                             <ul class="dropdown-list">
                             	<li  class="active" data-category-id="0" data-category-name="美食" data-has-sub="true"><span>交通大学</span></li>
+                            	<li  data-category-id="1" data-category-name="今日新单"><span>华东师范大学</span></li>
                             	<li  data-category-id="1" data-category-name="今日新单"><span>复旦大学</span></li>
+                            	<li  data-category-id="1" data-category-name="今日新单"><span>同济大学</span></li>
+                            	<li  data-category-id="1" data-category-name="今日新单"><span>财经大学</span></li>
                             </ul>
                         </li>
                     </ul>
@@ -78,7 +83,7 @@
 		    </div>
 		</div>
 -->
-
+<!--
 <div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding"><a href="http://localhost:8888/ff/Act/detail/36">		    	<div class="clearfix">
 		            <span class="ribbon labels">进行中</span><h1>流浪狗求收养</h1></div><div class="media"><p class="item-img"><img class="lazy pull-left" src="http://img3.imgtn.bdimg.com/it/u=525184704,2771878227&amp;fm=21&amp;gp=0.jpg"></p><p>学校的流浪狗妈妈因为咬了人背警察带走了555 留下了一窝小宝宝，爱心人士快来领养啦！</p></div></a><p class="channel_tip">发起人<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">好仁</a><p class="channel_tip">来自<a href="http://localhost:8888/ff/Act/display/4" class="channel_text">公益</a></p></p>		    </div>
@@ -100,6 +105,7 @@
 		        评论<span><i class="blue">78</i>次</span>
 		    </div>
 		</div>
+-->
 
 	<?php
 		foreach ($row as $r) {
@@ -228,7 +234,7 @@ TR;
 				if($('#display-rank span').hasClass('triangle_down')){
 					$('.display-top span').removeClass('triangle_up');
 					$('.display-top span').addClass('triangle_down');
-					$('#display-rank span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
+					$('#display-rank span').removeClass('triangle_down').addClass('triangle_up');$('.rank').removeClass('display-none');break;
 				}
 				else{
 					$('.display-top span').removeClass('triangle_up');
@@ -242,7 +248,7 @@ TR;
 				if($('#display-region span').hasClass('triangle_down')){
 					$('.display-top span').removeClass('triangle_up');
 					$('.display-top span').addClass('triangle_down');
-					$('#display-region span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
+					$('#display-region span').removeClass('triangle_down').addClass('triangle_up');$('.region').removeClass('display-none');break;
 				}
 				else{
 					$('.display-top span').removeClass('triangle_up');

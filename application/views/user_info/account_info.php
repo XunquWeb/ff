@@ -53,7 +53,7 @@
       <nav class="nav_fix navbar navbar-default " id="nav_fix">
         <div class="container-fluid0 bc-main">
           <div class="navbar-header">
-            <li class="m-l-sm"><a href="http://localhost/ff/User/myinfo" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a></li>
+            <li class=""><a href="<?php echo base_url('User/myinfo')?>" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a></li>
             <h4 class="c-white">编辑资料</h4>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

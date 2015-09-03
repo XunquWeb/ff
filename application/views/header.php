@@ -119,7 +119,7 @@
                           <span class="user_toggle_info">退出</span>
                         </a>
                         <p class="user_inter"></p>
-                        <a href="<?php echo base_url('act/submit')?>" class="user_toggle" >
+                        <a href="<?php echo base_url('user/account_info')?>" class="user_toggle" >
                           <i class="fa fa-tachometer fa-fw"></i>
                           <!-- <span class="badge badge-green">3</span> -->
                           <span class="user_toggle_info">设置</span>

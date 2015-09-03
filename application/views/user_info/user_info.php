@@ -35,6 +35,7 @@
         <div class="navbar-header">
           <a href="<?=$this->session->userdata('backurl');?>" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a>
           <h4 class="c-white">个人主页</h4>
+          <a class="addoredit"></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         </div><!-- /.navbar-collapse -->
@@ -256,7 +257,6 @@
     </section>
   </div>
 
-  
 
   <script src="<?php echo base_url('js/waypoints.min.js')?>" type="text/javascript"></script>
   <script src="<?php echo base_url('js/navbar2.js')?>" type="text/javascript"></script>
@@ -286,6 +286,16 @@
         $('html, body').animate({scrollTop:0}, 'fast');
         return false;
       })
+    });
+    $(document).ready(function(){
+      if(<?php echo ($this->session->userdata('id') == $id) ?> )
+      {
+        $('.addoredit').text("编辑").attr('href',"<?php echo base_url('user/account_info')?>"); 
+      }
+      else{
+        $('.addoredit').text("关注").attr('href',"<?php echo base_url('user/account_info')?>"); 
+      }
+        
     });
   </script>
 
