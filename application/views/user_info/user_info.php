@@ -307,7 +307,10 @@
             $('.addoredit').text("取消关注").attr('href',"<?php echo base_url('user').'/unfollow/'.$id ?>"); 
           }
         }
-      );
+        );
+        $.post(
+        "<?php echo base_url('user/viewcounter').'/'.$id ?>"
+        );
     }
 
     $(document).ready(function(){
@@ -320,6 +323,8 @@
       else{
         following();
       }
+
+
         
     });
   </script>

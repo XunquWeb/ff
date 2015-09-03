@@ -109,6 +109,15 @@ class User extends CI_Controller {
 			redirect('');
 		}
 	}
+	public function viewcounter($user_id){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$this->user_model->viewcounter($user_id);
+		}
+		else{
+			redirect('');
+		}
+	}
 
 	public function home(){
 		if($this->session->id){

@@ -146,4 +146,9 @@ class User_model extends CI_Model {
 		$sql = "DELETE FROM follow WHERE follower_id = ? and followed_id = ?";
 		return $this->db->query($sql, array($this->session->id, $user_id));
 	}
+
+	public function viewcounter($user_id){
+		$sql = "UPDATE user SET browse_num = browse_num+1 where id = ?";
+		return $this->db->query($sql,$user_id);
+	}
 }
