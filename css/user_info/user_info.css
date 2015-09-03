@@ -1682,3 +1682,17 @@ fieldset[disabled] .btn-success.active {
   right: 5%;
   top: 0;
 }
+.personal_info_message{
+  position:absolute;
+  right:5%;
+  top:60px;
+  font-size:20px;
+  color:white;
+}
+.personal_info_message span:nth-child(2){
+    position: absolute;
+    right: 24px;
+    top: 2px;
+    width: 30px;
+    font-size: 15px;
+}

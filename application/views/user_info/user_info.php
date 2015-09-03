@@ -42,8 +42,11 @@
 
           
       </div><!-- /.container-fluid -->
-
-    </nav>
+  </nav>
+  <div class="personal_info_message " data-toggle="modal" data-target="#msg_reply" data-whatever="@someone" >
+      <span class="glyphicon glyphicon-edit"></span>
+      <span>私信</span>
+  </div>
   <div class="profile-header clearfix" style="background:url(<?php echo base_url('image/01/5.jpg')?>) center center; background-size:cover">
     
     <div class="profile-header-contents">
@@ -264,9 +267,32 @@
   </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="msg_reply" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top:155px">
+    <div class="modal-content">
+      <div class="modal-header msg-modal-fix" style="padding-top: 10px;padding-bottom: 10px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span>发私信</span>
+      </div>
+      <div class="modal-body" style="padding-bottom:5px;">
+        <form>
+          <div class="form-group">
+            <textarea class="form-control" id="message-text" style="height: 90px;"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确认发送</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script src="<?php echo base_url('js/waypoints.min.js')?>" type="text/javascript"></script>
   <script src="<?php echo base_url('js/navbar2.js')?>" type="text/javascript"></script>
-
+  <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
 
   <script src="<?php echo base_url('js/cbpFWTabs.js')?>"></script>
   <script type="text/javascript">
@@ -319,13 +345,11 @@
       {
         //$('.addoredit').text("关注").attr('href',"<?php echo base_url('user').'/follow/'.$id ?>"); 
         $('.addoredit').text("编辑").attr('href',"<?php echo base_url('user/account_info')?>"); 
+        $('.personal_info_message ').css('display',"none");
       }
       else{
         following();
-      }
-
-
-        
+      }        
     });
   </script>
 
