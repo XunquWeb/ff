@@ -222,8 +222,8 @@ class User extends CI_Controller {
 			if($this->session->id != $user_id){			//A cannot follow A
 				$this->load->model('user_model');
 				if($this->user_model->follow($user_id)){
-					echo '<script>alert(/follow success/);</script>';
-					//redirect("");
+					//echo '<script>alert(/follow success/);</script>';
+					redirect(base_url("user/myinfo")."/".$user_id);
 					return true;
 				}
 			}
@@ -253,7 +253,8 @@ class User extends CI_Controller {
 			if($this->session->id != $user_id){			//A cannot unfollow A
 				$this->load->model('user_model');
 				if($this->user_model->unfollow($user_id)){
-					echo '<script>alert(/unfollow success/);</script>';
+					//echo '<script>alert(/unfollow success/);</script>';
+					redirect(base_url("user/myinfo")."/".$user_id);
 					return true;
 				}
 			}
