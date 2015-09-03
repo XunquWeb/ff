@@ -120,12 +120,16 @@ class User_model extends CI_Model {
 	}
 
 	public function followed_show($user_id){
-		//SELECT follow.followed_id,follow.follower_id,user.name AS followedname FROM follow LEFT JOIN user ON follow.followed_id = user.id
+		$sql="SELECT follow.followed_id,follow.follower_id,user.name AS followedname FROM follow LEFT JOIN user ON follow.followed_id = user.id WHERE follow.followed_id= ?";
+		return $this->db->query($sql, array($user_id));
 	}
 
 	public function follower_show($user_id){
-		//SELECT follow.followed_id,follow.follower_id,user.name AS followedname FROM follow LEFT JOIN user ON follow.followed_id = user.id
+		$sql="SELECT follow.followed_id,follow.follower_id,user.name AS followedname FROM follow LEFT JOIN user ON follow.followed_id = user.id WHERE follow.followed_id= ?";
+		return $this->db->query($sql, array($user_id));
+		
 	}
+
 
 	public function following($user_id){
 		$sql = "SELECT * FROM follow WHERE follower_id = ? and followed_id = ?";
