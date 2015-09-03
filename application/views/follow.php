@@ -16,7 +16,7 @@
 
 <!-- 这里就先不用ajax了，因为还有一些页面要写  follow_line_top直接用链接跳转吧，传不同的参数 php echo的时候也可以区分开  建议data－target 加上用户id作为后缀  区分不同的人的回复-->
 		<div class="container" id="msg-detail-list">
-			<div class="msg-detail" >
+			<div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
 				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">王永强</div>
