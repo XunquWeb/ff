@@ -118,7 +118,7 @@
                   </div>
           </div>
 -->
-          <div class="forum-box">
+          <div class="forum-box" id="first-forum-box">
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
                       <span class="forum-icon-box pull-left">
                           <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
@@ -140,9 +140,7 @@
                   </div>
                   <div class="btns-group clearfix">
                       <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-disagree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" ></div>
-                      <div class="icon icon-share pull-right" ></div>
+                      <div class="icon icon-comment pull-left" onclick=""></div>
                   </div>
           </div>
           <div class="forum-box">
@@ -167,9 +165,7 @@
                   </div>
                   <div class="btns-group clearfix">
                       <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-disagree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" ></div>
-                      <div class="icon icon-share pull-right" ></div>
+                      <div class="icon icon-comment pull-left" onclick=""></div>
                   </div>
           </div>
            <div class="forum-box">
@@ -194,9 +190,7 @@
                   </div>
                   <div class="btns-group clearfix">
                       <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-disagree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" ></div>
-                      <div class="icon icon-share pull-right" ></div>
+                      <div class="icon icon-comment pull-left" onclick=""></div>
                   </div>
           </div>
            <div class="forum-box">
@@ -221,9 +215,7 @@
                   </div>
                   <div class="btns-group clearfix">
                       <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-disagree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" ></div>
-                      <div class="icon icon-share pull-right" ></div>
+                      <div class="icon icon-comment pull-left" onclick=""></div>
                   </div>
           </div>
            <div class="forum-box">
@@ -248,17 +240,30 @@
                   </div>
                   <div class="btns-group clearfix">
                       <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-disagree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" ></div>
-                      <div class="icon icon-share pull-right" ></div>
+                      <div class="icon icon-comment pull-left" onclick=""></div>
                   </div>
           </div>
+          <a id="tocreat" herf="" style="display:inline;"><i class="fa fa-plus"></i></a>
+          <div id="totop" style="display: block;"><i class="fa fa-angle-up"></i></div>
           <div id="testtest"></div>
 
 </div>  
 <script>
       var tmp_page = 0;
       var flag=true;
+      $(function(){
+        $(window).scroll(function(){
+         if($(this).scrollTop() < 300) {
+              $('#totop') .fadeOut();
+          } else {
+              $('#totop') .fadeIn();
+          }
+         });
+         $('#totop').on('click', function(){
+          $('html, body').animate({scrollTop:0}, 'fast');
+          return false;
+        })
+      });
       $(window).scroll(function(){  
           // 当滚动到最底部以上100像素时， 加载新内容  
           if ($(document).height() - $(this).scrollTop() - $(this).height()<100) {loadMore();}
@@ -270,6 +275,7 @@
                 url : "<?php echo base_url('Forum/history_ajax')?>"+"/"+tmp_page,    
                 success : function(data)  
                 {  
+                  //alert(data);
                   if(data!="no more history"){
                     tmp_page++;
                     $forum_arr = data.split('#');
@@ -277,7 +283,8 @@
                     for(var i=0;i<=9;i++){
                       $forum_dtl[i] = $forum_arr[i].split('&');
                     }
-                    $("#testtest").append(" <b>Hello world!</b>");
+                    var html_temp = $("#first-forum-box").clone();
+                    $(".forum-frame").append($("#first-forum-box").clone());
                   }
                   else{
                     flag = false;

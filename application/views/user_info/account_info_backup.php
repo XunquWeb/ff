@@ -66,7 +66,6 @@
 
       <div class="content-wrap">
         <section>
-          <form>
             <div class="padder">
 
 
@@ -83,7 +82,7 @@
                     <div class="panel-body dl-menuwrapper dl-menu-main"  >
                       <div class="main_info " >
                         <figure class="m-b inline p">
-                          <a href="#" class="">
+                          <a href="http://localhost/ff/User/myinfo" class="">
                             <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
                             <p><span class="badge badge-green"><i class="fa fa-camera"></i></span></p>
                           </a>
@@ -93,7 +92,7 @@
                           <input class="c-black"  value="" placeholder="DannyJay"></i></input>
                         </li>
                         <li>
-                          <a href="#tab-account-setting" class="c-grey">&nbsp;&nbsp;<?php echo $?></a>
+                          <a href="#tab-account-setting" class="c-grey">&nbsp;&nbsp;15021132720</a>
                         </li>                                                                         
                       </div>
                       <ul class="nav nav-pills more_info dl-menu">
@@ -112,7 +111,7 @@
                             <input id="info_state"  value ="未填写"  class="bounceOutUp" ></input>
                           </li>
                           <li data-animation="1" index="1">
-                            <p><span>兴趣标签</span></p>
+                            <p><span>标榜</span></p>
                             <a href="#" class="c-black info_flaunt">&nbsp;&nbsp;艺术家</a>
                             <span><i class="fa fa-angle-right pull-right c-grey"></i> </span>
                           </li>
@@ -121,54 +120,15 @@
                             <a href="#" class="c-black">&nbsp;&nbsp;上海</a>
                             <span><i class="fa fa-angle-right pull-right c-grey"></i> </span>
                           </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="">
-                  <div class="panel">
-                    <!-- <div class="dl-menuwrapper dl-menu-main">
-                      <ul class="dl-menu">
-                        <li data-animation="1" index="1">
-                          <a href="#" class="c-black flaunt">&nbsp;&nbsp;艺术家</a>
-                        </li>
-                      </ul>
-                    </div> -->
-                    <div class="panel-body dl-menuwrapper dl-menu-main"  >
-                      <ul class="nav nav-pills more_info dl-menu">
-                          <div class="panel-header">
-                            <div class="caption"><span><i class="fa fa-user c-main"></i></span>更多信息</div> 
-                          </div>
-                          <li>
-                            <p><span>星座</span></p>
-                            <input id="info_date"  value ="未填写" href=""  data-toggle="tab" class="bounceOutUp"></input>
-                          </li>
-                          <li>
-                          <p><span>性别</span></p>
-                          <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
-                            <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
-                          </input>
-                          </li>
-                          <li>
-                            <p><span>情感</span></p>
-                            <input id="info_state"  value ="未填写"  class="bounceOutUp" ></input>
-                          </li>
-                          <li data-animation="1" index="1">
+                          <li data-animation="1" index="3">
                             <p><span>兴趣标签</span></p>
-                            <a href="#" class="c-black info_flaunt">&nbsp;&nbsp;艺术家</a>
-                            <span><i class="fa fa-angle-right pull-right c-grey"></i> </span>
-                          </li>
-                          <li data-animation="1" index="2">
-                            <p><span>活跃地</span></p>
-                            <a href="#" class="c-black">&nbsp;&nbsp;上海</a>
+                            <a href="#" class="c-black">&nbsp;&nbsp;出行 旅游</a>
                             <span><i class="fa fa-angle-right pull-right c-grey"></i> </span>
                           </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-
                 <div class="">
                   <div class="panel">
                     <div class="panel-body">
@@ -196,16 +156,50 @@
                         <li >
                           <a href="http://localhost/ff/User/account_info" class="c-black"><i class="fa fa-quote-left bc-red"></i>&nbsp;&nbsp;&nbsp;&nbsp;个性签名</a>
                         </li>
+                        <li>
+                          <a href="#tab-account-setting" class="c-black"><i class="fa fa-bookmark bc-blue-xm"></i>&nbsp;&nbsp;&nbsp;&nbsp;我的闲扯</a>
+                        </li>
+                        
                       </ul>
                       
                     </div>
                   </div>
                 </div>
+                <div class="">
+                  <div class="panel">
+                    <div class="panel-body">
+                      <ul class="nav nav-pills nav-stacked .others_info">
+                        <div class="panel-header">
+                          <div class="caption"><span><i class="fa fa-puzzle-piece c-main"></i></span>身份验证</div> 
+                        </div>
+                        <a href="" class="m-b-md inline-sm p">
+                          <span class="icon"><i class="icon fa fa-qq c-blue borc-blue"></i></span>
+                        </a>
+                        <a href="" class="m-b-md inline-sm p">
+                          <span class="icon"><i class="icon fa fa-wechat c-green borc-green"></i></span>
+                        </a>
+                        <!-- <a href="" class="m-b-md inline-sm p">
+                          <span class="icon"><i class="icon fa fa-weibo c-orange borc-orange"></i></span>
+                        </a>
+                        <a href="" class="m-b-md inline-sm p">
+                          <span class="icon"><i class="icon fa fa-renren c-pink borc-pink"></i></span>
+                        </a> -->
+                        <a href="" class="m-b-md inline-sm p">
+                          <span class="icon"><i class="icon fa fa-weibo c-default borc-default"></i></span>
+                        </a>
+                        <a href="" class="m-b-md inline-sm p">
+                          <span class="icon"><i class="icon fa fa-renren c-default borc-default"></i></span>
+                        </a>
+                      </ul>
+                      
+                    </div>
+                  </div>
+                </div>
+
+
+
             </div>
           </section>
-          <div class="submit_edit_button">
-            <button class="btn btn-primary"  type="submit"  >确认提交</button>
-          </div>
       </div>
     </div>
 
@@ -256,7 +250,6 @@
               </div>
 
           </div>
-         </form>
         </section>
     </div>
 

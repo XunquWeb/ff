@@ -33,7 +33,7 @@
   <nav class="nav_fix navbar navbar-default " id="nav_fix">
       <div class="container-fluid0 bc-main">
         <div class="navbar-header">
-          <a href="<?=$this->session->userdata('backurl');?>" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a>
+          <a href="<?php echo $this->session->userdata('backurl');?>" class="pull-left m-l-sm c-black"><span><i class="fa fa-angle-left c-white"></i> </span></a>
           <h4 class="c-white">个人主页</h4>
           <a class="addoredit"></a>
         </div>

@@ -84,3 +84,34 @@ body{
 .pull-right{
 	float:right;
 }
+#totop i, #tocreat i {
+  color: #A0D468;
+  line-height: 40px;
+  font-size: 33px;
+}
+#tocreat {
+  position: fixed;
+  bottom: 100px;
+  right: 1.5%;
+  display: none;
+  z-index: 9999;
+  background: transparent;
+  border: 3px solid #A0D468;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+}
+#totop {
+  position: fixed;
+  bottom: 40px;
+  right: 1.5%;
+  display: none;
+  z-index: 9999;
+  background: transparent;
+  border: 3px solid #A0D468;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+}
