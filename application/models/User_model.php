@@ -105,6 +105,13 @@ class User_model extends CI_Model {
 			$sql = "SELECT followed_id,nname,f_time as time,'follow' as type FROM follow,user WHERE user.id=follow.followed_id and follower_id=?";
 			$query = $this->db->query($sql, $user_id);
 			$temp['follow'] = $query->result_array();
+			//更新用户关注数量
+			$sql = "SELECT * FROM follow where followed_id=?";
+			$query = $this->db->query($sql,$user_id);
+			$follownum = $query->num_rows();
+			$sql = "UPDATE user set follow_num=? where id=? ";
+			$query = $this->db->query($sql, array( $follownum, $user_id));
+			$temp['follow_num'] = $follownum;
 
 			$query = array_merge($t[0],$temp);
 			return $query;

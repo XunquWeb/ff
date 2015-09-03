@@ -55,9 +55,16 @@
           </a>
         </figure>
         <div class="block user_name">
-          <h4 class="block profile-header-heading" ><?php echo $nname;?><span herf="" class="meta-rank pull-left">Lv.9</span></h4>
+          <h4 class="block profile-header-heading" ><?php echo $nname;?><!--<span herf="" class="meta-rank pull-left">Lv.9</span>--></h4>
         </div>
-        <em class="profile-header-subheading">Professional Consultant</em>
+        <em class="profile-header-subheading">          
+          <?php 
+            if($sign == "")
+              echo "这个人很懒，什么也没有留下";
+            else
+              echo $sign;
+          ?>
+        </em>
         <div class="info_view">
           <div class="info_view_fix">
             <span href="#"><span><?php echo $follow_num;?></span><span>关注 </span></span>
@@ -304,6 +311,7 @@
     }
 
     $(document).ready(function(){
+      //alert("<?php echo $sign;?>");
       if(<?php echo $this->session->userdata('id');?> == <?php echo $id ?> )
       {
         //$('.addoredit').text("关注").attr('href',"<?php echo base_url('user').'/follow/'.$id ?>"); 
