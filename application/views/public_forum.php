@@ -131,7 +131,7 @@
                   <div class="status-box">
                       <span class="agree">
                           <span class="agree-count">1000</span>
-                          点赞&nbsp;·
+                          点赞&nbsp;
                       </span>
                       <span class=" comment">
                           <span class=" comment-count">1000</span>
@@ -243,14 +243,76 @@
                       <div class="icon icon-comment pull-left" onclick=""></div>
                   </div>
           </div>
-          <a id="tocreat" herf="" style="display:inline;"><i class="fa fa-plus"></i></a>
+          <a id="tocreat" herf="" style="display:inline;"data-toggle="modal" data-target="#submit_forum" data-whatever="@someone"><i class="fa fa-plus"></i></a>
           <div id="totop" style="display: block;"><i class="fa fa-angle-up"></i></div>
           <div id="testtest"></div>
 
 </div>  
+
+<!-- Modal -->
+<div class="modal fade" id="submit_forum" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top:55px">
+    <div class="modal-content">
+      <div class="modal-header msg-modal-fix" style="padding-top: 10px;padding-bottom: 10px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span>广场趣谈</span>
+      </div>
+      <div class="modal-body" style="padding-bottom:5px;">
+        <form id="form_forum">
+          <div class="form-group">
+            <textarea class="form-control" id="message-text" style="height: 90px;" name="forum_text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确认发送</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="submit_reply" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top:55px">
+    <div class="modal-content">
+      <div class="modal-header msg-modal-fix" style="padding-top: 10px;padding-bottom: 10px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span>回复</span>
+      </div>
+      <div class="modal-body" style="padding-bottom:5px;">
+        <form >
+          <div class="form-group">
+            <textarea class="form-control" id="message-text" style="height: 90px;"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确认发送</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="<?php echo base_url('js/jquery.form.js')?>"></script>
+
+
 <script>
       var tmp_page = 0;
       var flag=true;
+      $("#submit_forum button.btn-primary").bind("click",function(){
+        $('#form_forum').ajaxSubmit({
+             type: "post",
+             dataType: "json", //数据类型  
+             url: "<?base_url('forum/submit_forum')?>",
+             success: function(result){
+                   //返回提示信息       
+                   alert("发布成功");
+             }
+        });
+      });
       $(function(){
         $(window).scroll(function(){
          if($(this).scrollTop() < 300) {
@@ -275,16 +337,26 @@
                 url : "<?php echo base_url('Forum/history_ajax')?>"+"/"+tmp_page,    
                 success : function(data)  
                 {  
-                  //alert(data);
+                  //alert(data)
                   if(data!="no more history"){
                     tmp_page++;
                     $forum_arr = data.split('#');
                     $forum_dtl = {};
-                    for(var i=0;i<=9;i++){
-                      $forum_dtl[i] = $forum_arr[i].split('&');
+                    // for(var i=0;i<=9;i++){
+                    //   $forum_dtl[i] = $forum_arr[i].split('&');
+                    // }
+                    $.each($forum_arr,function(n,value){
+                          $forum_dtl[n] = value.split('&');
+                          $html_temp = $("#first-forum-box").clone();
+                          $html_temp.find('.user-name').text($forum_dtl[n][1]);
+                          $html_temp.find('.text').text($forum_dtl[n][3]);
+                          //alert($forum_dtl[n][3]);
+                          $(".forum-frame").append($html_temp);
                     }
-                    var html_temp = $("#first-forum-box").clone();
-                    $(".forum-frame").append($("#first-forum-box").clone());
+
+                    );
+                    
+
                   }
                   else{
                     flag = false;
@@ -293,6 +365,10 @@
             });  
           }
       }  
+      function refresh()
+      {
+
+      }
 
 </script>
 </html>

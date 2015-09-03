@@ -85,4 +85,9 @@ class Forum extends CI_Controller {
 		}
 	}
 
+	public function submit_forum(){
+		$this->load->model('forum_model');
+		$this->forum_model->submit_forum($_POST('forum_text'));
+	}
+
 }
