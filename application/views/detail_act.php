@@ -52,11 +52,11 @@
         <div class="dt_address_item" ontouchstart="">
             <div class="detail_Attr_K">
             	<span class="glyphicon glyphicon-map-marker" ></span>
-                <p class="addressP">
-                                    <?php //if(!$place) echo "无"; 
-                                          //else echo $place;
+                <p class="addressP" style="<?php if(!$place) echo  'display:none';?>">
+                                    <?php if(!$place) echo "无"; 
+                                          else echo $place;
                                     ?>
-                                    上海交通大学
+                                    
                 </p>
             </div>
 
@@ -83,15 +83,15 @@
 <div class="dt_act_board">
   <div class="dt_act_detail">
      <div>
-        <?php // echo $extra;?>
-        如果你热衷探索技术或者深谙营销之道或者什么都不会但有一颗想改变世界的心，那么就请加入我们。我们是交大最有情怀的创业小分队，我们致力于解决自己身边的问题～
-
+        <?php  echo $extra;?>
+        <!--如果你热衷探索技术或者深谙营销之道或者什么都不会但有一颗想改变世界的心，那么就请加入我们。我们是交大最有情怀的创业小分队，我们致力于解决自己身边的问题～
+        -->
      </div>
   </div>
 </div>
-<div class="dt_like" ontouchstart="">
+<div class="dt_like" onclick="agree()">
       <a href="" ontouchstart="">
-        <p ontouchstart="">赞(<span id="dt_like_count"><?php echo $a_like;?></span>)</p>
+        <p ontouchstart="">赞(<span id="dt_like_count"><?php echo count($likes);?></span>)</p>
         <span class="zanWk" ontouchstart=""><img id="img_dt_like" src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" alt=""></span>
       </a>
 </div>
@@ -101,8 +101,18 @@
       <span>
         <img src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" class="zanIcon" id="icon_zan_ok2"></span>
         <?php
-          foreach ($likes as $r) {
-            echo "<a href=\"" . base_url('User/myinfo') . "/" . $r['id'] . "\" class='dt_nick' >" . $r['nname'] . "</a>";
+          $i = 0;
+          if(count($likes) < 6)
+            foreach ($likes as $r) {
+              echo "<a href=\"" . base_url('User/myinfo') . "/" . $r['id'] . "\" class='dt_nick' >" . $r['nname'] . "</a>";
+            }
+          else
+          {
+            while($i<=5) {
+              echo "<a href=\"" . base_url('User/myinfo') . "/" . $r['id'] . "\" class='dt_nick' >" . $r['nname'] . "</a>";
+              $i = $i+1;
+            } 
+            echo "等人";
           }
         ?>
         <a>觉得很赞</a>
@@ -169,3 +179,14 @@
         </div>
       </div>
 </div>
+
+<script>
+  function agree(){
+            $.ajax({  
+                url : "<?php echo base_url('Act/actlikes')?>"+"/"+<?php echo $a_id ?>,    
+                success : function(data)  
+                {  
+                }
+            }); 
+  }
+</script>
