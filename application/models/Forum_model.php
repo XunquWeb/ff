@@ -40,7 +40,7 @@ class Forum_model extends CI_Model {
 	public function submit_forum($text){
 		$sql = "INSERT INTO msg ( from_u_id , to_u_id, m_content, s_id ) values ( ? , ?,?,?)";
 		$query = $this->db->query($sql,array($this->session->id,-2,$text,3));
-		return $query;
+		return $query->result_array();
 	}
 
 }

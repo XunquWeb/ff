@@ -93,7 +93,7 @@
                           <input class="c-black"  value="" placeholder="DannyJay"></i></input>
                         </li>
                         <li>
-                          <a href="#tab-account-setting" class="c-grey">&nbsp;&nbsp;<?php echo $?></a>
+                          <a href="#tab-account-setting" class="c-grey">&nbsp;&nbsp;<?php 123 ?></a>
                         </li>                                                                         
                       </div>
                       <ul class="nav nav-pills more_info dl-menu">
@@ -102,6 +102,18 @@
                             <input id="info_date"  value ="未填写" href=""  data-toggle="tab" class="bounceOutUp"></input>
                           </li>
                           <li>
+                          <p><span>性别</span></p>
+                          <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
+                            <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
+                          </input>
+                          </li>
+                          <li>
+                          <p><span>性别</span></p>
+                          <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
+                            <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
+                          </input>
+                          </li>
+                                                    <li>
                           <p><span>性别</span></p>
                           <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->

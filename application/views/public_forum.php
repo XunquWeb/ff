@@ -304,12 +304,11 @@
       var flag=true;
       $("#submit_forum button.btn-primary").bind("click",function(){
         $('#form_forum').ajaxSubmit({
-             type: "post",
-             dataType: "json", //数据类型  
+             type: "post", 
              url: "<?base_url('forum/submit_forum')?>",
              success: function(result){
-                   //返回提示信息       
-                   alert("发布成功");
+                   //返回提示信息  
+                   alert(result);     
              }
         });
       });

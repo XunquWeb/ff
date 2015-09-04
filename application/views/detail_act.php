@@ -10,7 +10,7 @@
   </head>
 
 <div class="detail_title">
-    <h1 class="detail_title_h1" id="dt_title"><?//php echo $a_name;?>寻趣小分队求加盟</h1>
+    <h1 class="detail_title_h1" id="dt_title"><?php echo $a_name;?></h1>
 </div>
 
 <div class="detail_user hdMan">
@@ -21,10 +21,10 @@
     </div>
     <div class="hdman_r">
       <div class="yhName">
-        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $u_id . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php // echo $name;?>寻小趣</a>
+        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $u_id . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php  echo $name;?></a>
       </div>
       <div class="dt_review_item_count">
-        <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $share;?></a><span id="info_hits">阅读 <?php echo $browse;?></span>
+       <!-- <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $share;?></a><span id="info_hits">阅读 <?php echo $browse;?></span> -->
       </div>
     </div>
       <input type="hidden" id="postUserId36" value="a8fd3">
@@ -105,7 +105,7 @@
             echo "<a href=\"" . base_url('User/myinfo') . "/" . $r['id'] . "\" class='dt_nick' >" . $r['nname'] . "</a>";
           }
         ?>
-        <a>等人觉得很赞</a>
+        <a>觉得很赞</a>
       </span>
     </div>
 </div>

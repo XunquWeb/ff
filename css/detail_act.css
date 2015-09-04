@@ -379,7 +379,6 @@ a {
 }
 .dt_join_bar_outside {
   border-top: 1px solid #d9d9d9;
-  max-width: 640px;
   margin: 0 auto;
   background-color: #FFF;
   overflow: hidden;
