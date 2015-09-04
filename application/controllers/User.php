@@ -265,7 +265,7 @@ class User extends CI_Controller {
 		if($this->session->id){
 			$this->load->model('user_model');
 			$data['arr']=$this->user_model->follower_show($this->session->id);
-
+			//var_dump($data);
 			$this->load->view('header');
 			$this->load->view('follow_line_top');
 			$this->load->view('follow',$data);

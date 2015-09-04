@@ -75,24 +75,26 @@
 		//var_dump($utu_msg);
 		if($msg_type[0] == 1)
 			foreach($utu_msg as $r){
+				$d=strtotime($r['m_time']);
 				echo'<div class="msg-detail">';
 					echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
 					echo'<div class="msg-detail-content">';
 						echo'<div class="msg-source">'.$r['from_nname'].'</div>';
 						echo'<div class="msg-text">'.$r['m_content'].'</div>';
 					echo '</div>';
-					echo '<div class="msg-time">'."昨天2246".'</div>';
+					echo '<div class="msg-time">'. ( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
 				echo'</div>';
 			}
 		else{
-			foreach($utu_msg as $r){
+			foreach($system_msg as $r){
+				$d=strtotime($r['m_time']);
 				echo'<div class="msg-detail">';
 					echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
 					echo'<div class="msg-detail-content">';
 						echo'<div class="msg-source">'.$r['from_nname'].'</div>';
 						echo'<div class="msg-text">'.$r['m_content'].'</div>';
 					echo '</div>';
-					echo '<div class="msg-time">'."昨天2".'</div>';
+					echo '<div class="msg-time">'.( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
 				echo'</div>';
 			}
 		}
