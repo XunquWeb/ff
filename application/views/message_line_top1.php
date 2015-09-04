@@ -32,16 +32,18 @@
 		-->
 
 <nav class="msg-top-bar">
-	<a href="#" class="active">
+	<a href="1" class="active">
 	<span>用户私信</span>
 	</a>
-	<a href="#">
+	<a href="2">
 	<span>系统消息</span>
 	</a>
 </nav>
 
 <script>
 	$('.msg-top-bar a').bind('click', function(){
+			//alert('123');
+			//$('#tettet').append("<span>hello</span>");
 			$('.msg-top-bar a').each(
 				function(){
 					if($(this).hasClass('active'))

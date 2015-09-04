@@ -13,8 +13,10 @@
 		<link href="<?php echo base_url('css/message.css')?>" rel="stylesheet">
 	</head>
 
+<div id="#tettet">
+</div>
 
-
+<!--
 		<div class="container" id="msg-detail-list">
 			<div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
 				<img src="<?php echo base_url('image/photo_default.gif')?>">
@@ -66,9 +68,39 @@
 				<div class="msg-time">昨天10:08</div>
 			</div>
 		</div>
+-->
+<div class="container" id="msg-detail-list">
+	<?php 
+		$char = '"';
+		//var_dump($utu_msg);
+		if($msg_type[0] == 1)
+			foreach($utu_msg as $r){
+				echo'<div class="msg-detail">';
+					echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
+					echo'<div class="msg-detail-content">';
+						echo'<div class="msg-source">'.$r['from_nname'].'</div>';
+						echo'<div class="msg-text">'.$r['m_content'].'</div>';
+					echo '</div>';
+					echo '<div class="msg-time">'."昨天2246".'</div>';
+				echo'</div>';
+			}
+		else{
+			foreach($utu_msg as $r){
+				echo'<div class="msg-detail">';
+					echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
+					echo'<div class="msg-detail-content">';
+						echo'<div class="msg-source">'.$r['from_nname'].'</div>';
+						echo'<div class="msg-text">'.$r['m_content'].'</div>';
+					echo '</div>';
+					echo '<div class="msg-time">'."昨天2".'</div>';
+				echo'</div>';
+			}
+		}
 
+	?>
+</div>
 
-<!-- Modal -->
+<!-- Modal 
 <div class="modal fade" id="msg_reply" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -94,3 +126,4 @@
     </div>
   </div>
 </div>
+-->

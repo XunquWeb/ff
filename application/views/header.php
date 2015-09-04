@@ -32,7 +32,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
-          <a href="<?php echo base_url('user/message')?>" class="user_toggle user_message" >
+          <a href="<?php echo base_url('user/message/1')?>" class="user_toggle user_message" >
             <i class="fa fa-bell fa-fw"></i>
             <span class="badge badge-green" id="msg_num">0</span>
           </a>

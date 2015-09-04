@@ -197,18 +197,35 @@ class User extends CI_Controller {
 	}
 
 	public function message($type=0){
-		//$this->load->model('Msg_model');
-		/*
-		$data['type']=$type;
-		if($type==0)
-		{
-
-			$this->load->view('message');
+		$this->load->model('msg_model');
+		$result = $this->msg_model->index();
+		//var_dump($result);
+		$tmp;
+		if($result){
+			foreach ($result as $r) {
+				switch($r['s_name']){
+					case '用户私信':
+					  $tmp = 'utu_msg';
+					  break;
+					default:
+					  $tmp = 'system_msg';
+					  break;  
+				}
+					$data[$tmp][] = $r;
+			}		
 		}
-		else 
-			$this->load->view('message_line_top',$data);
-		*/
-		redirect('Msg');
+		else{
+			$data['empty'] = true;	
+		}
+		//var_dump($data);
+		$data['msg_type'][0] = $type;
+
+		$this->load->view('header');
+		$this->load->view('message_line_top'.$type);
+		$this->load->view('message_detail_list',$data);
+		$this->load->view('footer');
+
+		//redirect('Msg');
 	}
 
 	public function following($user_id){

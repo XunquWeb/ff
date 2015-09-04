@@ -83,7 +83,7 @@
 <div class="dt_act_board">
   <div class="dt_act_detail">
      <div>
-        <?php  echo $extra;?>
+        <?php  echo  $extra;?>
         <!--如果你热衷探索技术或者深谙营销之道或者什么都不会但有一颗想改变世界的心，那么就请加入我们。我们是交大最有情怀的创业小分队，我们致力于解决自己身边的问题～
         -->
      </div>
@@ -150,7 +150,7 @@
     </div>
 </div>
 
-<div ontouchstart="" onclick="" class="dt_review_top">
+<div ontouchstart="" onclick="" class="dt_review_top" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
       <p id="dt_review_count" class="dt_review_topL">快来发表你的评论</p>
       <p class="dt_review_topR" ontouchstart=""><span ontouchstart="">评论</span><a><img src="<?php echo base_url('image/comment_icon.png')?>" title="评论"></a></p>
       <a id="plWei" name="plWei"></a>
@@ -180,14 +180,41 @@
       </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="msg_reply" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top:55px">
+    <div class="modal-content">
+      <div class="modal-header msg-modal-fix" style="padding-top: 10px;padding-bottom: 10px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span>发布评论</span>
+      </div>
+      <div class="modal-body" style="padding-bottom:5px;">
+        <form>
+          <div class="form-group">
+            <textarea class="form-control" id="message-text" style="height: 90px;"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确认发布</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
+
 <script>
   function agree(){
             $.ajax({  
                 url : "<?php echo base_url('Act/actlikes')?>"+"/"+<?php echo $a_id ?>,    
                 success : function(data)  
-                {  
+                {
+                  $temp = $('#dt_like_count').text();
+                  $('#dt_like_count').text($temp + 1);  
                 }
             }); 
-  }   
   }
 </script>
