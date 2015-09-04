@@ -170,7 +170,7 @@
       </div>
       <div class="r">
         <div>
-          <a href="#" ontouchstart="" onclick="">
+          <a href="<?php echo base_url('act/join/').'/'.$a_id; ?>" ontouchstart="" >
             <p>
               <img class="dt_join_bar_icon" src="<?php echo base_url('image/icon_man2.png')?>" alt="">
               <span>我要去约</span>
@@ -188,5 +188,6 @@
                 {  
                 }
             }); 
+  }   
   }
 </script>
