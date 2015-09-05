@@ -292,6 +292,7 @@ class User extends CI_Controller {
 		}
 	}
 	public function unfollow($user_id=1){
+		if($this->session->id){
 		$type=$_FILES["file"]["type"];
 		if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][$i] < 10000)) {
 			if ($_FILES["file"]["error"] > 0) echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
@@ -309,6 +310,9 @@ class User extends CI_Controller {
   }
 else echo "Invalid file:";
 
+	}
+	}else{
+			redirect('');
 	}
 	
 }
