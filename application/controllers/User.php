@@ -291,6 +291,24 @@ class User extends CI_Controller {
 			redirect('');
 		}
 	}
+	public function unfollow($user_id=1){
+		$type=$_FILES["file"]["type"];
+		if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][$i] < 10000)) {
+			if ($_FILES["file"]["error"] > 0) echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+			else {
+				echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+				if (file_exists("upload/" . $_FILES["file"]["name"])) {
+					echo $_FILES["file"]["name"][$i] . " already exists. ";
+					}
+					else {
+						move_uploaded_file($_FILES["file"]["tmp_name"],
+						"image/photo/" . $this->session->id);
+						echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+						}
+						}
+  }
+else echo "Invalid file:";
 
+	}
 	
 }
