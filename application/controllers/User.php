@@ -293,10 +293,10 @@ class User extends CI_Controller {
 	}
 	public function post_photo()){
 		if($this->session->id){
-		$type=$_FILES["file"]["type"];
-		if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][$i] < 10000)) {
-			if ($_FILES["file"]["error"] > 0) echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
-			else {
+			$type=$_FILES["file"]["type"];
+			if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][$i] < 10000)) {
+				if ($_FILES["file"]["error"] > 0) echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+				else {
 				echo "Upload: " . $_FILES["file"]["name"] . "<br />";
 				if (file_exists("upload/" . $_FILES["file"]["name"])) {
 					echo $_FILES["file"]["name"][$i] . " already exists. ";
@@ -307,12 +307,21 @@ class User extends CI_Controller {
 						echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
 						}
 						}
-  }
-else echo "Invalid file:";
-
-	}
-	}else{
+				  }
+			else echo "Invalid file:";
+		}else{
 			redirect('');
+		}
 	}
-	
+	public function get_newest_follower(){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$data=$this->user_model->follower_show($this->session->id);
+			$data=end($data);
+		}
+		else{
+			redirect('');
+		}
+	}
+
 }
