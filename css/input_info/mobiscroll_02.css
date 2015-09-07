@@ -549,3 +549,17 @@
     -webkit-animation-name:bounceIn;
     animation-name:bounceIn
 }
+
+.dw-school td:nth-child(2){
+    display:none;
+}
+.dw-school td:nth-child(3){
+    display:none;
+}
+
+.dw-checkin td:nth-child(2){
+    display:none;
+}
+.dw-checkin td:nth-child(3){
+    display:none;
+}

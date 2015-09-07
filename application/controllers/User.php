@@ -291,7 +291,7 @@ class User extends CI_Controller {
 			redirect('');
 		}
 	}
-	public function post_photo()){
+	public function post_photo(){
 		if($this->session->id){
 			$type=$_FILES["file"]["type"];
 			if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][$i] < 10000)) {

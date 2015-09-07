@@ -28,7 +28,9 @@
     <script src="<?php echo base_url('js/input_info/mobiscroll_03.js')?>" type="text/javascript"></script>
     <script src="<?php echo base_url('js/input_info/mobiscroll_05.js')?>" type="text/javascript"></script>
     <link href="<?php echo base_url('css/input_info/mobiscroll_03.css')?>" rel="stylesheet" type="text/css">
-
+    <script src="<?php echo base_url('js/input_info/mobiscroll_school.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/input_info/mobiscroll_checkin.js')?>" type="text/javascript"></script>
+    
     <script src="<?php echo base_url('js/input_info/mobiscroll_06.js')?>" type="text/javascript"></script>
 
     <script src="<?php echo base_url('js/input_info/mobiscroll_07.js')?>" type="text/javascript"></script>
@@ -37,14 +39,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/page-transition/animations.css')?>" />
     <script src="<?php echo base_url('js/page-transition/modernizr.custom.js')?>"></script>
     <!-- <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css"> -->
-
-
-
-
-
   <body>
-    
-  
+
   </head>
   <div id="mask" style="display:none;"></div>
   <div id="pt-main" class="pt-perspective">
@@ -58,19 +54,13 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           </div><!-- /.navbar-collapse -->
-
-            
         </div><!-- /.container-fluid -->
-
       </nav>
 
       <div class="content-wrap">
         <section>
           <form>
-            <div class="padder">
-
-
-                  
+            <div class="padder">     
                 <div class="">
                   <div class="panel">
                     <!-- <div class="dl-menuwrapper dl-menu-main">
@@ -98,24 +88,20 @@
                       </div>
                       <ul class="nav nav-pills more_info dl-menu">
                           <li>
-                            <p><span>星座</span></p>
-                            <input id="info_date"  value ="未填写" href=""  data-toggle="tab" class="bounceOutUp"></input>
-                          </li>
-                          <li>
                           <p><span>性别</span></p>
                           <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
                           <li>
-                          <p><span>性别</span></p>
-                          <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
+                          <p><span>学校</span></p>
+                          <input id="info_school"  value ="未填写"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
-                                                    <li>
-                          <p><span>性别</span></p>
-                          <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
+                          <li>
+                          <p><span>入学年份</span></p>
+                          <input id="info_checkin"  value ="未填写"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
@@ -137,7 +123,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="">
                   <div class="panel">
                     <!-- <div class="dl-menuwrapper dl-menu-main">
@@ -180,7 +165,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="">
                   <div class="panel">
                     <div class="panel-body">
@@ -201,18 +185,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="">
-                  <div class="panel">
-                    <div class="panel-body">
-                      <ul class="nav nav-pills nav-stacked personal_info">
-                        <li >
-                          <a href="http://localhost/ff/User/account_info" class="c-black"><i class="fa fa-quote-left bc-red"></i>&nbsp;&nbsp;&nbsp;&nbsp;个性签名</a>
-                        </li>
-                      </ul>
-                      
-                    </div>
-                  </div>
-                </div>
             </div>
           </section>
           <div class="submit_edit_button">
@@ -220,7 +192,6 @@
           </div>
       </div>
     </div>
-
     <div class="pt-page pt-page-2 pt-info">
       <nav class="nav_fix navbar navbar-default " id="nav_fix">
         <div class="container-fluid0 bc-main dl-menuwrapper dl-menu-main">
@@ -230,11 +201,9 @@
           </ul>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           </div><!-- /.navbar-collapse -->
-
-            
         </div><!-- /.container-fluid -->
-
       </nav>
+
       <div class="content-wrap">
       <section>
           <div class="padder">
@@ -348,6 +317,8 @@
       });
     </script>
 
+
+
     <script type="text/javascript">
     $(function(){
 
@@ -359,18 +330,18 @@
         opt.time = {preset : 'time'};
         opt.default = {
           theme: 'android-ics light', //皮肤样式
-              display: 'modal', //显示方式 
-              mode: 'scroller', //日期选择模式
+          display: 'modal', //显示方式 
+          mode: 'scroller', //日期选择模式
           dateFormat: 'yyyy-mm-dd',
           lang: 'zh',
           showNow: true,
           nowText: "今天",
-              startYear: currYear - 0, //开始年份
-              endYear: currYear + 1 //结束年份
+          startYear: currYear - 0, //开始年份
+          endYear: currYear + 1 //结束年份
         };
 
         $("#info_sex").mobiscroll1($.extend(opt['date'], opt['default']));
-        });
+      });
 
         // $(".dw-persp").top();
 
@@ -400,6 +371,144 @@
           $('.dw-sex .dw-persp').fadeOut(300);
           $('.dw-sex .dwo').fadeOut(300,function(){
             $('.dw-sex .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
+          });
+          $('#mask').css('height', 0).fadeOut(300);
+
+          // console.log($('.dwwl1 .dw-sel').attr("data-val"));
+
+          // console.log($('.dwwl2 .dw-sel').attr("data-val"));
+
+          // console.log('ahaha');
+          // console.log($('body').css("z-index"));
+          // console.log($('body').css("z-index"));
+        });
+
+      
+
+      });
+    </script>
+
+    <script type="text/javascript">
+    $(function(){
+
+      $(function () {
+        var currYear = (new Date()).getFullYear();  
+        var opt={};
+        opt.date = {preset : 'date'};
+        opt.datetime = {preset : 'datetime'};
+        opt.time = {preset : 'time'};
+        opt.default = {
+          theme: 'android-ics light', //皮肤样式
+              display: 'modal', //显示方式 
+              mode: 'scroller', //日期选择模式
+          dateFormat: 'yyyy-mm-dd',
+          lang: 'zh',
+          showNow: true,
+          nowText: "今天",
+              startYear: currYear - 0, //开始年份
+              endYear: currYear + 1 //结束年份
+        };
+
+        $("#info_checkin").mobiscrollch($.extend(opt['date'], opt['default']));
+        });
+
+        // $(".dw-persp").top();
+
+
+        $("#info_checkin").click(function(){
+          $('.dw-checkin .dw-persp').fadeIn(300);
+          $('.dw-checkin .dwo').fadeIn(300,function(){
+            $('.dw-checkin .dwbg').removeClass('bounceInDown').addClass('bounceOutUp').fadeIn();
+            });
+
+          
+
+          var wh = $('body').height();
+          $('#mask').css('height', wh).fadeIn(300);
+          var wh1 = $(window).height()*0.3;
+          wh2 = 210;
+          wh3 = wh1 < wh2 ? wh2 : wh1;
+              var ma1 = $(window).height()-wh3;
+              $('.dw-checkin div.dw').css('height', wh3).css('margin-top',ma1);
+          // console.log('1');
+          console.log($("#info_checkin").val());
+        });
+
+
+
+        $('#mask').click(function(){
+          $('.dw-checkin .dw-persp').fadeOut(300);
+          $('.dw-checkin .dwo').fadeOut(300,function(){
+            $('.dw-checkin .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
+          });
+          $('#mask').css('height', 0).fadeOut(300);
+
+          // console.log($('.dwwl1 .dw-sel').attr("data-val"));
+
+          // console.log($('.dwwl2 .dw-sel').attr("data-val"));
+
+          // console.log('ahaha');
+          // console.log($('body').css("z-index"));
+          // console.log($('body').css("z-index"));
+        });
+
+      
+
+      });
+    </script>
+
+    <script type="text/javascript">
+    $(function(){
+
+      $(function () {
+        var currYear = (new Date()).getFullYear();  
+        var opt={};
+        opt.date = {preset : 'date'};
+        opt.datetime = {preset : 'datetime'};
+        opt.time = {preset : 'time'};
+        opt.default = {
+          theme: 'android-ics light', //皮肤样式
+              display: 'modal', //显示方式 
+              mode: 'scroller', //日期选择模式
+          dateFormat: 'yyyy-mm-dd',
+          lang: 'zh',
+          showNow: true,
+          nowText: "今天",
+              startYear: currYear - 0, //开始年份
+              endYear: currYear + 1 //结束年份
+        };
+
+        $("#info_school").mobiscrollsc($.extend(opt['date'], opt['default']));
+        });
+
+        // $(".dw-persp").top();
+
+
+        $("#info_school").click(function(){
+          $('.dw-school .dw-persp').fadeIn(300);
+          $('.dw-school .dwo').fadeIn(300,function(){
+            $('.dw-school .dwbg').removeClass('bounceInDown').addClass('bounceOutUp').fadeIn();
+            });
+
+          
+
+          var wh = $('body').height();
+          $('#mask').css('height', wh).fadeIn(300);
+          var wh1 = $(window).height()*0.3;
+          wh2 = 210;
+          wh3 = wh1 < wh2 ? wh2 : wh1;
+              var ma1 = $(window).height()-wh3;
+              $('.dw-school div.dw').css('height', wh3).css('margin-top',ma1);
+          // console.log('1');
+          console.log($("#info_school").val());
+        });
+
+
+
+        $('#mask').click(function(){
+          $('.dw-school .dw-persp').fadeOut(300);
+          $('.dw-school .dwo').fadeOut(300,function(){
+            $('.dw-school .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
           });
           $('#mask').css('height', 0).fadeOut(300);
 

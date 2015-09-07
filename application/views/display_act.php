@@ -138,11 +138,11 @@ TR;
 		    </div>
 		    <div class="panel-footer">
 TR;
-		    echo '浏览&nbsp;&nbsp;<span><i class="blue">' . $r['browse'] . '</i>次</span>';
+		    echo '浏览&nbsp;<span><i class="blue">' . $r['browse'] . '</i>次</span>&nbsp';
 
-		    echo <<<TR
-		    	响应&nbsp;&nbsp;<span><i class="blue">#act_take_num#</i>次</span>
-		        评论<span><i class="blue">#act_comment_num#</i>次</span>
+		    echo '报名&nbsp;<span><i class="blue">'.$r['browse'].'</i>次</span>';
+
+			echo <<<TR
 		    </div>
 		</div>
 TR;
