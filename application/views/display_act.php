@@ -23,14 +23,14 @@
                             <ul class="dropdown-list">
                             	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>全部分类</span></li>
                             	<li  data-category-id="1" data-category-name=""><span>吃喝玩乐</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>健身减肥</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>影音书画</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>同学去哪</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>争做学霸</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>来约奇葩</span></li>
                             	<li  data-category-id="1" data-category-name=""><span>我会更棒</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>摄影约片</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>变帅变美</span></li>                           	
+                            	<li  data-category-id="1" data-category-name=""><span>健身减肥</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>来约奇葩</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>请求支援</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>人在途中</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>影音书画</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>约谈约聊</span></li>
+                            	<li  data-category-id="1" data-category-name=""><span>新生戳这</span></li>                           	
                             </ul>
                         </li>
                         <li class="category-wrapper rank display-none">
@@ -45,9 +45,6 @@
                             <ul class="dropdown-list">
                             	<li  class="active" data-category-id="0" data-category-name="美食" data-has-sub="true"><span>交通大学</span></li>
                             	<li  data-category-id="1" data-category-name="今日新单"><span>华东师范大学</span></li>
-                            	<li  data-category-id="1" data-category-name="今日新单"><span>复旦大学</span></li>
-                            	<li  data-category-id="1" data-category-name="今日新单"><span>同济大学</span></li>
-                            	<li  data-category-id="1" data-category-name="今日新单"><span>财经大学</span></li>
                             </ul>
                         </li>
                     </ul>

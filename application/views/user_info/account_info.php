@@ -30,6 +30,7 @@
     <link href="<?php echo base_url('css/input_info/mobiscroll_03.css')?>" rel="stylesheet" type="text/css">
     <script src="<?php echo base_url('js/input_info/mobiscroll_school.js')?>" type="text/javascript"></script>
     <script src="<?php echo base_url('js/input_info/mobiscroll_checkin.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/input_info/mobiscroll_major.js')?>" type="text/javascript"></script>
     
     <script src="<?php echo base_url('js/input_info/mobiscroll_06.js')?>" type="text/javascript"></script>
 
@@ -80,35 +81,30 @@
                         </figure>
                         <ul class="nav nav-pills nav-stacked nav-sided pull-right">
                         <li >
-                          <input class="c-black"  value="" placeholder="DannyJay"></i></input>
+                          <input class="c-black"  value="" name="nickname" placeholder="<?php echo $this->session->nname;?>"></i></input>
                         </li>
                         <li>
-                          <a href="#tab-account-setting" class="c-grey">&nbsp;&nbsp;<?php 123 ?></a>
+                          <input name="signature" placeholder="<?php echo $this->session->sign; ?>"></input>
                         </li>                                                                         
                       </div>
                       <ul class="nav nav-pills more_info dl-menu">
                           <li>
                           <p><span>性别</span></p>
-                          <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
+                          <input id="info_sex" name="info_sex"  placeholder ="未填写"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
                           <li>
                           <p><span>学校</span></p>
-                          <input id="info_school"  value ="未填写"  class="bounceOutUp" >
+                          <input id="info_school" name="info_school"  placeholder ="未填写"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
                           <li>
-                          <p><span>入学年份</span></p>
-                          <input id="info_checkin"  value ="未填写"  class="bounceOutUp" >
-                            <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
-                          </input>
+                            <p><span>兴趣爱好</span></p>
+                            <input id="info_hobby" name="info_hobby"  placeholder ="未填写"></input>
                           </li>
-                          <li>
-                            <p><span>情感</span></p>
-                            <input id="info_state"  value ="未填写"  class="bounceOutUp" ></input>
-                          </li>
+<!--
                           <li data-animation="1" index="1">
                             <p><span>兴趣标签</span></p>
                             <a href="#" class="c-black info_flaunt">&nbsp;&nbsp;艺术家</a>
@@ -119,6 +115,7 @@
                             <a href="#" class="c-black">&nbsp;&nbsp;上海</a>
                             <span><i class="fa fa-angle-right pull-right c-grey"></i> </span>
                           </li>
+-->
                       </ul>
                     </div>
                   </div>
@@ -139,32 +136,31 @@
                           </div>
                           <li>
                             <p><span>星座</span></p>
-                            <input id="info_date"  value ="未填写" href=""  data-toggle="tab" class="bounceOutUp"></input>
+                            <input id="info_date"  name="info_date"  placeholder ="未填写" href=""  data-toggle="tab" class="bounceOutUp"></input>
                           </li>
                           <li>
-                          <p><span>性别</span></p>
-                          <input id="info_sex"  value ="未填写"  class="bounceOutUp" >
+                            <p><span>专业</span></p>
+                            <input id="info_major"  name="info_major"  placeholder ="未填写"  ></input>
+                          </li>
+                          <li>
+                          <p><span>情感状态</span></p>
+                          <input id="info_state" name="info_state" placeholder ="未填写"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
                           <li>
-                            <p><span>情感</span></p>
-                            <input id="info_state"  value ="未填写"  class="bounceOutUp" ></input>
+                            <p><span>家乡</span></p>
+                            <input id="info_home" name="info_home" placeholder ="未填写" ></input>
                           </li>
-                          <li data-animation="1" index="1">
-                            <p><span>兴趣标签</span></p>
-                            <a href="#" class="c-black info_flaunt">&nbsp;&nbsp;艺术家</a>
-                            <span><i class="fa fa-angle-right pull-right c-grey"></i> </span>
-                          </li>
-                          <li data-animation="1" index="2">
-                            <p><span>活跃地</span></p>
-                            <a href="#" class="c-black">&nbsp;&nbsp;上海</a>
-                            <span><i class="fa fa-angle-right pull-right c-grey"></i> </span>
+                          <li>
+                            <p><span>联系方式</span></p>
+                            <input id="info_contact" name="info_contact"  placeholder ="未填写"  ></input>
                           </li>
                       </ul>
                     </div>
                   </div>
                 </div>
+                <!--
                 <div class="">
                   <div class="panel">
                     <div class="panel-body">
@@ -173,23 +169,24 @@
                           <div class="caption"><span><i class="fa fa-user c-main"></i></span>个人成长</div> 
                         </div>
                         <li>
-                          <p><span><!-- <i class="fa fa-institution bc-blue"></i> -->等级状态</span></p>
+                          <p><span><!-- <i class="fa fa-institution bc-blue"></i> --> <!--等级状态</span></p>
                           <a href="" class=" level_info c-black" ><span class="meta-rank pull-left m-t m-l-sm">Lv.9</span></a>
                         </li>
                         <li>
-                          <p><span><!-- <i class="fa fa-level-up bc-blue"></i> -->信誉评分</span></p>
+                          <p><span><!-- <i class="fa fa-level-up bc-blue"></i> --><!--信誉评分</span></p>
                           <a href="#" class=" star_info"><span class="space"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star-o"></span></a>
                         </li>
                       </ul>
                       
                     </div>
                   </div>
+                -->
                 </div>
             </div>
-          </section>
-          <div class="submit_edit_button">
             <button class="btn btn-primary"  type="submit"  >确认提交</button>
-          </div>
+          </form>
+          </section>
+
       </div>
     </div>
     <div class="pt-page pt-page-2 pt-info">
@@ -416,9 +413,9 @@
 
 
         $("#info_checkin").click(function(){
-          $('.dw-checkin .dw-persp').fadeIn(300);
-          $('.dw-checkin .dwo').fadeIn(300,function(){
-            $('.dw-checkin .dwbg').removeClass('bounceInDown').addClass('bounceOutUp').fadeIn();
+          $('.dw-time .dw-persp').fadeIn(300);
+          $('.dw-time .dwo').fadeIn(300,function(){
+            $('.dw-time .dwbg').removeClass('bounceInDown').addClass('bounceOutUp').fadeIn();
             });
 
           
@@ -429,7 +426,7 @@
           wh2 = 210;
           wh3 = wh1 < wh2 ? wh2 : wh1;
               var ma1 = $(window).height()-wh3;
-              $('.dw-checkin div.dw').css('height', wh3).css('margin-top',ma1);
+              $('.dw-time div.dw').css('height', wh3).css('margin-top',ma1);
           // console.log('1');
           console.log($("#info_checkin").val());
         });
@@ -437,9 +434,9 @@
 
 
         $('#mask').click(function(){
-          $('.dw-checkin .dw-persp').fadeOut(300);
-          $('.dw-checkin .dwo').fadeOut(300,function(){
-            $('.dw-checkin .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
+          $('.dw-time .dw-persp').fadeOut(300);
+          $('.dw-time .dwo').fadeOut(300,function(){
+            $('.dw-time .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
           });
           $('#mask').css('height', 0).fadeOut(300);
 

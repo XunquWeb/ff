@@ -11,6 +11,10 @@
     <script src="<?php echo base_url('js/clockpicker.js')?>"></script>
     <script src="<?php echo base_url('js/datepicker.js')?>"></script>
     <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datetime/DateTimePicker.css')?>" />
+    <script type="text/javascript" src="<?php echo base_url('css/datetime/DateTimePicker.js')?>"></script>
+
   </head>
 
 
@@ -33,30 +37,54 @@
                 <span class="icon-alert"></span>
                 提示：发布违法、反动互动信息或者冒用他人、组织名义发起互动，将依据记录提交公安机关处理
             </div> -->
-            <div class="form-group error">
+            <div class="form-group error" style="border-bottom:0px;margin-bottom:-1px;">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="约单主题" required="" data-validation-message="请输入约单主题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+                <input type="text" class="form-control" placeholder="约单名称" required="" data-validation-message="请输入约单主题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+            </div>
+            <div class="create-event-more" style="height:50px;">
+                <div class="form-group" style="line-height:50px;">
+                    <span class="icon-tag"></span> <span style＝"top: 0px;left: 38px;color: rgb(159, 153, 181);">约单主题</span>
+                    <select name="Setting.HdxTags" id="event-select-hdxtag" style="margin-top:10px;">
+                        
+                        <option value="" img="/Content/v2.0/img/poster/thumb/entertainment.jpg">选择主题</option>
+                        <option value="创业" img="/Content/v2.0/img/poster/thumb/es.jpg">创业</option>
+                        <option value="商务" img="/Content/v2.0/img/poster/thumb/business.jpg">商务</option>
+                        <option value="公益" img="/Content/v2.0/img/poster/thumb/benefit.jpg">公益</option>
+                        <option value="社交" img="/Content/v2.0/img/poster/thumb/social.jpg">社交</option>
+                        <option value="亲子" img="/Content/v2.0/img/poster/thumb/baby.jpg">亲子</option>
+                        <option value="电影" img="/Content/v2.0/img/poster/thumb/movie.jpg">电影</option>
+                        <option value="娱乐" img="/Content/v2.0/img/poster/thumb/entertainment.jpg">娱乐</option>
+                        <option value="生活" img="/Content/v2.0/img/poster/thumb/life.jpg">生活</option>
+                        <option value="音乐" img="/Content/v2.0/img/poster/thumb/music.jpg">音乐</option>
+                        <option value="科技" img="/Content/v2.0/img/poster/thumb/tech.jpg">科技</option>
+                        <option value="运动" img="/Content/v2.0/img/poster/thumb/sport.jpg">运动</option>
+                        <option value="课程" img="/Content/v2.0/img/poster/thumb/course.jpg">课程</option>
+                        <option value="校园" img="/Content/v2.0/img/poster/thumb/school.jpg">校园</option>
+                        <option value="文化" img="/Content/v2.0/img/poster/thumb/culture.jpg">文化</option>
+                        
+                        <option value="其他" img="/Content/v2.0/img/poster/thumb/es.jpg">其他</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group deadline">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="报名截止时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Deadline" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
+                <input type="text" class="form-control" placeholder="报名截止时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Deadline"  data-field="datetime"  readonly="">
                 <!-- <div class="tips sr-only">输入活动开始时间</div> -->
             </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Start" value="2015-08-13 08:00:00" id="mobiscroll1438876656972" readonly="">
+                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Start" data-field="datetime" readonly="">
                 <!-- <div class="tips sr-only">输入活动开始时间</div> -->
             </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="活动结束时间" required="" data-validation-message="请输入约单结束时间" data-validation-type="warning" name="End" value="2015-08-13 17:00:00" id="mobiscroll1438876656973" readonly="">
+                <input type="text" class="form-control" placeholder="活动结束时间" required="" data-validation-message="请输入约单结束时间" data-validation-type="warning" name="End" data-field="datetime" readonly="">
                 <!-- <div class="tips sr-only">输入活动结束时间</div> -->
             </div>
             <div class="form-group">
                 <span class="icon-city-md"></span>
                 <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="活动学校" name="College">
                 </input>
-
             </div>
             <div class="form-group">
                 <span class="icon-place-md"></span>
@@ -73,7 +101,8 @@
                 </textarea>
                 
             </div>
-
+        <div id="dtBox"></div>
+<!--
             <div class="form-group error">
                 <span class="icon-tag"></span>
                 <input type="text" class="form-control" placeholder="个人姓名" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="name" value="" maxlength="100" data-invalid="">
@@ -162,3 +191,19 @@
         }
     })
 </script>
+
+        <script type="text/javascript">
+        
+            $(document).ready(function()
+            {
+                $("#dtBox").DateTimePicker({
+                
+                    formatHumanDate: function(date)
+                    {
+                        return date.day + ", " + date.month + " " + date.dd + ", " + date.yyyy;
+                    }
+                
+                });
+            });
+        
+        </script>

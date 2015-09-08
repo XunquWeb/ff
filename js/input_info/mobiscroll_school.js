@@ -379,7 +379,7 @@
             // date = $('.dwwl2 .dw-sel').attr("data-val");
             // if(school == 2015) {v = "男" + "span class="meta-school c-blue"><i class="fa fa-mars"></i></span>";}
             if(school == 2015) {v = "交通大学";}
-            if(school == 2016) {v = "复旦大学";}
+            if(school == 2016) {v = "华东师范大学";}
 
             // if (month == 0 && date >=20 || month == 1 && date <=18) {v = "水瓶座";}
             // if (month == 0 && date > 31) {v = "Huh?";}
@@ -454,7 +454,7 @@
                 that.setValue(false, manual);
                 that.html("123");
             } else {
-                $('.dwv', dw).html("性别");
+                $('.dwv', dw).html("学校");
             }
 
             if (manual) {
@@ -716,9 +716,8 @@
 
             console.log($('.dw-school .dwwl0 .dw-bf').children().eq(1).children().html());
             $(".dw-school .dwwl0 .dw-bf").children().eq(0).children().text('交通大学');
-            $(".dw-school .dwwl0 .dw-bf").children().eq(1).children().text('复旦大学');
-
-          
+            $(".dw-school .dwwl0 .dw-bf").children().eq(1).children().text('华东师范大学');
+            
 
               var wh = $('body').height();
               $('#mask').css('height', wh).fadeIn(300);
@@ -768,7 +767,7 @@
             $('.dw-school .dwbg').removeClass('bounceOutUp').addClass('bounceInDown').fadeOut();
           });
             $(".dw-school .dwwl0 .dw-bf").children().eq(0).children().text('交通大学');
-            $(".dw-school .dwwl0 .dw-bf").children().eq(1).children().text('复旦大学');
+            $(".dw-school .dwwl0 .dw-bf").children().eq(1).children().text('华东师范大学');
             $('#mask').css('height', 0).fadeOut(300);
             console.log('4');
         };
