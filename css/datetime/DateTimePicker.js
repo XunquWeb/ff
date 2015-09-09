@@ -68,7 +68,7 @@
 	
 		titleContentDate: "Set Date",
 		titleContentTime: "Set Time",
-		titleContentDateTime: "Set Date & Time",
+		titleContentDateTime: "请选择时间日期",
 	
 		buttonsToDisplay: ["HeaderCloseButton", "SetButton", "ClearButton"],
 		setButtonContent: "Set",

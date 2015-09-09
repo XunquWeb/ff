@@ -85,10 +85,13 @@ class Act_model extends CI_Model {
 		$this->form_validation->set_rules('Address','address','required|max_length[255]');
 		$this->form_validation->set_rules('Max_num','max number','required|less_than[500]|is_natural');
 		$this->form_validation->set_rules('Description','description','required|min_length[10]|max_length[255]');
-
+		$this->form_validation->set_rules('Type','type','required');
+		$dl=strtotime($_POST['Deadline']);
+		$st=strtotime($_POST['Start']);
+		$ed=strtotime($_POST['End']);
 		if($this->form_validation->run()){
-			$sql = "INSERT INTO act (u_id,a_name,deadline,start_time,end_time,extra,a_college,place,max_num) VALUES (?,?,?,?,?,?,?,?,?)";
-			$sql = $this->db->compile_binds($sql,array($this->session->id,$_POST['Title'],$_POST['Deadline'],$_POST['Start'],$_POST['End'],$_POST['Description'],$_POST['College'],$_POST['Address'],$_POST['Max_num']));
+			$sql = "INSERT INTO act (u_id,a_name,deadline,start_time,end_time,extra,a_college,place,max_num,t_id) VALUES (?,?,?,?,?,?,?,?,?,?)";
+			$sql = $this->db->compile_binds($sql,array($this->session->id,$_POST['Title'],$dl,$st,$ed,$_POST['Description'],$_POST['College'],$_POST['Address'],$_POST['Max_num'],$_POST['Type']));
 			if($this->db->simple_query($sql)){
 				return $this->db->insert_id();
 			}
