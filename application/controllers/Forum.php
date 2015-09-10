@@ -59,7 +59,7 @@ class Forum extends CI_Controller {
 		}
 	}
 
-	public function history_ajax($page=1){
+	public function history_ajax($page){
 		$this->load->model('forum_model');
 		if($data = $this->forum_model->history_ajax($page)){
 			//var_dump($data);
@@ -86,7 +86,8 @@ class Forum extends CI_Controller {
 	}
 
 	public function submit_forum(){
-		if($this->load->model('forum_model')){
+		$this->load->model('forum_model');
+		if($this->forum_model->submit_forum()){
 			echo "success";
 		}
 		else echo "failed";

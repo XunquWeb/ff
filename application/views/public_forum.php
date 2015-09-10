@@ -117,8 +117,8 @@
                       <div class="icon icon-share pull-right" ></div>
                   </div>
           </div>
--->
-          <div class="forum-box" id="first-forum-box">
+-->       <div id="first-forum-box" style="display:none">
+          <div class="forum-box" >
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
                       <span class="forum-icon-box pull-left">
                           <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
@@ -126,122 +126,25 @@
                       <span class="user-name pull-left">这就是用户名</span>
                   </div>
                   <div class="forum-content-text" onclick="" data-id="90000099">
-                      <p class="text">哈哈哈哈哈哈</p>
+                      <p class="text">&&&&&&&&&&&&&&&</p>
                   </div>
                   <div class="status-box">
                       <span class="agree">
                           <span class="agree-count">1000</span>
                           点赞&nbsp;
                       </span>
+                      <!--
                       <span class=" comment">
                           <span class=" comment-count">1000</span>
                           评论
                       </span>
+                      -->
                   </div>
                   <div class="btns-group clearfix">
                       <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" onclick=""></div>
+                      <!--<div class="icon icon-comment pull-left" onclick=""></div>-->
                   </div>
           </div>
-          <div class="forum-box">
-                  <div class="forum-top clearfix" onclick="" data-id="" data-type="">
-                      <span class="forum-icon-box pull-left">
-                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
-                      </span>
-                      <span class="user-name pull-left">这就是用户名</span>
-                  </div>
-                  <div class="forum-content-text" onclick="" data-id="90000099">
-                      <p class="text">哈哈哈哈哈哈</p>
-                  </div>
-                  <div class="status-box">
-                      <span class="agree">
-                          <span class="agree-count">1000</span>
-                          点赞&nbsp;·
-                      </span>
-                      <span class=" comment">
-                          <span class=" comment-count">1000</span>
-                          评论
-                      </span>
-                  </div>
-                  <div class="btns-group clearfix">
-                      <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" onclick=""></div>
-                  </div>
-          </div>
-           <div class="forum-box">
-                  <div class="forum-top clearfix" onclick="" data-id="" data-type="">
-                      <span class="forum-icon-box pull-left">
-                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
-                      </span>
-                      <span class="user-name pull-left">这就是用户名</span>
-                  </div>
-                  <div class="forum-content-text" onclick="" data-id="90000099">
-                      <p class="text">哈哈哈哈哈哈</p>
-                  </div>
-                  <div class="status-box">
-                      <span class="agree">
-                          <span class="agree-count">1000</span>
-                          点赞&nbsp;·
-                      </span>
-                      <span class=" comment">
-                          <span class=" comment-count">1000</span>
-                          评论
-                      </span>
-                  </div>
-                  <div class="btns-group clearfix">
-                      <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" onclick=""></div>
-                  </div>
-          </div>
-           <div class="forum-box">
-                  <div class="forum-top clearfix" onclick="" data-id="" data-type="">
-                      <span class="forum-icon-box pull-left">
-                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
-                      </span>
-                      <span class="user-name pull-left">这就是用户名</span>
-                  </div>
-                  <div class="forum-content-text" onclick="" data-id="90000099">
-                      <p class="text">哈哈哈哈哈哈</p>
-                  </div>
-                  <div class="status-box">
-                      <span class="agree">
-                          <span class="agree-count">1000</span>
-                          点赞&nbsp;·
-                      </span>
-                      <span class=" comment">
-                          <span class=" comment-count">1000</span>
-                          评论
-                      </span>
-                  </div>
-                  <div class="btns-group clearfix">
-                      <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" onclick=""></div>
-                  </div>
-          </div>
-           <div class="forum-box">
-                  <div class="forum-top clearfix" onclick="" data-id="" data-type="">
-                      <span class="forum-icon-box pull-left">
-                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
-                      </span>
-                      <span class="user-name pull-left">这就是用户名</span>
-                  </div>
-                  <div class="forum-content-text" onclick="" data-id="90000099">
-                      <p class="text">哈哈哈哈哈哈</p>
-                  </div>
-                  <div class="status-box">
-                      <span class="agree">
-                          <span class="agree-count">1000</span>
-                          点赞&nbsp;·
-                      </span>
-                      <span class=" comment">
-                          <span class=" comment-count">1000</span>
-                          评论
-                      </span>
-                  </div>
-                  <div class="btns-group clearfix">
-                      <div class="icon icon-agree pull-left" onclick=""></div>
-                      <div class="icon icon-comment pull-left" onclick=""></div>
-                  </div>
           </div>
           <a id="tocreat" herf="" style="display:inline;"data-toggle="modal" data-target="#submit_forum" data-whatever="@someone"><i class="fa fa-plus"></i></a>
           <div id="totop" style="display: block;"><i class="fa fa-angle-up"></i></div>
@@ -300,20 +203,27 @@
 
 
 <script>
+
+
       var tmp_page = 0;
       var flag=true;
+      var falling = 1;
       $("#submit_forum button.btn-primary").bind("click",function(){
         var msg_text = $("#message-text").val();
         alert(msg_text);
         $.ajax({
              type: "post", 
-             data: 'data='+msg_text,
-             url: "<?base_url('forum/submit_forum')?>",
+             data: {text:msg_text},
+             dataType: "json",
+             url: "<?php echo base_url('Forum/submit_forum')?>",
              success: function(result){
                    //返回提示信息
-                   alert(result) ;   
+                   alert(result);   
              }
         });
+      });
+      $(document).ready(function(){
+        loadMore();
       });
       $(function(){
         $(window).scroll(function(){
@@ -334,12 +244,14 @@
       });  
       function loadMore()  
       {   
-          if(flag){
+          if(flag&&falling){
+            falling = 0;
             $.ajax({  
                 url : "<?php echo base_url('Forum/history_ajax')?>"+"/"+tmp_page,    
                 success : function(data)  
                 {  
                   //alert(data)
+                  console.log(tmp_page);
                   if(data!="no more history"){
                     tmp_page++;
                     $forum_arr = data.split('#');
@@ -349,20 +261,22 @@
                     // }
                     $.each($forum_arr,function(n,value){
                           $forum_dtl[n] = value.split('&');
-                          $html_temp = $("#first-forum-box").clone();
+                          $html_temp = $("#first-forum-box .forum-box").clone();
                           $html_temp.find('.user-name').text($forum_dtl[n][1]);
                           $html_temp.find('.text').text($forum_dtl[n][3]);
+                          $html_temp.find('.forum-box').attr("display","block");
                           //alert($forum_dtl[n][3]);
                           $(".forum-frame").append($html_temp);
                     }
 
                     );
-                    
 
                   }
                   else{
                     flag = false;
+
                   }
+                  falling = 1;
                 }  
             });  
           }

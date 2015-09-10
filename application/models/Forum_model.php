@@ -23,7 +23,7 @@ class Forum_model extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function history_ajax($page=1){
+	public function history_ajax($page){
 		$sql = "SELECT m_id,user.nname,from_u_id,m_content,m_time FROM msg,user WHERE s_id=3 and msg.from_u_id=user.id and floor=0 ORDER BY m_time DESC limit ?,10";
 		$query = $this->db->query($sql,array(10*$page));
 		return $query->result_array();
@@ -38,8 +38,9 @@ class Forum_model extends CI_Model {
 	}
 
 	public function submit_forum(){
+		$tmp = $_POST["text"];
 		$sql = "INSERT INTO msg ( from_u_id , to_u_id, m_content, s_id ) values (?,?,?,?)";
-		$query = $this->db->query($sql,array($this->session->id,-2,$_POST['data'],3));
+		$query = $this->db->query($sql,array($this->session->id,-2,$tmp,3));
 		return $query->result_array();
 	}
 
