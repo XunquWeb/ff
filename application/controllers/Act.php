@@ -72,7 +72,8 @@ class Act extends CI_Controller {
 			else{
 				//echo "<script>alert(".$_POST['Title'].");</script>";
 				echo "<script>alert('请补全填写项');</script>";
-				//redirect('base_url("act/submit")');
+				$url = base_url("act/submit/")."/".$act_id;
+				redirect('base_url("act/submit")');
 			}
 			$url = base_url("act/detail/")."/".$act_id;
 			redirect($url);

@@ -89,6 +89,12 @@ class Act_model extends CI_Model {
 		$dl=strtotime($_POST['Deadline']);
 		$st=strtotime($_POST['Start']);
 		$ed=strtotime($_POST['End']);
+		// $dl=date('Y-m-d H:i:s',$_POST['Deadline']);
+		// $st=date('Y-m-d H:i:s',$_POST['Start']);
+		// $ed=date('Y-m-d H:i:s',$_POST['End']);
+		$dl=date('Y-m-d H:i:s',$dl);
+		$st=date('Y-m-d H:i:s',$st);
+		$ed=date('Y-m-d H:i:s',$ed);
 		if($this->form_validation->run()){
 			$sql = "INSERT INTO act (u_id,a_name,deadline,start_time,end_time,extra,a_college,place,max_num,t_id) VALUES (?,?,?,?,?,?,?,?,?,?)";
 			$sql = $this->db->compile_binds($sql,array($this->session->id,$_POST['Title'],$dl,$st,$ed,$_POST['Description'],$_POST['College'],$_POST['Address'],$_POST['Max_num'],$_POST['Type']));
