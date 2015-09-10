@@ -303,12 +303,15 @@
       var tmp_page = 0;
       var flag=true;
       $("#submit_forum button.btn-primary").bind("click",function(){
-        $('#form_forum').ajaxSubmit({
+        var msg_text = $("#message-text").val();
+        alert(msg_text);
+        $.ajax({
              type: "post", 
+             data: 'data='+msg_text,
              url: "<?base_url('forum/submit_forum')?>",
              success: function(result){
-                   //返回提示信息  
-                   alert(result);     
+                   //返回提示信息
+                   alert(result) ;   
              }
         });
       });

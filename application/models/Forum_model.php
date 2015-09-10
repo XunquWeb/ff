@@ -37,9 +37,9 @@ class Forum_model extends CI_Model {
 		return $query1->result_array();
 	}
 
-	public function submit_forum($text){
-		$sql = "INSERT INTO msg ( from_u_id , to_u_id, m_content, s_id ) values ( ? , ?,?,?)";
-		$query = $this->db->query($sql,array($this->session->id,-2,$text,3));
+	public function submit_forum(){
+		$sql = "INSERT INTO msg ( from_u_id , to_u_id, m_content, s_id ) values (?,?,?,?)";
+		$query = $this->db->query($sql,array($this->session->id,-2,$_POST['data'],3));
 		return $query->result_array();
 	}
 

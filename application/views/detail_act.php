@@ -160,7 +160,7 @@
 <div class="dt_join_bar dt_join_bar_outside" >
       <div class="l">
         <div>
-          <a href="#" ontouchstart="">
+          <a href="<?php echo base_url('act/submit/')?>" ontouchstart="">
             <p>
               <img class="dt_join_bar_icon" src="<?php echo base_url('image/icon_add.png')?>" alt="">
               <span>我也要发约单</span>

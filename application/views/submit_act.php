@@ -8,31 +8,17 @@
     <link href="<?php echo base_url('css/submit_act.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('css/clockpicker.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('css/datepicker.css')?>" rel="stylesheet">
-    <script src="<?php echo base_url('js/clockpicker.js')?>"></script>
-    <script src="<?php echo base_url('js/datepicker.js')?>"></script>
-    <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/fontawesome/css/font-awesome.css')?>" />
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datetime/DateTimePicker.css')?>" />
-    <script type="text/javascript" src="<?php echo base_url('css/datetime/DateTimePicker.js')?>"></script>
-
+    
   </head>
 
 
 
 
-    <form class="create-event " id="create_event" method="post" action="<?php echo base_url('act/submit');?>" data-abide="" prevent-submit="true" novalidate="">
-    		<input type="hidden" value="0" name="Id" id="activity_id">
-            <input id="Category" name="Category" type="hidden" value="99">
-            <input id="Type" name="Type" type="hidden" value="1">
-            <input id="CreateBy" name="CreateBy" type="hidden" value="9302036809375">
-            <input id="Setting_Province" name="Setting.Province" type="hidden" value="上海">
-            <input id="City" name="City" type="hidden" value="上海">
-            <input id="Setting_ShowMembers" name="Setting.ShowMembers" type="hidden" value=""> 
-            <input id="Setting_Summary" name="Setting.Summary" type="hidden" value="">
-            <input id="Setting_IsPrivate" name="Setting.IsPrivate" type="hidden" value=""> 
-            <input id="Tag" name="Tag" type="hidden" value="">
-            <input id="Description" name="Description" type="hidden" value="">
+    <form class="create-event " id="create_event" method="post" action="<?php echo base_url('act/submit');?>" accept-charset="utf-8" data-abide="" prevent-submit="true" >
             
             <!-- <div class="small tips">
                 <span class="icon-alert"></span>
@@ -40,7 +26,7 @@
             </div> -->
             <div class="form-group error" style="border-bottom:0px;margin-bottom:-1px;">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="约单名称" required="" data-validation-message="请输入约单主题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
+                <input type="text" class="form-control" placeholder="约单名称" required data-validation-message="请输入约单主题" data-validation-type="warning" name="Title" value="" maxlength="100" data-invalid="">
             </div>
             <div class="create-event-more" style="height:50px;">
                 <div class="form-group" style="line-height:50px;">
@@ -61,35 +47,35 @@
             </div>
             <div class="form-group deadline">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="报名截止时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Deadline"  data-field="datetime"  readonly="">
+                <input type="text" class="form-control" placeholder="报名截止时间" required data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Deadline"  data-field="datetime"  readonly="">
                 <!-- <div class="tips sr-only">输入活动开始时间</div> -->
             </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Start" data-field="datetime" readonly="">
+                <input type="text" class="form-control" placeholder="活动开始时间" required data-validation-message="请输入约单开始时间" data-validation-type="warning" name="Start" data-field="datetime" readonly="">
                 <!-- <div class="tips sr-only">输入活动开始时间</div> -->
             </div>
             <div class="form-group datetime">
                 <span class="icon-time-md"></span>
-                <input type="text" class="form-control" placeholder="活动结束时间" required="" data-validation-message="请输入约单结束时间" data-validation-type="warning" name="End" data-field="datetime" readonly="">
+                <input type="text" class="form-control" placeholder="活动结束时间" required data-validation-message="请输入约单结束时间" data-validation-type="warning" name="End" data-field="datetime" readonly="">
                 <!-- <div class="tips sr-only">输入活动结束时间</div> -->
             </div>
             <div class="form-group">
                 <span class="icon-city-md"></span>
-                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="学校" name="College">
+                <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="学校" name="College" required>
                 </input>
             </div>
             <div class="form-group">
                 <span class="icon-place-md"></span>
-                <input type="text" class="form-control" placeholder="详细地址" required="" data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
+                <input type="text" class="form-control" placeholder="详细地址" required data-validation-message="请输入活动详细地址" data-validation-type="warning" name="Address" value="">
             </div>
             <div class="form-group">
                 <span class="icon-tag"></span>
-                <input type="text" class="form-control" placeholder="人数上限" required="" data-validation-message="" data-validation-type="warning" name="Max_num" value="">
+                <input type="text" class="form-control" placeholder="人数上限" required data-validation-message="" data-validation-type="warning" name="Max_num" value="">
             </div>
             <div class="event-edit">
                 <div class="placeholder"><span></span><p>添加约单详情，让小伙伴更好的了解约单～</p></div>
-                <textarea class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description">
+                <textarea class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description" required>
                     
                 </textarea>
                 
@@ -164,6 +150,8 @@
             <input id="btn_create_event" type="submit" class="btn btn-primary btn-block btn-lg"  value="确定发布">
         </form>
 
+
+
 <style type="text/css">
 
     .special{
@@ -171,6 +159,13 @@
     }
 
 </style>
+
+    <script src="<?php echo base_url('js/clockpicker.js')?>"></script>
+    <script src="<?php echo base_url('js/datepicker.js')?>"></script>
+    <script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
+    <script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('css/datetime/DateTimePicker.js')?>"></script>
+
 
 <script>
     $(".event-edit .textarea").bind('input propertychange', function() {

@@ -42,12 +42,12 @@
                 <input type="text" class="form-control" placeholder="活动开始时间" required="" data-validation-message="请输入活动开始时间" data-validation-type="warning" name="Start" value="<?php echo $start_time;?>" id="mobiscroll1438876656972" readonly="">
                 <!-- <div class="tips sr-only">输入活动开始时间</div> -->
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom:10px;">
                 <span class="icon-city-md"></span>
                 <input type="text" id="mobiscroll1438876656974_dummy" class="form-control" placeholder="" readonly="" value="<?php echo $a_college;?>">
                 </input>
-
             </div>
+
             <div class="form-group error">
                 <span class="icon-tag"></span>
                 <input type="text" class="form-control" placeholder="姓名" required="" data-validation-message="请输入活动标题" data-validation-type="warning" name="name" value="" maxlength="100" data-invalid="">
