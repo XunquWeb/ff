@@ -168,7 +168,7 @@
 </div>
 
 -->
-<div class="height-fix" style="height:20px">
+<div class="height-fix" style="height:68px">
 </div>
 <div class="dt_join_bar dt_join_bar_outside" >
       <div class="l">
@@ -183,7 +183,7 @@
       </div>
       <div class="r">
         <div>
-          <a ontouchstart="join()" >
+          <a onclick="join()" >
             <p>
               <img class="dt_join_bar_icon" src="<?php echo base_url('image/icon_man2.png')?>" alt="">
               <span>我要去约</span>
@@ -235,8 +235,8 @@
 
 
   function join(){
-      var starttime = "<?php echo substr($start_time,5,11) ?>";
-      var deadline = "<?php echo substr($deadline,5,11) ?>";
+      var starttime = "<?php echo $start_time ?>";
+      var deadline = "<?php echo $deadline ?>";
       var starttime = new Date(starttime.replace("-", "/").replace("-", "/"));
       var deadline = new Date(deadline.replace("-", "/").replace("-", "/"));
       var mydate = new Date();
@@ -246,12 +246,15 @@
       }
       var already = "<?php echo $join_num;?>";
       var max = "<?php echo $max_num;?>";
-      if(already >= max && max!=0)
+      if( (already >= max) && (max!=0))
       {
         alert('报名人数已满');
         return false;
       }
-      if("<?php echo $this->session->id?>" == "<?php echo $u_id?>" )
+      if("<?php echo $this->session->id?>" == "<?php echo $u_id?>" ) {
+        alert("您是发起者，亲...");
+        return false;
+      }
       window.location.href="<?php echo base_url('act/join/').'/'.$a_id; ?>";
   }
 </script>

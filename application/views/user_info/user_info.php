@@ -269,7 +269,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="msg_reply" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
-  <div class="modal-dialog" style="margin-top:155px">
+  <div class="modal-dialog" style="margin-top:105px">
     <div class="modal-content">
       <div class="modal-header msg-modal-fix" style="padding-top: 10px;padding-bottom: 10px;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -351,6 +351,23 @@
         following();
       }        
     });
+
+    $(document).ready(function(){
+        $(".icon-agree").bind('click',function(){
+            alert("123");
+            $msg_id=$(this).children("span").val();
+            alert($msg_id);
+            $.ajax({
+                 type: "post", 
+                 url: "<?php echo base_url('Forum/forum_agree')?>"+"/"+$msg_id,
+                 success: function(result){
+                       //返回提示信息
+                       alert(result);   
+                 }
+            });
+        });
+        loadMore();
+      });
   </script>
 
 </html>
