@@ -214,7 +214,7 @@ class Act extends CI_Controller {
 		if($this->act_model->is_sponsor($a_id)){
 			if($data = $this->act_model->manage($a_id)){
 				//var_dump($data);
-				$this->load->view('header');
+				$this->load->view('header_manage',$data);
 				$this->load->view('manage_act',$data);
 				$this->load->view('footer');
 			}
