@@ -34,14 +34,16 @@ class Msg extends CI_Controller {
 
 
 	//发送私信
-	public function submit(){
+	public function submit($toid){
 		if($this->input->method()=='post'){
 			$this->load->model('msg_model');
-			if($this->msg_model->submit()){
+			if($this->msg_model->submit($toid)){
 				echo 'msg:success';
+				return true;
 			}else{
 				$error=$this->db->error();
 				echo 'err:'.$error['code'];
+				return false;
 			}
 			
 		}else{

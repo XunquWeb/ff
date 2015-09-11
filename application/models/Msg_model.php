@@ -28,15 +28,11 @@ class Msg_model extends CI_Model {
 		}
 	}
 
-	public function submit(){
-		$this->form_validation->set_rules('tid', 'tid', 'required|integer');
-		$this->form_validation->set_rules('data', 'data', 'required|max_length[60000]|');
-		if($this->form_validation->run()){
-			$sql = "INSERT INTO msg (from_u_id,to_u_id,data) values ( ? , ? , ? )";
-			$sql = $this->db->compile_binds($sql,$this->session->id,$_POST['tid'],$_POST['data']);
+	public function submit($toid){
+			$sql = "INSERT INTO msg (from_u_id,to_u_id,m_content,unrd,s_id) values ( ? , ? , ? , 1 , 1)";
+			$sql = $this->db->compile_binds($sql,array($this->session->id,$toid,$_POST['text']));
 			return $this->db->simple_query($sql);
-		}
-		return FALSE;	
+	
 	}
 
 	public function msg_ajax(){

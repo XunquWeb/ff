@@ -303,6 +303,25 @@
     });
 
   })();
+
+
+      $("#msg_reply button.btn-primary").bind("click",function(){
+        var msg_text = $("#message-text").val();
+        $('#msg_reply').modal('hide') 
+        //alert(msg_text);
+        $.ajax({
+             type: "post", 
+             data: {text:msg_text},
+             dataType: "json",
+             url: "<?php echo base_url('msg/submit').'/'.$id; ?>",
+             success: function(result){
+                   //返回提示信息 
+                   alert(result);
+                   alert("消息送达！");
+                   
+             }
+        });
+      });
   </script>
 
   <script type="text/javascript">
@@ -352,22 +371,7 @@
       }        
     });
 
-    $(document).ready(function(){
-        $(".icon-agree").bind('click',function(){
-            alert("123");
-            $msg_id=$(this).children("span").val();
-            alert($msg_id);
-            $.ajax({
-                 type: "post", 
-                 url: "<?php echo base_url('Forum/forum_agree')?>"+"/"+$msg_id,
-                 success: function(result){
-                       //返回提示信息
-                       alert(result);   
-                 }
-            });
-        });
-        loadMore();
-      });
+
   </script>
 
 </html>
