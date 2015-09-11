@@ -11,12 +11,12 @@ class Act_model extends CI_Model {
 
 	public function index($ch_id=0){
 		if($ch_id == 0){
-			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC limit 10";
+			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC ";
 			$query = $this->db->query($sql);
 			return $query->result_array();
 		}
 		else{
-			$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.t_id=type.id ORDER BY act.a_id DESC limit 10";
+			$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.t_id=type.id ORDER BY act.a_id DESC ";
 			$query = $this->db->query($sql,array($ch_id));
 			return $query->result_array();
 		}
@@ -42,10 +42,15 @@ class Act_model extends CI_Model {
 		$sql = "UPDATE act SET browse=browse+1 WHERE a_id= ? ";			//浏览量 + 1
 		$result = $this->db->compile_binds($sql, $a_id);
 		if($this->db->simple_query($result)){
+
+
 			//获取活动基本信息
 			$sql = "SELECT a_id,u_id,user.name,a_name,deadline,create_time,start_time,end_time,extra,place,max_num,join_num,t_name,a_state,browse,a_like,share 
 				FROM act,type,user WHERE act.t_id=type.id and user.id=act.u_id and act.a_id=? limit 1";
 			$query1 = $this->db->query($sql, array($a_id));
+
+
+
 			
 			//获取活动参与者信息
 			$sql = "SELECT user.nname,user.id FROM user WHERE user.id in (SELECT act_man.u_id FROM act,act_man WHERE act.a_id=act_man.a_id and act.a_id=?)";
@@ -129,9 +134,14 @@ class Act_model extends CI_Model {
 		//$this->form_validation->set_rules('year', 'Year', 'required|integer');
 
 		if($this->form_validation->run()){
+			$sql = "UPDATE act
+			SET join_num = join_num + 1 WHERE a_id=?";
+			$query = $this->db->query($sql, array($a_id));
 			$sql = "INSERT INTO act_man (a_id,u_id,am_state,am_name,am_phone,am_college,am_extra) VALUES (?,?,?,?,?,?,?)";
 			$sql = $this->db->compile_binds($sql,array($a_id,intval($this->session->id),$is_check,$_POST['name'],$_POST['phone'],$_POST['college'],isset($_POST['description'])? $_POST['description']: null));
 			return $this->db->simple_query($sql);
+
+
 		}
 		return FALSE;
 	}

@@ -23,6 +23,12 @@ class Forum_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function forum_agree($m_id){
+		$sql = "UPDATE msg set a_id=a_id+1 where m_id = ?";
+		$query = $this->db->query($sql, array($m_id));
+		return $query->result_array();
+	}
+
 	public function history_ajax($page){
 		$sql = "SELECT m_id,user.nname,from_u_id,m_content,m_time FROM msg,user WHERE s_id=3 and msg.from_u_id=user.id and floor=0 ORDER BY m_time DESC limit ?,10";
 		$query = $this->db->query($sql,array(10*$page));

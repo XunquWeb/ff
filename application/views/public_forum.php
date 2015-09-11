@@ -119,31 +119,37 @@
           </div>
 -->       <div id="first-forum-box" style="display:none">
           <div class="forum-box" >
+
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
+                      <a class="forum-photo" href="">
                       <span class="forum-icon-box pull-left">
-                          <img src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
+
+                          <img class="forum-photo" src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
                       </span>
+                      </a>
                       <span class="user-name pull-left">这就是用户名</span>
                   </div>
                   <div class="forum-content-text" onclick="" data-id="90000099">
                       <p class="text">&&&&&&&&&&&&&&&</p>
                   </div>
+                  <!--
                   <div class="status-box">
                       <span class="agree">
                           <span class="agree-count">1000</span>
                           点赞&nbsp;
                       </span>
-                      <!--
+
                       <span class=" comment">
                           <span class=" comment-count">1000</span>
                           评论
                       </span>
-                      -->
+
                   </div>
                   <div class="btns-group clearfix">
-                      <div class="icon icon-agree pull-left" onclick=""></div>
-                      <!--<div class="icon icon-comment pull-left" onclick=""></div>-->
+                      <div class="icon icon-agree pull-left" ><span style="display:none" class="forum_id"><span></div>
+                      <div class="icon icon-comment pull-left" onclick=""></div>
                   </div>
+                  -->
           </div>
           </div>
           <a id="tocreat" herf="" style="display:inline;"data-toggle="modal" data-target="#submit_forum" data-whatever="@someone"><i class="fa fa-plus"></i></a>
@@ -210,19 +216,33 @@
       var falling = 1;
       $("#submit_forum button.btn-primary").bind("click",function(){
         var msg_text = $("#message-text").val();
-        alert(msg_text);
+        $('#submit_forum').modal('hide') 
+        //alert(msg_text);
         $.ajax({
              type: "post", 
              data: {text:msg_text},
              dataType: "json",
              url: "<?php echo base_url('Forum/submit_forum')?>",
              success: function(result){
-                   //返回提示信息
-                   alert(result);   
+                   //返回提示信息 
+                   
              }
         });
       });
       $(document).ready(function(){
+        $(".icon-agree").bind('click',function(){
+            alert("123");
+            $msg_id=$(this).children("span").val();
+            alert($msg_id);
+            $.ajax({
+                 type: "post", 
+                 url: "<?php echo base_url('Forum/forum_agree')?>"+"/"+$msg_id,
+                 success: function(result){
+                       //返回提示信息
+                       alert(result);   
+                 }
+            });
+        });
         loadMore();
       });
       $(function(){
@@ -262,9 +282,11 @@
                     $.each($forum_arr,function(n,value){
                           $forum_dtl[n] = value.split('&');
                           $html_temp = $("#first-forum-box .forum-box").clone();
+                          $html_temp.find('.forum-photo').attr('href',"<?php echo base_url('user/myinfo')?>"+"/"+$forum_dtl[n][2]);
                           $html_temp.find('.user-name').text($forum_dtl[n][1]);
                           $html_temp.find('.text').text($forum_dtl[n][3]);
                           $html_temp.find('.forum-box').attr("display","block");
+                          $html_temp.find('.forum_id').text($forum_dtl[n][0]);
                           //alert($forum_dtl[n][3]);
                           $(".forum-frame").append($html_temp);
                     }
@@ -285,6 +307,7 @@
       {
 
       }
+      
 
 </script>
 </html>

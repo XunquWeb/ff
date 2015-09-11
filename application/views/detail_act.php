@@ -69,7 +69,15 @@
       </div>
       <div class="detail_Joinnum_b">
          <p>
-           限<span><?php echo $max_num;?></span>人报名
+          <?php 
+            if($max_num==0){
+              echo "不限人数";
+            }
+            else{
+              echo "限<span>".$max_num."</span>人报名";
+            }
+
+          ?>
          </p>
       </div>
     </div>
@@ -120,6 +128,9 @@
     </div>
 </div>
 
+
+
+<!--
 <div  class="comment_header">
     <h4 class="sub-title-decoration">闲聊</h4>
 </div>
@@ -155,6 +166,8 @@
       <p class="dt_review_topR" ontouchstart=""><span ontouchstart="">评论</span><a><img src="<?php echo base_url('image/comment_icon.png')?>" title="评论"></a></p>
       <a id="plWei" name="plWei"></a>
 </div>
+
+-->
 <div class="height-fix" style="height:20px">
 </div>
 <div class="dt_join_bar dt_join_bar_outside" >
@@ -170,7 +183,7 @@
       </div>
       <div class="r">
         <div>
-          <a href="<?php echo base_url('act/join/').'/'.$a_id; ?>" ontouchstart="" >
+          <a ontouchstart="join()" >
             <p>
               <img class="dt_join_bar_icon" src="<?php echo base_url('image/icon_man2.png')?>" alt="">
               <span>我要去约</span>
@@ -216,5 +229,28 @@
                   $('#dt_like_count').text($temp + 1);  
                 }
             }); 
+  }
+
+
+
+
+  function join(){
+      var starttime = "<?php echo substr($start_time,5,11) ?>";
+      var deadline = "<?php echo substr($deadline,5,11) ?>";
+      var starttime = new Date(starttime.replace("-", "/").replace("-", "/"));
+      var deadline = new Date(deadline.replace("-", "/").replace("-", "/"));
+      var mydate = new Date();
+      if (mydate > deadline) {
+          alert('报名已截止');
+          return false;
+      }
+      var already = "<?php echo $join_num;?>";
+      var max = "<?php echo $max_num;?>";
+      if(already >= max && max!=0)
+      {
+        alert('报名人数已满');
+        return false;
+      }
+      window.location.href="<?php echo base_url('act/join/').'/'.$a_id; ?>";
   }
 </script>

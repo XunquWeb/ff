@@ -59,6 +59,16 @@ class Forum extends CI_Controller {
 		}
 	}
 
+	public function forum_agree($m_id){
+		$this->load->model('forum_model');
+		if($data = $this->forum_model->forum_agree($m_id)){
+			echo "success";
+		}
+		else{
+			echo "no more history";
+		}
+	}
+
 	public function history_ajax($page){
 		$this->load->model('forum_model');
 		if($data = $this->forum_model->history_ajax($page)){
@@ -94,5 +104,7 @@ class Forum extends CI_Controller {
 		//$data = $this->forum_model->submit_forum($_POST('forum_text'));
 		//echo 234;
 	}
+
+
 
 }

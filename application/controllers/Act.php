@@ -103,6 +103,7 @@ class Act extends CI_Controller {
 		$this->load->model('act_model');
 		if($this->act_model->is_exist($a_id)){
 			echo '<script>alert(/already join in!/);</script>';
+
 		}
 		else{
 			//判断是否是活动发起人
@@ -121,6 +122,8 @@ class Act extends CI_Controller {
 			}
 					
 		}
+			$another = base_url("act/detail/")."/".$a_id;
+			redirect($another);
 		
 	}
 
@@ -191,6 +194,20 @@ class Act extends CI_Controller {
 
 	}
 
+
+	public function manage_list(){
+		$this->load->model('act_model');
+		if($data['row'] = $this->act_model->index($ch_id)){
+			//var_dump($data);
+			for($i=0; $i<count($data['row']); $i++){
+				$r = $data['row'][$i];
+				$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
+			}
+			$this->load->view('header');		
+			$this->load->view('display_act',$data);
+			$this->load->view('footer');
+		}
+	}
 
 	//活动管理界面
 	public function manage($a_id=1){
