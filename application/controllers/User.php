@@ -198,7 +198,7 @@ class User extends CI_Controller {
 
 	public function message($type=0){
 		$this->load->model('msg_model');
-		$result = $this->msg_model->index();
+		$result = $this->msg_model->index($type);
 		//var_dump($result);
 		$tmp;
 		if($result){
@@ -261,15 +261,42 @@ class User extends CI_Controller {
 		}
 	}
 
-	public function follow_list(){
+	public function follow_list($type=0){
 		if($this->session->id){
 			$this->load->model('user_model');
-			$data['arr']=$this->user_model->follower_show($this->session->id);
-			//var_dump($data);
-			$this->load->view('header');
-			$this->load->view('follow_line_top');
-			$this->load->view('follow',$data);
-			$this->load->view('footer');
+			if($type == 0)
+			{
+				if($data['arr']=$this->user_model->follower_show($this->session->id)){
+					//var_dump($data);
+					$this->load->view('header');
+					$this->load->view('follow_line_top_ed');
+					$this->load->view('followed',$data);
+					$this->load->view('footer');
+				}
+				else{
+					$data['arr'] = 123;
+					$this->load->view('header');
+					$this->load->view('follow_line_top_ed');
+					$this->load->view('followed',$data);
+					$this->load->view('footer');			
+				}
+			}
+			else{
+				if($data['arr']=$this->user_model->followed_show($this->session->id)){
+					//var_dump($data);
+					$this->load->view('header');
+					$this->load->view('follow_line_top_er');
+					$this->load->view('follower',$data);
+					$this->load->view('footer');
+				}
+				else{
+					$data['arr'] = 123;
+					$this->load->view('header');
+					$this->load->view('follow_line_top_er');
+					$this->load->view('follower',$data);
+					$this->load->view('footer');			
+				}
+			}
 		}
 		else{
 			redirect('');

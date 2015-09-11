@@ -28,10 +28,11 @@
   <body>
     
   
-    <nav class="nav_fix navbar navbar-default " id="nav_fix">
+    <nav class="nav_fix navbar navbar-default " id="nav_fix" style="margin-bottom:20px;">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a id="menu-toggle" href="#" class="slide-menu"><i class="fa fa-bars"></i></a>
+          <div style="z-index:50;"><a id="menu-toggle" href="#" class="slide-menu" style="z-index:100;"><i class="fa fa-bars" style="z-index:100;"></i></a></div>
+          <div style="position: absolute;font-size: 20px;color: white;line-height: 50px;width: 70%;text-align: center;right:15%;">管理约单</div>
           <a href="<?php echo base_url('user/message/1')?>" class="user_toggle user_message" >
             <i class="fa fa-bell fa-fw"></i>
             <span class="badge badge-green" id="msg_num">0</span>

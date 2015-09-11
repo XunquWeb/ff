@@ -13,21 +13,18 @@
 		<link href="<?php echo base_url('css/message.css')?>" rel="stylesheet">
 	</head>
 
-<div id="#tettet">
-</div>
 
+<!-- 这里就先不用ajax了，因为还有一些页面要写  follow_line_top直接用链接跳转吧，传不同的参数 php echo的时候也可以区分开  建议data－target 加上用户id作为后缀  区分不同的人的回复-->
 <!--
 		<div class="container" id="msg-detail-list">
 			<div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
 				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">王永强</div>
-					<div class="msg-text">今晚约写代码吗？</div>
+					<div class="msg-text">这里是个性签名</div>
 				</div>
-				<div class="msg-time">晚上18:08</div>
-				<div class="msg-nm"></div>
 			</div>
-			<div class="msg-detail">
+			<div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
 				<img src="<?php echo base_url('image/photo_default.gif')?>">
 				<div class="msg-detail-content">
 					<div class="msg-source">苏小欢</div>
@@ -69,56 +66,36 @@
 			</div>
 		</div>
 -->
-<div class="container" id="msg-detail-list">
-	<?php 
-		$char = '"';
-		//var_dump($utu_msg);
-		if($msg_type[0] == 1)
-			foreach($utu_msg as $r){
-				$d=strtotime($r['m_time']);
-				echo "<a href=".base_url('user/myinfo/').'/'.$r['from_u_id']." >";
-				echo'<div class="msg-detail">';
-					echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
-					echo'<div class="msg-detail-content">';
-						echo'<div class="msg-source">'.$r['from_nname'].'</div>';
-						echo'<div class="msg-text">'.$r['m_content'].'</div>';
-					echo '</div>';
-					echo '<div class="msg-time">'. ( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
-				echo'</div>';
-				echo'</a>';
-			}
-		else{
-			foreach($system_msg as $r){
-				$d=strtotime($r['m_time']);
-				echo'<div class="msg-detail">';
-					echo"<img src=".$char.base_url('image/xunqu.jpg').$char.'>';
-					echo'<div class="msg-detail-content">';
-						echo'<div class="msg-source">'.'管理员'.'</div>';
-						echo'<div class="msg-text">'.$r['m_content'].'</div>';
-					echo '</div>';
-					echo '<div class="msg-time">'.( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
-				echo'</div>';
-			}
-		}
+		<div class="container" id="msg-detail-list">
+			<?php
+				if($arr!=123)
+				{
+					foreach ($arr as $r) {
+						if($r['sign']=='')
+							$r['sign']="这个人很懒什么也没留下";
+									echo "<a href=".base_url('user/myinfo/').'/'.$r['followed_id']." >"."<div class="."msg-detail"." data-target="."#msg_reply "."data-whatever="."@someone".">";
+									echo "<img src=".base_url('image/photo_default.gif')." >";
+									echo "<div class='msg-detail-content'><div class='msg-source'>".$r['followername']."</div><div class='msg-text'>".$r['sign']."</div></div></div></a>";
+					}
+				}
+				else{
+					echo "你没有关注任何人哦！";
+				}
+			?>
+		</div>
 
-	?>
-</div>
 
-<!-- Modal 
+<!-- Modal -->
 <div class="modal fade" id="msg_reply" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header msg-modal-fix">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <img class="msg_reply_img" src="<?php echo base_url('image/photo_default.gif')?>">
-        <span>王永强</span>
-        <span class='msg_reply_time'>04:35am</span>
+        <span>发私信</span>
       </div>
       <div class="modal-body">
-      	<p>听说张之铖又找妹纸了？！！</p>
         <form>
           <div class="form-group">
-            <label for="message-text" class="control-label">回复</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div>
         </form>
@@ -130,4 +107,3 @@
     </div>
   </div>
 </div>
--->

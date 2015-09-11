@@ -251,6 +251,7 @@
         alert('报名人数已满');
         return false;
       }
+      if("<?php echo $this->session->id?>" == "<?php echo $u_id?>" )
       window.location.href="<?php echo base_url('act/join/').'/'.$a_id; ?>";
   }
 </script>

@@ -32,10 +32,10 @@
 		-->
 
 <nav class="msg-top-bar">
-	<a href="#" class="active">
+	<a href="<?php echo base_url('user/follow_list/0')?>" >
 	<span>我关注的</span>
 	</a>
-	<a href="#">
+	<a href="<?php echo base_url('user/follow_list/1')?>" class="active">
 	<span>关注我的</span>
 	</a>
 </nav>

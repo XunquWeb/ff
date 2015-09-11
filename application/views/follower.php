@@ -15,6 +15,7 @@
 
 
 <!-- 这里就先不用ajax了，因为还有一些页面要写  follow_line_top直接用链接跳转吧，传不同的参数 php echo的时候也可以区分开  建议data－target 加上用户id作为后缀  区分不同的人的回复-->
+<!--
 		<div class="container" id="msg-detail-list">
 			<div class="msg-detail" data-toggle="modal" data-target="#msg_reply" data-whatever="@someone">
 				<img src="<?php echo base_url('image/photo_default.gif')?>">
@@ -63,6 +64,24 @@
 				</div>
 				<div class="msg-time">昨天10:08</div>
 			</div>
+		</div>
+-->
+		<div class="container" id="msg-detail-list">
+			<?php
+				if($arr!=123)
+				{
+					foreach ($arr as $r) {
+						if($r['sign']=='')
+							$r['sign']="这个人很懒什么也没留下";
+									echo "<a href=".base_url('user/myinfo/').'/'.$r['follower_id']." >"."<div class="."msg-detail"." data-target="."#msg_reply "."data-whatever="."@someone".">";
+									echo "<img src=".base_url('image/photo_default.gif')." >";
+									echo "<div class='msg-detail-content'><div class='msg-source'>".$r['followedname']."</div><div class='msg-text'>".$r['sign']."</div></div></div>";
+					}
+				}
+				else{
+					echo "还没有人关注你哦！";
+				}
+			?>
 		</div>
 
 

@@ -195,16 +195,15 @@ class Act extends CI_Controller {
 	}
 
 
-	public function manage_list(){
+	public function manage_list($ch_id){
 		$this->load->model('act_model');
 		if($data['row'] = $this->act_model->index($ch_id)){
-			//var_dump($data);
 			for($i=0; $i<count($data['row']); $i++){
 				$r = $data['row'][$i];
 				$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
 			}
-			$this->load->view('header');		
-			$this->load->view('display_act',$data);
+			$this->load->view('header_manage_list');		
+			$this->load->view('manage_list',$data);
 			$this->load->view('footer');
 		}
 	}

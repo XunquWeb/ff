@@ -1317,7 +1317,7 @@ fieldset[disabled] .btn-success.active {
     display: none;
     z-index: 9999;
     background: transparent;
-    border: 3px solid #e74c3c;
+    border: 3px solid #A0D468;
     border-radius: 50%;
     height: 45px;
     width: 45px;
@@ -1331,14 +1331,14 @@ fieldset[disabled] .btn-success.active {
     display: none;
     z-index: 9999;
     background: transparent;
-    border: 3px solid #e74c3c;
+    border: 3px solid #A0D468;
     border-radius: 50%;
     height: 45px;
     width: 45px;
     text-align: center;
 }
 #totop i,#tocreat i{
-    color: #e74c3c;
+    color: #A0D468;
     line-height: 40px;
     font-size: 33px;
 }

@@ -9,7 +9,15 @@ class Msg_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function index(){
+	public function index($type){
+		if($type == 1){
+			$sql = "UPDATE msg SET unrd = 0 WHERE s_id = 1";
+			$this->db->query($sql);
+		}
+		if($type == 2){
+			$sql = "UPDATE msg SET unrd = 0 WHERE s_id!=1";
+			$this->db->query($sql);
+		}
 		$sql = "SELECT m_id,from_u_id,user.nname as from_nname,m_content,unrd,m_time,s_name FROM msg,user,source WHERE from_u_id=user.id and msg.s_id=source.s_id and to_u_id = ? and msg.s_id!=2";
 		$query1 = $this->db->query($sql, $this->session->id);
 		$sql = "SELECT m_id,from_u_id,user.nname as from_nname,m_content,unrd,m_time,s_name,a_name FROM msg,user,source,act WHERE from_u_id=user.id and msg.s_id=source.s_id and to_u_id = ? and msg.s_id=2 and act.a_id=msg.a_id";

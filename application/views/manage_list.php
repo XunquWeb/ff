@@ -8,50 +8,7 @@
     <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('css/display_act.css')?>" rel="stylesheet">
   </head>
-  		<div class="display-top">
-            <a id="display-classify" class="display-select" onclick="setFrameGroupIndex(0);">全部分类<span class="triangle_down"></span></a>
-            
-            <a id="display-rank" class="display-select"  onclick="setFrameGroupIndex(1);">智能排序<span class="triangle_down"></span></a>
 
-            <a id="display-region" class="display-select" onclick="setFrameGroupIndex(2);">交通大学<span class="triangle_down"></span></a>
-        </div>
-
-        <div class="scroller-wrapper display-none">
-                <div id="dropdown_scroller" class="dropdown-scroller">
-                    <ul style="-webkit-transition-property: -webkit-transform; transition-property: -webkit-transform; -webkit-transform-origin: 0px 0px 0px; -webkit-transform: translate3d(0px, 0px, 0px);">
-                        <li class="category-wrapper classify active">
-                            <ul class="dropdown-list">
-                            	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>全部分类</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>吃喝玩乐</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>我会更棒</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>健身减肥</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>来约奇葩</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>请求支援</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>人在途中</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>影音书画</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>约谈约聊</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>新生戳这</span></li>                           	
-                            </ul>
-                        </li>
-                        <li class="category-wrapper rank display-none">
-                            <ul class="dropdown-list">
-                            	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>智能排序</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>最热约单</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>最新约单</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>精品推荐</span></li>
-                            </ul>
-                        </li>
-                        <li class="category-wrapper region display-none">
-                            <ul class="dropdown-list">
-                            	<li  class="active" data-category-id="0" data-category-name="美食" data-has-sub="true"><span>交通大学</span></li>
-                            	<li  data-category-id="1" data-category-name="今日新单"><span>华东师范大学</span></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-        <div class="scroller_shadow display-none" style="height:100%;width:100%;background: rgba(0,0,0,.7);z-index:2;position:fixed;top:0;">
-		</div>
 	<div class="container channel_list" id="ff_projects_list">
 <!--
 		<div class="panel panel-default">
@@ -111,17 +68,20 @@
 			<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
 TR;
-		    echo "<a href=\"" . base_url('Act/detail') . "/" . $r['a_id'] . "\">";
+
 		    echo <<<TR
 		    	<div class="clearfix">
-		            <span class="ribbon labels">
 TR;
-						echo $r['a_state'];
-					echo '</span>';
+		    echo  "<a href=\"" . base_url('Act/manage') . "/" . $r['a_id'] . "\">";
+		    echo <<<TR
+		            <span class="ribbon labels" >
+TR;
+						echo "点我管理";
+					echo '</span></a>';
 		    
 		    		echo '<h1>' . $r['a_name'] . '</h1>';
 				echo '</div>';
-			
+		    echo "<a href=\"" . base_url('Act/detail') . "/" . $r['a_id'] . "\">";			
 		    	echo '<div class="media">';        
 		    		echo '<p class="item-img"><img class="lazy pull-left" src="http://p.qsc.dreamore.cn/Uploads/Project/Thumb/20150507/57d5208ffd8e1a11651024415aad821e.jpg!thumb"></p>';
 	            	echo '<p>' . $r['extra'] . '</p>';
@@ -196,67 +156,6 @@ TR;
 		</div>
 -->
 	</div>
-<script>
-	var updown = 1;
-	$('.scroller_shadow').bind('click', function() 
-		{ 
-			$('.scroller-wrapper').addClass('display-none');
-			$('.scroller_shadow').addClass('display-none');
-			$('.display-top span').removeClass('triangle_up');
-			$('.display-top span').addClass('triangle_down'); 
-		}
-	);
-	function setFrameGroupIndex(state){
-		$('.scroller-wrapper').removeClass('display-none');
-		$('.scroller_shadow').removeClass('display-none');
-		$('.category-wrapper').addClass('display-none');
 
-		switch(state){
-			case 0:{
-				if($('#display-classify span').hasClass('triangle_down')){
-					$('.display-top span').removeClass('triangle_up');
-					$('.display-top span').addClass('triangle_down');
-					$('#display-classify span').removeClass('triangle_down').addClass('triangle_up');$('.classify').removeClass('display-none');break;
-				}
-				else{
-					$('.display-top span').removeClass('triangle_up');
-					$('.display-top span').addClass('triangle_down');
-					$('.scroller-wrapper').addClass('display-none');
-					$('.scroller_shadow').addClass('display-none');
-					break;					
-				}
-			} 
-				
-			case 1:{
-				if($('#display-rank span').hasClass('triangle_down')){
-					$('.display-top span').removeClass('triangle_up');
-					$('.display-top span').addClass('triangle_down');
-					$('#display-rank span').removeClass('triangle_down').addClass('triangle_up');$('.rank').removeClass('display-none');break;
-				}
-				else{
-					$('.display-top span').removeClass('triangle_up');
-					$('.display-top span').addClass('triangle_down');
-					$('.scroller-wrapper').addClass('display-none');
-					$('.scroller_shadow').addClass('display-none');
-					break;					
-				}
-			}  
-			case 2:{
-				if($('#display-region span').hasClass('triangle_down')){
-					$('.display-top span').removeClass('triangle_up');
-					$('.display-top span').addClass('triangle_down');
-					$('#display-region span').removeClass('triangle_down').addClass('triangle_up');$('.region').removeClass('display-none');break;
-				}
-				else{
-					$('.display-top span').removeClass('triangle_up');
-					$('.display-top span').addClass('triangle_down');
-					$('.scroller-wrapper').addClass('display-none');
-					$('.scroller_shadow').addClass('display-none');
-					break;				
-				}
-			}  
-		}
-	}
-</script>
 
 </html>
