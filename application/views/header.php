@@ -178,6 +178,7 @@
       $.post(
         '<?php echo base_url('msg/msg_ajax')?>',
         function(data){
+          //alert(data);
           $msg_arr=data.split('|');
           $msg_sum=0;
           for(i=0;i<=2;i++)
@@ -193,12 +194,18 @@
       $.post(
         '<?php echo base_url('msg/msg_ajax')?>',
         function(data){
+          //alert(data);
           $msg_arr=data.split('|');
-          $msg_sum=0;
-          for(i=0;i<=2;i++)
-          {
-            $msg_sum = $msg_sum + parseInt($msg_arr[i]);
-          }
+          $msg_sum=$msg_arr[0];
+
+          // foreach($msg_arr as $r)
+          // {
+          //   alert($r);
+          //   if ($r!= null)
+          //     $msg_sum = $msg_sum + parseInt($r);
+          //   else 
+          //     break;
+          // }
           $("#msg_num").html($msg_sum);
         }
       );

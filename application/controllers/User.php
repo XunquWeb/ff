@@ -40,7 +40,9 @@ class User extends CI_Controller {
 				$this->load->view('signup');
 			}else{
 				$this->load->model('user_model');
+				$this->load->model('msg_model');
 				if($this->user_model->signup()){
+					$this->msg_model->welcome_msg();
 					echo '<script>alert(/success/);window.location="login";</script>';
 				}else{
 					$this->load->view('signup');
@@ -199,13 +201,16 @@ class User extends CI_Controller {
 	public function message($type=0){
 		$this->load->model('msg_model');
 		$result = $this->msg_model->index($type);
+		$this->msg_model->read($type);
 		//var_dump($result);
-		$tmp;
+		$flag=0;
+		$data['empty'] = false;
 		if($result){
 			foreach ($result as $r) {
 				switch($r['s_name']){
 					case '用户私信':
 					  $tmp = 'utu_msg';
+					  $flag = 1;
 					  break;
 					default:
 					  $tmp = 'system_msg';
@@ -217,6 +222,9 @@ class User extends CI_Controller {
 		else{
 			$data['empty'] = true;	
 		}
+
+		if($flag == 0)
+			$data['empty'] = true;
 		//var_dump($data);
 		$data['msg_type'][0] = $type;
 
