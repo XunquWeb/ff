@@ -50,8 +50,6 @@
           </div>
         </a>
       </div>
-
-
       <ul id="channel_list">
         <a class="ch_item" href="<?php echo base_url('Act/display/1')?>" data-order="3">
           <i class="ch_icon" style="background-position: 0px -140.625px;"></i>
@@ -60,32 +58,18 @@
             <span>－旅行、桌游、展览、约饭</span>
           </div>
         </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/7')?>" data-order="5">
+        <a class="ch_item" href="<?php echo base_url('Act/display/2')?>" data-order="1">
+          <i class="ch_icon" style="background-position: 0px -70.3125px;"></i>
+          <div class="fl">
+            <p>我会更棒</p>
+            <span>－科研实践、商赛创业</span>
+          </div>
+        </a>
+        <a class="ch_item" href="<?php echo base_url('Act/display/3')?>" data-order="5">
           <i class="ch_icon" style="background-position: 0px -281.25px;"></i>
           <div class="fl">
             <p>健身减肥</p>
             <span>－跑步、网球、乒羽、健身</span>
-          </div>
-        </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/2')?>" data-order="2">
-          <i class="ch_icon" style="background-position: 0px -70.3125px;"></i>
-          <div class="fl">
-            <p>影音书画</p>
-            <span>－影视交流、换书、画画</span>
-          </div>
-        </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
-          <i class="ch_icon" style="background-position: 0px 0px;"></i>
-          <div class="fl">
-            <p>同学去哪</p>
-            <span>－提前拼车、一起回家</span>
-          </div>
-        </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
-          <i class="ch_icon" style="background-position: 0px -140.625px;"></i>
-          <div class="fl">
-            <p>争做学霸</p>
-            <span>－学业辅导、课程交换</span>
           </div>
         </a>
         <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
@@ -95,39 +79,39 @@
             <span>－恐怖浪漫、奇思妙想</span>
           </div>
         </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
-          <i class="ch_icon" style="background-position: 0px -70.3125px;"></i>
-          <div class="fl">
-            <p>我会更棒</p>
-            <span>－科研实践、商赛创业</span>
-          </div>
-        </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
+        <a class="ch_item" href="<?php echo base_url('Act/display/5')?>" data-order="1">
           <i class="ch_icon" style="background-position: 0px 0px;"></i>
           <div class="fl">
-            <p>摄影约片</p>
-            <span>－约摄影、约外拍</span>
+            <p>请求支援</p>
+            <span>－提前拼车、一起回家</span>
           </div>
         </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
-          <i class="ch_icon" style="background-position: 0px -140.625px;"></i>
+        <a class="ch_item" href="<?php echo base_url('Act/display/6')?>" data-order="1">
+          <i class="ch_icon" style="background-position: 0px 0px;"></i>
           <div class="fl">
-            <p>变帅变美</p>
-            <span>－逛街化妆、好货交流</span>
+            <p>人在途中</p>
+            <span>－提前拼车、一起回家</span>
           </div>
         </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
+        <a class="ch_item" href="<?php echo base_url('Act/display/7')?>" data-order="2">
+          <i class="ch_icon" style="background-position: 0px -70.3125px;"></i>
+          <div class="fl">
+            <p>影音书画</p>
+            <span>－影视交流、换书、画画</span>
+          </div>
+        </a>
+        <a class="ch_item" href="<?php echo base_url('Act/display/8')?>" data-order="1">
           <i class="ch_icon" style="background-position: 0px -281.25px;"></i>
           <div class="fl">
             <p>约谈约聊</p>
             <span>－新生指导、心理咨询</span>
           </div>
         </a>
-        <a class="ch_item" href="<?php echo base_url('Act/display/4')?>" data-order="1">
-          <i class="ch_icon" style="background-position: 0px 0px;"></i>
+        <a class="ch_item" href="<?php echo base_url('Act/display/9')?>" data-order="1">
+          <i class="ch_icon" style="background-position: 0px -140.625px;"></i>
           <div class="fl">
-            <p>其他脑洞</p>
-            <span>－电脑维修、待吃零食</span>
+            <p>新生戳这</p>
+            <span>－逛街化妆、好货交流</span>
           </div>
         </a>
       </ul>

@@ -123,7 +123,7 @@ TR;
 				echo '</div>';
 			
 		    	echo '<div class="media">';        
-		    		echo '<p class="item-img"><img class="lazy pull-left" src="http://p.qsc.dreamore.cn/Uploads/Project/Thumb/20150507/57d5208ffd8e1a11651024415aad821e.jpg!thumb"></p>';
+		    		echo '<p class="item-img"><img class="lazy pull-left" src='.'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1109521759,949508831&fm=58'.'></p>';
 	            	echo '<p>' . $r['extra'] . '</p>';
             	echo '</div>';
             echo '</a>';

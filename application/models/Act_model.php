@@ -8,15 +8,15 @@ class Act_model extends CI_Model {
 		$this->load->database();
 	}
 
-//$ch_id = -1 means manage_list
+
 	public function index($ch_id=0){
-		if($ch_id == 0){
+		if($ch_id == 0){//$ch_id = -1 means all act
 			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC ";
 			$query = $this->db->query($sql);
 			return $query->result_array();
 		}
 		else{
-			if($ch_id == -1){
+			if($ch_id == -1){//$ch_id = -1 means manage_list
 				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.u_id = ? ORDER BY act.a_id DESC ";
 				$query = $this->db->query($sql,array($this->session->id));
 				return $query->result_array();
