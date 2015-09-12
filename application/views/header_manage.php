@@ -70,29 +70,36 @@
   </body>
   <script>
     $(function(){
+        
         var slist = '<?php echo urlencode(json_encode($list));?>';
         //alert(slist);
         $list = eval(decodeURIComponent(slist));
-        $html_temp0 = $("#e_a_thumb_body tr").eq(0).clone();
-        $html_temp1 = $("#e_a_thumb_body tr").eq(1).clone();
-        $html_temp2 = $("#e_a_thumb_body tr").eq(2).clone();
-        $.each($list,function(n,value){
-                          $html_temp0.find('.name').text(value['am_name']);
-                          $html_temp0.find('.phone').text(value['am_phone']);
-                          $html_temp0.find('.school').text(value['am_college']);
-                          $html_temp0.find('.date').text(value['am_jointime']);
-                          $html_temp0.find('.id').text(value['u_id']);
-                          $html_temp1.find('.extra').text(value['am_extra']);
-                          $("#e_a_thumb_body").append($html_temp0);
-                          $("#e_a_thumb_body").append($html_temp1);
-                          $("#e_a_thumb_body").append($html_temp2);
+        if($list!=0){
+          $html_temp0 = $("#e_a_thumb_body tr").eq(0).clone();
+          $html_temp1 = $("#e_a_thumb_body tr").eq(1).clone();
+          $html_temp2 = $("#e_a_thumb_body tr").eq(2).clone();
+          $.each($list,function(n,value){
+                            $html_temp0.find('.name').text(value['am_name']);
+                            $html_temp0.find('.phone').text(value['am_phone']);
+                            $html_temp0.find('.school').text(value['am_college']);
+                            $html_temp0.find('.date').text(value['am_jointime']);
+                            $html_temp0.find('.id').text(value['u_id']);
+                            $html_temp1.find('.extra').text(value['am_extra']);
+                            $("#e_a_thumb_body").append($html_temp0);
+                            $("#e_a_thumb_body").append($html_temp1);
+                            $("#e_a_thumb_body").append($html_temp2);
 
-        });
+          });
 
-        $('.e_a_data_0').bind("click",function(){
-          $url = $(this).find(".id").text();
-          window.location.href="<?php echo base_url('user/myinfo/')?>"+"/"+$url;
-        });
+          $('.e_a_data_0').bind("click",function(){
+            $url = $(this).find(".id").text();
+            window.location.href="<?php echo base_url('user/myinfo/')?>"+"/"+$url;
+          });
+        }
+        else{
+
+        }
+
 
 
     });

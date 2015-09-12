@@ -150,21 +150,35 @@ class User extends CI_Controller {
 			redirect('');
 		}
 	}
-
+	public function account_info(){
+		if($this->session->id){
+			$this->load->model('user_model');
+			$data = $this->user_model->myinfo_edit_get();
+			$this->load->view('user_info/account_info',$data);
+		}
+		else{
+			redirect('');
+		}
+	}
 	public function myinfo_edit(){
 		if($this->session->id){
+			$this->load->model('user_model');
+			$data = $this->user_model->myinfo_edit_get();
 			if($this->input->method()=='get'){
-				$this->load->model('user_model');
-				$data = $this->user_model->myinfo_edit_get();
-				$this->load->view('personal_info_edit',$data);
+				$this->load->view('user_info/account_info',$data);
 			}
 			else{
 				$this->load->model('user_model');
 				if($this->user_model->myinfo_edit()){
-					echo '<script>alert(/success/);window.location="login";</script>';
+					//////////
+					$res=$this->user_model->updatesession();
+					$this->session->set_userdata($res);
+					//////////
+					echo '<script>alert(/success/);</script>';
+					$this->load->view('user_info/account_info',$data);
 				}	
 				else{
-					$this->load->view('personal_info_edit');
+					$this->load->view('user_info/account_info',$data);
 				}
 			}	
 		}
@@ -188,15 +202,7 @@ class User extends CI_Controller {
 //		}
 //	}
 
-	public function account_info(){
-		if($this->session->id){
-			$this->load->model('user_model');
-			$this->load->view('user_info/account_info');
-		}
-		else{
-			redirect('');
-		}
-	}
+
 
 	public function message($type=0){
 		$this->load->model('msg_model');

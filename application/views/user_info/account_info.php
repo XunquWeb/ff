@@ -60,7 +60,7 @@
 
       <div class="content-wrap">
         <section>
-          <form>
+          <form action="<?php echo base_url("user/myinfo_edit") ?>" method="post">
             <div class="padder">     
                 <div class="">
                   <div class="panel">
@@ -81,28 +81,28 @@
                         </figure>
                         <ul class="nav nav-pills nav-stacked nav-sided pull-right">
                         <li >
-                          <input class="c-black"  value="" name="nickname" placeholder="<?php echo $this->session->nname;?>"></i></input>
+                          <input class="c-black"  value="<?php echo $this->session->nname;?>" name="nickname" placeholder="未填写" required></i></input>
                         </li>
                         <li>
-                          <input name="signature" placeholder="<?php echo $this->session->sign; ?>"></input>
+                          <input name="signature" value="<?php echo $this->session->sign;?>" placeholder="未填写"></input>
                         </li>                                                                         
                       </div>
                       <ul class="nav nav-pills more_info dl-menu">
                           <li>
                           <p><span>性别</span></p>
-                          <input id="info_sex" name="info_sex"  placeholder ="未填写"  class="bounceOutUp" >
+                          <input id="info_sex" name="info_sex"  placeholder ="未填写"  class="bounceOutUp" value="<?php echo $sex;?>">
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
                           <li>
                           <p><span>学校</span></p>
-                          <input id="info_school" name="info_school"  placeholder ="未填写"  class="bounceOutUp" >
+                          <input id="info_school" name="info_school"  placeholder ="未填写"  class="bounceOutUp" value="<?php echo $college;?>">
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
                           <li>
                             <p><span>兴趣爱好</span></p>
-                            <input id="info_hobby" name="info_hobby"  placeholder ="未填写"></input>
+                            <input id="info_hobby" name="info_hobby" value="<?php echo $hobby;?>" placeholder ="未填写"></input>
                           </li>
 <!--
                           <li data-animation="1" index="1">
@@ -136,30 +136,31 @@
                           </div>
                           <li>
                             <p><span>星座</span></p>
-                            <input id="info_date"  name="info_date"  placeholder ="未填写" href=""  data-toggle="tab" class="bounceOutUp"></input>
+                            <input id="info_date"  name="info_date"  placeholder ="未填写" href="" value="<?php echo $constellation; ?>" data-toggle="tab" class="bounceOutUp"></input>
                           </li>
                           <li>
                             <p><span>专业</span></p>
-                            <input id="info_major"  name="info_major"  placeholder ="未填写"  ></input>
+                            <input id="info_major"  name="info_major" value="<?php echo $major;?>" placeholder ="未填写"  ></input>
                           </li>
                           <li>
                           <p><span>情感状态</span></p>
-                          <input id="info_state" name="info_state" placeholder ="未填写"  class="bounceOutUp" >
+                          <input id="info_state" name="info_state" placeholder ="未填写" value="<?php echo $estate; ?>"  class="bounceOutUp" >
                             <!-- <span class="meta-sex c-blue"><i class="fa fa-mars"></i></span> -->
                           </input>
                           </li>
                           <li>
                             <p><span>家乡</span></p>
-                            <input id="info_home" name="info_home" placeholder ="未填写" ></input>
+                            <input id="info_home" name="info_home" value="<?php echo $home;?>" placeholder ="未填写" ></input>
                           </li>
                           <li>
-                            <p><span>联系方式</span></p>
-                            <input id="info_contact" name="info_contact"  placeholder ="未填写"  ></input>
+                            <p><span>移动电话</span></p>
+                            <input id="info_contact" name="info_contact" value="<?php echo $phone;?>" placeholder ="未填写"  ></input>
                           </li>
                       </ul>
                     </div>
                   </div>
                 </div>
+                <button class="btn btn-primary"  type="submit"  >确认提交</button>
                 <!--
                 <div class="">
                   <div class="panel">
@@ -183,7 +184,7 @@
                 -->
                 </div>
             </div>
-            <button class="btn btn-primary"  type="submit"  >确认提交</button>
+            
           </form>
           </section>
 

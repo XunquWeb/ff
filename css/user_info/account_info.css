@@ -196,7 +196,7 @@ body{
 
 .panel-body .nav-stacked li a{ text-align: left;border-radius: 0px;font-family:"Microsoft YaHei";padding-top: 10px;padding-bottom: 10px;border:none;}
 
-.panel-body .nav-stacked li input{ float:left;text-align: left;border-radius: 0px;font-family:"Microsoft YaHei";line-height:30px;margin-top: 5px;margin-bottom: 0px;border:none;width:100%;padding-left:24px;outline:medium;background-color: #ffffff;}
+.panel-body .nav-stacked li input{ float:left;text-align: left;border-radius: 0px;font-family:"Microsoft YaHei";line-height:30px;margin-top: 5px;margin-bottom: 0px;border:none;width:100%;padding-left:24px;outline:medium;background-color: #ffffff;  color: black;}
 
 /*.panel-body .nav-stacked li input:focus{border-bottom:1px solid #B4B4B4;}*/
 /*.panel-body .nav-stacked li a i{border-radius:30%;color: #333;padding:2px 0px;font-size:10px;width:16px;text-align:center; }*/

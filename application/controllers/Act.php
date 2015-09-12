@@ -213,18 +213,22 @@ class Act extends CI_Controller {
 		$this->load->model('act_model');
 		if($this->act_model->is_sponsor($a_id)){
 			if($data = $this->act_model->manage($a_id)){
-				var_dump($data);
-				$i = 0;
-				foreach($data as $r)
-				{
-					$r['am_jointime'] = date("Y-m-d", strtotime($r['am_jointime']));
-					$data[$i]['am_jointime']= $r['am_jointime'];
-					$i = $i + 1;
-				}
-				$sr['list'] = $data;
-				$this->load->view('header_manage',$sr);
-				$this->load->view('footer');
+					//var_dump($data);
+					$i = 0;
+					foreach($data as $r)
+					{
+						$r['am_jointime'] = date("Y-m-d", strtotime($r['am_jointime']));
+						$data[$i]['am_jointime']= $r['am_jointime'];
+						$i = $i + 1;
+					}
+					$sr['list'] = $data;
 			}
+			else{
+				$sr['list'] = 0;
+			}
+			$this->load->view('header_manage',$sr);
+			$this->load->view('footer');
+
 		}
 		else{
 			//redirect没有权限页面
