@@ -104,7 +104,7 @@
         <ul class="nav nav-pills nav-sm">
           <li><a href="#section-bar-1">状态</a></li>
           <li><a href="#section-bar-2">信息</a></li>
-          <li><a href="#section-bar-3">约单</a></li>
+          <!--<li><a href="#section-bar-3">约单</a></li>-->
         </ul>
       </nav>
       <div class="content-wrap">
@@ -155,7 +155,7 @@
                               </div>
                           </article>
               </div>
-              <a id="tocreat" herf=""  style="display:inline;"><i class="fa fa-plus"></i></a>
+              <a id="tocreat" href=""  style="display:none;"><i class="fa fa-plus"></i></a>
               <div id="totop"  style="display:inline;"><i class="fa fa-angle-up"></i></div>
             </div>
         </section>
@@ -170,17 +170,114 @@
                         <table class="table table-striped table-hover">
                                         <tbody>
                                             <tr>
-                                                <td width="30%"></td>
+                                                <td width="30%">姓名</td>
                                                 <td><?php echo $nname;?></td>
-                                            </tr>
+                                            </tr>                                            
                                             <tr>
-                                                <td width="30%">Email</td>
+                                                <td width="30%">邮箱</td>
                                                 <td><?php echo $email;?></td>
                                             </tr>
+                                            <?php
+                                            if($sex!=null){
+                                              echo <<<TR
                                             <tr>
-                                                <td width="30%">Hometown</td>
-                                                <td><?php echo $home;?></td>
-                                            </tr>
+                                                <td width="30%">性别</td>
+                                                <td>
+TR;
+echo $sex;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+                                            }
+                                            if($college!=null){
+                                              echo <<<TR
+                                            <tr>
+                                                <td width="30%">学校</td>
+                                                <td>
+TR;
+echo $college;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+                                            }
+                                            if($major!=null){
+                                              echo <<<TR
+                                            <tr>
+                                                <td width="30%">专业</td>
+                                                <td>
+TR;
+echo $major;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+                                            }
+                                            if($home!=null){
+                                              echo <<<TR
+                                            <tr>
+                                                <td width="30%">家乡</td>
+                                                <td>
+TR;
+echo $home;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+                                            }
+                                            if($hobby!=null){
+                                              echo <<<TR
+                                            <tr>
+                                                <td width="30%">兴趣爱好</td>
+                                                <td>
+TR;
+echo $hobby;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+                                            }
+                                            if($phone!=null){
+                                              echo <<<TR
+                                            <tr>
+                                                <td width="30%">联系方式</td>
+                                                <td>
+TR;
+echo $phone;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+}
+                                            if($constellation!=null){
+                                              echo <<<TR
+                                            <tr>
+                                                <td width="30%">星座</td>
+                                                <td>
+TR;
+echo $constellation;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+}
+                                            if($estate!=null){
+                                              echo <<<TR
+                                            <tr>
+                                                <td width="30%">情感状态</td>
+                                                <td>
+TR;
+echo $estate;
+echo <<<TR
+                                                </td>
+                                            </tr>                                            
+TR;
+                                            }
+
+
+
+                                            ?>
                                             <!--
                                             <tr>
                                                 <td width="30%">Status</td>
@@ -188,11 +285,6 @@
                                                 </td>
                                             </tr>
                                             -->
-                                            <tr>
-                                                <td width="30%">Rating</td>
-                                                <td><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i>
-                                                </td>
-                                            </tr>
                                             <tr>
                                                 <td width="30%">Join Since</td>
                                                 <td> Jun 03, 2014</td>
@@ -211,7 +303,7 @@
              </div>
 
           </div>        </section>
-        <section id="section-bar-3">
+<!--         <section id="section-bar-3">
           <div class="padder">
               <div class="">
                   <div class="portlet box">
@@ -261,7 +353,7 @@
              </div>
 
           </div>
-        </section>
+        </section> 
       </div>
     </section>
   </div>

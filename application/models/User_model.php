@@ -82,7 +82,7 @@ class User_model extends CI_Model {
 
 	public function myinfo_get($user_id){
 		//用户基本信息
-		$sql = "SELECT id,nname,sex,college,major,entryy,sign,birth,home,hobby,estate,email,follow_num,browse_num FROM user WHERE id=?";
+		$sql = "SELECT id,nname,sex,college,major,entryy,sign,birth,home,hobby,estate,email,follow_num,browse_num,constellation,phone FROM user WHERE id=?";
 		$query = $this->db->query($sql, $user_id);
 		if ($query->num_rows() > 0){
 			$t = $query->result_array();
