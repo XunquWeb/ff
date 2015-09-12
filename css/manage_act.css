@@ -3,20 +3,49 @@
   color: #a0a0a0;
 }
 #event_attendees_thumbs .table td, #event_attendees_thumbs .table th {
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
   vertical-align: middle;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+.table{
+  margin-bottom:0px;
+}
+
+.body{
+  background-color: white;
+}
+
+.table-striped>tbody>tr:nth-child(3n+1)>td, .table-striped>tbody>tr:nth-child(3n+2)>td,  .table-striped>tbody>tr:nth-child(3n+1)>th ,  .table-striped>tbody>tr:nth-child(3n+2)>th {
   background-color: #f9f9f9;
 }
 .table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
   border: 1px solid #ddd;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-  padding: 8px;
+  padding: 3px;
   vertical-align: top;
   border-top: 1px solid #ddd;
+}
+
+#e_a_data_0 {
+  margin-top:10px;
+}
+
+#btm {
+  text-align: center;
+  line-height: 50px;
+  color: #9e9e9e;
+  font-size: 14px;
+  background-color: white;
+}
+#btm>.img {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background-size: 100% 100%;
+  background-image: url('../image/xunqu.jpg');
 }

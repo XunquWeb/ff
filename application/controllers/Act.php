@@ -76,7 +76,7 @@ class Act extends CI_Controller {
 				redirect('base_url("act/submit")');
 			}
 			$url = base_url("act/detail/")."/".$act_id;
-			redirect($url);
+			redirect('$url');
 		}
 		
 	}
@@ -102,8 +102,8 @@ class Act extends CI_Controller {
 		//判断是否已报名
 		$this->load->model('act_model');
 		if($this->act_model->is_exist($a_id)){
-			echo '<script>alert(/already join in!/);</script>';
-
+			$url = base_url("act/detail/")."/".$a_id;
+			redirect($url);
 		}
 		else{
 			//判断是否是活动发起人
@@ -122,8 +122,8 @@ class Act extends CI_Controller {
 			}
 					
 		}
-			$another = base_url("act/detail/")."/".$a_id;
-			redirect($another);
+
+
 		
 	}
 
@@ -213,9 +213,16 @@ class Act extends CI_Controller {
 		$this->load->model('act_model');
 		if($this->act_model->is_sponsor($a_id)){
 			if($data = $this->act_model->manage($a_id)){
-				//var_dump($data);
-				$this->load->view('header_manage',$data);
-				$this->load->view('manage_act',$data);
+				var_dump($data);
+				$i = 0;
+				foreach($data as $r)
+				{
+					$r['am_jointime'] = date("Y-m-d", strtotime($r['am_jointime']));
+					$data[$i]['am_jointime']= $r['am_jointime'];
+					$i = $i + 1;
+				}
+				$sr['list'] = $data;
+				$this->load->view('header_manage',$sr);
 				$this->load->view('footer');
 			}
 		}
