@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+date_default_timezone_set('Asia/Shanghai');
 class User extends CI_Controller {
 	public function index()
 	{
@@ -63,7 +63,8 @@ class User extends CI_Controller {
 				echo "success";
 			}
 			else{
-				echo "err:".$this->db->error()['code'];
+				$temp = $this->db->error();
+				echo "err:".$temp['code'];
 			}
 		}
 		else{

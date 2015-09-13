@@ -13,7 +13,8 @@ class User_model extends CI_Model {
 			$sql = "SELECT id,name,nname,email,phone,sign,rating FROM user WHERE email = ? AND pwd = password( ? ) limit 1";
 			$query = $this->db->query($sql, array( $_POST['u'] , $_POST['p'] ));
 			if ($query->num_rows() > 0){
-				return $query->result_array()[0];
+				$temp = $query->result_array();
+				return $temp[0];
 			}
 		}
 		return 0;
@@ -23,7 +24,8 @@ class User_model extends CI_Model {
 			$sql = "SELECT name,nname,email,phone,sign,rating FROM user WHERE id = ?  limit 1";
 			$query = $this->db->query($sql, array( $this->session->id ));
 			if ($query->num_rows() > 0){
-				return $query->result_array()[0];
+				$temp = $query->result_array();
+				return $temp[0];
 			}	
 			else return 0;
 	}
@@ -75,7 +77,8 @@ class User_model extends CI_Model {
 		$sql = "SELECT name,sex,nname,college,major,entryy,sign,birth,home,hobby,estate,constellation,phone FROM user WHERE id=?";
 		$query = $this->db->query($sql, $this->session->id);
 		if ($query->num_rows() > 0){
-			return $query->result_array()[0];
+			$temp = $query->result_array();
+			return $temp[0];
 		}
 		return 0;
 	}

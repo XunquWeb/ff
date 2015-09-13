@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Sep 11, 2015 at 07:36 PM
+-- Generation Time: Sep 12, 2015 at 11:09 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -39,7 +39,7 @@ CREATE TABLE `act` (
   `a_like` bigint(40) NOT NULL DEFAULT '0',
   `share` bigint(20) NOT NULL DEFAULT '0',
   `a_check` int(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `act`
@@ -97,8 +97,10 @@ INSERT INTO `act` (`a_id`, `u_id`, `a_name`, `deadline`, `create_time`, `start_t
 (49, 11, '哈哈哈', '0000-00-00 00:00:00', '2015-09-09 15:24:08', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '          哈哈哈          \r\n                ', '华东师范大学', '阳曲路', 12, 0, 1, '已结束', 0, 0, 0, 0),
 (50, 11, '哈哈哈', '0000-00-00 00:00:00', '2015-09-11 06:10:20', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '你好你好\r\n                ', '交通大学', '阳曲路', 123, 0, 3, '已结束', 3, 0, 0, 0),
 (51, 11, 'wfnuser', '1970-01-01 00:00:10', '2015-09-11 03:46:45', '1970-01-01 00:00:10', '1970-01-01 00:00:11', '                    \r\n                哈哈哈哈', '交通大学', '阳曲路', 25, 0, 1, '已结束', 2, 0, 0, 0),
-(52, 11, 'wfnuser', '2015-09-10 01:31:00', '2015-09-11 05:35:44', '2015-10-10 01:31:00', '2015-09-11 01:31:00', '                    \r\n                哈哈哈哈', '交通大学', '阳曲路', 25, 0, 1, '酝酿中', 4, 0, 0, 0),
-(53, 11, 'wfnuser', '2015-09-10 01:31:00', '2015-09-11 11:17:35', '2015-10-10 01:31:00', '2015-09-11 01:31:00', '                    \r\n                哈哈哈哈', '交通大学', '阳曲路', 25, 0, 1, '酝酿中', 31, 0, 0, 0);
+(52, 11, 'wfnuser', '2015-09-10 01:31:00', '2015-09-12 13:37:21', '2015-10-10 01:31:00', '2015-09-11 01:31:00', '                    \r\n                哈哈哈哈', '交通大学', '阳曲路', 25, 0, 1, '酝酿中', 4, 0, 0, 0),
+(53, 11, 'wfnuser', '2015-09-10 01:31:00', '2015-09-12 13:37:21', '2015-10-10 01:31:00', '2015-09-11 01:31:00', '                    \r\n                哈哈哈哈', '交通大学', '阳曲路', 25, 0, 1, '酝酿中', 36, 0, 0, 0),
+(54, 11, '你不行啊', '2015-09-12 11:41:00', '2015-09-11 16:17:28', '2015-09-14 11:41:00', '2015-09-19 11:41:00', '                    \r\n               你不行你需变短发风景 ', '交通大学', '阳曲路', 20, 1, 6, '求队友', 25, 0, 0, 0),
+(55, 11, 'fgfjf', '2015-09-12 02:00:00', '2015-09-12 10:56:52', '2015-09-14 02:00:00', '2015-09-16 02:00:00', '    2132131                \r\n                ', 'jiagfhgj', 'dhdhfdd', 12, 0, 4, '求队友', 7, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -110,7 +112,7 @@ CREATE TABLE `act_likes` (
 `al_id` bigint(20) NOT NULL,
   `u_id` bigint(20) NOT NULL,
   `a_id` bigint(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `act_likes`
@@ -142,7 +144,10 @@ INSERT INTO `act_likes` (`al_id`, `u_id`, `a_id`) VALUES
 (23, 11, 44),
 (24, 11, 44),
 (25, 11, 53),
-(26, 11, 5);
+(26, 11, 5),
+(27, 11, 54),
+(28, 11, 54),
+(29, 11, 55);
 
 -- --------------------------------------------------------
 
@@ -166,7 +171,7 @@ CREATE TABLE `act_man` (
   `am_extra` varchar(255) NOT NULL,
   `am_qq` varchar(11) DEFAULT NULL,
   `am_wx` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `act_man`
@@ -189,7 +194,9 @@ INSERT INTO `act_man` (`am_id`, `a_id`, `u_id`, `am_jointime`, `am_signup`, `am_
 (14, 4, 11, '2015-08-31 02:26:22', '2015-08-31 02:26:22', 0, 'greger', 'gergregerg', NULL, NULL, 'gdgfsds', NULL, 'gdgrgrehtrhtrsdhsr', NULL, NULL),
 (15, 50, 11, '2015-09-09 15:06:43', '2015-09-09 15:06:43', 0, '黄清昊', '18616907530', NULL, NULL, '交通大学', NULL, '                哈哈哈    \r\n                ', NULL, NULL),
 (16, 53, 11, '2015-09-10 15:45:16', '2015-09-10 15:45:16', 0, '黄清昊', '18616907530', NULL, NULL, '交通大学', NULL, '                    \r\n        你不行你绪病        ', NULL, NULL),
-(17, 43, 11, '2015-09-11 03:47:23', '2015-09-11 03:47:23', 0, '黄清昊', '18616907530', NULL, NULL, '交通大学', NULL, '                    \r\n         我是一个好学生       ', NULL, NULL);
+(17, 43, 11, '2015-09-11 03:47:23', '2015-09-11 03:47:23', 0, '黄清昊', '18616907530', NULL, NULL, '交通大学', NULL, '                    \r\n         我是一个好学生       ', NULL, NULL),
+(18, 54, 11, '2015-09-11 12:55:18', '2015-09-11 12:55:18', 0, '你好呀', '18616907530', NULL, NULL, '交通大学', NULL, '太弱了吧也           \r\n                ', NULL, NULL),
+(19, 55, 11, '2015-09-11 12:55:18', '2015-09-12 10:22:56', 0, '你好呀', '18616907530', NULL, NULL, '交通大学', NULL, 'hahahah                ', NULL, NULL);
 
 --
 -- Triggers `act_man`
@@ -218,7 +225,6 @@ CREATE TABLE `follow` (
 --
 
 INSERT INTO `follow` (`f_id`, `follower_id`, `followed_id`, `f_time`) VALUES
-(1, 11, 4, '2015-08-31 04:52:06'),
 (3, 11, 8, '2015-08-13 04:52:06'),
 (5, 11, 10, '2015-08-31 04:52:06'),
 (6, 11, 7, '2015-08-31 04:52:06'),
@@ -247,7 +253,7 @@ CREATE TABLE `msg` (
   `a_id` bigint(20) NOT NULL DEFAULT '0',
   `rp_id` bigint(40) NOT NULL,
   `floor` int(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `msg`
@@ -315,7 +321,10 @@ INSERT INTO `msg` (`m_id`, `from_u_id`, `to_u_id`, `m_content`, `unrd`, `m_time`
 (59, 11, -2, '123', 0, '2015-09-10 15:32:49', 3, 0, 0, 0),
 (60, 11, -2, 'hahah123123', 0, '2015-09-10 15:34:46', 3, 0, 0, 0),
 (61, 11, -2, 'wqerqreqwrewq', 0, '2015-09-10 15:36:39', 3, 0, 0, 0),
-(63, 2, 18, '欢迎注册，寻找身边的乐趣从这里开始！', 0, '2015-09-11 10:30:28', 0, 0, 0, 0);
+(63, 2, 18, '欢迎注册，寻找身边的乐趣从这里开始！', 0, '2015-09-11 10:30:28', 0, 0, 0, 0),
+(64, 11, -2, '呵呵阿达', 0, '2015-09-11 12:13:06', 3, 0, 0, 0),
+(65, 11, 8, '哈哈哈哈 终于成功了', 1, '2015-09-11 12:15:10', 1, 0, 0, 0),
+(66, 11, 8, '再来一条', 1, '2015-09-11 12:16:06', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -398,7 +407,7 @@ INSERT INTO `type` (`id`, `t_name`) VALUES
 (5, '人在途中'),
 (6, '影音书画'),
 (7, '约谈约聊'),
-(8, '新生戳这');
+(9, '新生戳这');
 
 -- --------------------------------------------------------
 
@@ -460,36 +469,37 @@ CREATE TABLE `user` (
   `rating` bigint(10) DEFAULT NULL,
   `follow_num` bigint(20) DEFAULT NULL,
   `browse_num` bigint(20) DEFAULT '0',
-  `latest_m_id` bigint(40) NOT NULL
+  `latest_m_id` bigint(40) NOT NULL,
+  `constellation` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `phone`, `pwd`, `name`, `nname`, `sex`, `birth`, `home`, `college`, `academy`, `major`, `entryy`, `qq`, `wx`, `rr`, `fb`, `tw`, `estate`, `hobby`, `tag`, `sign`, `pvg`, `rating`, `follow_num`, `browse_num`, `latest_m_id`) VALUES
-(-2, '0', '0', '0', '广场主体', '-2', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, NULL, 0),
-(-1, '0', '0', '0', '活动评论', '-1', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, NULL, 0),
-(1, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin1', 'admin1', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 1, 0, 0, 0, 0),
-(2, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin2', 'admin2', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 2, 0, 1, 1, 0),
-(3, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin3', 'admin3', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 3, 0, 3, 19, 0),
-(4, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin4', 'admin4', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 4, 0, 1, 1, 0),
-(5, 'youxiang@126.com', '13615468546', '000000', 'guestguestguest', 'guestguestguest', '', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 10, 0),
-(6, 'youxian@126.com', '13615468545', '000000', 'guestguestgues', 'guestguestgues', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 3, 0),
-(7, 'youxia@126.com', '13615468544', '000000', 'guestguestgue', 'guestguestgue', 'male', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 0, 0),
-(8, 'youxi@126.com', '13615468542', '000000', 'guestguestg', 'guestguestg', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 1, 275253, 0),
-(9, 'youx@126.com', '13615468541', '000000', 'guestguest', 'guestguest', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 16, 1, 57, 0),
-(10, 'you@126.com', '13615468540', '000000', 'guestgues', 'guestgues', 'male', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 12, 3, 28, 0),
-(11, 'caozhechao@126.com', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '', '土拨鼠1313', 'male', '0000-00-00', '上海闸北', 'sjtu', '', '电院信安', 2015, NULL, NULL, NULL, NULL, NULL, 'singledog', '。', '', '给清昊找妹子5', 5, 14, 1, 5, 63),
-(12, '123456@qq.com', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '', '你才没有名字', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 0),
-(13, '13@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '131313', '131313', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 57),
-(14, '14@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '141414', '141414', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 0),
-(15, 'shangyuan@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '尚缘', '尚缘', 'male', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 1, NULL, 0),
-(16, 'keaizhuyi@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '可爱主义', '可爱主义', 'male', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 0),
-(17, 'wfnuser@foxmail.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0),
-(18, 'wfnuser@126.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0),
-(19, 'wfnuser@163.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0),
-(20, 'wfnuser@gmail.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0);
+INSERT INTO `user` (`id`, `email`, `phone`, `pwd`, `name`, `nname`, `sex`, `birth`, `home`, `college`, `academy`, `major`, `entryy`, `qq`, `wx`, `rr`, `fb`, `tw`, `estate`, `hobby`, `tag`, `sign`, `pvg`, `rating`, `follow_num`, `browse_num`, `latest_m_id`, `constellation`) VALUES
+(-2, '0', '0', '0', '广场主体', '-2', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, NULL, 0, ''),
+(-1, '0', '0', '0', '活动评论', '-1', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, NULL, 0, ''),
+(1, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin1', 'admin1', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 1, 0, 0, 0, 0, ''),
+(2, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin2', 'admin2', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 2, 0, 1, 2, 0, ''),
+(3, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin3', 'admin3', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 3, 0, 3, 19, 0, ''),
+(4, '', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 'admin4', 'admin4', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 4, 0, 0, 3, 0, ''),
+(5, 'youxiang@126.com', '13615468546', '000000', 'guestguestguest', 'guestguestguest', '', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 10, 0, ''),
+(6, 'youxian@126.com', '13615468545', '000000', 'guestguestgues', 'guestguestgues', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 3, 0, ''),
+(7, 'youxia@126.com', '13615468544', '000000', 'guestguestgue', 'guestguestgue', 'male', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 0, 0, 0, ''),
+(8, 'youxi@126.com', '13615468542', '000000', 'guestguestg', 'guestguestg', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 0, 1, 275255, 0, ''),
+(9, 'youx@126.com', '13615468541', '000000', 'guestguest', 'guestguest', 'female', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 16, 1, 57, 0, ''),
+(10, 'you@126.com', '13615468540', '000000', 'guestgues', 'guestgues', 'male', '2010-09-16', '湖南长沙', '上海交通大学', '电院', '信安', 0000, NULL, NULL, NULL, NULL, NULL, '你猜呀', '继续猜啊', '', '低调', 5, 12, 3, 28, 0, ''),
+(11, 'caozhechao@126.com', '18616907530', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '', 'wfnuser', '女', '0000-00-00', '上海市', '交通大学', '', '电院信安', 2015, NULL, NULL, NULL, NULL, NULL, '单身', '学习读书', '', '给清昊找妹子5', 5, 14, 1, 5, 66, '巨蟹座'),
+(12, '123456@qq.com', '', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '', '你才没有名字', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 0, ''),
+(13, '13@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '131313', '131313', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 57, ''),
+(14, '14@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '141414', '141414', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 0, ''),
+(15, 'shangyuan@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '尚缘', '尚缘', 'male', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 1, NULL, 0, ''),
+(16, 'keaizhuyi@126.com', '11111111111', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', '可爱主义', '可爱主义', 'male', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, 0, NULL, 0, ''),
+(17, 'wfnuser@foxmail.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0, ''),
+(18, 'wfnuser@126.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0, ''),
+(19, 'wfnuser@163.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0, ''),
+(20, 'wfnuser@gmail.com', '', '*E56A114692FE0DE073F9A1DD68A00EEB9703F3F1', '', '', '', '0000-00-00', '', '', '', '', 0000, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 5, NULL, NULL, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -597,17 +607,17 @@ ALTER TABLE `user_state`
 -- AUTO_INCREMENT for table `act`
 --
 ALTER TABLE `act`
-MODIFY `a_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
+MODIFY `a_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `act_likes`
 --
 ALTER TABLE `act_likes`
-MODIFY `al_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+MODIFY `al_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `act_man`
 --
 ALTER TABLE `act_man`
-MODIFY `am_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+MODIFY `am_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `follow`
 --
@@ -617,7 +627,7 @@ MODIFY `f_id` bigint(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 -- AUTO_INCREMENT for table `msg`
 --
 ALTER TABLE `msg`
-MODIFY `m_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
+MODIFY `m_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `reg`
 --

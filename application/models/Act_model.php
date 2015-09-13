@@ -71,7 +71,8 @@ class Act_model extends CI_Model {
 			$sql = "SELECT A.nname as from_nname,B.nname as to_nname,m_content,m_time FROM user as A,user as B,msg WHERE A.id=msg.from_u_id and B.id=msg.to_u_id and msg.s_id=2 and msg.a_id=? ORDER BY m_time DESC";
 			$query4 = $this->db->query($sql, array($a_id));
 			$temp['comments'] = $query4->result_array();
-			$query = array_merge($query1->result_array()[0],$temp);
+			$thebug = $query1->result_array();
+			$query = array_merge($thebug[0],$temp);
 
 			return $query;
 		}
