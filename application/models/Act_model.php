@@ -40,19 +40,21 @@ class Act_model extends CI_Model {
 		}
 		else{
 			if($ch_id == -1){//$ch_id = -1 means manage_list
-				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? and act.u_id = ? ORDER BY act.a_id DESC ";
+				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id  and act.u_id = ? ORDER BY act.a_id DESC ";
 				$query = $this->db->query($sql,array($this->session->id));
 				return $query->result_array();
 			}
-			if($select==0){
-				$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.a_state=? and act.t_id=type.id ORDER BY act.a_id DESC ";
-				$query = $this->db->query($sql,array($ch_id,$tag));
-				return $query->result_array();
-			}
 			else{
-				$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.a_state=? and act.t_id=type.id ORDER BY act.browse DESC ";
-				$query = $this->db->query($sql,array($ch_id,$tag));
-				return $query->result_array();
+				if($select==0){
+					$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.a_state=? and act.t_id=type.id ORDER BY act.a_id DESC ";
+					$query = $this->db->query($sql,array($ch_id,$tag));
+					return $query->result_array();
+				}
+				else{
+					$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.a_state=? and act.t_id=type.id ORDER BY act.browse DESC ";
+					$query = $this->db->query($sql,array($ch_id,$tag));
+					return $query->result_array();
+				}
 			}
 		}
 		
