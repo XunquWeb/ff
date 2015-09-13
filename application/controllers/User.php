@@ -234,6 +234,7 @@ class User extends CI_Controller {
 		//var_dump($result);
 		$flag=0;
 		$data['empty'] = false;
+		$data['empty2'] = true;
 		if($result){
 			foreach ($result as $r) {
 				switch($r['s_name']){
@@ -243,9 +244,11 @@ class User extends CI_Controller {
 					  break;
 					default:
 					  $tmp = 'system_msg';
+					  $flag = 2;
 					  break;  
 				}
-					$data[$tmp][] = $r;
+					if($flag==2)
+						$data['empty2'] = false;
 			}		
 		}
 		else{
@@ -255,6 +258,7 @@ class User extends CI_Controller {
 		if($flag == 0)
 			$data['empty'] = true;
 		//var_dump($data);
+		
 		$data['msg_type'][0] = $type;
 
 		$this->load->view('header');

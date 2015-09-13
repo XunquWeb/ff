@@ -93,17 +93,19 @@
 			else echo '暂时没有人给您发消息哦～';
 		}
 		else{
-			foreach($system_msg as $r){
-				$d=strtotime($r['m_time']);
-				echo'<div class="msg-detail">';
-					echo"<img src=".$char.base_url('image/xunqu.jpg').$char.'>';
-					echo'<div class="msg-detail-content">';
-						echo'<div class="msg-source">'.'管理员'.'</div>';
-						echo'<div class="msg-text">'.$r['m_content'].'</div>';
-					echo '</div>';
-					echo '<div class="msg-time">'.( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
-				echo'</div>';
-			}
+			if ($empty2 == false)
+				foreach($system_msg as $r){
+					$d=strtotime($r['m_time']);
+					echo'<div class="msg-detail">';
+						echo"<img src=".$char.base_url('image/xunqu.jpg').$char.'>';
+						echo'<div class="msg-detail-content">';
+							echo'<div class="msg-source">'.'管理员'.'</div>';
+							echo'<div class="msg-text">'.$r['m_content'].'</div>';
+						echo '</div>';
+						echo '<div class="msg-time">'.( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
+					echo'</div>';
+				}
+			else echo '暂时没有系统消息哦～';
 		}
 
 	?>
