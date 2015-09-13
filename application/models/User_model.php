@@ -157,7 +157,7 @@ class User_model extends CI_Model {
 	}
 
 	public function follower_show($user_id){
-		$sql="SELECT follow.followed_id,follow.follower_id,user.name AS followername, user.sign AS sign FROM follow LEFT JOIN user ON follow.followed_id = user.id WHERE follow.follower_id= 11";
+		$sql="SELECT follow.followed_id,follow.follower_id,user.name AS followername, user.sign AS sign FROM follow LEFT JOIN user ON follow.followed_id = user.id WHERE follow.follower_id= ?";
 		$query=$this->db->query($sql, array($user_id));
 			if ($query->num_rows() > 0){
 				return $query->result_array();
