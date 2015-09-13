@@ -100,7 +100,7 @@ class User extends CI_Controller {
 			$this->load->model('user_model');
 			if($data = $this->user_model->myinfo_get($user_id)){
 				$data['authority'] = ($this->session->id == $user_id ? true : false);			
-				var_dump($data);
+				//var_dump($data);
 
 				$t['act_arrange'] = $data['act_arrange'];
 				$t['act_join'] = $data['act_join'];

@@ -84,7 +84,7 @@ class Act extends CI_Controller {
 				redirect('base_url("act/submit")');
 			}
 			$url = base_url("act/detail/")."/".$act_id;
-			redirect('$url');
+			redirect($url);
 		}
 		
 	}
