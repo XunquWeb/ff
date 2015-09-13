@@ -9,21 +9,51 @@ class Act_model extends CI_Model {
 	}
 
 
-	public function index($ch_id=0){
+	public function index($ch_id=0,$select=0,$state=0){
+		switch($state)
+		{
+			case 0:
+				$tag = "求队友";
+				break;
+			case 1:
+				$tag = "酝酿中";
+				break;
+			case 2:
+				$tag = "已结束";
+				break;
+			default:
+				break;
+		}
+
 		if($ch_id == 0){//$ch_id = -1 means all act
-			$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC ";
-			$query = $this->db->query($sql);
-			return $query->result_array();
+			if($select==0){
+				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? ORDER BY act.a_id DESC ";
+				$query = $this->db->query($sql,$tag);
+				return $query->result_array();
+			}
+			else{
+				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? ORDER BY act.browse DESC ";
+				$query = $this->db->query($sql,$tag);
+				return $query->result_array();
+			}
+
 		}
 		else{
 			if($ch_id == -1){//$ch_id = -1 means manage_list
-				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.u_id = ? ORDER BY act.a_id DESC ";
+				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? and act.u_id = ? ORDER BY act.a_id DESC ";
 				$query = $this->db->query($sql,array($this->session->id));
 				return $query->result_array();
 			}
-			$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.t_id=type.id ORDER BY act.a_id DESC ";
-			$query = $this->db->query($sql,array($ch_id));
-			return $query->result_array();
+			if($select==0){
+				$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.a_state=? and act.t_id=type.id ORDER BY act.a_id DESC ";
+				$query = $this->db->query($sql,array($ch_id,$tag));
+				return $query->result_array();
+			}
+			else{
+				$sql = "SELECT * FROM act,type WHERE act.t_id=? and act.a_state=? and act.t_id=type.id ORDER BY act.browse DESC ";
+				$query = $this->db->query($sql,array($ch_id,$tag));
+				return $query->result_array();
+			}
 		}
 		
 	}

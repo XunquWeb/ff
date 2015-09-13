@@ -11,40 +11,40 @@
   		<div class="display-top">
             <a id="display-classify" class="display-select" onclick="setFrameGroupIndex(0);">全部分类<span class="triangle_down"></span></a>
             
-            <a id="display-rank" class="display-select"  onclick="setFrameGroupIndex(1);">智能排序<span class="triangle_down"></span></a>
+            <a id="display-rank" class="display-select"  onclick="setFrameGroupIndex(1);">最新约单<span class="triangle_down"></span></a>
 
-            <a id="display-region" class="display-select" onclick="setFrameGroupIndex(2);">交通大学<span class="triangle_down"></span></a>
+            <a id="display-region" class="display-select" onclick="setFrameGroupIndex(2);">求队友<span class="triangle_down"></span></a>
         </div>
 
         <div class="scroller-wrapper display-none">
                 <div id="dropdown_scroller" class="dropdown-scroller">
                     <ul style="-webkit-transition-property: -webkit-transform; transition-property: -webkit-transform; -webkit-transform-origin: 0px 0px 0px; -webkit-transform: translate3d(0px, 0px, 0px);">
                         <li class="category-wrapper classify active">
-                            <ul class="dropdown-list">
-                            	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>全部分类</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>吃喝玩乐</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>我会更棒</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>健身减肥</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>来约奇葩</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>请求支援</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>人在途中</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>影音书画</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>约谈约聊</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>新生戳这</span></li>                           	
+                            <ul class="dropdown-list" id="type1">
+                            	<li  data-category-id="0" data-category-name="" data-has-sub="true"><a style="display:none;">0</a><span>全部分类</span></li>
+                            	<li  data-category-id="1" data-category-name=""><a style="display:none;">1</a><span>吃喝玩乐</span></li>
+                            	<li  data-category-id="2" data-category-name=""><a style="display:none;">2</a><span>我会更棒</span></li>
+                            	<li  data-category-id="3" data-category-name=""><a style="display:none;">3</a><span>健身减肥</span></li>
+                            	<li  data-category-id="4" data-category-name=""><a style="display:none;">4</a><span>来约奇葩</span></li>
+                            	<li  data-category-id="5" data-category-name=""><a style="display:none;">5</a><span>请求支援</span></li>
+                            	<li  data-category-id="6" data-category-name=""><a style="display:none;">6</a><span>人在途中</span></li>
+                            	<li  data-category-id="7" data-category-name=""><span>影音书画</span><a style="display:none;">7</a></li>
+                            	<li  data-category-id="8" data-category-name=""><span>约谈约聊</span><a style="display:none;">8</a></li>
+                            	<li  data-category-id="9" data-category-name=""><a style="display:none;">9</a><span>新生戳这</span></li>                           	
                             </ul>
                         </li>
                         <li class="category-wrapper rank display-none">
-                            <ul class="dropdown-list">
-                            	<li  class="active" data-category-id="0" data-category-name="" data-has-sub="true"><span>智能排序</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>最热约单</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>最新约单</span></li>
-                            	<li  data-category-id="1" data-category-name=""><span>精品推荐</span></li>
+                            <ul class="dropdown-list" id="type2">
+                            	<li  data-category-id="0" data-category-name="" data-has-sub="true"><span>最新约单</span><a style="display:none;">0</a></li>
+                            	<li  data-category-id="1" data-category-name=""><span>最热约单</span><a style="display:none;">1</a></li>
+                            	<li  data-category-id="2" data-category-name=""><span>精品推荐</span><a style="display:none;">2</a></li>
                             </ul>
                         </li>
                         <li class="category-wrapper region display-none">
-                            <ul class="dropdown-list">
-                            	<li  class="active" data-category-id="0" data-category-name="美食" data-has-sub="true"><span>交通大学</span></li>
-                            	<li  data-category-id="1" data-category-name="今日新单"><span>华东师范大学</span></li>
+                            <ul class="dropdown-list" id="type3">
+                            	<li  data-category-id="0" data-category-name="" data-has-sub="true"><span>求队友</span><a style="display:none;">0</a></li>
+                            	<li  data-category-id="1" data-category-name=""><span>酝酿中</span><a style="display:none;">1</a></li>
+                            	<li  data-category-id="2" data-category-name=""><span>已结束</span><a style="display:none;">2</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -105,6 +105,11 @@
 -->
 
 	<?php
+		if($row == 0)
+		{
+			echo "<p style='text-align:center;height:400px;'>没有相关约单～</p>";
+		}
+		else{
 		foreach ($row as $r) {
 			//var_dump($r);
 			echo <<<TR
@@ -144,7 +149,7 @@ TR;
 		</div>
 TR;
 		}
-
+		}
 
 
 
@@ -197,6 +202,88 @@ TR;
 -->
 	</div>
 <script>
+
+	$(function(){
+		$choose0 = "<?php echo $choose[0];?>";
+		$choose1 = "<?php echo $choose[1];?>";
+		$choose2 = "<?php echo $choose[2];?>";
+		$url = "<?php echo base_url('act/display');?>"
+		//alert($url);
+
+		switch($choose0){
+			case ("0"):
+				$data1 = "全部分类";break;
+			case ("1"):
+				$data1 = "吃喝玩乐";break;
+			case ("2"):
+				$data1 = "我会更棒";break;
+			case ("3"):
+				$data1 = "健身减肥";break;
+			case ("4"):
+				$data1 = "来约奇葩";break;
+			case ("5"):
+				$data1 = "请求支援";break;
+			case ("6"):
+				$data1 = "人在途中";break;
+			case ("7"):
+				$data1 = "影音书画";break;
+			case ("8"):
+				$data1 = "约谈约聊";break;
+			case ("9"):
+				$data1 = "新生戳这";break;
+		}
+		switch($choose1){
+			case ("0"):
+				$data2 = "最新约单";break;
+			case ("1"):
+				$data2 = "最热约单";break;
+			case ("2"):
+				$data2 = "精品推荐";break;
+		}
+		switch($choose2){
+			case ("0"):
+				$data3 = "求队友";break;
+			case ("1"):
+				$data3 = "酝酿中";break;
+			case ("2"):
+				$data3 = "已结束";break;
+		}
+		$("#display-classify").html($data1+"<span class='triangle_down'>");
+		$("#display-rank").html($data2+"<span class='triangle_down'>");
+		$("#display-region").html($data3+"<span class='triangle_down'>");
+		
+		$("#type1 li").bind("click",function(){
+			$choose0 = $(this).find('a').first().text();
+			// alert($url);
+			// alert($choose0);
+			// alert($choose1);
+			// alert($choose2);
+			$url = $url+"/" + $choose0+"/" + $choose1+"/" +$choose2;
+			location.href = $url;
+		});
+		$("#type2 li").bind("click",function(){
+			$choose1 = $(this).find('a').first().text();
+			// alert($url);
+			// alert($choose0);
+			// alert($choose1);
+			// alert($choose2);
+			$url = $url+"/" + $choose0+"/" + $choose1+"/" +$choose2;
+			//alert($url);
+			location.href = $url;
+		});
+		$("#type3 li").bind("click",function(){
+			$choose2 = $(this).find('a').first().text();
+			// alert($url);
+			// alert($choose0);
+			// alert($choose1);
+			// alert($choose2);
+			$url = $url+"/" + $choose0+"/" + $choose1+"/" +$choose2;
+			//alert($url);
+			location.href = $url;
+		});
+
+		
+	});
 	var updown = 1;
 	$('.scroller_shadow').bind('click', function() 
 		{ 

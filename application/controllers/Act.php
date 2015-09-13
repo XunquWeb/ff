@@ -17,11 +17,11 @@ class Act extends CI_Controller {
 	}
 
 
-	public function display($ch_id=0){
+	public function display($ch_id=0,$select=0,$state=0){
 
 		$this->load->model('act_model');
-		if($data['row'] = $this->act_model->index($ch_id)){
-			//var_dump($data);
+		$data['choose']=array($ch_id,$select,$state);
+		if($data['row'] = $this->act_model->index($ch_id,$select,$state)){
 			for($i=0; $i<count($data['row']); $i++){
 				$r = $data['row'][$i];
 				$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
@@ -29,6 +29,14 @@ class Act extends CI_Controller {
 			$this->load->view('header');		
 			$this->load->view('display_act',$data);
 			$this->load->view('footer');
+		}
+		else{
+			//var_dump($data);
+			$data['row'] = 0;
+			$this->load->view('header');		
+			$this->load->view('display_act',$data);
+			$this->load->view('footer');
+
 		}
 
 	}
