@@ -40,8 +40,11 @@
 <?php echo validation_errors(); ?>
 <form action="<?php echo base_url('User/signup')?>" class="form-signin" method="post" accept-charset="utf-8">
                         <input type="text" class="form-control" id="" placeholder="电子邮箱" name="e" required autofocus>
+                        <input type="text" class="form-control" id="" placeholder="用户名" name="n" required >
+                        
                         <input type="password" class="form-control" id="pwd" placeholder="密码" name="p" required >
                         <input type="password" class="form-control" id="pwdchk" placeholder="确认密码" required onchange="checkPasswords()">
+                        
                         <button class="btn btn-lg btn-primary btn-block " id="loginButton" type="submit">
                             加入寻趣</button>
                     </form>

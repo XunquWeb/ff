@@ -33,11 +33,25 @@ class User_model extends CI_Model {
 		$this->form_validation->set_rules('e', 'Username', 'required|max_length[255]|valid_email|is_unique[user.email]');
 		$this->form_validation->set_rules('p', 'Password', 'required|min_length[6]|max_length[255]');
 		if($this->form_validation->run()){
-			$sql = "INSERT INTO user ( email , pwd ) values ( ? , password( ? ))";
-			$sql = $this->db->compile_binds($sql, array($_POST['e'],$_POST['p']));
-			return $this->db->simple_query($sql);
+			$sql = "INSERT INTO user ( email , pwd ,nname ) values ( ? , password( ? ), ?);";
+			$sql = $this->db->query($sql, array($_POST['e'],$_POST['p'],$_POST['n']));
+			// $tmp = $_POST['e'];
+			// $query = "SELECT id FROM user WHERE email = ? limit 1;";
+			// $query = $this->db->query($sql, array($tmp));
+			return $sql;
 		}
 		return FALSE;
+	}
+
+	public function signid(){
+		$tmp = $_POST['e'];
+		$sql = "SELECT name,id,sex,nname,college,major,entryy,sign,birth,home,hobby,estate,constellation,phone FROM user WHERE email=?";
+		$query = $this->db->query($sql, $tmp);
+		if ($query->num_rows() > 0){
+			$temp = $query->result_array();
+			return $temp[0];
+		}
+		return $tmp;
 	}
 
 	public function register(){

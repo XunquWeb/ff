@@ -36,18 +36,40 @@ class User extends CI_Controller {
 //		if($this->session->id){
 //			echo $this->session->email;
 //		}else{
+		///////////////
+			// if($this->input->method()=='get'){
+			// 	$this->load->view('signup');
+			// }else{
+			// 	$this->load->model('user_model');
+			// 	$this->load->model('msg_model');
+			// 	if($this->user_model->signup()){
+			// 		$this->msg_model->welcome_msg();
+			// 		echo '<script>alert(/success/);window.location="login";</script>';
+			// 	}else{
+			// 		$this->load->view('signup');
+			// 	}
+			// }
+		//////////////
+
 			if($this->input->method()=='get'){
 				$this->load->view('signup');
 			}else{
 				$this->load->model('user_model');
 				$this->load->model('msg_model');
 				if($this->user_model->signup()){
-					$this->msg_model->welcome_msg();
-					echo '<script>alert(/success/);window.location="login";</script>';
+					//$this->msg_model->welcome_msg();
+					if($toid = $this->user_model->signid()){
+						//var_dump($toid);
+						$this->msg_model->welcome_msg($toid);
+						echo '<script>alert(/success/);window.location="login";</script>';
+					}
+					
+					//echo '<script>alert(/success/);window.location="login";</script>';
 				}else{
 					$this->load->view('signup');
 				}
 			}
+
 //		}
 	}
 	public function logout()
@@ -78,7 +100,7 @@ class User extends CI_Controller {
 			$this->load->model('user_model');
 			if($data = $this->user_model->myinfo_get($user_id)){
 				$data['authority'] = ($this->session->id == $user_id ? true : false);			
-				//var_dump($data);
+				var_dump($data);
 
 				$t['act_arrange'] = $data['act_arrange'];
 				$t['act_join'] = $data['act_join'];

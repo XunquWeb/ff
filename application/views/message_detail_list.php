@@ -78,16 +78,17 @@
 			if ($empty == false)
 				foreach($utu_msg as $r){
 					$d=strtotime($r['m_time']);
-					echo "<a href=".base_url('user/myinfo/').'/'.$r['from_u_id']." >";
 					echo'<div class="msg-detail">';
+						echo "<a href=".base_url('user/myinfo/').'/'.$r['from_u_id']." >";
 						echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
+						echo'</a>';
 						echo'<div class="msg-detail-content">';
 							echo'<div class="msg-source">'.$r['from_nname'].'</div>';
 							echo'<div class="msg-text">'.$r['m_content'].'</div>';
 						echo '</div>';
 						echo '<div class="msg-time">'. ( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
 					echo'</div>';
-					echo'</a>';
+
 				}
 			else echo '暂时没有人给您发消息哦～';
 		}
@@ -108,30 +109,39 @@
 	?>
 </div>
 
-<!-- Modal 
+
 <div class="modal fade" id="msg_reply" tabindex="-1" role="dialog" aria-labelledby="msg_reply" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header msg-modal-fix">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <img class="msg_reply_img" src="<?php echo base_url('image/photo_default.gif')?>">
-        <span>王永强</span>
-        <span class='msg_reply_time'>04:35am</span>
+        <span id="msg_person">王永强</span>
+        <span class='msg_reply_time' id='msg_reply_time'>04:35am</span>
       </div>
       <div class="modal-body">
-      	<p>听说张之铖又找妹纸了？！！</p>
-        <form>
-          <div class="form-group">
-            <label for="message-text" class="control-label">回复</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
+      	<p id="msg_note" style="word-break: break-all;">听说张之铖又找妹纸了？！！</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary">确认发送</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
       </div>
     </div>
   </div>
 </div>
--->
+
+<script src="<?php echo base_url('js/jquery-1.10.2.min.js')?>"></script>
+<script src="<?php echo base_url('js/bootstrap.min.js')?>"></script>
+<script>
+
+	$(function(){
+		$(".msg-detail-content").bind("click",function(){
+			$tmp1 = $(this).find(".msg-source").first().text();
+			$tmp2 = $(this).find(".msg-text").first().text();
+			$tmp3 = $(this).nextAll('.msg-time').first().text();
+			$('#msg_person').text($tmp1);
+			$('#msg_note').text($tmp2);
+			$('#msg_reply_time').text($tmp3);
+			$('#msg_reply').modal('show');
+		});
+	});
+</script>

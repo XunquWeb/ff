@@ -42,9 +42,9 @@ class Msg_model extends CI_Model {
 		}
 	}
 
-	public function welcome_msg(){
+	public function welcome_msg($toid){
 		$text = "欢迎注册，寻找身边的乐趣从这里开始！";
 		$sql = "INSERT INTO msg(s_id, unrd,m_content,from_u_id,to_u_id) VALUES (0, 1,?,2,?);";
-		$this->db->query($sql,array($text,$this->session->id));
+		$this->db->query($sql,array($text,$toid['id']));
 	}
 }
