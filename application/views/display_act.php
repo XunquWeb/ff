@@ -105,6 +105,16 @@
 -->
 
 	<?php
+
+		switch($choose[2]){
+			case ("0"):
+				$tag = "求队友";break;
+			case ("1"):
+				$tag = "酝酿中";break;
+			case ("2"):
+				$tag = "已结束";break;
+		}
+
 		if($row == 0)
 		{
 			echo "<p style='text-align:center;height:400px;'>没有相关约单～</p>";
@@ -112,6 +122,7 @@
 		else{
 		foreach ($row as $r) {
 			//var_dump($r);
+			if($r['a_state'] == $tag){
 			echo <<<TR
 			<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
@@ -148,6 +159,7 @@ TR;
 		    </div>
 		</div>
 TR;
+		}
 		}
 		}
 

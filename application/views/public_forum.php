@@ -224,7 +224,8 @@
              dataType: "json",
              url: "<?php echo base_url('Forum/submit_forum')?>",
              success: function(result){
-                   //返回提示信息 
+                   //返回提示信息
+                   alert("success"); 
                    
              }
         });
@@ -239,7 +240,7 @@
                  url: "<?php echo base_url('Forum/forum_agree')?>"+"/"+$msg_id,
                  success: function(result){
                        //返回提示信息
-                       alert(result);   
+                       //alert(result);   
                  }
             });
         });
@@ -280,15 +281,19 @@
                     //   $forum_dtl[i] = $forum_arr[i].split('&');
                     // }
                     $.each($forum_arr,function(n,value){
-                          $forum_dtl[n] = value.split('&');
-                          $html_temp = $("#first-forum-box .forum-box").clone();
-                          $html_temp.find('.forum-photo').attr('href',"<?php echo base_url('user/myinfo')?>"+"/"+$forum_dtl[n][2]);
-                          $html_temp.find('.user-name').text($forum_dtl[n][1]);
-                          $html_temp.find('.text').text($forum_dtl[n][3]);
-                          $html_temp.find('.forum-box').attr("display","block");
-                          $html_temp.find('.forum_id').text($forum_dtl[n][0]);
-                          //alert($forum_dtl[n][3]);
-                          $(".forum-frame").append($html_temp);
+                          if(n!=10) {
+                            $forum_dtl[n] = value.split('&');
+                            $html_temp = $("#first-forum-box .forum-box").clone();
+                            $html_temp.find('.forum-photo').attr('href',"<?php echo base_url('user/myinfo')?>"+"/"+$forum_dtl[n][2]);
+                            $html_temp.find('.user-name').text($forum_dtl[n][1]);
+                            $html_temp.find('.text').text($forum_dtl[n][3]);
+                            $html_temp.find('.forum-box').attr("display","block");
+                            $html_temp.find('.forum_id').text($forum_dtl[n][0]);
+                            //alert($forum_dtl[n][3]);
+                            if($html_temp.find('.user-name').text()!="这就是用户名")
+                                $(".forum-frame").append($html_temp);
+                            //alert(n);
+                          }
                     }
 
                     );

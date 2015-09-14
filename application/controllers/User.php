@@ -198,9 +198,11 @@ class User extends CI_Controller {
 					$this->session->set_userdata($res);
 					//////////
 					echo '<script>alert(/success/);</script>';
+					$data = $this->user_model->myinfo_edit_get();
 					$this->load->view('user_info/account_info',$data);
 				}	
 				else{
+					$data = $this->user_model->myinfo_edit_get();
 					$this->load->view('user_info/account_info',$data);
 				}
 			}	
@@ -232,32 +234,28 @@ class User extends CI_Controller {
 		$result = $this->msg_model->index($type);
 		$this->msg_model->read($type);
 		//var_dump($result);
-		$flag=0;
-		$data['empty'] = false;
+		$data['empty'] = true;
 		$data['empty2'] = true;
+		$data['utu_msg'] = [];
+		$data['system_msg'] = [];
 		if($result){
 			foreach ($result as $r) {
 				switch($r['s_name']){
 					case '用户私信':
 					  $tmp = 'utu_msg';
-					  $flag = 1;
+					  $data['empty'] = false;
 					  break;
 					default:
 					  $tmp = 'system_msg';
-					  $flag = 2;
+					  $data['empty2'] = false;
 					  break;  
 				}
-					if($flag==2)
-						$data['empty2'] = false;
+				array_push($data[$tmp],$r);
 			}		
 		}
-		else{
-			$data['empty'] = true;	
-		}
-
-		if($flag == 0)
-			$data['empty'] = true;
 		//var_dump($data);
+
+		//$data[] = array_merge($data,$result);
 		
 		$data['msg_type'][0] = $type;
 

@@ -22,6 +22,7 @@ class Act extends CI_Controller {
 		$this->load->model('act_model');
 		$data['choose']=array($ch_id,$select,$state);
 		if($data['row'] = $this->act_model->index($ch_id,$select,$state)){
+			//var_dump($data);
 			for($i=0; $i<count($data['row']); $i++){
 				$r = $data['row'][$i];
 				$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
@@ -40,6 +41,7 @@ class Act extends CI_Controller {
 		}
 
 	}
+	//不可以先select再排除 否则会有漏选
 
 
 	//活动列表ajax

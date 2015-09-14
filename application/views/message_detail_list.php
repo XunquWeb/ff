@@ -75,7 +75,7 @@
 		//var_dump($utu_msg);
 		if($msg_type[0] == 1)
 		{
-			if ($empty == false)
+			if ($empty == false){
 				foreach($utu_msg as $r){
 					$d=strtotime($r['m_time']);
 					echo'<div class="msg-detail">';
@@ -90,10 +90,11 @@
 					echo'</div>';
 
 				}
+			}
 			else echo '暂时没有人给您发消息哦～';
 		}
 		else{
-			if ($empty2 == false)
+			if ($empty2 == false){
 				foreach($system_msg as $r){
 					$d=strtotime($r['m_time']);
 					echo'<div class="msg-detail">';
@@ -105,6 +106,7 @@
 						echo '<div class="msg-time">'.( ( date("Y-m-d", $d)==date("Y-m-d") ) ? date("h:i a", $d) : date("m-d", $d) ).'</div>';
 					echo'</div>';
 				}
+			}
 			else echo '暂时没有系统消息哦～';
 		}
 
