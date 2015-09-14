@@ -73,9 +73,10 @@
                     </div> -->
                     <div class="panel-body dl-menuwrapper dl-menu-main"  >
                       <div class="main_info " >
-                        <figure class="m-b inline p">
+                        <input class="replace-input" id="replace_input" onchange="replace(this)" style="display:none;" type="file" />';
+                        <figure class="m-b inline p" id="user_avatar" onclick="$('#replace_input').click()">
                           <a href="#" class="">
-                            <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" />
+                            <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" id="user_img" />
                             <p><span class="badge badge-green"><i class="fa fa-camera"></i></span></p>
                           </a>
                         </figure>
@@ -683,6 +684,34 @@
 
         // console.log($('.panel-btn .btn-select-group').hasClass('btn-select-group'));
       });
+    </script>
+
+    <script>
+      function replace(input){
+        var file = input.files[0];
+        if(file.type.indexOf("image")==0){
+          var reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = (function(e){
+            $('#user_avatar img').attr('src',e.target.result);
+            canvas = document.createElement("canvas");
+            canvas.width = 80;
+            canvas.height = 80;
+            var img = document.getElementById('user_img');
+            var height = $('#user_avatar img')[0].naturalHeight;
+            var width = $('#user_avatar img')[0].naturalWidth;
+            if(height>width){sw = width;sh = width;sx = 0;sy = (height - width)/2;}
+            else{sw = height;sh = height;sx = (width-height)/2;sy = 0;}
+            var context = canvas.getContext("2d");
+            context.drawImage(img, sx, sy, sw, sh, 0, 0, 80, 80);
+            var imageData = canvas.toDataURL('image/png');
+            $('#user_avatar img').attr('src',imageData);
+          });
+        }
+        else{
+          alert('不合法呀不合法~~');
+        }
+      }
     </script>
 
 
