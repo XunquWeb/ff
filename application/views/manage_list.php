@@ -62,6 +62,10 @@
 -->
 
 	<?php
+		if($empty){
+			echo "您还没有发起约单哦～";
+		}
+		else{
 		foreach ($row as $r) {
 			//var_dump($r);
 			echo <<<TR
@@ -103,6 +107,7 @@ TR;
 		    </div>
 		</div>
 TR;
+		}
 		}
 
 

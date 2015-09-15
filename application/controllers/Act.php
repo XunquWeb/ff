@@ -75,7 +75,7 @@ class Act extends CI_Controller {
 			if($act_id = $this->act_model->submit()){
 				//将组织者加入act_man表
 				if($this->join_in($act_id, 1)){
-					echo '<script>alert(/success/);window.location="index";</script>';
+					echo '<script>alert("恭喜您，发布成功!");window.location="index";</script>';
 					
 				}
 			}
@@ -207,11 +207,22 @@ class Act extends CI_Controller {
 
 	public function manage_list($ch_id){
 		$this->load->model('act_model');
+		$data['empty'] = false;
+		//var_dump($data);
 		if($data['row'] = $this->act_model->index($ch_id)){
-			for($i=0; $i<count($data['row']); $i++){
-				$r = $data['row'][$i];
-				$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
+			if(count($data['row'])>0){
+				for($i=0; $i<count($data['row']); $i++){
+					$r = $data['row'][$i];
+					$data['row'][$i]['a_state'] = $this->modifya_state($r['deadline'], $r['start_time'], $r['end_time'], $r['a_state'], $r['a_id']);
+				}
 			}
+			else $data['empty'] = true;
+			$this->load->view('header_manage_list');		
+			$this->load->view('manage_list',$data);
+			$this->load->view('footer');
+		}
+		else{
+			$data['empty'] = true;
 			$this->load->view('header_manage_list');		
 			$this->load->view('manage_list',$data);
 			$this->load->view('footer');
