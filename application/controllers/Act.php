@@ -75,18 +75,19 @@ class Act extends CI_Controller {
 			if($act_id = $this->act_model->submit()){
 				//将组织者加入act_man表
 				if($this->join_in($act_id, 1)){
-					echo '<script>alert("恭喜您，发布成功!");window.location="index";</script>';
+					//echo '<script>alert("恭喜您，发布成功!");window.location="index";</script>';
 					
 				}
+				$url = base_url("act/detail/")."/".$act_id;
+				redirect($url);
 			}
 			else{
 				//echo "<script>alert(".$_POST['Title'].");</script>";
-				echo "<script>alert('请补全填写项');</script>";
 				$url = base_url("act/submit/")."/".$act_id;
-				redirect('base_url("act/submit")');
+				echo "<script>alert('请补全填写项');windows.location.href="."'".$url."'"." </script>";
+				//redirect($url);
 			}
-			$url = base_url("act/detail/")."/".$act_id;
-			redirect($url);
+			
 		}
 		
 	}
