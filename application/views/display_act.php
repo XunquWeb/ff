@@ -42,9 +42,11 @@
                         </li>
                         <li class="category-wrapper region display-none">
                             <ul class="dropdown-list" id="type3">
-                            	<li  data-category-id="0" data-category-name="" data-has-sub="true"><span>求队友</span><a style="display:none;">0</a></li>
-                            	<li  data-category-id="1" data-category-name=""><span>酝酿中</span><a style="display:none;">1</a></li>
-                            	<li  data-category-id="2" data-category-name=""><span>已结束</span><a style="display:none;">2</a></li>
+                            	<li  data-category-id="0" data-category-name="" data-has-sub="true"><span>全部</span><a style="display:none;">0</a></li>
+                            	<li  data-category-id="1" data-category-name=""><span>求队友</span><a style="display:none;">1</a></li>
+                            	<li  data-category-id="2" data-category-name=""><span>酝酿中</span><a style="display:none;">2</a></li>
+                            	<li  data-category-id="3" data-category-name=""><span>已结束</span><a style="display:none;">3</a></li>
+                            	
                             </ul>
                         </li>
                     </ul>
@@ -108,11 +110,14 @@
 
 		switch($choose[2]){
 			case ("0"):
-				$tag = "求队友";break;
+				$tag = "全部";break;
 			case ("1"):
-				$tag = "酝酿中";break;
+				$tag = "求队友";break;
 			case ("2"):
+				$tag = "酝酿中";break;
+			case ("3"):
 				$tag = "已结束";break;
+			
 		}
 
 		if($row == 0)
@@ -122,7 +127,47 @@
 		else{
 		foreach ($row as $r) {
 			//var_dump($r);
+			if($tag!='全部'){
 			if($r['a_state'] == $tag){
+			echo <<<TR
+			<div class="panel panel-default">
+		    <div class="panel-body mod-project-details funding">
+TR;
+		    echo "<a href=\"" . base_url('Act/detail') . "/" . $r['a_id'] . "\">";
+		    echo <<<TR
+		    	<div class="clearfix">
+		            <span class="ribbon labels">
+TR;
+						echo $r['a_state'];
+					echo '</span>';
+		    
+		    		echo '<h1>' . $r['a_name'] . '</h1>';
+				echo '</div>';
+			
+		    	echo '<div class="media">';        
+		    		echo '<p class="item-img"><img class="lazy pull-left" src='.'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1109521759,949508831&fm=58'.'></p>';
+	            	echo '<p>' . $r['extra'] . '</p>';
+            	echo '</div>';
+            echo '</a>';
+            
+            
+        	echo '<p class="channel_tip">来自<a href="'. base_url('Act/display') . '/' . $r['t_id'] .'" class="channel_text">' . $r['t_name'] . '</a></p>';
+        		
+			echo <<<TR
+		    </div>
+		    <div class="panel-footer">
+TR;
+		    echo '浏览&nbsp;<span><i class="blue">' . $r['browse'] . '</i>次</span>&nbsp';
+
+		    echo '报名&nbsp;<span><i class="blue">'.$r['join_num'].'</i>次</span>';
+
+			echo <<<TR
+		    </div>
+		</div>
+TR;
+		}
+		}
+		else{
 			echo <<<TR
 			<div class="panel panel-default">
 		    <div class="panel-body mod-project-details funding">
@@ -272,10 +317,12 @@ TR;
 		}
 		switch($choose2){
 			case ("0"):
-				$data3 = "求队友";break;
+				$data3 = "全部";break;
 			case ("1"):
-				$data3 = "酝酿中";break;
+				$data3 = "求队友";break;
 			case ("2"):
+				$data3 = "酝酿中";break;
+			case ("3"):
 				$data3 = "已结束";break;
 		}
 		$("#display-classify").html($data1+"<span class='triangle_down'>");

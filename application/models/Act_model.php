@@ -13,12 +13,15 @@ class Act_model extends CI_Model {
 		switch($state)
 		{
 			case 0:
-				$tag = "求队友";
+				$tag = "全部";
 				break;
 			case 1:
-				$tag = "酝酿中";
+				$tag = "求队友";
 				break;
 			case 2:
+				$tag = "酝酿中";
+				break;
+			case 3:
 				$tag = "已结束";
 				break;
 			default:
@@ -26,15 +29,29 @@ class Act_model extends CI_Model {
 		}
 
 		if($ch_id == 0){//$ch_id = -1 means all act
-			if($select==0){
-				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? ORDER BY act.a_id DESC ";
-				$query = $this->db->query($sql,$tag);
-				return $query->result_array();
+			if($tag!="全部"){
+				if($select==0){
+					$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? ORDER BY act.a_id DESC ";
+					$query = $this->db->query($sql,$tag);
+					return $query->result_array();
+				}
+				else{
+					$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? ORDER BY act.browse DESC ";
+					$query = $this->db->query($sql,$tag);
+					return $query->result_array();
+				}
 			}
 			else{
-				$sql = "SELECT * FROM act,type WHERE act.t_id=type.id and act.a_state=? ORDER BY act.browse DESC ";
-				$query = $this->db->query($sql,$tag);
-				return $query->result_array();
+				if($select==0){
+					$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.a_id DESC ";
+					$query = $this->db->query($sql);
+					return $query->result_array();
+				}
+				else{
+					$sql = "SELECT * FROM act,type WHERE act.t_id=type.id ORDER BY act.browse DESC ";
+					$query = $this->db->query($sql);
+					return $query->result_array();
+				}
 			}
 
 		}
