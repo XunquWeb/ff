@@ -166,6 +166,9 @@ TR;
 
 
 	?>
+
+	      <a id="tocreat" style="display:inline;" href="<?php echo base_url("act/submit")?>"><i class="fa fa-plus"></i></a>
+          <div id="totop" style="display: block;"><i class="fa fa-angle-up"></i></div>
 	
 		<!-- 
 	
@@ -214,6 +217,21 @@ TR;
 -->
 	</div>
 <script>
+	$(function(){
+        $(window).scroll(function(){
+         if($(this).scrollTop() < 300) {
+              $('#totop') .fadeOut();
+          } else {
+              $('#totop') .fadeIn();
+          }
+         });
+         $('#totop').on('click', function(){
+          $('html, body').animate({scrollTop:0}, 'fast');
+          return false;
+         })
+      });
+
+
 
 	$(function(){
 		$choose0 = "<?php echo $choose[0];?>";

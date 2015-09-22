@@ -391,6 +391,9 @@ a {
   padding-top: 6px;
   background-color: #FFF;
 }
+#dt_like_main{
+    margin-top:30px;
+}
 .dt_like_main_top {
   overflow: hidden;
   margin: 0 20px;

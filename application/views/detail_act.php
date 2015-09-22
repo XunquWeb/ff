@@ -168,7 +168,7 @@
 </div>
 
 -->
-<div class="height-fix" style="height:68px">
+<div class="height-fix" style="height:150px">
 </div>
 <div class="dt_join_bar dt_join_bar_outside" >
       <div class="l">

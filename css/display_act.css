@@ -290,3 +290,39 @@ p.channel_tip:before {
 .display-none{
   display:none;
 }
+#tocreat {
+    position: fixed;
+    bottom: 105px;
+    right: 1.5%;
+    display: none;
+    z-index: 9999;
+    background: transparent;
+    border: 3px solid #A0D468;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+}
+#totop i, #tocreat i {
+    color: #A0D468;
+    line-height: 40px;
+    font-size: 33px;
+}
+#totop {
+    position: fixed;
+    bottom: 45px;
+    right: 1.5%;
+    display: none;
+    z-index: 9999;
+    background: transparent;
+    border: 3px solid #A0D468;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+}
+#totop i, #tocreat i {
+    color: #A0D468;
+    line-height: 40px;
+    font-size: 33px;
+}

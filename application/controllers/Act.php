@@ -74,16 +74,16 @@ class Act extends CI_Controller {
 			$this->load->model('act_model');
 			if($act_id = $this->act_model->submit()){
 				//将组织者加入act_man表
-				if($this->join_in($act_id, 1)){
-					//echo '<script>alert("恭喜您，发布成功!");window.location="index";</script>';
+				// if($this->join_in($act_id, 1)){
+				// 	//echo '<script>alert("恭喜您，发布成功!");window.location="index";</script>';
 					
-				}
+				// }
 				$url = base_url("act/detail/")."/".$act_id;
 				redirect($url);
 			}
 			else{
 				//echo "<script>alert(".$_POST['Title'].");</script>";
-				$url = base_url("act/submit/")."/".$act_id;
+				$url = base_url("act/submit/");
 				echo "<script>alert('请补全填写项');windows.location.href="."'".$url."'"." </script>";
 				//redirect($url);
 			}
@@ -155,7 +155,7 @@ class Act extends CI_Controller {
 			//var_dump($data);
 			$this->load->view('header');		
 			$this->load->view('detail_act',$data);
-			$this->load->view('footer');
+			//$this->load->view('footer');
 		}
 				
 	}

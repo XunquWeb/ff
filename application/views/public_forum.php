@@ -7,8 +7,8 @@
     <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('css/public_forum.css')?>" rel="stylesheet">
   </head>
-<div class="forum-frame">    
 
+<div class="forum-frame">    
 <!--
 <div class="forum-box">
                   <div class="forum-top clearfix" onclick="" data-id="" data-type="">
@@ -216,16 +216,16 @@
       var falling = 1;
       $("#submit_forum button.btn-primary").bind("click",function(){
         var msg_text = $("#message-text").val();
-        $('#submit_forum').modal('hide') 
         //alert(msg_text);
         $.ajax({
              type: "post", 
              data: {text:msg_text},
-             dataType: "json",
              url: "<?php echo base_url('Forum/submit_forum')?>",
              success: function(result){
                    //返回提示信息
-                   alert("success"); 
+                   $('#submit_forum').modal('hide'); 
+                   $("#message-text").val('');
+                   alert("发布成功！"); 
                    
              }
         });

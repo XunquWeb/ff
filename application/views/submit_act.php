@@ -30,7 +30,7 @@
             </div>
             <div class="create-event-more" style="height:50px;">
                 <div class="form-group" style="line-height:50px;">
-                    <input style="display:none;" id="event-select-follow" name="Type"></input>
+                    <input style="display:none;" id="event-select-follow" name="Type" value="0"></input>
                     <span class="icon-tag"></span> <input type="text" class="form-control"  placeholder="约单主题" data-validation-message="请输入约单主题" data-validation-type="warning"  value="" maxlength="100" data-invalid="" style="padding-left:29px;" readonly="">
                     <select name="Setting.HdxTags" id="event-select-hdxtag" style="margin-top:10px;  position: absolute;top: 0px;right: 10px;">
                         <option value="吃喝玩乐" img="/Content/v2.0/img/poster/thumb/es.jpg">吃喝玩乐</option>
@@ -74,11 +74,8 @@
                 <input type="text" class="form-control" placeholder="人数上限" required data-validation-message="" data-validation-type="warning" name="Max_num" value="">
             </div>
             <div class="event-edit">
-                <div class="placeholder"><span></span><p>添加约单详情，让小伙伴更好的了解约单～</p></div>
-                <textarea class="form-control textarea" contenteditable="" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description" required>
-                    
-                </textarea>
-                
+                <div class="placeholder"><span></span><!-- <p>添加约单详情，让小伙伴更好的了解约单～</p> --></div>
+                <textarea class="form-control textarea" contenteditable="" placeholder="添加约单详情，让小伙伴更好的了解约单～" data-validation-message="活动详情不能少于5个字数" data-validation-type="warning" data-abide-validator="minLength" name="Description" required></textarea>
             </div>
         <div id="dtBox"></div>
 <!--
