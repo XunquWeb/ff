@@ -54,7 +54,7 @@
         <figure class="m-b inline p">
           <a href="<?php echo base_url('User/myinfo')?>" class="">
             <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
-            <form method="post" action="user/post_photo">
+            <form method="post" action=""<?php echo base_url('User/post_photo')?>" ">
 								<input type="file" name="file" />
 								<input type="submit"/>
 								</form>
