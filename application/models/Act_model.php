@@ -130,9 +130,20 @@ class Act_model extends CI_Model {
 
 	//点赞
 	public function actlikes($a_id){
-		$sql = "INSERT INTO act_likes (u_id,a_id) values ( ? , ? )";
-		$result = $this->db->compile_binds($sql, array($this->session->id, $a_id));
-		return $this->db->simple_query($result);
+		$sql = "SELECT * FROM act_likes WHERE u_id=? AND a_id=?";
+		$query = $this->db->query($sql, array($this->session->id, $a_id));
+		if ($query->num_rows() > 0){
+			$sql = "DELETE FROM act_likes WHERE u_id=? AND a_id=?";
+			$result = $this->db->compile_binds($sql, array($this->session->id, $a_id));
+			$this->db->simple_query($result);
+			return 1;
+		}
+		else{
+			$sql = "INSERT INTO act_likes (u_id,a_id) values ( ? , ? )";
+			$result = $this->db->compile_binds($sql, array($this->session->id, $a_id));
+			$this->db->simple_query($result);
+			return 2;
+		}
 	}
 
 
@@ -144,7 +155,7 @@ class Act_model extends CI_Model {
 		$this->form_validation->set_rules('College','college','required');
 		$this->form_validation->set_rules('Address','address','required|max_length[255]');
 		$this->form_validation->set_rules('Max_num','max number','required|less_than[500]|is_natural');
-		$this->form_validation->set_rules('Description','description','required|min_length[10]|max_length[255]');
+		$this->form_validation->set_rules('Description','description','required|max_length[255]');
 		$this->form_validation->set_rules('Type','type','required');
 		$dl=strtotime($_POST['Deadline']);
 		$st=strtotime($_POST['Start']);
@@ -155,16 +166,21 @@ class Act_model extends CI_Model {
 		$dl=date('Y-m-d H:i:s',$dl);
 		$st=date('Y-m-d H:i:s',$st);
 		$ed=date('Y-m-d H:i:s',$ed);
+		//echo "1";
 		if($this->form_validation->run()){
+			//echo "2";
 			$sql = "INSERT INTO act (u_id,a_name,deadline,start_time,end_time,extra,a_college,place,max_num,t_id) VALUES (?,?,?,?,?,?,?,?,?,?)";
 			$sql = $this->db->compile_binds($sql,array($this->session->id,$_POST['Title'],$dl,$st,$ed,$_POST['Description'],$_POST['College'],$_POST['Address'],$_POST['Max_num'],$_POST['Type']));
 			if($this->db->simple_query($sql)){
+				//echo "3";
 				return $this->db->insert_id();
 			}
 			else{
+				//echo "4";
 				return false;
 			}
 		}
+		//echo "5";
 		return false;
 
 	}

@@ -76,14 +76,13 @@ class Act extends CI_Controller {
 				//将组织者加入act_man表
 				// if($this->join_in($act_id, 1)){
 				// 	//echo '<script>alert("恭喜您，发布成功!");window.location="index";</script>';
-					
 				// }
 				$url = base_url("act/detail/")."/".$act_id;
 				redirect($url);
 			}
 			else{
 				//echo "<script>alert(".$_POST['Title'].");</script>";
-				$url = base_url("act/submit/");
+				$url = base_url("act/submit");
 				echo "<script>alert('请补全填写项');windows.location.href="."'".$url."'"." </script>";
 				//redirect($url);
 			}
@@ -164,7 +163,9 @@ class Act extends CI_Controller {
 	public function actlikes($a_id=1)
 	{
 		$this->load->model('act_model');
-		if($this->act_model->actlikes(intval($a_id))){
+		if($state=$this->act_model->actlikes(intval($a_id))){
+			//$data["state"] = $state;
+			echo $state;
 			return true;
 		}
 				

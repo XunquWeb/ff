@@ -236,8 +236,8 @@ class User extends CI_Controller {
 		//var_dump($result);
 		$data['empty'] = true;
 		$data['empty2'] = true;
-		$data['utu_msg'] = [];
-		$data['system_msg'] = [];
+		$data['utu_msg'] = array();
+		$data['system_msg'] = array();
 		if($result){
 			foreach ($result as $r) {
 				switch($r['s_name']){

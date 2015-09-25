@@ -98,7 +98,7 @@
   </div>
 </div>
 <div class="dt_like" onclick="agree()">
-      <a href="" ontouchstart="">
+      <a ontouchstart="">
         <p ontouchstart="">赞(<span id="dt_like_count"><?php echo count($likes);?></span>)</p>
         <span class="zanWk" ontouchstart=""><img id="img_dt_like" src="http://img1.hudongba.cn/static_v4/images/detail/dt_like.png" alt=""></span>
       </a>
@@ -225,8 +225,17 @@
                 url : "<?php echo base_url('Act/actlikes')?>"+"/"+<?php echo $a_id ?>,    
                 success : function(data)  
                 {
-                  $temp = $('#dt_like_count').text();
-                  $('#dt_like_count').text($temp + 1);  
+                  //alert(data);
+                  if(data == 1){
+                    $temp = $('#dt_like_count').text();
+                    $('#dt_like_count').text($temp*1 - 1);
+
+                  }
+                  else{
+                    $temp = $('#dt_like_count').text();
+                    $('#dt_like_count').text($temp*1 + 1);
+                  }
+                    
                 }
             }); 
   }

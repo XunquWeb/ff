@@ -41,8 +41,8 @@
 		timeMeridiemSeparator: " ",
 		dateTimeSeparator: " ",
 	
-		dateTimeFormat: "dd-MM-yyyy HH:mm:ss",
-		dateFormat: "dd-MM-yyyy",
+		dateTimeFormat: "yyyy-MM-dd HH:mm:ss",
+		dateFormat: "yyyy-MM-dd",
 		timeFormat: "HH:mm",
 	
 		maxDate: null,
@@ -55,9 +55,9 @@
 		minDateTime: null,
 	
 		shortDayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-		fullDayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+		fullDayNames: ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
 		shortMonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-		fullMonthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+		fullMonthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
 		formatHumanDate: function(sDate) 
 		{
 			return sDate.dayShort + ", " + sDate.month + " " + sDate.dd + ", " + sDate.yyyy;
@@ -71,8 +71,8 @@
 		titleContentDateTime: "请选择时间日期",
 	
 		buttonsToDisplay: ["HeaderCloseButton", "SetButton", "ClearButton"],
-		setButtonContent: "Set",
-		clearButtonContent: "Clear",
+		setButtonContent: "确认",
+		clearButtonContent: "取消",
     	incrementButtonContent: "+",
     	decrementButtonContent: "-",
 		setValueInTextboxOnEveryClick: false,
