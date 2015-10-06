@@ -102,9 +102,12 @@ class User extends CI_Controller {
 				$data['authority'] = ($this->session->id == $user_id ? true : false);			
 				//var_dump($data);
 
+				//保存发起的活动和参与的活动两个数组
 				$t['act_arrange'] = $data['act_arrange'];
 				$t['act_join'] = $data['act_join'];
-				foreach ($data as $k => $d) {
+
+				//将发起活动、参与活动、更换签名、个人发布状态、广场发布的消息、关注，放入一个数组$data['more']，用以显示个人状态栏
+				foreach ($data as $k => $d){
 					if(is_array($d)){
 						while(count($data[$k]) != 0){
 							$data['more'][] = array_pop($data[$k]);
@@ -112,15 +115,20 @@ class User extends CI_Controller {
 						unset($data[$k]);
 					}
 				}
+				if(!isset($data['more'])){
+					$data['more'] = array();
+				}
 				$data['act_arrange'] = $t['act_arrange'];
 				$data['act_join'] = $t['act_join'];
 				//var_dump($data);
 
 				//按时间降序排序
-				foreach ($data['more'] as $d) {
-					$time[] = strtotime($d['time']);
+				if(!empty($data['more'])){
+					foreach ($data['more'] as $d) {
+						$time[] = strtotime($d['time']);
+					}
+					array_multisort($time, SORT_DESC, SORT_STRING, $data['more']);
 				}
-				array_multisort($time, SORT_DESC, SORT_STRING, $data['more']);
 				//var_dump($data);
 
 
