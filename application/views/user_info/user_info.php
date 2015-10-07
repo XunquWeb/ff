@@ -52,12 +52,12 @@
     <div class="profile-header-contents">
       <div class="profile-header-overlay">
         <figure class="m-b inline p">
-          <a href="<?php echo base_url('User/myinfo')?>" class="">
+          <a href="<?php echo base_url('user/account_info');?>" class="">
             <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
-            <form method="post" action=""<?php echo base_url('User/post_photo')?>" ">
+            <form method="post" action="<?php echo base_url('User/post_photo')?>" enctype="multipart/form-data">
 								<input type="file" name="file" />
 								<input type="submit"/>
-								</form>
+						</form>
             <p><span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span></p>
           </a>
         </figure>

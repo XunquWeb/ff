@@ -292,7 +292,6 @@
                             //alert($forum_dtl[n][3]);
                             if($html_temp.find('.user-name').text()!="这就是用户名")
                                 $(".forum-frame").append($html_temp);
-                            //alert(n);
                           }
                     }
 

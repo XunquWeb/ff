@@ -359,19 +359,23 @@ class User extends CI_Controller {
 	}
 	public function post_photo(){
 		if($this->session->id){
+			//var_dump($_FILES);
 			$type=$_FILES["file"]["type"];
-			if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][$i] < 10000)) {
+			if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][0] < 10000)) {
 				if ($_FILES["file"]["error"] > 0) echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
 				else {
-				echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+						var_dump($_FILES["file"]["tmp_name"]);
+						//echo "Upload: " . $_FILES["file"]["name"] . "<br />";
 						move_uploaded_file($_FILES["file"]["tmp_name"],
-						"image/photo/" . $this->session->id);
-						echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
-						}
-				  }
+						"./image/photo/".$this->session->id);
+						echo "<script>alert('success')</script>";
+						//echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+					}
+				}
 			else echo "Invalid file:";
+			
 		}else{
-			redirect('');
+			redirect("");
 		}
 	}
 	public function get_newest_follower(){
