@@ -115,6 +115,69 @@
         <section id="section-bar-1">
             <div class="padder">
               <div class="timeline-centered timeline-sm">
+                      <?php 
+                        if(empty($more)){
+                          echo "<article>" . '<h4 class="timeline-title">' . 
+                            ($authority ? "你" : "他") . "还没有任何动态T_T" . 
+                            '</h4>' . "</article>";
+                        }
+                        else{
+
+                          foreach ($more as $row) {
+                            switch ($row['type']) {
+                              case 'act_join': $row['title'] = "新的约单";
+                                                $row['text'] = $this->session->nname . "参加了活动——" . 
+                                                  "<a href=\"" . base_url("Act/detail") . "/" . $row['a_id'] . "\">" .$row['a_name'] . "</a>";
+                                                break;
+                              case 'act_arrange': $row['title'] = "新的约单";
+                                                  $row['text'] = $this->session->nname . "发起了活动——" . 
+                                                    "<a href=\"" . base_url("Act/detail") . "/" . $row['a_id'] . "\">" .$row['a_name'] . "</a>";
+                                                  break;
+                              case 'follow': $row['title'] = "新的关注";
+                                              $row['text'] = $this->session->nname . "关注了" . 
+                                                "<a href=\"" . base_url("User/myinfo") . "/" . $row['followed_id'] . "\">" .$row['nname'] . "</a>";
+                                              break;
+                              case 'forum': $row['title'] = "新的说说";
+                                            $row['text'] = $row['m_content'];
+                                            break;
+                              case 'sign_change': $row['title'] = "新的签名";
+                                                  $row['text'] = $row['sn_content'];
+                                                  break;
+                              case 'user_state': $row['title'] = "新的状态";
+                                                  $row['text'] = $row['us_content'];
+                                                  break;                             
+                              default: $row['title'] = "Users shouldn't have seen this message!";
+                                        $row['text'] = "";
+                                        break;
+                            }
+                            //var_dump($row);
+
+                            echo <<<TR
+                              <article class="timeline-entry">
+                                <div class="timeline-entry-inner">
+TR;
+                            echo '<time class="timeline-time"><span>' . substr($row['time'], 11, 5) . 
+                            '</span><span>' . (date("Y-m-d") == substr($row['time'], 0, 10) ? "Today" : substr($row['time'], 0, 10)) . 
+                            '</span></time>';
+
+                            //图片及颜色仍需调整
+                            echo <<<TR
+                              <div class="timeline-icon bg-green"><i class="fa fa-group"></i>
+                              </div>
+                              <div class="timeline-space"></div>
+                              <div class="timeline-label bg-green">
+                                <h4 class="timeline-title">
+TR;
+                            echo $row['title'] . "</h4>";
+                            echo "<p>" . $row['text'] . "</p>";
+                            echo "</div>" . "</div>" . "</article>";
+
+
+                          }
+                        }
+
+                      ?>
+                        <!--
                           <article class="timeline-entry">
                               <div class="timeline-entry-inner">
                                   <time datetime="2014-01-10T03:45" class="timeline-time"><span>12:45 AM</span><span>Today</span>
@@ -152,12 +215,17 @@
                                       <h4 class="timeline-title">新的约单</h4>
                                       <p><img src="http://lorempixel.com/45/45/nature/3/" alt="" class="timeline-img pull-left">土拨鼠1313参加了苏小欢发起的“寻趣小分队招募”</p>
                                   </div>
-                              </div>
-                              <div class="timeline-entry-inner">
+                              </div>                            
+                          </article>
+                          -->
+
+                          <article class="timeline-entry">
+                            <div class="timeline-entry-inner">
                                   <div style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);" class="timeline-icon"><i class="fa fa-plus"></i>
                                   </div>
                               </div>
                           </article>
+
               </div>
               <a id="tocreat" href=""  style="display:none;"><i class="fa fa-plus"></i></a>
               <div id="totop"  style="display:inline;"><i class="fa fa-angle-up"></i></div>
