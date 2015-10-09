@@ -53,7 +53,7 @@
       <div class="profile-header-overlay">
         <figure class="m-b inline p">
           <a href="<?php echo base_url('user/account_info');?>" class="">
-            <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
+            <img src="<?php echo base_url('image/photo/11')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
             <form method="post" action="<?php echo base_url('User/post_photo')?>" enctype="multipart/form-data">
 								<input type="file" name="file" />
 								<input type="submit"/>
@@ -122,23 +122,39 @@
                             '</h4>' . "</article>";
                         }
                         else{
-
+                          
                           foreach ($more as $row) {
+                            //$css_type = 0;
                             switch ($row['type']) {
                               case 'act_join': $row['title'] = "新的约单";
                                                 $row['text'] = $this->session->nname . "参加了活动——" . 
                                                   "<a href=\"" . base_url("Act/detail") . "/" . $row['a_id'] . "\">" .$row['a_name'] . "</a>";
+                                                $type_fa = "fa-exclamation";
+                                                $type_bg = "bg-violet";
+                                                $type_bg2 = "";
                                                 break;
                               case 'act_arrange': $row['title'] = "新的约单";
                                                   $row['text'] = $this->session->nname . "发起了活动——" . 
                                                     "<a href=\"" . base_url("Act/detail") . "/" . $row['a_id'] . "\">" .$row['a_name'] . "</a>";
+                                                  //$css_type = 0;
+                                                  $type_fa = "fa-exclamation";
+                                                  $type_bg = "bg-violet";
+                                                  $type_bg2 = "";
                                                   break;
                               case 'follow': $row['title'] = "新的关注";
                                               $row['text'] = $this->session->nname . "关注了" . 
                                                 "<a href=\"" . base_url("User/myinfo") . "/" . $row['followed_id'] . "\">" .$row['nname'] . "</a>";
+                                              //$css_type = 1;
+                                              $type_fa = "fa-group";
+                                              $type_bg = "bg-green";
+                                              $type_bg2 = "bg-green";
                                               break;
-                              case 'forum': $row['title'] = "新的说说";
+                              case 'forum': $row['title'] = "新的趣谈";
                                             $row['text'] = $row['m_content'];
+                                            //$css_type = 2;
+                                            $type_fa = "fa-paper-plane";
+                                            $type_bg = "bg-orange";
+                                            $type_bg2 = "bg-orange";
                                             break;
                               case 'sign_change': $row['title'] = "新的签名";
                                                   $row['text'] = $row['sn_content'];
@@ -161,13 +177,13 @@ TR;
                             '</span></time>';
 
                             //图片及颜色仍需调整
+                            echo '<div class="timeline-icon '.$type_bg.'">'.'<i class="fa '.''.$type_fa.'"></i>';
                             echo <<<TR
-                              <div class="timeline-icon bg-green"><i class="fa fa-group"></i>
                               </div>
                               <div class="timeline-space"></div>
-                              <div class="timeline-label bg-green">
-                                <h4 class="timeline-title">
 TR;
+
+                            echo '<div class="timeline-label '.$type_bg2.'">'.'<h4 class="timeline-title">';
                             echo $row['title'] . "</h4>";
                             echo "<p>" . $row['text'] . "</p>";
                             echo "</div>" . "</div>" . "</article>";
@@ -177,8 +193,8 @@ TR;
                         }
 
                       ?>
-                        <!--
-                          <article class="timeline-entry">
+                        
+<!--                           <article class="timeline-entry">
                               <div class="timeline-entry-inner">
                                   <time datetime="2014-01-10T03:45" class="timeline-time"><span>12:45 AM</span><span>Today</span>
                                   </time>
@@ -216,8 +232,8 @@ TR;
                                       <p><img src="http://lorempixel.com/45/45/nature/3/" alt="" class="timeline-img pull-left">土拨鼠1313参加了苏小欢发起的“寻趣小分队招募”</p>
                                   </div>
                               </div>                            
-                          </article>
-                          -->
+                          </article> -->
+                          
 
                           <article class="timeline-entry">
                             <div class="timeline-entry-inner">

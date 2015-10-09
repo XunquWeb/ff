@@ -1535,6 +1535,7 @@ fieldset[disabled] .btn-success.active {
 }
 .profile-header-logo{
   width:85px;
+  height:85px;
   border-radius:100px;
   margin-top:15px;
   margin-bottom:0px;
