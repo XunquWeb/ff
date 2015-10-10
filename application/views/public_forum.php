@@ -124,7 +124,7 @@
                       <a class="forum-photo" href="">
                       <span class="forum-icon-box pull-left">
 
-                          <img class="forum-photo" src="<?php echo base_url('/image/photo_default.gif')?>" alt="">
+                          <img class="forum-photo" src="<?php echo base_url('image/photo/').'/'.$this->session->id;?>" onerror="this.src='../../image/photo_default.gif'" alt="">
                       </span>
                       </a>
                       <span class="user-name pull-left">这就是用户名</span>
@@ -284,7 +284,7 @@
                           if(n!=10) {
                             $forum_dtl[n] = value.split('&');
                             $html_temp = $("#first-forum-box .forum-box").clone();
-                            $html_temp.find('.forum-photo').attr('href',"<?php echo base_url('user/myinfo')?>"+"/"+$forum_dtl[n][2]);
+                            $html_temp.find('.forum-photo').attr('href',"<?php echo base_url('user/myinfo')?>"+"/"+$forum_dtl[n][2]).attr('src',"<?php echo base_url('image/photo/');?>"+"/"+$forum_dtl[n][2]).attr("onerror","this.src='../../ff/image/photo_default.gif'");
                             $html_temp.find('.user-name').text($forum_dtl[n][1]);
                             $html_temp.find('.text').text($forum_dtl[n][3]);
                             $html_temp.find('.forum-box').attr("display","block");

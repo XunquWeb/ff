@@ -60,7 +60,7 @@
 
       <div class="content-wrap">
         <section>
-          <form action="<?php echo base_url("user/myinfo_edit") ?>" method="post">
+          <form action="<?php echo base_url("user/myinfo_edit") ?>" method="post" enctype="multipart/form-data">
             <div class="padder">     
                 <div class="">
                   <div class="panel">
@@ -73,10 +73,10 @@
                     </div> -->
                     <div class="panel-body dl-menuwrapper dl-menu-main"  >
                       <div class="main_info " >
-                        <input class="replace-input" id="replace_input" onchange="replace(this)" style="display:none;" type="file" />';
+                        <input class="replace-input" name="file" id="replace_input" onchange="replace(this)" style="display:none;" type="file" ></input>;
                         <figure class="m-b inline p" id="user_avatar" onclick="$('#replace_input').click()">
                           <a href="#" class="">
-                            <img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" id="user_img" />
+                            <img src="<?php echo base_url('image/photo/').'/'.$this->session->id;?>" onerror="this.src='../../image/photo_default.gif'" alt="" style="display: inline-block" class="img-responsive img-circle" id="user_img" />
                             <p><span class="badge badge-green"><i class="fa fa-camera"></i></span></p>
                           </a>
                         </figure>
@@ -243,8 +243,6 @@
     <div class="pt-page pt-page-3 pt-info"><h1><span>A collection of</span>页面切换效果</h1></div>
 
     <div class="pt-page pt-page-4 pt-info"><h1><span>A collection of</span>页面切换效果</h1></div>
-
-
 </div>
 
 
@@ -689,6 +687,7 @@
     <script>
       function replace(input){
         var file = input.files[0];
+
         if(file.type.indexOf("image")==0){
           var reader = new FileReader();
           reader.readAsDataURL(file);

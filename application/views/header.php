@@ -50,7 +50,7 @@
                     <div style="margin-top:10px;" class="row">
                       <div class="col-xs-4 col-sm-4 text-center">
                         <figure>
-                          <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $this->session->id . "\"";?> class=""><img src="<?php echo base_url('image/users/avatar/default/default10.jpg')?>" alt="" style="display: inline-block" class="img-responsive img-circle" /></a>
+                          <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $this->session->id . "\"";?> class=""><img src="<?php echo base_url('image/photo/').'/'.$this->session->id;?>" onerror="this.src='../../image/photo_default.gif'" alt="" style="display: inline-block;width: 50px;height: 50px;" class="img-responsive img-circle" /></a>
                         </figure>
                       </div>
                       <div class="col-xs-8 col-sm-8">
@@ -136,6 +136,7 @@
         <?php
             $page_url=current_url();
             $this->load->library('session');
+            $page_url = strtr($page_url,"index.php/","");
             $this->session->set_userdata(array(
                                         'user_id'       => $user->uid,
                                         'username'      => $user->username,

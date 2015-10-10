@@ -80,7 +80,11 @@
 					$d=strtotime($r['m_time']);
 					echo'<div class="msg-detail">';
 						echo "<a href=".base_url('user/myinfo/').'/'.$r['from_u_id']." >";
-						echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
+						//echo"<img src=".$char.base_url('image/photo_default.gif').$char.'>';
+						$src = base_url('image/photo/').'/'.$r['from_u_id'];
+						$err = "'../../image/photo_default.gif'";
+						echo "<img src="."'".$src."'"." "."onerror="."this.src=".$err." >";
+									
 						echo'</a>';
 						echo'<div class="msg-detail-content">';
 							echo'<div class="msg-source">'.$r['from_nname'].'</div>';

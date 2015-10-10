@@ -199,13 +199,27 @@ class User extends CI_Controller {
 				$this->load->view('user_info/account_info',$data);
 			}
 			else{
-				$this->load->model('user_model');
+				//$this->load->model('user_model');
+				$type=$_FILES["file"]["type"];
+				//var_dump($type);
+				if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/pjpeg")) && ($_FILES["file"]["size"][0] < 10000)) {
+					if ($_FILES["file"]["error"] > 0) echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+					else {
+							//var_dump($_FILES["file"]["tmp_name"]);
+							//echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+							move_uploaded_file($_FILES["file"]["tmp_name"],
+							"./image/photo/".$this->session->id);
+							//echo "<script>alert('success')</script>";
+							//echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+						}
+				}
+				else echo "Invalid file:";
 				if($this->user_model->myinfo_edit()){
 					//////////
 					$res=$this->user_model->updatesession();
 					$this->session->set_userdata($res);
 					//////////
-					echo '<script>alert(/success/);</script>';
+					echo '<script>alert("编辑成功！");</script>';
 					$data = $this->user_model->myinfo_edit_get();
 					$this->load->view('user_info/account_info',$data);
 				}	
@@ -216,7 +230,7 @@ class User extends CI_Controller {
 			}	
 		}
 		else{
-			redirect('welcome');
+			redirect('');
 		}
 	}
 

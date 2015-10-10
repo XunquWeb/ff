@@ -74,7 +74,9 @@
 						if($r['sign']=='')
 							$r['sign']="这个人很懒什么也没留下";
 									echo "<a href=".base_url('user/myinfo/').'/'.$r['follower_id']." >"."<div class="."msg-detail"." data-target="."#msg_reply "."data-whatever="."@someone".">";
-									echo "<img src=".base_url('image/photo_default.gif')." >";
+									$src = base_url('image/photo/').'/'.$r['follower_id'];
+									$err = "'../../image/photo_default.gif'";
+									echo "<img src="."'".$src."'"." "."onerror="."this.src=".$err." >";
 									echo "<div class='msg-detail-content'><div class='msg-source'>".$r['followedname']."</div><div class='msg-text'>".$r['sign']."</div></div></div>";
 					}
 				}

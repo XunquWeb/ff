@@ -53,11 +53,11 @@
       <div class="profile-header-overlay">
         <figure class="m-b inline p">
           <a href="<?php echo base_url('user/account_info');?>" class="">
-            <img src="<?php echo base_url('image/photo/11')?>" alt="" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
-            <form method="post" action="<?php echo base_url('User/post_photo')?>" enctype="multipart/form-data">
+            <img src="<?php echo base_url('image/photo/').'/'.$id;?>" onerror="this.src='../../image/photo_default.gif'" alt="<?php echo base_url('image/photo_default.gif'); ?>" style="display: inline-block" class="img-responsive img-circle profile-header-logo" />
+<!--             <form method="post" action="<?php echo base_url('User/post_photo')?>" enctype="multipart/form-data">
 								<input type="file" name="file" />
 								<input type="submit"/>
-						</form>
+						</form> -->
             <p><span class="badge badge-green bc-blue c-white"><i class="fa fa-mars"></i></span></p>
           </a>
         </figure>
@@ -116,6 +116,8 @@
             <div class="padder">
               <div class="timeline-centered timeline-sm">
                       <?php 
+                        //var_dump($id);
+                        //var_dump($this->session->id);
                         if(empty($more)){
                           echo "<article>" . '<h4 class="timeline-title">' . 
                             ($authority ? "你" : "他") . "还没有任何动态T_T" . 
@@ -538,9 +540,10 @@ TR;
         );
     }
 
+
     $(document).ready(function(){
       //alert("<?php echo $sign;?>");
-      if(<?php echo $this->session->userdata('id');?> == <?php echo $id ?> )
+      if(<?php echo $this->session->id;?> == <?php echo $id;?> )
       {
         //$('.addoredit').text("关注").attr('href',"<?php echo base_url('user').'/follow/'.$id ?>"); 
         $('.addoredit').text("编辑").attr('href',"<?php echo base_url('user/account_info')?>"); 

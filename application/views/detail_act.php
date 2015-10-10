@@ -15,19 +15,15 @@
 
 <div class="detail_user hdMan">
     <div class="userPicA">
-      <a href="＃" ontouchstart="">
-      <img class="userPic default_img" src="<?base_url("image/p2181454027.jpg")?>" alt="" ontouchstart="" >
+      <a href='<?php echo  base_url("User/myinfo") . "/" . $u_id ;?>' ontouchstart="">
+      <img class="userPic default_img" src="<?php echo base_url('image/photo/').'/'.$u_id;?>" onerror="this.src='../../image/photo_default.gif'" alt="" ontouchstart="" >
       </a>
     </div>
     <div class="hdman_r">
       <div class="yhName">
-        <a href=<?php echo "\"" . base_url('User/myinfo') . "/" . $u_id . "\"";?> class="subinfo_name" id="subinfo_name" ontouchstart="" style="max-width: 100px;"><?php  echo $name;?></a>
-      </div>
-      <div class="dt_review_item_count">
-       <!-- <a class="info_share" id="info_share" style="color: rgb(153, 153, 153);">分享 <?php echo $share;?></a><span id="info_hits">阅读 <?php echo $browse;?></span> -->
+        <a href='<?php echo base_url("User/myinfo") . "/" . $u_id ;?>' class="subinfo_name" id="subinfo_name" style="max-width: 100px;"> <?php  echo $name;?> </a>
       </div>
     </div>
-      <input type="hidden" id="postUserId36" value="a8fd3">
 </div>
 
 <div class="detail_time_attr_join">

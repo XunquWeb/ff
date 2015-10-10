@@ -1186,6 +1186,9 @@ fieldset[disabled] .btn-success.active {
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label.bg-green p {
     color: #ffffff;
 }
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label.bg-green a {
+    color: #ffffff;
+}
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label.bg-orange {
     background: #e9662c;
 }
@@ -1194,6 +1197,9 @@ fieldset[disabled] .btn-success.active {
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label.bg-orange .timeline-title,
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label.bg-orange p {
+    color: #ffffff;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label.bg-orange a {
     color: #ffffff;
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label.bg-yellow {
