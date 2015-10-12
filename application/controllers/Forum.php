@@ -96,13 +96,25 @@ class Forum extends CI_Controller {
 	}
 
 	public function submit_forum(){
-		$this->load->model('forum_model');
-		if($this->forum_model->submit_forum()){
-			echo "success";
+		// $this->load->model('forum_model');
+		// if($this->forum_model->submit_forum()){
+		// 	echo "success";
+		// }
+		// else echo "failed";
+		if($this->input->method()=='post'){
+			$this->load->model('forum_model');
+			if($this->forum_model->submit()){
+				//echo 'msg:success';
+				return true;
+			}else{
+				//$error=$this->db->error();
+				//echo 'err:'.$error['code'];
+				return false;
+			}
+			
+		}else{
+			show_404();
 		}
-		else echo "failed";
-		//$data = $this->forum_model->submit_forum($_POST('forum_text'));
-		//echo 234;
 	}
 
 

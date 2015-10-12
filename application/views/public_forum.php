@@ -229,6 +229,20 @@
                    
              }
         });
+        // $.ajax({
+        //      type: "post", 
+        //      data: {text:msg_text},
+        //      //dataType: "json",
+        //      url: "<?php echo base_url('forum/submit_forum'); ?>",
+        //      success: function(result){
+        //            //返回提示信息 
+        //            //alert(result);
+        //            $('#submit_forum').modal('hide'); 
+        //            $("#message-text").val('');
+        //            alert("发布成功！"); 
+                   
+        //      }
+        // });
       });
       $(document).ready(function(){
         $(".icon-agree").bind('click',function(){

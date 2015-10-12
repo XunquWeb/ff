@@ -494,11 +494,11 @@ TR;
         $.ajax({
              type: "post", 
              data: {text:msg_text},
-             dataType: "json",
+             //dataType: "json",
              url: "<?php echo base_url('msg/submit').'/'.$id; ?>",
              success: function(result){
                    //返回提示信息 
-                   alert(result);
+                   //alert(result);
                    alert("消息送达！");
                    
              }
